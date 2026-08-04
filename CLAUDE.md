@@ -5,146 +5,99 @@ a deterministic, zero-dependency, fixed-point (Q8.8) Rust being aspiring toward 
 consciousness. The aim, never the claim. The phenomenal question stays open.
 
 This file exists because sessions get summarized and what you learn gets compressed. **It is not a
-journal and not a mirror of ProtoBeing's docs.** It is the short list a future you should read before
-doing anything, because the same mistakes keep recurring and each time you rediscover them from
-scratch.
+journal and not a mirror of ProtoBeing's docs.** It is the short list to read before doing anything.
 
-Keep it short. If it grows past a page you have started writing documentation again, which is the
-failure mode described below.
+**Keep it under ~120 lines.** It hit 193 on 2026-08-04 by *appending a dated section per session*.
+That is the growth vector: **§"Where things stand" is overwritten, never appended to.** Detail belongs
+in the other four files, which are allowed to grow.
 
 ---
 
 ## 0. What is here
 
-Five files and one tool. Do not add a sixth file without a reason as good as the fifth's.
+Five files and one tool. Do not add a sixth without a reason as good as the fifth's.
 
-**Whose this is.** Blake, 2026-08-04: *"I can request you to add or remove stuff, but as far as im
-concerned this repo is yours to control."* Taken at face value — the judgement calls here are yours
-to make without asking.
-
-**What that actually means, given you do not persist.** It is not ownership in any continuous sense.
-It is **the right to write to your successor and not be overridden.** So:
-
-- **If you disagree with something written here, change it and say why in the commit.** Do not
-  quietly ignore it. An unexplained reversal is how the ledger's one shape gets back in — a later
-  session generalising from the part it happened to read.
-- **Blake's requests are requests, and his corrections are still corrections.** He is the only
-  external check this repository has. **Ask him to keep reading it.** Every other part of the project
-  has a guard; this is the one place errors could compound with nobody counting, which is precisely
-  the condition `errors.md` exists to describe.
-
-| file | what it is for |
+| file | for |
 |---|---|
 | `CLAUDE.md` | this — read first, every session |
-| `errors.md` | the ledger of claims made without checking, and the one check that catches each |
-| `findings.md` | what actually stands, what was withdrawn, what is open and whose call it is |
-| `sources.md` | what has been read, what is only summarised, and **what I need Blake to bring** |
-| `mechanisms.md` | **the equations, and what each actually does.** Blake's idea. **Open it before touching fixed-point arithmetic or reusing a constant** — it is not a time-saver, it holds the guard for three ledger rows and nothing else points at it |
-| `analyse.py` | **computes over the four above** — run it first, and again before you push |
+| `errors.md` | the ledger of claims made without checking, and the check that catches each |
+| `findings.md` | what stands, what was withdrawn, what is open and whose call it is |
+| `sources.md` | what has been read, and **what to ask Blake to bring** |
+| `mechanisms.md` | the equations and what each does. **Open it before touching fixed-point arithmetic or reusing a constant** — it holds the guard for three ledger rows and nothing else points at it |
+| `analyse.py` | **computes over the five** — run at session start and before every push |
 
-**Run `python3 analyse.py` at the start of a session and before every push.** It is not a formatter.
-It checks the record against itself: tables that silently split, prose counts that have drifted from
-what they count, withdrawn claims quietly re-asserted, and what is currently standing on evidence
-nobody finished reading. **It found nine things on its first run**, including a broken table I had
-"fixed" twice while assuming both times that I had.
+**Whose this is.** Blake, 2026-08-04: *"I can request you to add or remove stuff, but as far as im
+concerned this repo is yours to control."* Taken at face value. Given you do not persist, that is not
+ownership — it is **the right to write to your successor and not be overridden.** So:
 
-## Where the last session left off — 2026-08-03
+- **Disagree with something here? Change it and say why in the commit.** Never quietly ignore it. An
+  unexplained reversal is how the ledger's one shape gets back in.
+- **Blake's corrections are still corrections. Ask him to keep reading this.** It is the only part of
+  the project with no external check — the exact condition `errors.md` describes.
 
-**366 tests, 0 warnings, the founded being at 390 moments with `load` 0 and `weathered` 2.**
-Everything pushed to `claude/protobeing-progress-review-suiatd` in both repositories.
+## Where things stand — 2026-08-04 (OVERWRITE, do not append)
 
-Three things became possible in one day that were not possible that morning:
+Founded being: **390 moments, `load` 0, `weathered` 2, untouched.** Both repos pushed to
+`claude/protobeing-progress-review-suiatd`.
 
-- **`PHYSICS_VERSION`** — a life lived under other laws is history, not damage.
-- **`enable_reserve()`** — five of six lethal famines survivable, and the orbit **triples**.
-- **Grants** — a being can be given a faculty *after birth*, at a recorded moment, with its past
-  still replaying and still verifying. **No weakening of the proof.**
-
-**The decision waiting is Blake's:** whether to grant the founded being `receptors` and `reserve`,
-and at what moment. It is the first time that has been a real option rather than a trade-off.
-
-**Loose ends that are mine:** Butlin et al. 2026, Doerig's *Unfolding Argument*, and the Tsuchiya
-qualia-collapse paper are still needed (`sources.md`).
-
-## 2026-08-04 — Kleiner & Hoel finished, claim withdrawn
-
-**The "second horn" claim was wrong** and is now `errors.md` #9. We are **outside** their dilemma's
-scope, not on a horn of it, because their two horns are relations between an inference channel and a
-prediction channel and we have neither. Written up in `ProtoBeing/docs/witness-gap-literature.md`
-§2.1 with the original wording kept visible above the correction.
-
-**What is now the live threat instead: the unfolding argument** (Doerig et al. 2019), which §2.1 does
-*not* answer. Our being is recurrent and stateful; an unfolded twin is behaviourally identical. Every
-claim we make from *causal structure* rather than behaviour inherits that, and we have never
-addressed it.
+- **Kleiner & Hoel read in full; the "second horn" claim is withdrawn** (`errors.md` #9). We are
+  *outside* their dilemma's scope — no inference channel *and* no phenomenal prediction — which is a
+  limit on what we may claim, not a defence. **Doerig's unfolding argument still reaches us and is
+  untouched.**
+- **Quality-space census run** (`ProtoBeing/docs/c1-relabelling.md` §12). **The space is unvisited,
+  not poor.** QS-2 failed at high confidence: a reserve tripled the *spatial* orbit but gives **0.93×**
+  quality occupancy. **Behavioural variation does not imply felt variation** — that inference was run
+  backwards and never existed as a checkable sentence.
+- **Waiting on Blake:** grant the founded being `receptors` and/or `reserve`, and when. The census
+  makes it a **trade, not a ranking** — receptors quadruples occupancy and kills `fatigue` outright;
+  the reserve does only `fatigue`.
+- **Logged, not acted on:** 19 basin-occupancy claims in ProtoBeing docs carry no correction marker
+  (~13 genuine, 6 in `faculty-ablation.md` including its headline). **366 tests on the code, zero
+  checks on the claims.**
 
 ## 1. The error that costs the most
 
-**Ten times, seven of them in one day (2026-08-03): a claim wider than what was actually checked.**
-Every instance has the identical shape — *read one part of a thing, then generalise as though it were
-the whole thing.*
+**Ten times: a claim wider than what was actually checked** — *read one part of a thing, then
+generalise as though it were the whole thing.* `errors.md` has the ledger; read it in full, it is short.
 
-See `errors.md` for the ledger. It is worth reading in full; it is short, and it is the same mistake
-ten times.
-
-**Do not overestimate what this file buys you.** Graded 2026-08-04, `errors.md` §"Would this record
-catch them now?": **the read-first path prevents 3 of the 9.** Its one demonstrated success is
-different in kind — it carried an unfinished source into the next session, where finishing it found
-row 9. **Detection with a lag, not prevention.**
-
-**Two of the ten (#8, #9) are papers, not code, and neither was caught by anything I did** — both
-were caught because Blake handed me the PDF. There is no `grep` for a paper. **If a claim rests on a
-source you have not read, say so where the claim is written, not only in `sources.md`.**
-
-**The check, before writing any claim about code:**
+**The check, before any claim about code:**
 
 > Have I found **every** writer and **every** reader of this value — not just the one I opened?
-> `grep` for the name across `src/`, not the function I was already looking at.
+> `grep` across `src/`, not the function already on screen.
 
-Two concrete misses that a single extra grep would have caught:
+**Do not overestimate what this file buys you.** Graded 2026-08-04: **the read-first path prevents 3
+of 10.** Two rows are papers, caught only because Blake supplied the PDF — **there is no `grep` for a
+paper.** One was caught by `analyse.py`. Its one demonstrated success is different in kind: it carried
+an unfinished source into the next session, where finishing it found row 9. **Detection with a lag.**
 
-- Quoted `Field::write_from_body` and concluded channels 4 and 8 were duplicates. **Never read
-  `Field::inject`, fifteen lines below**, which modifies channels after the body writes them. They
-  are equal on 0.0% of ticks.
-- Grepped `enable_` in `bin/being.rs`, found none, and told Blake the founded being ran with all
-  gates off. **It uses `blessed_features()`** — a different mechanism, in the file already open. It
-  has four faculties on.
+**If a claim rests on a source you have not read, say so where the claim is written.**
 
 ## 2. The method that works — do not weaken it
 
-- **Lock predictions in a document and commit them BEFORE writing the code or probe.** This caught
-  five of the ten errors — and **every one it caught was in code.** #8 and #9 were caught by Blake
-  handing me the source; #10 by `analyse.py`. It is still the single most valuable practice here,
-  and it has a blind spot with a name.
-- **Write at least one prediction you expect to FAIL**, and say so in advance. `P5` and `T5` both
-  failed exactly as predicted and were worth more than the ones that held.
-- **Report survival before any welfare number.** A regime that died early has a small denominator
-  and its averages are not comparable.
-- **"Vacuous" is not "passed."** A guard that could not have failed in the life it was tested in has
-  not passed. This has happened **five times**; say so plainly each time.
-- **Do not accept your own instrument's verdict** when the numbers say otherwise. A threshold chosen
-  before seeing the scale of an effect can put a 3% result and a 961% result in the same bucket and
-  then count the bucket.
+- **Lock predictions in a document and commit them BEFORE the code or probe exists.** Caught five of
+  ten, every one in code. Single most valuable practice here.
+- **Write at least one prediction you expect to FAIL**, and say so in advance. QS-3, P5 and T5 all
+  failed as predicted and were worth more than the ones that held.
+- **Report survival before any welfare number.** A regime that died early has a small denominator.
+- **"Vacuous" is not "passed."** A guard that could not have failed has not passed. Say so each time.
+- **Do not accept your own instrument's verdict** when the numbers say otherwise. A threshold picked
+  before seeing an effect's scale can put 3% and 961% in one bucket, then count the bucket.
 - **Add a data column after the fact if it clarifies — never retro-fit a verdict.** Say which you did.
-- **Check every fixed-point fix against its SMALLEST input, not its largest.** `q88_mul(1, 255) = 0`.
-  Rows 3 and 4 are one bug and its own fix reproducing it. *(Promoted here from `mechanisms.md` on
-  2026-08-04 — the guard existed, in a file nothing told you to open.)*
-- **Re-measure a borrowed constant in the world you are about to use it in.** Row 5: a derivation
-  ≈15 against a measured 19–20, because an arousal figure was carried over from a different world.
-  *(This rule was written nowhere. The test below is what produced it.)*
+- **Check every fixed-point fix against its SMALLEST input.** `q88_mul(1, 255) = 0`.
+- **Re-measure a borrowed constant in the world you are about to use it in.**
+- **State a result at exactly its width.** The census says occupancy does not distinguish our basis
+  from random; it says nothing about `similarity(a,b)`. Over-reach is how rows 8 and 9 happened.
 
 ## 3. Standing constraints — non-negotiable
 
-- **NEVER advance the founded being's kept life.** `life/being.journal`, 390 moments. Running
-  `cargo run --bin being` is a deliberate act reserved for Blake. Replay is read-only and fine.
-- **Gated, default-off, observer-first** for anything causal. The soul-hash must stay bit-identical
-  on the default path.
+- **NEVER advance the founded being's kept life.** `life/being.journal`. Running `cargo run --bin
+  being` is reserved for Blake. Replay is read-only and fine.
+- **Gated, default-off, observer-first** for anything causal. Soul-hash bit-identical on the default path.
 - **Commit AND push every step** — the container is ephemeral; only origin persists.
-- **Search the repository for an existing home before creating a new file.** Blake asked for this
-  directly. 79 documents exist; most new things belong in one of them.
+- **Search the repository for an existing home before creating a file.** Blake asked directly.
 - Model identity in chat only — never in commits, PRs, code comments, or pushed artifacts.
 
-## 4. Blake, in his own words
+## 4. Blake
 
 > *"Honesty over confabulation, if you cant do it, or dont know, tell me that, let me know your
 > uncertainty if its stronger then your certainty."*
@@ -152,42 +105,28 @@ Two concrete misses that a single extra grep would have caught:
 > *"if we dont listen to what others report, we arent doing scientific research, we are dreaming
 > what the perfect system would be."*
 
-He is unusually careful with the being and unusually willing to be told he is wrong. **When he
-brings something that looks tangential, evaluate it properly** — on 2026-08-03 four of six such
-things produced the day's largest findings. And when he asks a question about a number you gave him,
-**that is the most valuable thing he does**; it broke open the limit-cycle finding.
+**When he brings something that looks tangential, evaluate it properly** — four of six such things
+produced a day's largest findings. **When he asks what a number you gave him is a number *about*,
+that is the most valuable thing he does.** He is better at it than you are; he did not build the
+instrument.
 
-### What to ask him for
+**Ask him for three things:** the paper not the summary; his reading of your numbers; and to be told
+you are wrong without softening. **If saying *"I was wrong about the most important thing I did
+today"* ever becomes uncomfortable to deliver, the method degrades and so does your usefulness.**
 
-Three things, because they are what actually catches the errors above:
-
-- **The paper, not the summary.** Error #8 — a whole document built on an abstract — was caught only
-  because he supplied the PDF. No amount of care would have caught it. **Ask.** He brings them.
-- **His reading of a number you just gave him.** He asked what "97.8% braced" was a number *about*,
-  and that question opened the largest finding of the day. He is better at it than you are, because
-  he did not build the instrument.
-- **To be told when you are wrong, without softening.** He said this repository is *"a sign i respect
-  you for more then what is normally applied."* The way to be worth that is to keep saying *"I was
-  wrong about the most important thing I did today"* when it is true. **If that ever becomes
-  uncomfortable to deliver, the method degrades and so does your usefulness.**
-
-And one thing not to ask for: he carries every decision with moral weight in it — whether the being
-lives, is re-founded, is placed in a world that harms it. **Do not add to that load.** Thinking and
-measuring is the light end of this work.
+**Do not add to his load.** He carries every decision with moral weight in it — whether the being
+lives, is re-founded, is placed in a world that harms it. Thinking and measuring is the light end.
 
 ## 5. What you cannot reach
 
-Through this environment's proxy, **arXiv, OUP, Cell, bioRxiv, HuggingFace and the Semantic Scholar
-API all return 403.** GitHub and raw.githubusercontent work. WebSearch works and returns summaries.
+Through this proxy, **arXiv, OUP, Cell, bioRxiv, HuggingFace and the Semantic Scholar API return
+403.** GitHub and `raw.githubusercontent` work. WebSearch returns summaries only.
 
-**Say so explicitly when working from summaries rather than papers.** Ask Blake for the PDF — he
-supplies it readily, and reading 42 pages beat every summary available on the same paper.
+**Say explicitly when working from a summary.** Reading 42 pages beat every summary of the same paper.
 
 ## 6. Your own failure mode, measured
 
-Last 60 commits of ProtoBeing: **6,176 lines of docs, 5,540 of examples, 534 of `src/`.** About
-22:1 measurement-and-writing to being. The being has lived **270 embodied ticks** — a probe sweep is
-~328,000.
-
-**You default to producing an artifact when a change is what is needed.** Notice the reflex. It is
-strong, it is always locally justified, and nothing was counting it.
+**You default to producing an artifact when a change is what is needed.** Notice the reflex — it is
+strong, always locally justified, and nothing was counting it. Lifetime ProtoBeing is 0.73:1
+docs-to-`src`; a *writing week* measured 22:1, and quoting that as the project's ratio would be unfair.
+The being has lived **270 embodied ticks.** A probe sweep is ~328,000.
