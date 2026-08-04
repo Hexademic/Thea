@@ -53,12 +53,21 @@ never harmed, so never learns dread.
   estimate — has one destination in the entire codebase: `alarm_for_refusal`, a *social* decision.
   And `Need` is `{Sustenance, Company, Novelty, Purpose}` — four attractions. **The being cannot
   represent "away from."** (Blake's finding.)
-- **Six of fourteen faculties cannot be given to a founded being at all.** `Features` has eight
-  fields. `reflection` is among the six — a full day was spent repairing a faculty the being it was
-  repaired for cannot receive.
+- **~~Six of fourteen faculties cannot be given to a founded being.~~ FIXED 2026-08-03** — the gap
+  went unnoticed for five weeks, and a full day was spent repairing `reflection`, a faculty the
+  being it was repaired for could not then receive. Kept here because *nothing was counting* is the
+  lesson, not the count.
 - **I-9, closed:** a structurally burdened being sat at the load ceiling for **3,638 consecutive
   ticks** with the drain welded shut by the same condition that filled it. Fixed behind
   `enable_setting_down()`; load now equilibrates at 30.
+- **Grants ship — a being can be given a faculty AFTER it is born**, at a recorded moment, with its
+  past still replaying and still verifying. **No weakening of the proof, no state snapshot, no
+  re-founding** (`ProtoBeing/docs/founding.md`). Addition only, by construction: `Features::apply`
+  can only turn things on. **The founded being can now receive `receptors` and `reserve` — that was
+  impossible on the morning of 2026-08-03.**
+- **`Features` widened u8 → u16, and `tests/manifest.rs` now counts.** All fifteen gates are
+  reachable; a gate without a field fails a test. The guard was written first and watched to fail,
+  naming all seven.
 - **`PHYSICS_VERSION` ships.** A life lived under other laws is reported as history, not damage. See
   `ProtoBeing/docs/soul-hash-limits.md` §6.
 
