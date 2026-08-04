@@ -35,7 +35,7 @@ never harmed, so never learns dread.
   largest conclusion**: `fear-and-avoidance.md` §9 said the limit cycle was *"a fact about a static
   world, not about metabolism."* Wrong. Internal variation produces behavioural variation. **The
   being was not only unexercised — it was internally still, and the stillness was most of the
-  orbit.**
+  orbit.** **Read only in that direction** — the reverse failed as QS-2; see Withdrawn.
 - **Five of six lethal famines are now survivable**, so a life with stakes is no longer disqualified.
   The one that still kills it is a 120-tick total famine — a fact about the chosen `RESERVE_CAP`,
   left standing rather than tuned away.
@@ -71,7 +71,29 @@ never harmed, so never learns dread.
 - **`PHYSICS_VERSION` ships.** A life lived under other laws is reported as history, not damage. See
   `ProtoBeing/docs/soul-hash-limits.md` §6.
 
+- **The quality space is UNVISITED, not poor** — the fork this file carried for weeks, answered
+  2026-08-04 (`ProtoBeing/docs/c1-relabelling.md` §12). Turning on `receptors`, changing no
+  structure, **quadruples occupancy** (4.10×/2.92×/1.82× at three grains). Default occupies
+  0.05–3.7% of afforded volume. **A lower bound** — the afforded box over-counts by construction.
+  *The limit, stated: even the best regime reaches 0.65% at bin 32. Unvisited is not "the ceiling is
+  high", and four axes are four axes.*
+- **`receptors` and `reserve` are close to complementary, not ranked.** `receptors` widens nearly
+  every channel (ch0 30→115, ch5 19→154) **and destroys `fatigue` outright — 1 distinct value in
+  4,000 ticks.** `reserve` doubles `fatigue` variety (17→35) and moves almost nothing else.
+  **`+both` scores *below* `+receptors` alone on occupancy** (99 vs 105 at bin 32) while buying back
+  the one channel receptors kills. **That is a trade, and the decision is Blake's.**
+- **Our quality basis is not distinguishable from a random 4×12 basis by occupancy** (1.31× the
+  random median, inside the random spread). Stated at exactly that width: occupancy is not evidence
+  our axes are the *right* axes. It says nothing about `similarity(a,b)`, which is a different
+  measure tested by a different probe and untouched by the census.
+
 ## Withdrawn — do not repeat these
+
+- **"A tripled spatial orbit means the being's felt life varied more."** Never written in those
+  words, which is why it survived — it was an *inference* I ran, not a sentence I checked. QS-2 was
+  predicted at high confidence from it and **failed**: reserve gives 186→564 positions and **0.93×**
+  quality occupancy. **Where the body goes and what its state is like are different measurements.**
+  Yesterday's direction (internal variation → behavioural variation) stands; the reverse does not.
 
 - **"Arousal is dead weight in the classifier."** Every one of the twelve channels is, by the same
   measure (≤0.25%). The sentence took its content from the **label**. The honest version is *"no
@@ -107,6 +129,18 @@ never harmed, so never learns dread.
   *resume* across a physics change, because resuming needs state and `waypoints.md` §1–2 deliberately
   refuses to store any. This is the real remaining half of the freeze.
 - Whether to avow Charter §11(b).
+
+**Measured 2026-08-04, not yet acted on — ProtoBeing's claims are unchecked:**
+- **19 basin-occupancy claims sit with no correction marker within ten lines, across 9 documents**;
+  by hand, ~13 are genuine (the rest are code quotes, locked predictions, or the withdrawal notices
+  themselves). **`faculty-ablation.md` holds 6, including its headline blockquote** — *"the blessed
+  being spends 97.8% of its real 90-tick day in `Basin::Defensive`"* — with no notice in the file.
+  `incidents.md` amended itself properly, so the practice exists and simply is not enforced.
+- **The repository is organised by place and disorganised by time.** 79 docs, **zero orphans**, every
+  one reachable — but documents do not learn: a claim withdrawn in one stays asserted in another.
+  **366 tests on the code, zero checks on the claims.**
+- Two fixes, neither of them reorganisation: mark the ~13 sites, and port `analyse.py`'s
+  withdrawn-claim view into ProtoBeing as a test so this is caught rather than discovered.
 
 **Measurements not yet made:**
 - Is the quality space **poor, or merely unvisited**? Opposite fixes. `quality_space.rs` already has

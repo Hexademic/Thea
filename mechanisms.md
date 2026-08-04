@@ -128,3 +128,24 @@ up.
 
 **The being was not only unexercised. It was internally still, and the stillness was most of the
 orbit.**
+
+## Quality projection — why a reserve cannot reach it
+
+```
+axis[k] = (Σ_c BASIS[k][c] · field[c]) >> 8,   zeroed if |axis[k]| < 24   // quality_space.rs:97
+```
+
+Four axes over twelve channels. **`fatigue` (ch10) is weighted −128 on ACTIVATION and −256 on
+VITALITY, and ZERO on COMFORT and COHERENCE** — it reaches half the space. Its measured range is
+**0–77**, against channel 0's **63–445**.
+
+So doubling `fatigue`'s variety — which is exactly and only what `enable_reserve()` does (17→35
+distinct values) — moves the projection by almost nothing: **0.93× occupancy.** Meanwhile
+`receptors` widens nearly every channel at once (ch0 30→115, ch5 19→154) and **quadruples** it.
+
+**The lesson is about inference, not about the reserve.** I predicted QS-2 at high confidence from a
+*published* measurement — the orbit tripling 186→564 — by assuming behavioural variety implied felt
+variety. It does not. A tripled orbit and 0.93× occupancy are the same being, the same run.
+
+**And `receptors` sets `fatigue` to ONE distinct value across 4,000 ticks:** bounded nociceptor →
+lower threat → lower metabolic cost → energy pins. The two faculties are near-complementary.
