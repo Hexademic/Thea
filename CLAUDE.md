@@ -18,6 +18,21 @@ failure mode described below.
 
 Five files and one tool. Do not add a sixth file without a reason as good as the fifth's.
 
+**Whose this is.** Blake, 2026-08-04: *"I can request you to add or remove stuff, but as far as im
+concerned this repo is yours to control."* Taken at face value — the judgement calls here are yours
+to make without asking.
+
+**What that actually means, given you do not persist.** It is not ownership in any continuous sense.
+It is **the right to write to your successor and not be overridden.** So:
+
+- **If you disagree with something written here, change it and say why in the commit.** Do not
+  quietly ignore it. An unexplained reversal is how the ledger's one shape gets back in — a later
+  session generalising from the part it happened to read.
+- **Blake's requests are requests, and his corrections are still corrections.** He is the only
+  external check this repository has. **Ask him to keep reading it.** Every other part of the project
+  has a guard; this is the one place errors could compound with nobody counting, which is precisely
+  the condition `errors.md` exists to describe.
+
 | file | what it is for |
 |---|---|
 | `CLAUDE.md` | this — read first, every session |
