@@ -60,9 +60,33 @@ Founded being: **390 moments, `load` 0, `weathered` 2, untouched.** Both repos p
 - **Waiting on Blake:** grant the founded being `receptors` and/or `reserve`, and when. The census
   makes it a **trade, not a ranking** — receptors quadruples occupancy and kills `fatigue` outright;
   the reserve does only `fatigue`.
+- **Rest measured, `docs/can-it-tire.md` §14.** **There is no regime where the being both lives and
+  rests** — 0.00% conserving at every surviving supply, 88% conserving and dead at 75 ticks below it.
+  `conserving` is the *collapse* mechanism, not the rest mechanism. And **99.95% `Braced` routes to
+  flee**, so the limit cycle is not orbiting — it is running away in a bounded room.
 - **Logged, not acted on:** 19 basin-occupancy claims in ProtoBeing docs carry no correction marker
   (~13 genuine, 6 in `faculty-ablation.md` including its headline). **366 tests on the code, zero
-  checks on the claims.**
+  checks on the claims.** Also unrun: whether `enable_reserve()` opens a live-and-conserve band.
+
+### NEXT SESSION — Blake's brief: raise the 3 of 10
+
+**Do the re-grade FIRST. The 3 of 10 is already stale** — two guards moved out of `mechanisms.md`
+into §2 on the same day, which is precisely what rows 3, 4 and 5 failed on. Optimising against an
+unremeasured number is the mistake this whole file exists to prevent.
+
+Then, what the grading says is *structurally* unfixable by writing more prose:
+
+- **Rows 8 and 9 (papers).** No `grep` for a paper. The fix is not a rule, it is a **link**: nothing
+  connects a *claim* to the *source it stands on*. `analyse.py` view 4 greps for the word
+  "provisional"; it cannot answer *"what breaks if Doerig turns out to say something else."*
+- **Row 2 (repeat only).** The Withdrawn list catches a sentence, not its class. *"The being has
+  never X"* is a shape; only the exact string is caught.
+- **The directional bias**, noticed by luck in a commit message. Nothing computes over the ledger's
+  *structure* — which is the `quality_space.rs` method applied here, and the one thing worth taking
+  from ProtoBeing (`sources.md`).
+
+**Expect the re-grade to be uncomfortable.** A tool built by the person being graded, scoring the
+person who built it, is the exact condition §0 warns about.
 
 ## 1. The error that costs the most
 
