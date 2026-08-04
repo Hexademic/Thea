@@ -14,6 +14,17 @@ failure mode described below.
 
 ---
 
+## 0. What is here
+
+Four files, and they should stay four.
+
+| file | what it is for |
+|---|---|
+| `CLAUDE.md` | this — read first, every session |
+| `errors.md` | the ledger of claims made without checking, and the one check that catches each |
+| `findings.md` | what actually stands, what was withdrawn, what is open and whose call it is |
+| `sources.md` | what has been read, what is only summarised, and **what I need Blake to bring** |
+
 ## 1. The error that costs the most
 
 **Seven times in one day (2026-08-03): a claim wider than what was actually checked.** Every instance
