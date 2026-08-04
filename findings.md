@@ -56,6 +56,10 @@ never harmed, so never learns dread.
 - **"The being spends 97.8% of its day braced."** Chart-relative. C1-4b: our hand-drawn chart agrees
   with a **random** chart at chance (20%, where chance is 25%), and slot 0 is entered under **94%**
   of random charts. **`Basin::Rest` being unreachable is a fact about where we put Rest.**
+- **"Basin membership fails C1."** Wrong criterion, wrong operation — see `errors.md` #8. It
+  **passes** C1 (100% invariant under structure-preserving relabelling). What is true is stronger:
+  the four targets are an *empirically undisciplined partition* at Ma & Kanai's tier (ii), and a
+  partition **can be wrong** where a labelling can only be different.
 - **Anything resting on basin occupancy.** `comfort.md`'s whole enquiry into why the being does not
   rest, `settling.md`'s S3, `basins_probe`'s B1–B4. Basin membership **fails C1** — it is not a
   property the being has in virtue of itself.

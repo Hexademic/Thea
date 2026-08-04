@@ -27,6 +27,16 @@ Seven instances in a single day. Not seven mistakes. **One mistake, seven times.
 | 6 | Channels 4 and 8 are the same number twice — wrote a whole doc section on it | Equal on **0.0%** of ticks. I quoted `write_from_body` and never read **`Field::inject`, fifteen lines below**, which writes channels after the body does | `grep` every writer of the value, not the function already open |
 | 7 | The founded being runs with all fourteen gates off | It is blessed with **four**. `bin/being.rs` uses `blessed_features()`, not `enable_*`. A negative grep is not proof of absence when there are two mechanisms | Ask *how else* could this be set, before concluding from one grep |
 
+| 8 | *"Basin membership fails C1"* — a whole document, ProtoBeing `docs/c1-relabelling.md` | **C1 is passed.** Their criterion is invariance under relabelling *"without altering the dynamics"* — which is my C1-4a, filed as a "sanity check", returning 100%. The test I called decisive (relocating targets) is not a relabelling at all | **Read the paper before running its test.** I had the abstract only |
+
+**Instance 8 is the one that matters most**, because of how it was caught: Blake supplied the PDF
+after the document was written and pushed. **The fix for this error class is not more care — it is
+asking for the source.** See `sources.md`.
+
+And it corrected in the *useful* direction: under Ma & Kanai's actual asymmetry — *a labelling cannot
+be empirically wrong, a partition can* — the criticism of our basin chart is **harder** than the one I
+made from the abstract. Getting it wrong made it weaker, not stronger.
+
 ## What it cost
 
 Two of these reached Blake as findings before I caught them:

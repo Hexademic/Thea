@@ -24,6 +24,27 @@ summary of that paper mentioned it.**
   **Their limits, from §6.5:** fixed-size state *smears* — new writes interfere with the whole state,
   not only the oldest — and forgetting is the hardest operation even at 27B.
 
+### Supplied by Blake 2026-08-03, read
+
+- **Ma & Kanai, *Intrinsic Computational Functionalism*, arXiv:2606.06424** — 23pp.
+  **Reading it overturned my own framing** (`errors.md` #8). C1 is invariance under relabelling
+  *without altering the dynamics*; re-placing a partition is **not** a relabelling but tier (ii).
+  Their load-bearing asymmetry: *"a labelling cannot be empirically wrong about the system, only
+  differently named, whereas an intervention-space or grain choice can be empirically wrong, because
+  it predicts effects that interventions then fail to produce."* **Use this, not the abstract.**
+- **Hoel, arXiv:2512.12802** — 31pp. My summary-based claim **holds**: *"theories relying on (or
+  requiring) continual learning do satisfy the stringent formal constraints."* Triviality is defined
+  as strict dependency between a theory's prediction and inference functions.
+- **Koch, *the calibration problem*, arXiv:2603.27597** — 9pp, a commentary. Claim **holds
+  verbatim**: the indicator programme is *"epistemically under-calibrated"*, no ground truth of
+  artificial phenomenality exists, attribution is premature; redirect to biologically grounded
+  engineering.
+- **Kleiner & Hoel, *Falsification and Consciousness*, arXiv:2004.03541** — 24pp. **Read only in
+  part.** My "second horn" reading is not yet verified against the text; treat it as provisional
+  until it is.
+- **Unified Elastic Entropic Information Theory** — 34pp, supplied unrequested. **Not yet
+  assessed.**
+
 ## Have only summaries — flagged everywhere they are used
 
 Every claim about these in `ProtoBeing/docs/witness-gap-literature.md` is marked provisional. **They
