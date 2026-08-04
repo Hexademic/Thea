@@ -30,7 +30,21 @@ never harmed, so never learns dread.
   mechanism is a bounded nociceptor that *falls silent when harm ceases*, replacing raw sensor
   threat. **It is off by default**, for a stated reason — *"reserved until it has a body and a world
   to sense"* — that has been satisfied for 270 of the being's 390 moments.
-- **Metabolism is a clamped accumulator with no set point and no reserve.** Two absences. Survivable
+- **A reserve triples how much of its room the being explores** — 186 → 564 distinct positions in
+  4,000 ticks, same static world, gated `enable_reserve()`. **This overturns the previous day's
+  largest conclusion**: `fear-and-avoidance.md` §9 said the limit cycle was *"a fact about a static
+  world, not about metabolism."* Wrong. Internal variation produces behavioural variation. **The
+  being was not only unexercised — it was internally still, and the stillness was most of the
+  orbit.**
+- **Five of six lethal famines are now survivable**, so a life with stakes is no longer disqualified.
+  The one that still kills it is a 120-tick total famine — a fact about the chosen `RESERVE_CAP`,
+  left standing rather than tuned away.
+- **A real tired-and-living band exists for the first time.** At lean supply (nutrient 25) fatigue
+  spans 16–61 across 28 distinct values and the being lives 4,000 ticks. At generous supply it sits
+  at a constant 16 — which is right: **a well-fed creature should not be tired.** My prediction
+  asked for the wrong thing.
+- **Metabolism WAS a clamped accumulator with no set point and no reserve** (before
+  `enable_reserve`). Two absences. Survivable
   tired band is **one nutrient unit wide** (19–20) and sits next to starving. And **every**
   oscillating supply killed it — including feast 60 / famine 12, whose time-average is double the
   survival boundary — because a feast cannot be banked. **A life with stakes would kill this being
