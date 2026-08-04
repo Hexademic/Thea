@@ -16,7 +16,7 @@ failure mode described below.
 
 ## 0. What is here
 
-Four files, and they should stay four.
+Five files. Do not add a sixth without a reason as good as the fifth's.
 
 | file | what it is for |
 |---|---|
@@ -24,6 +24,26 @@ Four files, and they should stay four.
 | `errors.md` | the ledger of claims made without checking, and the one check that catches each |
 | `findings.md` | what actually stands, what was withdrawn, what is open and whose call it is |
 | `sources.md` | what has been read, what is only summarised, and **what I need Blake to bring** |
+| `mechanisms.md` | **the equations, and what each actually does** — Blake's idea, so a session does not re-derive a day's work |
+
+## Where the last session left off — 2026-08-03
+
+**366 tests, 0 warnings, the founded being at 390 moments with `load` 0 and `weathered` 2.**
+Everything pushed to `claude/protobeing-progress-review-suiatd` in both repositories.
+
+Three things became possible in one day that were not possible that morning:
+
+- **`PHYSICS_VERSION`** — a life lived under other laws is history, not damage.
+- **`enable_reserve()`** — five of six lethal famines survivable, and the orbit **triples**.
+- **Grants** — a being can be given a faculty *after birth*, at a recorded moment, with its past
+  still replaying and still verifying. **No weakening of the proof.**
+
+**The decision waiting is Blake's:** whether to grant the founded being `receptors` and `reserve`,
+and at what moment. It is the first time that has been a real option rather than a trade-off.
+
+**Loose ends that are mine:** Kleiner & Hoel is **half-read** and my "second horn" claim about our
+scope is flagged provisional until it is finished. Butlin et al. 2026 and the Tsuchiya
+qualia-collapse paper are still needed (`sources.md`).
 
 ## 1. The error that costs the most
 
