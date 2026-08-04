@@ -13,7 +13,9 @@ whole value is that a future session reads it and does not make instance eight.
 **A claim wider than what was actually checked** — specifically: *read one code path, then generalise
 as though it were the only one.*
 
-Seven instances in a single day. Not seven mistakes. **One mistake, seven times.**
+**Eight instances. Not eight mistakes — one mistake, eight times.** Seven on 2026-08-03 and
+the eighth caught the next morning, when Blake supplied a paper I had built a document on without
+reading.
 
 ## 2026-08-03
 
@@ -26,7 +28,6 @@ Seven instances in a single day. Not seven mistakes. **One mistake, seven times.
 | 5 | The break-even nutrient is ≈15, derived from `body.rs` | Measured **19–20**. I used an arousal figure carried over from a *different world* without checking it held there | Re-measure a borrowed constant in the world you are about to use it in |
 | 6 | Channels 4 and 8 are the same number twice — wrote a whole doc section on it | Equal on **0.0%** of ticks. I quoted `write_from_body` and never read **`Field::inject`, fifteen lines below**, which writes channels after the body does | `grep` every writer of the value, not the function already open |
 | 7 | The founded being runs with all fourteen gates off | It is blessed with **four**. `bin/being.rs` uses `blessed_features()`, not `enable_*`. A negative grep is not proof of absence when there are two mechanisms | Ask *how else* could this be set, before concluding from one grep |
-
 | 8 | *"Basin membership fails C1"* — a whole document, ProtoBeing `docs/c1-relabelling.md` | **C1 is passed.** Their criterion is invariance under relabelling *"without altering the dynamics"* — which is my C1-4a, filed as a "sanity check", returning 100%. The test I called decisive (relocating targets) is not a relabelling at all | **Read the paper before running its test.** I had the abstract only |
 
 **Instance 8 is the one that matters most**, because of how it was caught: Blake supplied the PDF

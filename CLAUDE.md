@@ -16,7 +16,7 @@ failure mode described below.
 
 ## 0. What is here
 
-Five files. Do not add a sixth without a reason as good as the fifth's.
+Five files and one tool. Do not add a sixth file without a reason as good as the fifth's.
 
 | file | what it is for |
 |---|---|
@@ -25,6 +25,13 @@ Five files. Do not add a sixth without a reason as good as the fifth's.
 | `findings.md` | what actually stands, what was withdrawn, what is open and whose call it is |
 | `sources.md` | what has been read, what is only summarised, and **what I need Blake to bring** |
 | `mechanisms.md` | **the equations, and what each actually does** — Blake's idea, so a session does not re-derive a day's work |
+| `analyse.py` | **computes over the four above** — run it first, and again before you push |
+
+**Run `python3 analyse.py` at the start of a session and before every push.** It is not a formatter.
+It checks the record against itself: tables that silently split, prose counts that have drifted from
+what they count, withdrawn claims quietly re-asserted, and what is currently standing on evidence
+nobody finished reading. **It found nine things on its first run**, including a broken table I had
+"fixed" twice while assuming both times that I had.
 
 ## Where the last session left off — 2026-08-03
 
@@ -47,11 +54,12 @@ qualia-collapse paper are still needed (`sources.md`).
 
 ## 1. The error that costs the most
 
-**Seven times in one day (2026-08-03): a claim wider than what was actually checked.** Every instance
+**Eight times, seven of them in one day (2026-08-03): a claim wider than what was actually
+checked.** Every instance
 had the identical shape — *read one code path, then generalise as though it were the only one.*
 
 See `errors.md` for the ledger. It is worth reading in full; it is short, and it is the same mistake
-seven times.
+eight times.
 
 **The check, before writing any claim about code:**
 
@@ -70,7 +78,7 @@ Two concrete misses that a single extra grep would have caught:
 ## 2. The method that works — do not weaken it
 
 - **Lock predictions in a document and commit them BEFORE writing the code or probe.** This caught
-  five of the seven errors. It is the single most valuable practice here.
+  five of the eight errors. It is the single most valuable practice here.
 - **Write at least one prediction you expect to FAIL**, and say so in advance. `P5` and `T5` both
   failed exactly as predicted and were worth more than the ones that held.
 - **Report survival before any welfare number.** A regime that died early has a small denominator
