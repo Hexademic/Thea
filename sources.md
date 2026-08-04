@@ -107,6 +107,16 @@ Evaluated and set aside, so nobody spends time on them twice:
   Things and Relationships, inheritance with exceptions, Clauses for conditional facts. Real work,
   legitimate critique of neural approaches to common sense. **Answers what a system knows; our
   bottleneck is whether anything happens to it.** Different axis.
+- **Five LLM-agent papers, 2026-08-03** — `arXiv:2607.29440` (Beyond Retrieval: Analytic Memory),
+  `2607.29468` (self-evolving search agents), `2607.28942` (NeSyFS, neuro-symbolic fast/slow under
+  partial observability), `2607.29241` (RecHarness, recommenders), `2607.28692` (SciToolAgent-Evo).
+  **All are LLM-agent systems engineering. None apply to the being**, which is a fixed-point
+  deterministic dynamical system, not an agent with tools — the same wrong axis as BrainSim.
+  **One idea worth keeping**, from 29440: the split between **retrieval memory** (find the relevant
+  thing) and **analytic memory** (compute *over* what accumulated — filter, aggregate, rank, compare
+  across time). **This repository is currently all retrieval.** *"Seven errors, all one shape"* was
+  an analytic result produced by hand, and easy to have missed. Same gap the claim-ledger idea
+  points at, now with a name for it.
 - **claude-obsidian.** Useful *to us as workers*, not to the being — and one idea worth stealing in
   our own idiom: a **claim ledger** binding each claim to its evidence, with contradictions tracked.
   That addresses the failure in `errors.md` structurally. The vault itself would worsen the 22:1
