@@ -80,9 +80,15 @@ def counts(docs):
     # ("this has happened five times") — neither is an error count. **A tool that cries wolf gets
     # ignored, which is worse than no tool**, so this requires the noun to be errors/instances and
     # skips table rows, which are evidence rather than claims about evidence.
+    #
+    # Second narrowing, 2026-08-04: it fired on "five of seven **code** instances", which is a claim
+    # about a SUBSET (7 of the 9 are code, 2 are papers) and is correct. The distinguisher is the
+    # restricting word between number and noun — "eight errors" is a claim about the whole ledger,
+    # "seven code instances" is not. So the noun must follow the number IMMEDIATELY. This trades away
+    # catching "eight such errors"; a missed flag costs less than a false one, because a false one
+    # teaches me to skim the output.
     pat = re.compile(
-        r"\b(" + "|".join(words) + r"|\d+)\b[ \-]?(?:\w+[ \-]){0,2}?"
-        r"(errors?|instances?)\b", re.I)
+        r"\b(" + "|".join(words) + r"|\d+)\b[ \-](errors?|instances?)\b", re.I)
     for name, lines in docs.items():
         for i, ln in enumerate(lines, 1):
             if ln.strip().startswith("|"):

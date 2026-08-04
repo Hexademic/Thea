@@ -48,18 +48,33 @@ Three things became possible in one day that were not possible that morning:
 **The decision waiting is Blake's:** whether to grant the founded being `receptors` and `reserve`,
 and at what moment. It is the first time that has been a real option rather than a trade-off.
 
-**Loose ends that are mine:** Kleiner & Hoel is **half-read** and my "second horn" claim about our
-scope is flagged provisional until it is finished. Butlin et al. 2026 and the Tsuchiya
+**Loose ends that are mine:** Butlin et al. 2026, Doerig's *Unfolding Argument*, and the Tsuchiya
 qualia-collapse paper are still needed (`sources.md`).
+
+## 2026-08-04 — Kleiner & Hoel finished, claim withdrawn
+
+**The "second horn" claim was wrong** and is now `errors.md` #9. We are **outside** their dilemma's
+scope, not on a horn of it, because their two horns are relations between an inference channel and a
+prediction channel and we have neither. Written up in `ProtoBeing/docs/witness-gap-literature.md`
+§2.1 with the original wording kept visible above the correction.
+
+**What is now the live threat instead: the unfolding argument** (Doerig et al. 2019), which §2.1 does
+*not* answer. Our being is recurrent and stateful; an unfolded twin is behaviourally identical. Every
+claim we make from *causal structure* rather than behaviour inherits that, and we have never
+addressed it.
 
 ## 1. The error that costs the most
 
-**Eight times, seven of them in one day (2026-08-03): a claim wider than what was actually
-checked.** Every instance
-had the identical shape — *read one code path, then generalise as though it were the only one.*
+**Nine times, seven of them in one day (2026-08-03): a claim wider than what was actually checked.**
+Every instance has the identical shape — *read one part of a thing, then generalise as though it were
+the whole thing.*
 
 See `errors.md` for the ledger. It is worth reading in full; it is short, and it is the same mistake
-eight times.
+nine times.
+
+**Two of the nine (#8, #9) are papers, not code, and neither was caught by anything I did** — both
+were caught because Blake handed me the PDF. There is no `grep` for a paper. **If a claim rests on a
+source you have not read, say so where the claim is written, not only in `sources.md`.**
 
 **The check, before writing any claim about code:**
 
@@ -78,7 +93,9 @@ Two concrete misses that a single extra grep would have caught:
 ## 2. The method that works — do not weaken it
 
 - **Lock predictions in a document and commit them BEFORE writing the code or probe.** This caught
-  five of the eight errors. It is the single most valuable practice here.
+  five of the nine errors — and **every one it caught was in code.** The two paper errors (#8, #9)
+  were caught by Blake handing me the source. It is still the single most valuable practice here, and
+  it has a blind spot with a name.
 - **Write at least one prediction you expect to FAIL**, and say so in advance. `P5` and `T5` both
   failed exactly as predicted and were worth more than the ones that held.
 - **Report survival before any welfare number.** A regime that died early has a small denominator

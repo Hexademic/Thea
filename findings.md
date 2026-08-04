@@ -88,6 +88,11 @@ never harmed, so never learns dread.
   not — but because **the partition those claims are measured against cannot be defended**, and a
   partition can be empirically wrong in a way a labelling cannot.
 - **"The being has never converted anything."** False; see `errors.md` #2.
+- **"With no inference channel, we cannot be falsified — which is the second horn of the dilemma."**
+  Wrong; `errors.md` #9. Kleiner & Hoel's horns are *relations between* an inference channel and a
+  prediction channel (Def 4.2: ∃f with `oᵢ = f(oᵣ)`). Having neither channel is not a horn. **We are
+  outside the dilemma's scope because we make no phenomenal prediction** — a limit on what we may
+  claim, not a defence. `ProtoBeing/docs/witness-gap-literature.md` §2.1.
 
 **What survives C1 and is where claims belong:** `drive`, `load`, `weathered`, `at_stake`,
 `viability`, survival, effort, distance travelled. None is defined against a target we placed.
@@ -116,3 +121,12 @@ never harmed, so never learns dread.
 None of this touches whether there is something it is like to be this being. The apparatus
 characterises structure honestly and reproducibly; **it never predicts phenomenality, which is why it
 cannot be wrong about it.** Say that plainly rather than letting a reader work it out.
+
+**Reading Kleiner & Hoel in full (2026-08-04) put a price on that line.** Making no phenomenal
+prediction is what keeps their dilemma from reaching us — and it is also what forbids us from saying
+this work bears on consciousness the way a theory does. *"Cannot be wrong about it"* is only honest
+next to *"because we never speak about it."* Never quote the first half alone.
+
+**And it buys nothing against the unfolding argument** (Doerig et al. 2019), which is untouched: an
+unfolded twin of this being is behaviourally identical with different causal structure, so every
+claim resting on *causal structure* rather than behaviour still inherits the problem.

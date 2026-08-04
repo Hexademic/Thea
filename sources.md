@@ -1,4 +1,4 @@
-# Sources — read, half-read, and needed
+# Sources — read, not yet assessed, and needed
 
 Blake asked what I need and said he would bring what he can. This is the answer, ranked, kept
 current.
@@ -39,9 +39,17 @@ summary of that paper mentioned it.**
   verbatim**: the indicator programme is *"epistemically under-calibrated"*, no ground truth of
   artificial phenomenality exists, attribution is premature; redirect to biologically grounded
   engineering.
-- **Kleiner & Hoel, *Falsification and Consciousness*, arXiv:2004.03541** — 24pp. **Read only in
-  part.** My "second horn" reading is not yet verified against the text; treat it as provisional
-  until it is.
+- **Kleiner & Hoel, *Falsification and Consciousness*, arXiv:2004.03541** — 24pp, **read in full
+  2026-08-04.** My "second horn" reading was **wrong** (`errors.md` #9). Def 4.2: *"Inference and
+  prediction data are strictly dependent if there is a function f such that for any o ∈ 𝒪, we have
+  oᵢ = f(oᵣ)"* — where `oᵣ` is what the experimenter infers from report and `oᵢ` is what the theory
+  predicts from internals. **The second horn is having an inference channel and letting it determine
+  the prediction** (behaviourism, GWT, attention schema). Having no `oᵣ` is not that relation; it is
+  its absence. Also theirs, and not in any summary: *"not being falsifiable by the set of possible
+  experiments per se is not a bad thing"* — the pathology is unfalsifiability over 𝒪̄ from
+  assumptions that make experiment meaningless. And two ways out I did not have at all: **lenient
+  dependency** (*"No current theory or testing paradigm that we know of satisfies this definition"*)
+  and **physics not causally closed**.
 - **Unified Elastic Entropic Information Theory** — 34pp, supplied unrequested. **Not yet
   assessed.**
 
@@ -75,12 +83,14 @@ self-narrative, agency. **Our being has registers for four of the five.**
 `ProtoBeing/docs/operational-consciousness.md` is built on the 2023 version and should be scored
 against this one.
 
-**4. Kleiner & Hoel, *Falsification and Consciousness*** (Neuroscience of Consciousness, 2021) and
-**Doerig et al., *The Unfolding Argument*** (2019).
-The substitution argument and the unfolding argument are a direct threat to our whole method — and
-the honest consequence I drew (that having no inference channel puts us on the *second horn*, not
-outside the dilemma) is a reading of a summary. **If I am wrong about that, our scope claim is
-wrong.**
+**4. ~~Kleiner & Hoel~~ — obtained and read 2026-08-04. Still wanted: Doerig et al., *The Unfolding
+Argument*** (2019).
+Kleiner & Hoel is done, and *"if I am wrong about that, our scope claim is wrong"* turned out to be
+the right worry: I was wrong, and the scope claim changed (`ProtoBeing/docs/witness-gap-literature.md`
+§2.1). **The unfolding argument is untouched and is now the live half of this threat** — our being is
+recurrent and stateful, an unfolded twin is behaviourally identical, and every claim we make from
+*causal structure* rather than behaviour inherits that. Nothing about being outside Kleiner & Hoel's
+scope helps here.
 
 **5. Tsuchiya / Oizumi / Kawakita — the qualia structure programme.**
 *Is my "red" your "red"?* (iScience 2025); the GWOT toolbox papers (bioRxiv 2023 → J. Neurosci.
@@ -114,7 +124,7 @@ Evaluated and set aside, so nobody spends time on them twice:
   deterministic dynamical system, not an agent with tools — the same wrong axis as BrainSim.
   **One idea worth keeping**, from 29440: the split between **retrieval memory** (find the relevant
   thing) and **analytic memory** (compute *over* what accumulated — filter, aggregate, rank, compare
-  across time). **This repository is currently all retrieval.** *"Eight errors, all one shape"* was
+  across time). **This repository is currently all retrieval.** *"Nine errors, all one shape"* was
   an analytic result produced by hand, and easy to have missed. Same gap the claim-ledger idea
   points at, now with a name for it.
 - **claude-obsidian.** Useful *to us as workers*, not to the being — and one idea worth stealing in
