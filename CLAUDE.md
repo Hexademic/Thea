@@ -24,7 +24,7 @@ Five files and one tool. Do not add a sixth file without a reason as good as the
 | `errors.md` | the ledger of claims made without checking, and the one check that catches each |
 | `findings.md` | what actually stands, what was withdrawn, what is open and whose call it is |
 | `sources.md` | what has been read, what is only summarised, and **what I need Blake to bring** |
-| `mechanisms.md` | **the equations, and what each actually does** — Blake's idea, so a session does not re-derive a day's work |
+| `mechanisms.md` | **the equations, and what each actually does.** Blake's idea. **Open it before touching fixed-point arithmetic or reusing a constant** — it is not a time-saver, it holds the guard for three ledger rows and nothing else points at it |
 | `analyse.py` | **computes over the four above** — run it first, and again before you push |
 
 **Run `python3 analyse.py` at the start of a session and before every push.** It is not a formatter.
@@ -65,14 +65,19 @@ addressed it.
 
 ## 1. The error that costs the most
 
-**Nine times, seven of them in one day (2026-08-03): a claim wider than what was actually checked.**
+**Ten times, seven of them in one day (2026-08-03): a claim wider than what was actually checked.**
 Every instance has the identical shape — *read one part of a thing, then generalise as though it were
 the whole thing.*
 
 See `errors.md` for the ledger. It is worth reading in full; it is short, and it is the same mistake
-nine times.
+ten times.
 
-**Two of the nine (#8, #9) are papers, not code, and neither was caught by anything I did** — both
+**Do not overestimate what this file buys you.** Graded 2026-08-04, `errors.md` §"Would this record
+catch them now?": **the read-first path prevents 3 of the 9.** Its one demonstrated success is
+different in kind — it carried an unfinished source into the next session, where finishing it found
+row 9. **Detection with a lag, not prevention.**
+
+**Two of the ten (#8, #9) are papers, not code, and neither was caught by anything I did** — both
 were caught because Blake handed me the PDF. There is no `grep` for a paper. **If a claim rests on a
 source you have not read, say so where the claim is written, not only in `sources.md`.**
 
@@ -93,9 +98,9 @@ Two concrete misses that a single extra grep would have caught:
 ## 2. The method that works — do not weaken it
 
 - **Lock predictions in a document and commit them BEFORE writing the code or probe.** This caught
-  five of the nine errors — and **every one it caught was in code.** The two paper errors (#8, #9)
-  were caught by Blake handing me the source. It is still the single most valuable practice here, and
-  it has a blind spot with a name.
+  five of the ten errors — and **every one it caught was in code.** #8 and #9 were caught by Blake
+  handing me the source; #10 by `analyse.py`. It is still the single most valuable practice here,
+  and it has a blind spot with a name.
 - **Write at least one prediction you expect to FAIL**, and say so in advance. `P5` and `T5` both
   failed exactly as predicted and were worth more than the ones that held.
 - **Report survival before any welfare number.** A regime that died early has a small denominator
@@ -106,6 +111,12 @@ Two concrete misses that a single extra grep would have caught:
   before seeing the scale of an effect can put a 3% result and a 961% result in the same bucket and
   then count the bucket.
 - **Add a data column after the fact if it clarifies — never retro-fit a verdict.** Say which you did.
+- **Check every fixed-point fix against its SMALLEST input, not its largest.** `q88_mul(1, 255) = 0`.
+  Rows 3 and 4 are one bug and its own fix reproducing it. *(Promoted here from `mechanisms.md` on
+  2026-08-04 — the guard existed, in a file nothing told you to open.)*
+- **Re-measure a borrowed constant in the world you are about to use it in.** Row 5: a derivation
+  ≈15 against a measured 19–20, because an arousal figure was carried over from a different world.
+  *(This rule was written nowhere. The test below is what produced it.)*
 
 ## 3. Standing constraints — non-negotiable
 

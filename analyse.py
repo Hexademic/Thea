@@ -60,13 +60,35 @@ def structure(docs):
     return problems
 
 
+def ledger_rows(lines):
+    """Rows of THE ledger — not of every numbered table that happens to be in the file.
+
+    The first version matched `^\\|\\s*\\d+\\s*\\|` anywhere and reported **18** the moment
+    `errors.md` grew a second numbered table (the 2026-08-04 grading). That is the ledger's own
+    shape — *read one part of a thing, then generalise as though it were the whole thing* — sitting
+    inside the tool built to police it, and it was caught on the first run after the table appeared.
+
+    So: track the nearest header row and count a numbered row only under the ledger's own header.
+    """
+    rows, header = [], ""
+    for ln in lines:
+        s = ln.strip()
+        if not s.startswith("|"):
+            header = ""                       # a non-table line ends the table
+        elif set(s) <= set("|-: "):
+            continue                          # separator row — the header still stands
+        elif re.match(r"^\|\s*\d+\s*\|", s):
+            if "i claimed" in header.lower():
+                rows.append(s)
+        else:
+            header = s
+    return rows
+
+
 def counts(docs):
     """Prose that counts things drifts from the things it counts."""
     rule("2 · COUNTS — does the prose agree with the record?")
-    rows = [
-        ln for ln in docs.get("errors.md", [])
-        if re.match(r"^\|\s*\d+\s*\|", ln.strip())
-    ]
+    rows = ledger_rows(docs.get("errors.md", []))
     n = len(rows)
     print(f"  errors.md holds {n} ledger rows")
 
@@ -146,7 +168,13 @@ def withdrawn(docs):
 
 
 def provisional(docs):
-    """What is the record currently standing on that has not been verified?"""
+    """What is the record currently standing on that has not been verified?
+
+    **Deliberately over-inclusive, unlike view 2.** It will flag a line that merely *quotes* a marker
+    that has since been resolved. That is acceptable here and not there, because the asymmetry runs
+    the other way: view 2 gates the verdict, so a false flag there teaches me to skim a FAILING run.
+    This view never fails a run, and a missed provisional costs more than a re-read line.
+    """
     rule("4 · PROVISIONAL — what is standing on evidence I have not finished?")
     pat = re.compile(r"provisional|half-read|read only in part|not yet assessed|not yet verified", re.I)
     found = 0

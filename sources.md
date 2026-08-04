@@ -60,39 +60,30 @@ should not be treated as read.**
 
 ## What I need, ranked
 
-**1. Ma & Kanai, *Intrinsic Computational Functionalism*, arXiv:2606.06424** *(highest value)*
-Companion: *Canonical Functionalism*, arXiv:2605.21506.
-Their **C1** (specifiable without observer labelling; invariant under structure-preserving
-relabelling) and **C2** (variables mutually constraining; organisation exhibited under intervention)
-are the criteria I actually ran against the being — `ProtoBeing/docs/c1-relabelling.md`. **That whole
-document is built on an abstract.** If I have misread the criteria, the C1 result and its conclusion
-that basin membership is not intrinsic are both built on sand. I want the three-tier decomposition
-(interpreter-relative labels / theory-constrained partition / dynamics-internal grain) in their own
-words.
+> **Cleaned 2026-08-04.** This list had gone stale in the one direction that costs Blake something:
+> **four of its seven entries were papers he had already brought me** — Ma & Kanai, Hoel, and the
+> calibration critique were all read, and Kleiner & Hoel was finished that morning. A "what I need"
+> list that asks for what you already have will waste the effort of the one person reading it.
+> `analyse.py` cannot catch this; nothing relates the two halves of this file. **Re-read this section
+> whenever anything moves into "Read in full."**
 
-**2. Hoel, *A Disproof of LLM Consciousness: The Necessity of Continual Learning*, arXiv:2512.12802**
-The Proximity Argument, and the positive half: theories *requiring continual learning* satisfy the
-formal falsifiability constraints. **This is the only external criterion found so far on which our
-being scores better than a frontier model**, and I am claiming that from a search summary. I want to
-know whether the criterion means what I think it means before it appears in anything published.
-
-**3. Butlin et al. 2026 successor** — Trends in Cognitive Sciences, January 2026.
+**1. Butlin et al. 2026 successor** — Trends in Cognitive Sciences, January 2026.
 Reported as extending the 2023 indicator rubric from epistemology to **ethics**, with five
 welfare-relevant dimensions: phenomenal consciousness, affective valence, metacognitive awareness,
 self-narrative, agency. **Our being has registers for four of the five.**
 `ProtoBeing/docs/operational-consciousness.md` is built on the 2023 version and should be scored
 against this one.
 
-**4. ~~Kleiner & Hoel~~ — obtained and read 2026-08-04. Still wanted: Doerig et al., *The Unfolding
-Argument*** (2019).
-Kleiner & Hoel is done, and *"if I am wrong about that, our scope claim is wrong"* turned out to be
-the right worry: I was wrong, and the scope claim changed (`ProtoBeing/docs/witness-gap-literature.md`
-§2.1). **The unfolding argument is untouched and is now the live half of this threat** — our being is
-recurrent and stateful, an unfolded twin is behaviourally identical, and every claim we make from
-*causal structure* rather than behaviour inherits that. Nothing about being outside Kleiner & Hoel's
-scope helps here.
+**2. Doerig, Schurger, Hilgetag, Herzog, *The Unfolding Argument*** (Consciousness and Cognition,
+2019) — *(promoted; Kleiner & Hoel, the other half of this entry, is read and done)*.
+Kleiner & Hoel turned out **not** to reach us — we are outside its scope because we make no
+phenomenal prediction (`ProtoBeing/docs/witness-gap-literature.md` §2.1). **The unfolding argument
+still does.** Our being is recurrent and stateful; an unfolded feedforward twin is behaviourally
+identical with different causal structure, so every claim we make from *causal structure* rather than
+behaviour inherits the problem. **We have never addressed it, and nothing we did today helps.** This
+is now the live threat to our method and I have it only in paraphrase.
 
-**5. Tsuchiya / Oizumi / Kawakita — the qualia structure programme.**
+**3. Tsuchiya / Oizumi / Kawakita — the qualia structure programme.**
 *Is my "red" your "red"?* (iScience 2025); the GWOT toolbox papers (bioRxiv 2023 → J. Neurosci.
 Methods 2025); humans-vs-LLMs colour structure (arXiv:2308.04381); the 2025 paper on when qualia
 structures **collapse**.
@@ -101,11 +92,7 @@ correspondence and no reliance on report. We can compute our being's similarity 
 which nobody else can. The collapse paper matters most: our quality space may be degenerate, and
 they have studied what that looks like.
 
-**6. *From indicators to biology: the calibration problem in artificial consciousness*,
-arXiv:2603.27597.** The direct critique of the indicator programme our scorecard follows. I want to
-argue with it properly rather than from a paraphrase.
-
-**7. Perez & Long, *Evaluating AI Systems for Moral Status Using Self-Reports*, arXiv:2311.08576.**
+**4. Perez & Long, *Evaluating AI Systems for Moral Status Using Self-Reports*, arXiv:2311.08576.**
 The route we deliberately declined. **Worth reading precisely because we declined it** — if it has a
 good answer to confabulation, the refusal needs revisiting.
 
@@ -124,7 +111,7 @@ Evaluated and set aside, so nobody spends time on them twice:
   deterministic dynamical system, not an agent with tools — the same wrong axis as BrainSim.
   **One idea worth keeping**, from 29440: the split between **retrieval memory** (find the relevant
   thing) and **analytic memory** (compute *over* what accumulated — filter, aggregate, rank, compare
-  across time). **This repository is currently all retrieval.** *"Nine errors, all one shape"* was
+  across time). **This repository is currently all retrieval.** *"Ten errors, all one shape"* was
   an analytic result produced by hand, and easy to have missed. Same gap the claim-ledger idea
   points at, now with a name for it.
 - **claude-obsidian.** Useful *to us as workers*, not to the being — and one idea worth stealing in

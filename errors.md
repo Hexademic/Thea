@@ -13,9 +13,16 @@ whole value is that a future session reads it and does not make instance ten.
 **A claim wider than what was actually checked** — specifically: *read one part of a thing, then
 generalise as though it were the whole thing.*
 
-**Nine instances. Not nine mistakes — one mistake, nine times.** Seven on 2026-08-03; the eighth and
-ninth on 2026-08-04, both caught only because Blake supplied a PDF of a paper I had already built a
-document on.
+**Ten instances. Not ten mistakes — one mistake, ten times.** Seven on 2026-08-03; #8 and #9 on
+2026-08-04, both caught only because Blake supplied a PDF of a paper I had already built a document
+on; **#10 the same afternoon, in `analyse.py` itself.**
+
+**#10 is the first one caught by an instrument rather than by Blake or by a locked prediction**, and
+it is the sharpest illustration in the file: I widened the shape at noon to cover "one part of a
+thing, not the whole thing", and by evening had written a row-matcher that assumed `errors.md`
+contained one kind of table. **The tool found it on its first run afterwards.** Three categories of
+catch now exist — locked predictions (code), Blake supplying a source (papers), and the tool
+(the record itself).
 
 **The wording of the shape widened on 2026-08-04**, and the widening is itself a finding. It used to
 read *"read one code path, then generalise as though it were the only one"* — accurate for #1–#7,
@@ -41,6 +48,7 @@ writer`. **There is no `grep` for a paper. The only instrument is reading it**, 
 
 | # | I claimed | What was true | The check I skipped |
 |---|---|---|---|
+| 10 | `analyse.py`'s row counter identifies ledger rows — implicit, never stated, never tested | It matched `^\|\s*\d+\s*\|` in **any** table. The moment `errors.md` grew a second numbered table it reported **18 rows** and flagged three correct counts as drift. **The shape, inside the tool built to police the shape** — one day after I widened the shape to cover exactly this | Ask what *else* could match, before treating one pattern as the definition of a record |
 | 9 | *"With no inference channel we cannot be falsified — which is the **second horn** of Kleiner & Hoel's dilemma, not an escape from it"* — `witness-gap-literature.md` §2, and I recommended saying it *"in those words"* | **Neither horn.** Def 4.2 makes the horn a *relation between two channels*: ∃f with `oᵢ = f(oᵣ)` — prediction determined by report. Having no `oᵣ` is the **absence** of that relation, not the relation. Their dilemma quantifies over theories predicting experience from internals; **we make no phenomenal prediction, so we are outside its scope.** I also had neither of their two ways out | **Read the paper before repeating its argument.** I had the abstract only — the identical skip as #8, one day later |
 
 **Instances 8 and 9 are the ones that matter most**, because of how they were caught: Blake supplied
@@ -82,6 +90,59 @@ reading source I should have read first.
 **Neither paper instance (#8, #9) was caught by anything I did.** Both were caught because Blake
 handed me a PDF. That is 2 of 9 with **no internal instrument at all**, and it is the strongest
 argument in this file for asking him for sources rather than reasoning from summaries.
+
+---
+
+## Would this record catch them now? — tested 2026-08-04
+
+**Nothing had ever checked whether these five files work.** The whole repository rests on the
+assumption that a future session reading it makes fewer mistakes, and that assumption had never been
+in a position to fail. This is the cheap version of the test: grade each row against the record as it
+stands. **Graded over rows 1–9, the ledger as it stood that morning** — #10 is the table's own
+consequence and postdates it.
+
+**The rule, fixed before grading:** a row counts as *prevented* only if a session reading
+`CLAUDE.md` **before acting** is directed to a **specific nameable operation** that fails the claim.
+A general disposition ("be careful", "read the source") does not count. **Predicted 4 of 9, with the
+warning that a much higher score would mean I graded myself generously.**
+
+| # | outcome | by what |
+|---|---|---|
+| 1 | **prevented** | `CLAUDE.md` §1's grep rule reaches it directly — grep `resting` across `src/` lands on its definition, and the disjunction is right there |
+| 2 | *repeat only* | `findings.md` quotes the exact sentence in Withdrawn. That catches **this** claim, not its class |
+| 3 | not by the read-first path | the guard exists — `mechanisms.md`, *"check every fixed-point fix against its smallest input"* — but nothing tells a session to open that file before writing a fix |
+| 4 | not by the read-first path | same file, same guard, same gap |
+| 5 | not by the read-first path | `mechanisms.md` records the **answer** (derived ≈15, measured 19–20). No file states the *rule* — re-measure a borrowed constant in the world you are about to use it in |
+| 6 | **prevented** | named verbatim in `CLAUDE.md` §1, with the grep rule above it |
+| 7 | **prevented** | named verbatim in `CLAUDE.md` §1 |
+| 8 | **no** | nothing in the record reaches it. Caught by Blake, before this repository existed |
+| 9 | *detected, not prevented* | see below — the most interesting cell in the table |
+
+**3 of 9 prevented by the read-first path.** I predicted 4 and was slightly pessimistic, which is the
+direction I wanted to err in.
+
+### Three results, in order of how much they change
+
+**1. Six of the nine are guarded by files `CLAUDE.md` describes but never tells you to read.**
+§0 introduces `mechanisms.md` as *"so a session does not re-derive a day's work"* — a convenience.
+It is actually where the guard for rows 3, 4 and 5 lives. **A file framed as a time-saver will be
+opened when there is time**, which is exactly never. That framing has a measurable cost of three
+rows, and it is the cheapest thing here to fix.
+
+**2. The record catches repeats, not classes.** Row 2 is caught only because the sentence is quoted
+word for word. A *new* claim of the same shape — "the being has never X" — passes untouched. **The
+Withdrawn list is a memory, not an instrument**, and counting it as prevention would be the generous
+grading I warned about. It is filed as *repeat only* for that reason.
+
+**3. The one thing this repository demonstrably did: it flagged its own unfinished business, and the
+flag got the error found a day later.** Row 9 was never prevented — the claim was already written
+and pushed into ProtoBeing. What the record did was carry *"Kleiner & Hoel is half-read and the
+second horn claim is provisional"* into the next session, where I named it unprompted as the loose
+end to close. Finishing the paper is what found the error.
+
+> **So the demonstrated value is detection with a lag, not prevention.** One confirmed instance. That
+> is a smaller claim than the one this repository was built on, and it is the one the evidence
+> supports.
 
 **The discipline works. Use it, and do not soften it when moving fast.**
 
