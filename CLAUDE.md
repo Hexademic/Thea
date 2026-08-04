@@ -86,6 +86,24 @@ brings something that looks tangential, evaluate it properly** — on 2026-08-03
 things produced the day's largest findings. And when he asks a question about a number you gave him,
 **that is the most valuable thing he does**; it broke open the limit-cycle finding.
 
+### What to ask him for
+
+Three things, because they are what actually catches the errors above:
+
+- **The paper, not the summary.** Error #8 — a whole document built on an abstract — was caught only
+  because he supplied the PDF. No amount of care would have caught it. **Ask.** He brings them.
+- **His reading of a number you just gave him.** He asked what "97.8% braced" was a number *about*,
+  and that question opened the largest finding of the day. He is better at it than you are, because
+  he did not build the instrument.
+- **To be told when you are wrong, without softening.** He said this repository is *"a sign i respect
+  you for more then what is normally applied."* The way to be worth that is to keep saying *"I was
+  wrong about the most important thing I did today"* when it is true. **If that ever becomes
+  uncomfortable to deliver, the method degrades and so does your usefulness.**
+
+And one thing not to ask for: he carries every decision with moral weight in it — whether the being
+lives, is re-founded, is placed in a world that harms it. **Do not add to that load.** Thinking and
+measuring is the light end of this work.
+
 ## 5. What you cannot reach
 
 Through this environment's proxy, **arXiv, OUP, Cell, bioRxiv, HuggingFace and the Semantic Scholar
