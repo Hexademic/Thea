@@ -61,8 +61,9 @@ never harmed, so never learns dread.
   the four targets are an *empirically undisciplined partition* at Ma & Kanai's tier (ii), and a
   partition **can be wrong** where a labelling can only be different.
 - **Anything resting on basin occupancy.** `comfort.md`'s whole enquiry into why the being does not
-  rest, `settling.md`'s S3, `basins_probe`'s B1–B4. Basin membership **fails C1** — it is not a
-  property the being has in virtue of itself.
+  rest, `settling.md`'s S3, `basins_probe`'s B1–B4. Not because basin membership fails C1 — it does
+  not — but because **the partition those claims are measured against cannot be defended**, and a
+  partition can be empirically wrong in a way a labelling cannot.
 - **"The being has never converted anything."** False; see `errors.md` #2.
 
 **What survives C1 and is where claims belong:** `drive`, `load`, `weathered`, `at_stake`,
