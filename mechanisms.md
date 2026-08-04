@@ -112,8 +112,25 @@ nutrient = AMBIENT + hearth warmth, capped 220
 exteroception: 4 compass probes — "hearth and companion draw; hazard repels"
 ```
 
-Repulsion is already in the being's **perception**. It is absent from its **motor vocabulary** —
-`Need` is four attractions and `reach` can only name one of them.
+Repulsion is already in the being's **perception** — `exteroception[i] = good − bad`, a signed
+four-direction gradient, `room.rs:248`.
+
+**Corrected 2026-08-04 — it is NOT absent from the motor path either.** `Room::actuate` flees
+whenever `posture` is `Braced | Withdrawn`, or when `in_hazard() > 128`, at `effort.max(160)`. The
+being produces that posture, so it *does* drive its own flight.
+
+**The accurate gap is narrower and more interesting: avoidance exists as a REFLEX keyed to affect,
+and not at all as an INTENTION.**
+
+```
+Need = { Sustenance, Company, Novelty, Purpose }     // four approaches, no negative member
+flee target = self.hazard                            // hardcoded, room.rs:265 — one named thing
+```
+
+The being cannot *decide* to avoid, cannot avoid a *particular* thing, and cannot weigh avoiding
+against approaching — because `reach` names one thing to go to and the sign is not its to set.
+**I had written this as "absent from its motor vocabulary", which was wrong in the direction that
+flatters the finding.** Read the whole path: `sense` at 236, `actuate` at 261.
 
 ## The limit cycle, and the correction to it
 

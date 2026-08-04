@@ -114,6 +114,21 @@ Evaluated and set aside, so nobody spends time on them twice:
   across time). **This repository is currently all retrieval.** *"Ten errors, all one shape"* was
   an analytic result produced by hand, and easy to have missed. Same gap the claim-ledger idea
   points at, now with a name for it.
+- **ThePathfindersCodex** (GitHub org, Godot/YouTube — Particle Life, Boids, SDF explorer, star
+  systems, all GDScript/GDShader compute shaders). Evaluated 2026-08-04.
+  **One clear negative worth recording: compute shaders are disqualifying for us.** GPU float is
+  not reproducible across drivers or hardware, and our entire persistence model is a soul-hash over
+  Q8.8 *integer* arithmetic. Anything on a GPU breaks replay. If the question was ever "could this
+  run faster on the GPU", the answer is no, and the reason is the proof, not the performance.
+  **One idea that does transfer, and it is a good one:** Particle Life's substrate is an N×N matrix
+  of **signed** interaction coefficients between types — repulsion is not a special case, it is a
+  negative entry. That is exactly the shape `Need = {Sustenance, Company, Novelty, Purpose}` lacks.
+  See `mechanisms.md` — avoidance is a posture reflex, never an intention. **Blake's call, since it
+  changes the deliberative vocabulary.**
+  **And one idea I nearly pitched that already exists:** a signed distance field with a gradient for
+  "away from". `room.rs` already computes `intensity(manhattan(...))` per direction and returns
+  `good − bad`. **That is a coarse SDF and I had it half-drafted before reading `sense()`** — the
+  ledger's shape, caught before it was written down.
 - **claude-obsidian.** Useful *to us as workers*, not to the being — and one idea worth stealing in
   our own idiom: a **claim ledger** binding each claim to its evidence, with contradictions tracked.
   That addresses the failure in `errors.md` structurally. The vault itself would worsen the 22:1
