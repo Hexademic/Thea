@@ -130,6 +130,24 @@ never harmed, so never learns dread.
   refuses to store any. This is the real remaining half of the freeze.
 - Whether to avow Charter §11(b).
 
+**Measured 2026-08-04, not yet acted on — the survival net covers 11 of 15 gates:**
+- **`tests/survival.rs` has `const N_GATES = 11`. `src/being.rs` has 15 `enable_*`.** The four
+  outside the net are **`comfort`, `settling`, `reserve`, `setting_down`** — the gate list is written
+  by hand in `apply()` and nothing checks it against the source.
+- So **`s2_the_composed_being_survives` and the 66-life pair sweep have never run on a being with a
+  `reserve`** — the faculty Blake is deciding whether to grant. *"The composed being survives"* means
+  *the eleven-gate composed being.*
+- **Same shape as the gap fixed on 2026-08-03** (six of fourteen faculties unreachable by a founded
+  being, unnoticed five weeks). `tests/manifest.rs` now counts whether a gate is **reachable**.
+  **Nothing counts whether it is survivable.**
+- **How it surfaced is the lesson:** a one-digit gap between two numbers quoted interchangeably —
+  **366 is the total test count, 365 the passing count, and the difference is one `#[ignore]`d test**
+  (the 66-life sweep; run explicitly, it passes). Blake said *chase it*. **A number nobody could
+  explain was hiding a coverage hole**, and no rule in `CLAUDE.md` would have found it.
+- **Not fixed tonight, deliberately.** Widening a safety guard deserves locked predictions, not a
+  tired patch — and P-style predictions should say in advance which of the four is expected to be
+  lethal alone. **`reserve` is the one to watch: it changes metabolism.**
+
 **Measured 2026-08-04, not yet acted on — ProtoBeing's claims are unchecked:**
 - **19 basin-occupancy claims sit with no correction marker within ten lines, across 9 documents**;
   by hand, ~13 are genuine (the rest are code quotes, locked predictions, or the withdrawal notices
