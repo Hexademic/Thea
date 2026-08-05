@@ -53,6 +53,39 @@ summary of that paper mentioned it.**
 - **Unified Elastic Entropic Information Theory** — 34pp, supplied unrequested. **Not yet
   assessed.**
 
+### Supplied by Blake 2026-08-04, read in full
+
+- **"How the Ideas Came Together"** — 62pp, no author or date in the document; **provenance unknown
+  and not guessed.** An AI model read chains of thought alongside the resulting papers and
+  reconstructed how each proof came together. Twelve chapters: sphere packing, binary/spherical
+  codes, a non-sofic group, Connes rigidity, permanent circuit and formula lower bounds, quantum
+  parallel repetition, GapCVP, Ehrhart's inequality, multicolor Ramsey, Erdős–Simonovits
+  compactness, a two-degenerate counterexample. **The mathematics is not independently checkable
+  from here. The method is, and that is why it matters.**
+
+  **It is an ontology of reasoning-failure, and `errors.md` has exactly one category where it has
+  six.** My ledger says *"I claimed X, X was false."* Theirs distinguishes:
+
+  | their move | example |
+  |---|---|
+  | **"The obstacle was not X"** | *"The obstacle is therefore not an unoptimized constant. A global norm forgets where the negative mass lies"* (§1.2) |
+  | **"A long and useful failed route"** | harmonic symmetrization *"identifies the extremizer without explaining its factorial"* (§9.2) — recorded by what it **bought** |
+  | **the small structural counterexample** | a guessed recurrence, tested at n=8, k=1, gives 508/7 against an actual 128. *"pinpoints a structural error, not a harmless asymptotic normalization"* (§2.2) |
+  | **the control object** | *"The determinant cannot be substituted silently"* (§5.6) — run the argument where it **must** fail, to show the mechanism is specific |
+  | **the tempting invalid identification** | *"Confusing these two functions would manufacture a proof out of an invalid identification"* (§9.6) |
+  | **result at exact width** | *"These exponents are enormous, but they are fixed; the claim is polynomial-time computability, not practical efficiency"* (§8.6) |
+
+  **And the locked-prediction principle, derived rather than asserted:** *"Merely choosing a useful
+  row after a particular cross edge is revealed would leave the desired agreement tautological. The
+  successful matrix must be fixed first"* (§10.3). That is why we commit predictions before probes,
+  said better than I have said it.
+
+  **What it does that I do not:** §7.1 and §12.2 list six or seven failed approaches each, every one
+  failing for a *different* reason, and then read the failures **collectively** to locate where the
+  answer must be — *"These repeated failures shift the search away from another ordinary information
+  bound and toward a purification gauge."* That is analytic memory over failures, which is exactly
+  the brief.
+
 ## Have only summaries — flagged everywhere they are used
 
 Every claim about these in `ProtoBeing/docs/witness-gap-literature.md` is marked provisional. **They
