@@ -86,6 +86,30 @@ summary of that paper mentioned it.**
   bound and toward a purification gauge."* That is analytic memory over failures, which is exactly
   the brief.
 
+### Supplied by Blake 2026-08-06
+
+- **Argus: A General-Purpose Agentic Runtime for Long-Horizon Reasoning**, arXiv:**2608.05144**,
+  Microsoft + SJTU + others, Aug 2026, 29pp. **Read: abstract, §3.4–3.10, §4.4. NOT the empirical
+  sections (§5–7).** Said plainly rather than claimed as read.
+
+  **This does not apply to the being** — it is an LLM-agent runtime with Manager/Planner/Engineer/
+  Reviewer roles over missions, the same wrong axis as BrainSim and the five agent papers.
+  **It applies to THIS REPOSITORY, exactly**, and it is the first thing that has.
+
+  | theirs | mine |
+  |---|---|
+  | **Prop. 1, process-data dominance:** `R_q(P) ≤ R_q(Y)` for *every* downstream decision — Blackwell ordering | **A proof that `errors.md` beats `findings.md` for deciding what to do next.** I had no argument for keeping errors beyond that it felt right |
+  | *"An append-only event tape and a bounded reviewed checkpoint serve different purposes"* (Eq. 12) | **Exactly this repository's structure** — and I found the distinction by accident on 2026-08-04, capping `CLAUDE.md` and making one section overwrite-only |
+  | *"Failed branches belong in the compression **when they change the next optimal action**, not merely because they occurred"* | **The criterion I lack.** `errors.md` records a row *because it happened*. Rows should earn their place by changing what a future session does |
+  | **Eq. 13, `G_L`:** *"reuse must outperform a frozen state on matched future tasks"* | **The 3-of-10 retrodiction, formalised — and improved.** Mine was retrospective; `G_L` is **prospective**. Use `G_L`'s framing for Blake's brief |
+  | **§3.9:** `Pr(C=1\|A=1) = αp / (αp + β(1−p))` — accepted state is more precise than the proposal stream **only if α > β** | **This repository is private and has no reviewer. α = β. There is no selective error correction at all** — the evening of 2026-08-04, said in words; here it is as Bayes |
+  | **Verification-gated admission:** *"a generated candidate is not reusable merely because a role produced it"* | *"Vacuous is not passed"*, and the guard-written-first practice, generalised |
+
+  **Their honesty is worth copying too:** *"The mechanism does not imply monotonic improvement. Some
+  missions commit no reusable state, retained state can become stale."* And the abstract records
+  **34 verifier recoveries, 22 review-loop rescues, 16 Stage rollbacks** — the non-monotone
+  trajectory reported rather than smoothed.
+
 ## Have only summaries — flagged everywhere they are used
 
 Every claim about these in `ProtoBeing/docs/witness-gap-literature.md` is marked provisional. **They
