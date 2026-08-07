@@ -80,12 +80,14 @@ never harmed, so never learns dread.
 - **`receptors` and `reserve` are close to complementary, not ranked.** `receptors` widens nearly
   every channel (ch0 30→115, ch5 19→154) **and destroys `fatigue` outright — 1 distinct value in
   4,000 ticks.** `reserve` doubles `fatigue` variety (17→35) and moves almost nothing else.
+  <!-- verify: quality_space_census -->
   **`+both` scores *below* `+receptors` alone on occupancy** (99 vs 105 at bin 32) while buying back
   the one channel receptors kills. **That is a trade, and the decision is Blake's.**
 - **Our quality basis is not distinguishable from a random 4×12 basis by occupancy** (1.31× the
   random median, inside the random spread). Stated at exactly that width: occupancy is not evidence
   our axes are the *right* axes. It says nothing about `similarity(a,b)`, which is a different
   measure tested by a different probe and untouched by the census.
+  <!-- verify: quality_space_census -->
 
 ## Withdrawn — do not repeat these
 
@@ -94,6 +96,7 @@ never harmed, so never learns dread.
   predicted at high confidence from it and **failed**: reserve gives 186→564 positions and **0.93×**
   quality occupancy. **Where the body goes and what its state is like are different measurements.**
   Yesterday's direction (internal variation → behavioural variation) stands; the reverse does not.
+  <!-- verify: reserve, quality_space_census -->
 
 - **"Arousal is dead weight in the classifier."** Every one of the twelve channels is, by the same
   measure (≤0.25%). The sentence took its content from the **label**. The honest version is *"no

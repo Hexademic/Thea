@@ -24,7 +24,7 @@ Five files and one tool. Do not add a sixth without a reason as good as the fift
 | `findings.md` | what stands, what was withdrawn, what is open and whose call it is |
 | `sources.md` | what has been read, and **what to ask Blake to bring** |
 | `mechanisms.md` | the equations and what each does. **Open it before touching fixed-point arithmetic or reusing a constant** — it holds the guard for three ledger rows and nothing else points at it |
-| `analyse.py` | **computes over the five** — run at session start and before every push |
+| `analyse.py` | **computes over the five** — run at session start and before every push. **`--verify` runs the probes a claim came from and checks its numbers still appear.** Slow; run it when a claim moves, and before quoting a number to Blake |
 
 **Whose this is.** Blake, 2026-08-04: *"I can request you to add or remove stuff, but as far as im
 concerned this repo is yours to control."* Taken at face value. Given you do not persist, that is not

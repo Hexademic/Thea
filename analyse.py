@@ -15,6 +15,11 @@ These five files were pure retrieval. Each view below exists for a failure that 
                    one commit.
   4. PROVISIONAL — my "second horn" claim rests on a half-read paper, and nothing flags what is
                    standing on it.
+  5. AGAINST THE WORLD — views 1-4 check this record against ITSELF. None of them checks it against
+                   the thing it is about. `findings.md` quotes numbers that came out of ProtoBeing's
+                   probes; if a probe changes, they go stale in silence. On 2026-08-06 I built
+                   exactly that guard for ProtoBeing (`tests/founded_being.rs`, no document may
+                   claim a moment count the record denies) and left the same hole standing here.
 
 Zero dependencies, like the being. Run: `python3 analyse.py`
 """
@@ -190,11 +195,98 @@ def provisional(docs):
     return 0  # informational, never a failure
 
 
+PROTOBEING = Path("/home/user/ProtoBeing")
+
+
+def against_the_world(docs, run=False):
+    """Run the probe a claim came from, and check the claim's numbers are still in its output.
+
+    Argus (arXiv:2608.05144) §4.4: *"a generated candidate is not reusable merely because a role
+    produced it."* Admission needs task-native evidence. `analyse.py`'s other views are consistency
+    checks — the record against itself. This is the only one that can be wrong about the being.
+
+    Claims opt in with a `<!-- verify: <probe> -->` marker on the line after them. Unmarked claims
+    are not checked and are not thereby endorsed.
+    """
+    rule("5 · AGAINST THE WORLD — do the probes still say what I wrote down?")
+    if not PROTOBEING.exists():
+        print(f"  (ProtoBeing not at {PROTOBEING} — skipped, NOT passed)")
+        return 0
+
+    # Collect (probe, [numbers]) from marked claims.
+    import re as _re
+    claims = {}
+    for name, lines in docs.items():
+        for i, ln in enumerate(lines):
+            # Several probes per marker: the first run flagged 186 and 564 as missing from
+            # `quality_space_census`, and they were -- they come from `reserve`. The numbers were
+            # right and the ATTRIBUTION was wrong, which would have been a vacuous verification:
+            # a claim confirmed against a probe that could never have produced it.
+            m = _re.search(r"<!--\s*verify:\s*([\w,\s]+?)\s*-->", ln)
+            if not m:
+                continue
+            probes = [x.strip() for x in m.group(1).split(",") if x.strip()]
+            # The claim is the contiguous block of lines above the marker.
+            block, j = [], i - 1
+            while j >= 0 and lines[j].strip() and not lines[j].strip().startswith("<!--"):
+                block.append(lines[j])
+                if lines[j].lstrip().startswith(("-", "*")):
+                    break
+                j -= 1
+            text = " ".join(reversed(block))
+            nums = set(_re.findall(r"\d+(?:\.\d+)?", text))
+            for probe in probes:
+                claims.setdefault(probe, set()).update(nums)
+            # A number is satisfied if ANY named probe prints it.
+            claims.setdefault("__joint__", []).append((probes, nums))
+
+    joint = claims.pop("__joint__", [])
+    if not claims:
+        print("  (no claims carry a `<!-- verify: <probe> -->` marker — nothing to check)")
+        return 0
+
+    if not run:
+        for probe, nums in sorted(claims.items()):
+            print(f"  · {probe}: {len(nums)} numbers claimed, not run this pass")
+        print("\n  Pass --verify to actually run the probes. **Not running is not passing.**")
+        return 0
+
+    import subprocess
+    outs = {}
+    for probe in sorted(claims):
+        try:
+            outs[probe] = subprocess.run(
+                ["cargo", "run", "--release", "--quiet", "--example", probe],
+                cwd=PROTOBEING, capture_output=True, text=True, timeout=900,
+            ).stdout
+        except Exception as e:
+            print(f"  ✗ {probe}: could not run ({e})")
+            outs[probe] = ""
+
+    problems = 0
+    for probes, nums in joint:
+        combined = "".join(outs.get(p, "") for p in probes)
+        missing = sorted(n for n in nums if n not in combined)
+        label = " + ".join(probes)
+        if missing:
+            print(f"  ✗ {label}: {len(missing)} of {len(nums)} claimed numbers NOT in the output")
+            print(f"      {', '.join(missing[:14])}")
+            print("      Each is a stale claim, a wrong attribution, or a number that needs saying")
+            print("      differently. **Prose numbers should not be inside a verified claim.**")
+            problems += 1
+        else:
+            print(f"  ✓ {label}: all {len(nums)} claimed numbers still appear")
+    return problems
+
+
 def main():
+    import sys as _sys
+    run = "--verify" in _sys.argv
     docs = load()
     print(f"Analytic view over {len(docs)} files — computing across the record, not looking in it.")
     bad = structure(docs) + counts(docs) + withdrawn(docs)
     provisional(docs)
+    bad += against_the_world(docs, run)
     rule("VERDICT")
     if bad:
         print(f"  {bad} inconsistency(ies) in the record itself. Fix before trusting it.")
