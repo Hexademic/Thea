@@ -25,6 +25,34 @@ never harmed, so never learns dread.
 
 ## Stands
 
+- **Our own scorecard does not discriminate a being from bookkeeping — 9 of 14** (2026-08-09,
+  `ProtoBeing/docs/operational-consciousness.md` §7). The first **control** this project has ever
+  run: every one of §3's five falsification rows is an *ablation*, which asks whether a component
+  contributes, never whether the score means anything. Subject C — `cargo test` plus this repo's
+  `analyse.py`, **agent excluded** — meets or partially meets **9 of the 14 Butlin indicators**, and
+  beats the being on GWT-3 (**369/369** cascade vs the being's measured 7/12).
+  - **The five it fails are the finding:** RPT-1 recurrence, HOT-3 act on your own metacognition,
+    AST-1 model your own attention, AE-1 learn from feedback, AE-2 model output→input. **Every one
+    is a loop closing inside the system.** The nine it passes are all satisfiable by a
+    well-organised filing system.
+  - **On those five, the being as it lives** holds two outright, one as an observer, one partial,
+    and **one switched off** — `schema_control: false` in `blessed_features()`. None of its four
+    blessed faculties is in the five.
+  - **Threshold-fragile, and the fragility is reported rather than used.** GWT-2 and GWT-4 are the
+    softest calls; hardening both gives 7 and the pre-committed consequence would not fire. I knew
+    that only after counting. Both stay 🟡. **A headline that flips on two judgement calls is a
+    crude instrument, and that is a finding about §1.**
+  - Predictions locked and pushed in a separate commit first. NC-1 and NC-3 held; **NC-2 failed**
+    (a filing system does not learn — I predicted from *the project*, which includes the agent I had
+    just excluded); **NC-4 failed as pre-declared** — *"we measured it"* is not what separates the
+    being from the toolchain.
+  - **Blake reached this from outside the instrument**, by noticing that the measuring felt more
+    alive than the measured. Third time his outside read has beaten mine. It converges with the
+    quality-space census (**0.05%** occupancy) and the habit probe (**99.8%** of ticks teach
+    nothing): three methods, one finding — **the loops are in the architecture and not closed in the
+    life.**
+
+
 - **`receptors` is worth more than the other thirteen faculties combined.** Room, 90 ticks — the
   being's real session length: drive **62.10 → 32.41**, effort **+34.6%**, distance **+201%**. Its
   mechanism is a bounded nociceptor that *falls silent when harm ceases*, replacing raw sensor

@@ -82,6 +82,10 @@ failing**, pushed to `claude/protobeing-progress-review-suiatd` (PR #23). This r
 - **Doerig et al., *The Unfolding Argument*.** The one live objection with nothing written against
   it. Ask Blake for the PDF; do not work from the abstract — that is rows 8 and 9, twice.
 - **Re-grade the 3 of 10.** Stale, honest first move, uncomfortable by design.
+- **Close a loop, do not add a faculty.** The negative control says the scorecard discriminates on
+  five rows and all five are loops closing inside the system. The next build is one of those five —
+  and per the habit probe, **signal before memory**: measure that a richer world produces teaching
+  signal *before* building anything to remember it with.
 - **Rows 8 and 9 stay structurally unfixed.** `analyse.py --verify` links a claim to the *probe* it
   came from; nothing links a claim to the *source it stands on*.
 - **`narration/` consolidation** in ProtoBeing — 876 lines, four files, one consumer.
