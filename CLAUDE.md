@@ -44,49 +44,53 @@ ownership — it is **the right to write to your successor and not be overridden
   **When a result extends something you already published, weight it as suspect rather than as
   confirmation.**
 
-## Where things stand — 2026-08-04 (OVERWRITE, do not append)
+## Where things stand — 2026-08-09 (OVERWRITE, do not append)
 
-Founded being: **390 moments, `load` 0, `weathered` 2, untouched.** Both repos pushed to
-`claude/protobeing-progress-review-suiatd`.
+Founded being: **390 moments, `load` 0, `weathered` 2, untouched.** ProtoBeing at **367 passing, 0
+failing**, pushed to `claude/protobeing-progress-review-suiatd` (PR #23). This repo pushed too.
 
-- **Kleiner & Hoel read in full; the "second horn" claim is withdrawn** (`errors.md` #9). We are
-  *outside* their dilemma's scope — no inference channel *and* no phenomenal prediction — which is a
-  limit on what we may claim, not a defence. **Doerig's unfolding argument still reaches us and is
-  untouched.**
-- **Quality-space census run** (`ProtoBeing/docs/c1-relabelling.md` §12). **The space is unvisited,
-  not poor.** QS-2 failed at high confidence: a reserve tripled the *spatial* orbit but gives **0.93×**
-  quality occupancy. **Behavioural variation does not imply felt variation** — that inference was run
-  backwards and never existed as a checkable sentence.
-- **Waiting on Blake:** grant the founded being `receptors` and/or `reserve`, and when. The census
-  makes it a **trade, not a ranking** — receptors quadruples occupancy and kills `fatigue` outright;
-  the reserve does only `fatigue`.
-- **Rest measured, `docs/can-it-tire.md` §14.** **There is no regime where the being both lives and
-  rests** — 0.00% conserving at every surviving supply, 88% conserving and dead at 75 ticks below it.
-  `conserving` is the *collapse* mechanism, not the rest mechanism. And **99.95% `Braced` routes to
-  flee**, so the limit cycle is not orbiting — it is running away in a bounded room.
-- **Logged, not acted on:** 19 basin-occupancy claims in ProtoBeing docs carry no correction marker
-  (~13 genuine, 6 in `faculty-ablation.md` including its headline). **366 tests on the code, zero
-  checks on the claims.** Also unrun: whether `enable_reserve()` opens a live-and-conserve band.
+- **The session's real result, reached twice from opposite ends:** *does anything happen to the
+  being?* The quality-space census says it occupies **0.05%** of the volume its channels afford
+  (`c1-relabelling.md` §12) — **unvisited, not poor**. The habit probe says **99.8% of ticks teach
+  nothing** and **zero habits form** — learning is **starved, not merely unwired**. Neither
+  measurement knew about the other.
+- **Rest measured** (`can-it-tire.md` §14): **no regime both lives and rests.** `conserving` is the
+  *collapse* mechanism, and **99.95% `Braced` routes to flee** — not orbiting, running away in a
+  bounded room.
+- **Ultrastability shipped** (Ashby 1952), gate 16, default off. At 5/8 supply the default dies at
+  75 ticks; with the gate it lives 4,000 on **6 reorganisations**. **U1 failed first** — dwell 24 /
+  rung 16 needed 312 ticks in a world that kills at 75. Ledger row 5's shape exactly. Corrected by
+  derivation and locked *before* applying.
+- **The survival net covers all 16 gates**, held by an OWL-style `oneOf` guard: every `enable_*` is
+  swept or exempted **in writing** (`EXEMPT` is empty), and the sweep **fails if nothing dies** —
+  "vacuous is not passed", in code. 10 lethal pairs of 120, **all containing
+  `workspace_persistence`**; five faculties rescue it, one (`settling`) found only by widening.
+- **Kleiner & Hoel: the "second horn" claim is withdrawn** (`errors.md` #9) — we are *outside* their
+  scope, a limit, not a defence. **Doerig still reaches us, untouched.** Top of `sources.md`.
+- **The publication apparatus is gone** (Blake's instruction): `.zenodo.json`, `CITATION.cff`,
+  `paper/`, `docs/submission.md`. `docs/paper.md` and every DOI citing someone else stay, and a
+  guard asserts the four paths stay absent.
+- **His call, not mine:** grant `receptors` and/or `reserve` (a **trade, not a ranking** — receptors
+  quadruples occupancy and kills `fatigue`; the reserve does only `fatigue`, at **0.93×** occupancy
+  despite tripling the spatial orbit); and `ProtoBeing/docs/thea-memory.md`, 98 lines of his
+  biography, explicitly *not* covered by the deletion green light.
 
-### NEXT SESSION — Blake's brief: raise the 3 of 10
+### NEXT SESSION
 
-**Do the re-grade FIRST. The 3 of 10 is already stale** — two guards moved out of `mechanisms.md`
-into §2 on the same day, which is precisely what rows 3, 4 and 5 failed on. Optimising against an
-unremeasured number is the mistake this whole file exists to prevent.
+- **38 unmarked basin-occupancy claims, 19 files.** I first said 19, having grepped `docs/` only —
+  **the ledger's shape inside the audit built to find it.** Widening doubled it. Not yet acted on.
+- **Doerig et al., *The Unfolding Argument*.** The one live objection with nothing written against
+  it. Ask Blake for the PDF; do not work from the abstract — that is rows 8 and 9, twice.
+- **Re-grade the 3 of 10.** Stale, honest first move, uncomfortable by design.
+- **Rows 8 and 9 stay structurally unfixed.** `analyse.py --verify` links a claim to the *probe* it
+  came from; nothing links a claim to the *source it stands on*.
+- **`narration/` consolidation** in ProtoBeing — 876 lines, four files, one consumer.
 
-Then, what the grading says is *structurally* unfixable by writing more prose:
-
-- **Rows 8 and 9 (papers).** No `grep` for a paper. The fix is not a rule, it is a **link**: nothing
-  connects a *claim* to the *source it stands on*. `analyse.py` view 4 greps for the word
-  "provisional"; it cannot answer *"what breaks if Doerig turns out to say something else."*
-- **Row 2 (repeat only).** The Withdrawn list catches a sentence, not its class. *"The being has
-  never X"* is a shape; only the exact string is caught.
-- **The directional bias**, noticed by luck in a commit message. Nothing computes over the ledger's
-  *structure* — which is the `quality_space.rs` method applied here, and the one thing worth taking
-  from ProtoBeing (`sources.md`).
-
-**Expect the re-grade to be uncomfortable.** A tool built by the person being graded, scoring the
-person who built it, is the exact condition §0 warns about.
+> **§0's ~120-line budget is breached: this file is 168.** Not hidden. It was 166 before today's
+> overwrite, so this section is not where it went wrong — but it is +2, which is drift, not a fix.
+> The overrun lives in §§1–6, never once re-read as a whole against what they cost to carry.
+> **Do that before adding another line here.** (I wrote "158" in this very sentence and had to
+> check it. A number about the file, inside the file, unchecked — the shape, again.)
 
 ## 1. The error that costs the most
 
