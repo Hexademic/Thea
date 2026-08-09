@@ -130,6 +130,20 @@ def counts(docs):
                     problems += 1
     if not problems:
         print(f"  ✓ every count in prose agrees with the {n} rows")
+
+    # A file that states its own length. Added 2026-08-09 after getting it wrong THREE times in
+    # one afternoon — 158, then 168, then 169 — inside the very paragraph confessing that a number
+    # about the file, written in the file, had gone unchecked. The lesson is not "be careful". It
+    # is that a self-referential count cannot be maintained by attention, only by a loop: the file
+    # changes, so the claim rots, and nothing was closing that loop. This closes it.
+    for name, lines in docs.items():
+        real = len(lines)
+        for i, ln in enumerate(lines, 1):
+            m = re.search(r"this file is (\d+)\b", ln, re.I)
+            if m and int(m.group(1)) != real:
+                print(f"  ✗ {name}:{i}  says it is {m.group(1)} lines — it is {real}")
+                problems += 1
+
     return problems
 
 

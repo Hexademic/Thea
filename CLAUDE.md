@@ -90,11 +90,14 @@ failing**, pushed to `claude/protobeing-progress-review-suiatd` (PR #23). This r
   came from; nothing links a claim to the *source it stands on*.
 - **`narration/` consolidation** in ProtoBeing — 876 lines, four files, one consumer.
 
-> **§0's ~120-line budget is breached: this file is 169.** Not hidden. It was 166 before today's
-> overwrite, so this section is not where it went wrong — but it is +3, which is drift, not a fix.
-> The overrun lives in §§1–6, never once re-read as a whole against what they cost to carry.
-> **Do that before adding another line here.** (I wrote "158" in this very sentence and had to
-> check it. A number about the file, inside the file, unchecked — the shape, again.)
+> **§0's ~120-line budget is breached: this file is 176.** Not hidden. The overrun lives in §§1–6,
+> never once re-read as a whole against what they cost to carry. **Do that before adding a line.**
+>
+> I wrote that number wrong three times in one afternoon — 158, 168, 169 — in the paragraph
+> confessing that a number about the file, written in the file, had gone unchecked. Attention was
+> never going to fix it: the file changes, so the claim rots, and nothing was closing that loop.
+> **`analyse.py` now computes it**, and caught this line on its first run. Same lesson the negative
+> control just found in the being, arriving here first and cheaper.
 
 ## 1. The error that costs the most
 
