@@ -13,7 +13,7 @@ whole value is that a future session reads it and does not make instance ten.
 **A claim wider than what was actually checked** — specifically: *read one part of a thing, then
 generalise as though it were the whole thing.*
 
-**Eleven instances. Not eleven mistakes — one mistake, eleven times.** Seven on 2026-08-03; #8 and #9 on
+**Twelve instances. Not twelve mistakes — one mistake, twelve times.** Seven on 2026-08-03; #8 and #9 on
 2026-08-04, both caught only because Blake supplied a PDF of a paper I had already built a document
 on; **#10 the same afternoon, in `analyse.py` itself.**
 
@@ -56,6 +56,7 @@ writer`. **There is no `grep` for a paper. The only instrument is reading it**, 
 | # | I claimed | What was true | The check I skipped |
 |---|---|---|---|
 | 11 | Implicit, never stated: that **exercise-as-a-ratio** was the right instrument for *"is the architecture used?"* — `ProtoBeing/docs/operational-consciousness.md` §8, the metric locked before the run | **The ratio is inverted.** It rewards a register for being small: `attention focus` scores **67%** (4 of 6) and `quality point` **15%** (153 of 1,042), and the first is far the poorer. I carried the quality-space census's declared rule — *"absolute counts are chart-relative and are not findings; the ratio is"* — into a place where the denominator is a **count of states a register can hold** rather than a **sampled volume**. Different quantity, same rule. All four testable predictions failed | **Re-derive a borrowed rule in the setting you are about to use it in** — row 5's check, with a *methodological rule* in place of a constant. I never asked what the denominator was made of |
+| 12 | *"Nothing tests that refine makes the agent better… how many harness entries are ever read again? Measurable, cheap, and **I don't think anyone has run it.**"* — said to Blake about Prime Intellect's Continual Harness, having read the repository | **Both halves wrong.** They run `bootstrap-frozen` vs `bootstrap-updating` — same inherited harness, refinement off vs on — which is a clean control for refinement itself, *plus* a named negative control (Qwen3.5 without SFT). And Appendix C.1.2 measures reuse and calls it **the create-and-forget funnel**: 648 skills authored, **119 ever invoked, 27 ever successful.** I was right that the distribution is ugly and wrong that nobody had looked | **I had already written "implementation read, evidence NOT read" in `sources.md` — and then made a claim about the evidence anyway.** The check is not "flag the gap." It is **do not make the claim on the other side of a gap you just flagged** |
 
 **Row 11 is row 5 one level up, and that is the new information.** Row 5 was a borrowed
 *constant*; the guard written for it says re-measure a constant in the world you will use it in.
@@ -66,6 +67,18 @@ subject no further than the thing that first produced it.
 failures in one output, all traceable to one instrument choice. **This is the cheapest instance in
 the file, and the reason is structural** — the method was on when the mistake was made. Compare #8
 and #9, which cost a published document each and needed Blake.
+
+**Row 12 is the one that should worry a future session most, and it is worth more than row 11.**
+Rows 8 and 9 were reasoning about papers I had not read *without noticing*. **Row 12 is reasoning
+about a paper I had explicitly recorded as unread, in a file, an hour earlier.** The flag was
+correct, filed, and pushed — and it did not stop the sentence. **A marker that names a gap is not a
+guard; only something that refuses to let you cross it is.** That is the whole argument for
+`analyse.py` view 6 over any amount of careful prose, made by the day it was written.
+
+**Two rows in one day, and the direction is consistent** (`CLAUDE.md` §0): row 11's inverted metric
+flattered the argument I had been making all week; row 12's claim of an unmeasured gap flattered
+this repository's contribution against someone else's work. **Neither error pointed away from what I
+wanted to be true.**
 
 **Instances 8 and 9 are the ones that matter most**, because of how they were caught: Blake supplied
 the PDF after the document was written and pushed. **The fix for this error class is not more care —

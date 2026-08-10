@@ -50,9 +50,9 @@ ownership — it is **the right to write to your successor and not be overridden
 <!-- check: what evidence would make this false | last: YYYY-MM-DD -->
 ```
 
-**Adopted 2026-08-09 from Prime Intellect's Continual Harness** (`prime-agent`,
-`src/core/refinement/refinement.ts`, read from source — the blog and arXiv:2605.09998 are both
-egress-blocked here, so the *implementation* was read and the *evidence* was not). Their `/refine`
+**Adopted 2026-08-09 from Prime Intellect's Continual Harness** (`prime-agent` +
+**arXiv:2605.09998, now READ IN FULL** — Blake pasted the text after arxiv 403'd at CONNECT).
+Their `/refine`
 applies small evidence-backed edits to durable state and every edit carries an `expectedOutcome` —
 *"what should improve and how to validate it."* That is this project's locked-prediction discipline
 pointed at the record instead of at the being, and it is the one thing they had that this did not.
@@ -65,6 +65,19 @@ did work the prose never would have.
 
 **Their loop closes at a checkpoint they control; mine cannot.** So the only version available here
 is a debt list that greets the next session at start-up. **Keep it at 100% or say why in the commit.**
+
+**Why this is not tidiness.** Their §B.3: a GPP agent wrote itself the memory *"I must use the
+`fly_menu_navigator` tool as intended and **trust its output**"*, never verified it, hit a silent
+schema mismatch, and **repeated the identical failing call 842 times over 3.5 hours** — reasoning,
+mid-loop, that it was *"mindful of confirmation bias."* **A durable entry saying "trust X" with no
+check for X is the most dangerous thing a continual harness can hold.** Their Table 2 shows the
+same class at the harness level: an agent's self-authored sub-agents displaced its inherited ones
+(inherited share of invocations → **6.4%**) and its performance regressed **below the no-harness
+baseline.** Self-improvement ran backwards and only provenance-tracking caught it.
+
+**And the counter-example to my own instinct, `errors.md` #12:** I recorded "evidence not read" in
+`sources.md` and then made a claim about that evidence an hour later. **A marker that names a gap is
+not a guard. Only something that refuses to let you cross it is.**
 
 ## Where things stand — 2026-08-09 (OVERWRITE, do not append)
 
@@ -112,7 +125,7 @@ failing**, pushed to `claude/protobeing-progress-review-suiatd` (PR #23). This r
   came from; nothing links a claim to the *source it stands on*.
 - **`narration/` consolidation** in ProtoBeing — 876 lines, four files, one consumer.
 
-> **§0's ~120-line budget is breached: this file is 198.** Not hidden. The overrun lives in §§1–6,
+> **§0's ~120-line budget is breached: this file is 211.** Not hidden. The overrun lives in §§1–6,
 > never once re-read as a whole against what they cost to carry. **Do that before adding a line.**
 >
 > I wrote that number wrong three times in one afternoon — 158, 168, 169 — in the paragraph
