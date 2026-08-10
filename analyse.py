@@ -439,6 +439,84 @@ def provenance(docs):
     return len(unaccounted)
 
 
+# The ~120 in CLAUDE.md's header is a TARGET, not the invariant. It was set when the failure mode
+# was *appending a dated section per session* (the file hit 193 that way), so it is a proxy for
+# "do not accumulate" — a borrowed constant from a different world (§2 rule 8, ledger rows 5 & 11).
+# The file now carries enforced invariants and traced rules it did not carry then.
+#
+# So the HARD failure is the real invariant and it cannot be gamed: **the file may not grow.**
+# Ratcheted against HEAD, so shrinking is free and every increase must be argued in a commit.
+# The 120 target stays, reported as DEBT — the same way view 6 reports missing falsifiers — because
+# a number I moved on the day I failed to hit it would not be worth having.
+LINE_BUDGET = 120
+
+def harness_health(docs):
+    """**View 8 — is the harness itself within what a session can use, and is every rule traceable?**
+
+    Two lessons from arXiv:2605.09998, both aimed at this repository rather than at the being.
+
+    **(a) The capability floor.** Every Continual Harness variant on Gemini Flash-Lite scores
+    *below* the minimalist baseline — 3-13% against 20%, at equal or higher cost. **Structure a
+    system cannot exercise is not neutral; it is negative.** A harness is context, and context is
+    attention spent. `CLAUDE.md` states a ~120-line budget in its own header and sat at **215** on
+    2026-08-09, having been noted as breached three times that day and acted on zero times.
+    Described, never enforced. Enforced now.
+
+    **(b) `trust X` with no check for X** (their §B.3, the 842-turn loop). `findings.md` reached
+    100% falsifiers while **§2 of `CLAUDE.md` — fifteen standing imperatives in the file read first
+    every session — carried no evidence at all.** The more dangerous file was the unguarded one.
+    So every §2 bullet must name what produced it, in a `[from: ...]` tag.
+    """
+    rule("8 · HARNESS HEALTH — is the guidance itself usable and traceable?")
+    lines = docs.get("CLAUDE.md", [])
+    problems = 0
+
+    n = len(lines)
+    try:
+        was = len(subprocess.run(["git", "show", "HEAD:CLAUDE.md"], cwd=str(HERE),
+                                 capture_output=True, text=True, check=True).stdout.splitlines())
+    except Exception as e:
+        print(f"  ✗ cannot read HEAD:CLAUDE.md ({e.__class__.__name__}) — **the ratchet is VACUOUS")
+        print("    this run.** It has not passed; it did not run.")
+        return problems + 1
+
+    if n > was:
+        print(f"  ✗ CLAUDE.md GREW: {was} → {n} lines. **The ratchet only turns one way.**")
+        print("    Cut something else, or argue the increase explicitly in the commit message.")
+        problems += 1
+    else:
+        print(f"  ✓ CLAUDE.md {was} → {n} lines — did not grow")
+
+    if n > LINE_BUDGET:
+        print(f"  · DEBT: {n - LINE_BUDGET} lines over the ~{LINE_BUDGET} target."
+              f" A harness larger than the session can use is the Flash-Lite result.")
+
+    in_method, rules, untagged = False, 0, []
+    for i, ln in enumerate(lines, 1):
+        if ln.startswith("## "):
+            in_method = ln.startswith("## 2.")
+        elif in_method and ln.startswith("- **"):
+            rules += 1
+            # A rule owns its continuation lines; look ahead to the next bullet or heading.
+            block = ln
+            for nxt in lines[i:]:
+                if nxt.startswith("- ") or nxt.startswith("## "):
+                    break
+                block += " " + nxt.strip()
+            if "[from:" not in block:
+                untagged.append((i, ln[4:60]))
+    for i, t in untagged:
+        print(f"  ✗ CLAUDE.md:{i}  §2 rule with NO evidence tag — {t}")
+    if rules == 0:
+        print("  ✗ found no §2 rules — the parser is looking in the wrong place, so this view is VACUOUS")
+        return problems + 1
+    if not untagged:
+        print(f"  ✓ all {rules} §2 rules name the evidence that produced them")
+    else:
+        print("    **A rule you cannot trace is a `trust X` with no check for X.**")
+    return problems + len(untagged)
+
+
 def main():
     import sys as _sys
     run = "--verify" in _sys.argv
@@ -449,6 +527,7 @@ def main():
     bad += against_the_world(docs, run)
     bad += refinement_due(docs)
     bad += provenance(docs)
+    bad += harness_health(docs)
     rule("VERDICT")
     if bad:
         print(f"  {bad} inconsistency(ies) in the record itself. Fix before trusting it.")
