@@ -199,3 +199,45 @@ The honest answer to *"what do you need"* is not a paper.
 > Every finding here is about a being that has barely existed.
 
 That is not something anyone can bring me. It is a decision, and it is Blake's.
+
+## Prime Intellect — Prime Agent / the Continual Harness (read 2026-08-09)
+
+**READ FROM SOURCE:** `PrimeIntellect-ai/prime-agent` — `packages/coding-agent/docs/` (architecture,
+rlm-runtime, long-running-agents, skills, usage) and `src/core/refinement/refinement.ts`, cloned and
+read. **NOT READ:** the announcement blog and **arXiv:2605.09998**, the Continual Harness paper —
+**both egress-blocked here.** So I have their *implementation* and not their *evidence*, and
+anything below about whether it works is unsupported. **Ask Blake for the PDF.** This is rows 8 and
+9's exact situation, named at the point of use rather than discovered afterwards.
+
+**What it is.** `rlm.harness` — a persisted ledger of memories, prompt notes, reusable skill
+descriptions and subagent specs, session-local by default (`harness/harness_state.json`) with an
+explicitly global tier (`~/.prime/agent/harness/`). `/refine` reviews the trajectory and applies
+**small, evidence-backed** create/update/delete edits, with before/after snapshots for rollback, and
+**never rewrites the base system prompt.**
+
+**Adopted here:** the `expectedOutcome` field — *"what should improve and how to validate it."*
+That is our locked-prediction discipline aimed at the record. It became `analyse.py` view 6 and the
+`<!-- check: … | last: … -->` format, and it found **0 of 16** on its first run.
+
+**Their trigger list is today's finding in someone else's engineering.** Refinement fires *after a
+repeated failure · when a reusable tactic emerges · when a user corrects behaviour that should
+persist · when validation shows an entry is wrong.* **Every one is a loop closing inside the
+system** — the same five rows the negative control found discriminating, arrived at independently,
+for an LLM agent instead of a 2 KB being.
+
+**What they have that this does not:** the loop closes at a **checkpoint they control**. A model
+decides `shouldRefine`. Mine closes when I remember to close it — and I got this file's own line
+count wrong three times in one afternoon before code took the job.
+
+**What this has that I could not find in theirs** — checked twice, because a negative grep is not
+proof (ledger row 7): **nothing audits the accumulated state.** `validateEdit` checks that an *edit*
+is well-formed. I found no pass that reads the whole store and asks whether it still agrees with
+itself. That is the difference between **a memory and an instrument**, and it is `analyse.py`'s
+entire job.
+
+**The gap I would flag in theirs, and it is our exercise criterion transferred:** `refinement.test.ts`
+and its siblings test that refine **applies and rolls back correctly**. That is *correctness*. I
+found nothing testing that refine makes the agent **better**. *"The harness can improve"* is a claim
+about **capability**, and capability is not use — which is precisely how a scorecard came to count
+nine rows a filing cabinet also passes. **How many harness entries are ever read again? How often
+does one change a decision?** Measurable, cheap, and I do not think anyone has run it.

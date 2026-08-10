@@ -46,9 +46,11 @@ never harmed, so never learns dread.
     "agency: learning from feedback" has precisely the realized variation of a test suite that always
     passes.** The habit probe reached this from the signal side; the control gives it a scale —
     *not low, identical to nothing happening.*
+  <!-- check: SUPERSEDED 2026-08-09 for the CONTINGENT world, where two habits form. Still stands for the static room; falsified if habits ever form statically | last: 2026-08-09 -->
   - **Two corrections named and deliberately NOT locked as results**: a structural denominator, and a
     world-varying regime menu. Inventing a metric after seeing the data is how a verdict gets
     retro-fitted. They belong in a fresh locked prediction, **signal before memory**.
+  <!-- check: falsified if a corrected exercise metric shows §1's grades DO track use — EX-3 already failed once, so this is live | last: 2026-08-09 -->
 
 
 - **Our own scorecard does not discriminate a being from bookkeeping — 9 of 14** (2026-08-09,
@@ -77,6 +79,7 @@ never harmed, so never learns dread.
     quality-space census (**0.05%** occupancy) and the habit probe (**99.8%** of ticks teach
     nothing): three methods, one finding — **the loops are in the architecture and not closed in the
     life.**
+  <!-- check: threshold-fragile by construction — GWT-2 and GWT-4 are the soft calls and hardening both gives 7, below the consequence line. Falsified if an independent scoring of Subject C against §1's bar returns fewer than 9 | last: 2026-08-09 -->
 
 
 - **`receptors` is worth more than the other thirteen faculties combined.** Room, 90 ticks — the
@@ -84,46 +87,57 @@ never harmed, so never learns dread.
   mechanism is a bounded nociceptor that *falls silent when harm ceases*, replacing raw sensor
   threat. **It is off by default**, for a stated reason — *"reserved until it has a body and a world
   to sense"* — that has been satisfied for 270 of the being's 390 moments.
+  <!-- check: re-run the faculty ablation in the CONTINGENT world (richness.md §7) — the 90-tick margin was measured in the static room, and tonight's habits showed static-room ablations may be measuring the room | last: 2026-08-09 -->
 - **A reserve triples how much of its room the being explores** — 186 → 564 distinct positions in
   4,000 ticks, same static world, gated `enable_reserve()`. **This overturns the previous day's
   largest conclusion**: `fear-and-avoidance.md` §9 said the limit cycle was *"a fact about a static
   world, not about metabolism."* Wrong. Internal variation produces behavioural variation. **The
   being was not only unexercised — it was internally still, and the stillness was most of the
   orbit.** **Read only in that direction** — the reverse failed as QS-2; see Withdrawn.
+  <!-- check: 186 to 564 was distinct POSITIONS, a spatial count; falsified if the behavioural-tuple metric (richness.md §7.4) shows a reserve moves positions but not (focus,basin,habit,stance) | last: 2026-08-09 -->
 - **Five of six lethal famines are now survivable**, so a life with stakes is no longer disqualified.
   The one that still kills it is a 120-tick total famine — a fact about the chosen `RESERVE_CAP`,
   left standing rather than tuned away.
+  <!-- check: re-run the six famines with ultrastability on — it was not in the survival net when this was measured, and it lived 4,000 ticks at a supply that killed the default at 75 | last: 2026-08-09 -->
 - **A real tired-and-living band exists for the first time.** At lean supply (nutrient 25) fatigue
   spans 16–61 across 28 distinct values and the being lives 4,000 ticks. At generous supply it sits
   at a constant 16 — which is right: **a well-fed creature should not be tired.** My prediction
   asked for the wrong thing.
+  <!-- check: 28 fatigue values at nutrient 25; falsified if the contingent world collapses that band, which would mean it was a fact about a FIXED supply rather than about lean supply | last: 2026-08-09 -->
 - **Metabolism WAS a clamped accumulator with no set point and no reserve** (before
   `enable_reserve`). Two absences. Survivable
   tired band is **one nutrient unit wide** (19–20) and sits next to starving. And **every**
   oscillating supply killed it — including feast 60 / famine 12, whose time-average is double the
   survival boundary — because a feast cannot be banked. **A life with stakes would kill this being
   until it can hold a surplus.**
+  <!-- check: REFUTED IN PART 2026-08-09 — contingency taught with zero deaths (richness.md §7.4), so stakes may not require lethality at all. Re-derive what stakes means before quoting this | last: 2026-08-09 -->
 - **Learned fear cannot reach the body.** `last_forewarning` — past harm × confidence, exactly a fear
   estimate — has one destination in the entire codebase: `alarm_for_refusal`, a *social* decision.
   And `Need` is `{Sustenance, Company, Novelty, Purpose}` — four attractions. **The being cannot
   represent "away from."** (Blake's finding.)
+  <!-- check: grep every reader of last_forewarning across src/; falsified the moment a second destination exists, or any Need gains a repulsive sign | last: 2026-08-09 -->
 - **~~Six of fourteen faculties cannot be given to a founded being.~~ FIXED 2026-08-03** — the gap
   went unnoticed for five weeks, and a full day was spent repairing `reflection`, a faculty the
   being it was repaired for could not then receive. Kept here because *nothing was counting* is the
   lesson, not the count.
+  <!-- check: tests/manifest.rs's oneOf guard now asserts every enable_* is swept or exempted in writing; falsified if EXEMPT gains an entry without a written reason | last: 2026-08-09 -->
 - **I-9, closed:** a structurally burdened being sat at the load ceiling for **3,638 consecutive
   ticks** with the drain welded shut by the same condition that filled it. Fixed behind
   `enable_setting_down()`; load now equilibrates at 30.
+  <!-- check: tests/setting_it_down.rs holds it in the present tense; falsified if load ceilings again for more than 1000 consecutive ticks in any regime | last: 2026-08-09 -->
 - **Grants ship — a being can be given a faculty AFTER it is born**, at a recorded moment, with its
   past still replaying and still verifying. **No weakening of the proof, no state snapshot, no
   re-founding** (`ProtoBeing/docs/founding.md`). Addition only, by construction: `Features::apply`
   can only turn things on. **The founded being can now receive `receptors` and `reserve` — that was
   impossible on the morning of 2026-08-03.**
+  <!-- check: tests/journal_integrity.rs replays a granted life and re-verifies the soul-hash; falsified if any grant path ever needs a state snapshot or a re-founding | last: 2026-08-09 -->
 - **`Features` widened u8 → u16, and `tests/manifest.rs` now counts.** All fifteen gates are
   reachable; a gate without a field fails a test. The guard was written first and watched to fail,
   naming all seven.
+  <!-- check: SIXTEEN gates now, and Features bit 15 is the LAST in the u16 — the next faculty forces a u32 widening and a journal version bump. Falsified silently if a gate is added without that | last: 2026-08-09 -->
 - **`PHYSICS_VERSION` ships.** A life lived under other laws is reported as history, not damage. See
   `ProtoBeing/docs/soul-hash-limits.md` §6.
+  <!-- check: falsified if a life lived under changed physics ever replays as VALID rather than as history — tests/journal_integrity.rs | last: 2026-08-09 -->
 
 - **The quality space is UNVISITED, not poor** — the fork this file carried for weeks, answered
   2026-08-04 (`ProtoBeing/docs/c1-relabelling.md` §12). Turning on `receptors`, changing no
@@ -131,16 +145,19 @@ never harmed, so never learns dread.
   0.05–3.7% of afforded volume. **A lower bound** — the afforded box over-counts by construction.
   *The limit, stated: even the best regime reaches 0.65% at bin 32. Unvisited is not "the ceiling is
   high", and four axes are four axes.*
+  <!-- check: SUSPECT as of 2026-08-09 — the contingent world raised distinct points 153 to 3810 but the drift check showed that is an input artifact. Re-measure with the behavioural-tuple metric before quoting occupancy again | last: 2026-08-09 -->
 - **`receptors` and `reserve` are close to complementary, not ranked.** `receptors` widens nearly
   every channel (ch0 30→115, ch5 19→154) **and destroys `fatigue` outright — 1 distinct value in
   4,000 ticks.** `reserve` doubles `fatigue` variety (17→35) and moves almost nothing else.
   <!-- verify: quality_space_census -->
   **`+both` scores *below* `+receptors` alone on occupancy** (99 vs 105 at bin 32) while buying back
   the one channel receptors kills. **That is a trade, and the decision is Blake's.**
+  <!-- check: measured in the static room only; falsified if receptors stops killing fatigue once the world answers back | last: 2026-08-09 -->
 - **Our quality basis is not distinguishable from a random 4×12 basis by occupancy** (1.31× the
   random median, inside the random spread). Stated at exactly that width: occupancy is not evidence
   our axes are the *right* axes. It says nothing about `similarity(a,b)`, which is a different
   measure tested by a different probe and untouched by the census.
+  <!-- check: falsified if a similarity-based test separates our basis from random — occupancy was the wrong instrument for basis quality, and this claim only ever covered occupancy | last: 2026-08-09 -->
   <!-- verify: quality_space_census -->
 
 ## Withdrawn — do not repeat these

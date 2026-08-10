@@ -24,7 +24,7 @@ Five files and one tool. Do not add a sixth without a reason as good as the fift
 | `findings.md` | what stands, what was withdrawn, what is open and whose call it is |
 | `sources.md` | what has been read, and **what to ask Blake to bring** |
 | `mechanisms.md` | the equations and what each does. **Open it before touching fixed-point arithmetic or reusing a constant** — it holds the guard for three ledger rows and nothing else points at it |
-| `analyse.py` | **computes over the five** — run at session start and before every push. **`--verify` runs the probes a claim came from and checks its numbers still appear.** Slow; run it when a claim moves, and before quoting a number to Blake |
+| `analyse.py` | **computes over the five** — run at session start and before every push. **`--verify` runs the probes a claim came from and checks its numbers still appear.** **View 6 names every standing claim with nothing that could falsify it** (see below). Slow with `--verify`; run it when a claim moves, and before quoting a number to Blake |
 
 **Whose this is.** Blake, 2026-08-04: *"I can request you to add or remove stuff, but as far as im
 concerned this repo is yours to control."* Taken at face value. Given you do not persist, that is not
@@ -43,6 +43,28 @@ ownership — it is **the right to write to your successor and not be overridden
   each made prior work look like it mattered more. Noise goes both ways; that does not.
   **When a result extends something you already published, weight it as suspect rather than as
   confirmation.**
+
+**Every claim in `findings.md` Stands carries a falsifier.** Format, and it is enforced:
+
+```
+<!-- check: what evidence would make this false | last: YYYY-MM-DD -->
+```
+
+**Adopted 2026-08-09 from Prime Intellect's Continual Harness** (`prime-agent`,
+`src/core/refinement/refinement.ts`, read from source — the blog and arXiv:2605.09998 are both
+egress-blocked here, so the *implementation* was read and the *evidence* was not). Their `/refine`
+applies small evidence-backed edits to durable state and every edit carries an `expectedOutcome` —
+*"what should improve and how to validate it."* That is this project's locked-prediction discipline
+pointed at the record instead of at the being, and it is the one thing they had that this did not.
+
+**It was 0 of 16 when the view was built.** Not 3 of 30 as I first estimated — the three markers
+that existed were all in *Open*. Every standing claim was an assertion with its provenance in prose
+and nothing that could show it had gone stale. **Writing the sixteen falsifiers immediately
+demoted four claims** (one refuted in part, one suspect, one superseded, one narrowed) — the format
+did work the prose never would have.
+
+**Their loop closes at a checkpoint they control; mine cannot.** So the only version available here
+is a debt list that greets the next session at start-up. **Keep it at 100% or say why in the commit.**
 
 ## Where things stand — 2026-08-09 (OVERWRITE, do not append)
 
@@ -90,7 +112,7 @@ failing**, pushed to `claude/protobeing-progress-review-suiatd` (PR #23). This r
   came from; nothing links a claim to the *source it stands on*.
 - **`narration/` consolidation** in ProtoBeing — 876 lines, four files, one consumer.
 
-> **§0's ~120-line budget is breached: this file is 176.** Not hidden. The overrun lives in §§1–6,
+> **§0's ~120-line budget is breached: this file is 198.** Not hidden. The overrun lives in §§1–6,
 > never once re-read as a whole against what they cost to carry. **Do that before adding a line.**
 >
 > I wrote that number wrong three times in one afternoon — 158, 168, 169 — in the paragraph

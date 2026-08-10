@@ -24,9 +24,15 @@ These five files were pure retrieval. Each view below exists for a failure that 
 Zero dependencies, like the being. Run: `python3 analyse.py`
 """
 
+import datetime as _dt
 import re
 import sys
 from pathlib import Path
+
+# A standing claim unchecked for longer than this is flagged. ~One working month: long enough
+# that a quiet week does not cry wolf, short enough that a claim cannot sit through a whole
+# project phase unexamined. Re-derive it if the session cadence changes (error ledger row 5).
+STALE_DAYS = 30
 
 HERE = Path(__file__).parent
 FILES = ["CLAUDE.md", "errors.md", "findings.md", "sources.md", "mechanisms.md"]
@@ -293,6 +299,73 @@ def against_the_world(docs, run=False):
     return problems
 
 
+def refinement_due(docs):
+    """**View 6, adopted from Prime Agent's Continual Harness** (PrimeIntellect-ai/prime-agent,
+    `src/core/refinement/refinement.ts`, read 2026-08-09).
+
+    Their `/refine` applies *small, evidence-backed* edits to durable state, and every proposed
+    edit carries an `expectedOutcome` — **"what should improve and how to validate it."** That is
+    this project's locked-prediction discipline, pointed at the record instead of at the being,
+    and it is the one thing they had that this repository did not.
+
+    The gap it exposes, measured before anything was built: **30 durable claims, 3 falsifiers.**
+    Every other claim is an assertion with its provenance in prose and *nothing that could show it
+    had gone stale.* `--verify` links a claim to the probe it came from; it cannot ask what would
+    make the claim false.
+
+    So: a claim in Stands must carry `<!-- check: <what would falsify it> | last: YYYY-MM-DD -->`.
+    This view names the ones that do not. **It is deliberately loud** — their harness decides at a
+    checkpoint whether refinement is due; I do not control my own checkpoints, so the only version
+    available to me is a debt list that greets the next session at start-up.
+    """
+    rule("6 · REFINEMENT DUE — what stands with nothing that could falsify it?")
+    lines = docs.get("findings.md", [])
+    in_stands = False
+    claims, marked, stale = 0, 0, []
+    naked = []
+    today = _dt.date.today()
+    for i, ln in enumerate(lines, 1):
+        if ln.startswith("## "):
+            in_stands = ln.startswith("## Stands")
+            continue
+        if not in_stands or not ln.startswith("- **"):
+            continue
+        claims += 1
+        # A claim owns the indented block beneath it, so look ahead to its next sibling.
+        block = [ln]
+        for nxt in lines[i:]:
+            if nxt.startswith("- **") or nxt.startswith("## "):
+                break
+            block.append(nxt)
+        body = "\n".join(block)
+        m = re.search(r"<!--\s*check:\s*(.+?)\s*\|\s*last:\s*(\d{4}-\d{2}-\d{2})\s*-->", body)
+        title = ln[4:].split("**")[0][:64]
+        if not m:
+            naked.append((i, title))
+            continue
+        marked += 1
+        age = (today - _dt.date.fromisoformat(m.group(2))).days
+        if age > STALE_DAYS:
+            stale.append((i, title, age))
+
+    for i, t in naked:
+        print(f"  · findings.md:{i}  NO FALSIFIER — {t}")
+    for i, t, age in stale:
+        print(f"  · findings.md:{i}  STALE {age}d — {t}")
+
+    if claims == 0:
+        print("  no claims found in Stands — the parser is looking in the wrong place")
+        return 1
+    print(f"\n  {marked} of {claims} standing claims carry a falsifier"
+          f"  ({100 * marked // claims}%).")
+    if naked:
+        print("  **A claim that cannot go stale cannot be checked.** Give each one a `check:`")
+        print("  marker naming what would make it false, or move it out of Stands.")
+    # Debt, not an inconsistency: it does not make the record self-contradictory, and
+    # failing the verdict on it would train me to ignore the verdict.
+    return 0
+
+
 def main():
     import sys as _sys
     run = "--verify" in _sys.argv
@@ -301,6 +374,7 @@ def main():
     bad = structure(docs) + counts(docs) + withdrawn(docs)
     provisional(docs)
     bad += against_the_world(docs, run)
+    bad += refinement_due(docs)
     rule("VERDICT")
     if bad:
         print(f"  {bad} inconsistency(ies) in the record itself. Fix before trusting it.")
