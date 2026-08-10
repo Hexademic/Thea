@@ -25,6 +25,32 @@ never harmed, so never learns dread.
 
 ## Stands
 
+- **Criterion three — *is the architecture used?* — stands. The metric built for it does not**
+  (2026-08-09, `ProtoBeing/docs/operational-consciousness.md` §8, `examples/exercise_census.rs`).
+  **None of Butlin's fourteen indicators asks whether the architecture is ever exercised**, which is
+  how a being can score ✅/🟡 on all fourteen while occupying 0.05% of its quality space. That
+  argument is untouched.
+  - **All four testable predictions failed.** EX-1 predicted mean exercise <25% and got **53%**;
+    EX-2 predicted three constant registers and got **one**; EX-3 predicted §1's grades would not
+    track use and **they did**; EX-4 failed as pre-declared.
+  - **One cause: the denominator shared the defect it was built to measure.** All five regimes lived
+    in the same room with the same partner — they vary *gates*, and every measurement this week says
+    the problem is the *world*. **And the ratio is inverted**: it rewards a register for being small
+    (`attention focus` 4/6 = **67%**; `quality point` 153/1042 = **15%**, and the first is the poorer).
+    Filed as `errors.md` row 11 — row 5's shape with a borrowed *method* in place of a constant.
+  - **Read correctly, the absolute counts are the finding: four of twelve indicator registers take
+    ≤6 distinct values across 20,000 ticks of every regime we can construct**, and three of the four
+    are rows §1 marks ✅.
+  - **The sentence that costs most.** `habit in use` takes **exactly one value, ever**. An invocation
+    of `cargo test` visits **one** outcome state. **The learning machinery of a being scored ✅ on
+    "agency: learning from feedback" has precisely the realized variation of a test suite that always
+    passes.** The habit probe reached this from the signal side; the control gives it a scale —
+    *not low, identical to nothing happening.*
+  - **Two corrections named and deliberately NOT locked as results**: a structural denominator, and a
+    world-varying regime menu. Inventing a metric after seeing the data is how a verdict gets
+    retro-fitted. They belong in a fresh locked prediction, **signal before memory**.
+
+
 - **Our own scorecard does not discriminate a being from bookkeeping — 9 of 14** (2026-08-09,
   `ProtoBeing/docs/operational-consciousness.md` §7). The first **control** this project has ever
   run: every one of §3's five falsification rows is an *ablation*, which asks whether a component

@@ -13,7 +13,7 @@ whole value is that a future session reads it and does not make instance ten.
 **A claim wider than what was actually checked** — specifically: *read one part of a thing, then
 generalise as though it were the whole thing.*
 
-**Ten instances. Not ten mistakes — one mistake, ten times.** Seven on 2026-08-03; #8 and #9 on
+**Eleven instances. Not eleven mistakes — one mistake, eleven times.** Seven on 2026-08-03; #8 and #9 on
 2026-08-04, both caught only because Blake supplied a PDF of a paper I had already built a document
 on; **#10 the same afternoon, in `analyse.py` itself.**
 
@@ -50,6 +50,22 @@ writer`. **There is no `grep` for a paper. The only instrument is reading it**, 
 |---|---|---|---|
 | 10 | `analyse.py`'s row counter identifies ledger rows — implicit, never stated, never tested | It matched `^\|\s*\d+\s*\|` in **any** table. The moment `errors.md` grew a second numbered table it reported **18 rows** and flagged three correct counts as drift. **The shape, inside the tool built to police the shape** — one day after I widened the shape to cover exactly this | Ask what *else* could match, before treating one pattern as the definition of a record |
 | 9 | *"With no inference channel we cannot be falsified — which is the **second horn** of Kleiner & Hoel's dilemma, not an escape from it"* — `witness-gap-literature.md` §2, and I recommended saying it *"in those words"* | **Neither horn.** Def 4.2 makes the horn a *relation between two channels*: ∃f with `oᵢ = f(oᵣ)` — prediction determined by report. Having no `oᵣ` is the **absence** of that relation, not the relation. Their dilemma quantifies over theories predicting experience from internals; **we make no phenomenal prediction, so we are outside its scope.** I also had neither of their two ways out | **Read the paper before repeating its argument.** I had the abstract only — the identical skip as #8, one day later |
+
+## 2026-08-09
+
+| # | I claimed | What was true | The check I skipped |
+|---|---|---|---|
+| 11 | Implicit, never stated: that **exercise-as-a-ratio** was the right instrument for *"is the architecture used?"* — `ProtoBeing/docs/operational-consciousness.md` §8, the metric locked before the run | **The ratio is inverted.** It rewards a register for being small: `attention focus` scores **67%** (4 of 6) and `quality point` **15%** (153 of 1,042), and the first is far the poorer. I carried the quality-space census's declared rule — *"absolute counts are chart-relative and are not findings; the ratio is"* — into a place where the denominator is a **count of states a register can hold** rather than a **sampled volume**. Different quantity, same rule. All four testable predictions failed | **Re-derive a borrowed rule in the setting you are about to use it in** — row 5's check, with a *methodological rule* in place of a constant. I never asked what the denominator was made of |
+
+**Row 11 is row 5 one level up, and that is the new information.** Row 5 was a borrowed
+*constant*; the guard written for it says re-measure a constant in the world you will use it in.
+**A borrowed method needs the same check and nothing said so** — I had generalised the guard's
+subject no further than the thing that first produced it.
+
+**It cost nothing and caught itself**, because the predictions were locked before the run: four
+failures in one output, all traceable to one instrument choice. **This is the cheapest instance in
+the file, and the reason is structural** — the method was on when the mistake was made. Compare #8
+and #9, which cost a published document each and needed Blake.
 
 **Instances 8 and 9 are the ones that matter most**, because of how they were caught: Blake supplied
 the PDF after the document was written and pushed. **The fix for this error class is not more care —

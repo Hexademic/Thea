@@ -168,7 +168,7 @@ Evaluated and set aside, so nobody spends time on them twice:
   deterministic dynamical system, not an agent with tools — the same wrong axis as BrainSim.
   **One idea worth keeping**, from 29440: the split between **retrieval memory** (find the relevant
   thing) and **analytic memory** (compute *over* what accumulated — filter, aggregate, rank, compare
-  across time). **This repository is currently all retrieval.** *"Ten errors, all one shape"* was
+  across time). **This repository is currently all retrieval.** *"Eleven errors, all one shape"* was
   an analytic result produced by hand, and easy to have missed. Same gap the claim-ledger idea
   points at, now with a name for it.
 - **ThePathfindersCodex** (GitHub org, Godot/YouTube — Particle Life, Boids, SDF explorer, star
