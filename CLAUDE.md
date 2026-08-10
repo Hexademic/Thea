@@ -123,9 +123,13 @@ failing**, pushed to `claude/protobeing-progress-review-suiatd` (PR #23). This r
   signal *before* building anything to remember it with.
 - **Rows 8 and 9 stay structurally unfixed.** `analyse.py --verify` links a claim to the *probe* it
   came from; nothing links a claim to the *source it stands on*.
+- **Finish the Continual Harness audit — it stands at 2 of 7** (`sources.md`). The three untouched:
+  give `CLAUDE.md` §2's fifteen imperatives falsifiers; **cut this file to its own budget** (the
+  capability-floor lesson, and I am the instance); and score the rebuilt exercise metric against an
+  **oracle** rather than its own history.
 - **`narration/` consolidation** in ProtoBeing — 876 lines, four files, one consumer.
 
-> **§0's ~120-line budget is breached: this file is 211.** Not hidden. The overrun lives in §§1–6,
+> **§0's ~120-line budget is breached: this file is 215.** Not hidden. The overrun lives in §§1–6,
 > never once re-read as a whole against what they cost to carry. **Do that before adding a line.**
 >
 > I wrote that number wrong three times in one afternoon — 158, 168, 169 — in the paragraph

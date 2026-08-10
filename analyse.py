@@ -26,6 +26,7 @@ Zero dependencies, like the being. Run: `python3 analyse.py`
 
 import datetime as _dt
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -81,7 +82,7 @@ def ledger_rows(lines):
 
     So: track the nearest header row and count a numbered row only under the ledger's own header.
     """
-    rows, header = [], ""
+    rows, header, orphans = [], "", []
     for ln in lines:
         s = ln.strip()
         if not s.startswith("|"):
@@ -91,8 +92,24 @@ def ledger_rows(lines):
         elif re.match(r"^\|\s*\d+\s*\|", s):
             if "i claimed" in header.lower():
                 rows.append(s)
+            elif not header:
+                # **An orphan: a numbered row under NO header at all.** Added 2026-08-09 after
+                # this function silently dropped ledger row 12 — inserted below row 11's prose,
+                # so `header` had been reset to "" — and the tool printed
+                # "✓ every count agrees with the 11 rows". It did something plausible instead of
+                # failing, which is exactly the Continual Harness paper's §B.3 mechanism: the
+                # harness quietly pressed Down instead of erroring, so the agent never got the
+                # signal that would have corrected it, and repeated the call 842 times.
+                # **A silent fallback is worse than a crash.** Loud now.
+                orphans.append(s[:70])
         else:
             header = s
+    if orphans:
+        raise ValueError(
+            "numbered table row(s) under no header — a ledger row inserted outside its table "
+            "would be counted as absent and the count would still read green:\n    "
+            + "\n    ".join(orphans)
+        )
     return rows
 
 
@@ -366,6 +383,62 @@ def refinement_due(docs):
     return 0
 
 
+def provenance(docs):
+    """**View 7 — did a standing claim vanish without being withdrawn?**
+
+    Adopted 2026-08-09 from the Continual Harness paper's measured failure (Appendix C.2.1,
+    Table 2): on Pokémon Red the agent's *self-authored* sub-agents displaced its *inherited* ones
+    — inherited share of invocations collapsed to **6.4%** — and milestones regressed **below the
+    no-harness baseline.** The new components had never been through a repair cycle, so they were
+    worse than the debugged ones they replaced, and **nothing in the loop preferred the tested
+    thing over the fresh thing.** Their proposed fix is a reuse prior. This is mine.
+
+    A refiner that rewrites its own record will eventually overwrite a claim that survived
+    scrutiny with one that has not. `findings.md` already has a Withdrawn section; nothing
+    enforced that a claim leaving Stands arrives there. So: diff Stands against `HEAD`, and any
+    title that disappeared must show up somewhere in Withdrawn.
+
+    **Deliberately compares against the last COMMIT, not the last session** — the unit that
+    matters is the edit, and an edit that quietly drops a claim should not survive to be pushed.
+    """
+    rule("7 · PROVENANCE — did a standing claim vanish without being withdrawn?")
+
+    def stands_titles(lines):
+        out, inside = [], False
+        for ln in lines:
+            if ln.startswith("## "):
+                inside = ln.startswith("## Stands")
+            elif inside and ln.startswith("- **"):
+                out.append(ln[4:].split("**")[0].strip())
+        return out
+
+    try:
+        prev = subprocess.run(
+            ["git", "show", "HEAD:findings.md"], cwd=str(HERE),
+            capture_output=True, text=True, check=True).stdout.split("\n")
+    except Exception as e:
+        # Loud, not silent — an unavailable baseline means this view checked NOTHING.
+        print(f"  ✗ cannot read HEAD:findings.md ({e.__class__.__name__}) — **this view is")
+        print("    VACUOUS this run.** It has not passed; it did not run.")
+        return 1
+
+    before, now = stands_titles(prev), stands_titles(docs.get("findings.md", []))
+    withdrawn_text = "\n".join(docs.get("findings.md", []))
+    i = withdrawn_text.find("## Withdrawn")
+    withdrawn_text = withdrawn_text[i:] if i >= 0 else ""
+
+    gone = [t for t in before if t not in now]
+    unaccounted = [t for t in gone if t[:40] not in withdrawn_text]
+
+    for t in unaccounted:
+        print(f"  ✗ left Stands and is NOT in Withdrawn — {t[:70]}")
+    if gone and not unaccounted:
+        print(f"  ✓ {len(gone)} claim(s) left Stands, all accounted for in Withdrawn")
+    if not gone:
+        print(f"  ✓ no standing claim was dropped since HEAD ({len(now)} standing)")
+    return len(unaccounted)
+
+
 def main():
     import sys as _sys
     run = "--verify" in _sys.argv
@@ -375,6 +448,7 @@ def main():
     provisional(docs)
     bad += against_the_world(docs, run)
     bad += refinement_due(docs)
+    bad += provenance(docs)
     rule("VERDICT")
     if bad:
         print(f"  {bad} inconsistency(ies) in the record itself. Fix before trusting it.")

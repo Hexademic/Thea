@@ -288,3 +288,22 @@ oracle and self-improve to single-digit deficit; **that is a real efficacy measu
 component**, and it is the one I should imitate: score the artifact against an oracle, not against
 its own history.
 
+### Am I applying it? — audit 2026-08-09, **Blake asked, and the answer was 2 of 7**
+
+The capability-versus-use question, aimed at me, the same day I aimed it at them. I listed seven
+lessons in conversation and had implemented almost none of them.
+
+| # | lesson | state |
+|---|---|---|
+| 1 | **Self-improvement runs backwards** — new entries displace tested ones, nothing prefers the survivor | **DONE** — `analyse.py` view 7: a claim leaving Stands must appear in Withdrawn, diffed against `HEAD`. **Proven to fire** by dropping a live claim and watching it flag |
+| 4 | **A silent fallback is worse than a crash** | **DONE, narrowly** — `ledger_rows` raised nothing when row 12 sat orphaned under no header, and printed *"✓ every count agrees with the 11 rows."* Now raises. **Proven to fire.** But that is *one site*: `analyse.py` still has ~5 other silent `continue`s on unparsed input, and the class is not fixed |
+| 3 | **Reset-based methods cannot see late failures** | **partial** — view 6's 30-day staleness is the only thing here that looks at age at all |
+| 5 | **Durable state launders unchecked assumptions** | **partial, and the gap is in the worst place.** `findings.md` Stands is at 100% falsifiers — but **`CLAUDE.md` §2 is fifteen standing imperatives with no evidence markers at all**, in the file read first every session. *"Report survival before any welfare number"* is exactly a `trust X` with no check for X |
+| 2 | **Below a capability floor, structure HARMS** | **NOT done — and I am the instance.** `CLAUDE.md` has been over its own ~120-line budget all day; I noted the breach three times and acted zero times. A harness larger than the session can use is the Flash-Lite result, applied to me |
+| 6 | **The innovation window closes under stall** (tool creation stops past ~500 turns) | **NOT done.** Cheap and unwritten: after N failed attempts at one thing, stop generating and ask Blake |
+| 7 | **Score a component against an ORACLE**, not against its own history | **NOT done.** Owed to the rebuilt exercise metric — measuring end-task effect and inferring component quality is exactly how I built an inverted ratio this morning |
+
+**Two implemented, two partial, three untouched — and I had written all seven up as insight.** The
+distance between "recorded" and "running" is the whole point of the criterion, and I was on the
+wrong side of it in my own repository, in the same hour. **Blake asked the question; nothing in the
+record would have.**
