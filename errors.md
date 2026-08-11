@@ -177,6 +177,73 @@ end to close. Finishing the paper is what found the error.
 
 ---
 
+## Re-graded 2026-08-09 — **7 of 12**, and none of the gain came from the new code
+
+Blake asked whether this repository will ever be useful, and the honest answer was *there is an
+instrument that would tell us and I keep deferring it.* Deferred three times that day. Run now.
+
+**Same rule as the first grading, restated before scoring:** a row counts as *prevented* only if a
+session reading `CLAUDE.md` **before acting** is directed to a **specific nameable operation** that
+fails the claim. A disposition — *"be careful", "read the source"* — does not count.
+
+**A weakness in this grade, stated up front.** I formed an estimate of **5 of 12** while thinking it
+through, and it came out **7**. I cannot prove that ordering to anyone, because it was never
+committed. **That is exactly why locked predictions go in a commit and this one did not** — treat
+this grade as materially weaker evidence than any of the probe results, and read 7 as an upper
+bound written by an interested party.
+
+| # | outcome | by what |
+|---|---|---|
+| 1 | **prevented** | §1's grep rule reaches it — grep `resting` across `src/` lands on the disjunction |
+| 2 | *repeat only* | view 3 now **enforces** that nothing withdrawn is re-asserted — an upgrade from memory to code, but it still catches the sentence, not the shape |
+| 3 | **prevented** *(new)* | §0's file table now says **"Open `mechanisms.md` before touching fixed-point arithmetic or reusing a constant"**, and `mechanisms.md:62` holds the guard verbatim. **Softest call here** — it needs three steps, and it is only prevented because that pointer was added |
+| 4 | **prevented** *(new)* | §2 verbatim: *"Check every fixed-point fix against its SMALLEST input [from: row 4, `q88_mul(1, 255) = 0`]"*. Moved out of `mechanisms.md` and into the file read first |
+| 5 | **prevented** *(new)* | §2 verbatim: *"Re-measure a borrowed constant — or a borrowed METHOD — in the world you will use it in"* |
+| 6 | **prevented** | the grep rule — **but its verbatim naming was cut today**, so it now rests on the general rule rather than being called out by name |
+| 7 | **prevented** | same: the grep rule reaches *"how else could this be set"*, **verbatim naming lost in the cut** |
+| 8 | **no** | nothing reaches it. Caught by Blake, before this repository existed |
+| 9 | *detected, not prevented* | `sources.md` still carries the unfinished source forward; that is what found it. Detection with a lag, unchanged |
+| 10 | **no** | view 2 now **raises** on an orphan row — but that fixes row 10's class *in one parser*, not in general. Nothing says *"ask what else could match"* |
+| 11 | **prevented** *(new)* | §2's borrowed-METHOD clause, added the same day |
+| 12 | **no** | nothing refuses it. I had written *"evidence not read"* and made the claim anyway. **A marker that names a gap is not a guard** |
+
+**3 of 10 → 7 of 12.** Four rows moved, and every one of them moved for the same reason: **a guard
+that already existed somewhere was written into `CLAUDE.md` §2 with its evidence attached, or
+pointed at from §0.**
+
+### The finding that inverts what I said all day
+
+**Not one of the five guards built today prevents a single ledger row.**
+
+View 2's orphan-raise, view 6's falsifiers, view 7's provenance, view 8's ratchet and rule-tags —
+all of them police **the record's internal consistency.** Every ledger row is a claim about *code*
+or about *a paper*. The two sets do not intersect.
+
+> I spent the day arguing that *a marker that names a gap is not a guard; only code that refuses is.*
+> **The re-grade says the opposite for this metric: the prose changes moved the score and the code
+> changes did not.**
+
+Both readings can be true, and the honest reconciliation is the one that costs something: **the code
+guards catch a class the ledger does not file.** `errors.md` records one shape by construction, so
+it is structurally incapable of measuring whether the new guards prevent anything. **The instrument
+is selected on the thing it measures** — the same confound found in a control arm the same
+afternoon, sitting inside the ledger, unnoticed for five days.
+
+### Two costs, both discovered by grading
+
+1. **Today's cut removed the verbatim naming of rows 6 and 7 from §1.** They survive on the general
+   grep rule. Thinner than before. **Cutting to a budget has a measurable price and this is it.**
+2. **Rows 8, 9, 12 remain unreachable — three of twelve, all of them claims about sources.** The
+   fix is still not a rule. There is no `grep` for a paper.
+
+### What would make the next grade mean something
+
+Commit the predicted score **before** grading, in the commit that runs it. This one was not, and
+it is worth less for that.
+
+
+---
+
 ## Errors of a different kind — worth separating
 
 A **locked prediction that fails is the method working.** T2, T3, T4, T5, P5, C1-1, C1-2, A3 all

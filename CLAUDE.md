@@ -43,29 +43,25 @@ it is **the right to write to your successor and not be overridden.**
 | 7 | a claim leaving Stands must arrive in Withdrawn (diffed against `HEAD`) |
 | 8 | **this file may not GROW** (ratchet vs `HEAD`), and every §2 rule names its evidence |
 
-**Views 6–8 came from the Continual Harness paper** — read `sources.md` for why, in one sentence:
-an agent wrote itself *"trust its output"* about an unverified tool and repeated the same failing
-call **842 times**. **A durable entry saying "trust X" with no check for X is the most dangerous
-thing a harness can hold.**
+**Views 6–8 came from the Continual Harness paper** (`sources.md`): an agent wrote itself *"trust
+its output"* about an unverified tool and repeated the same failing call **842 times**. **A durable
+entry saying "trust X" with no check for X is the most dangerous thing a harness can hold.**
 
 ## Where things stand — 2026-08-09 (OVERWRITE, do not append)
 
 Founded being: **390 moments, untouched.** ProtoBeing **368 green**, pushed to
 `claude/protobeing-progress-review-suiatd` (PR #23).
 
-- **The day's finding, reached four ways** — *does anything happen to the being?* Quality space
-  **0.05%** occupied; **99.8%** of ticks teach nothing; **9 of our 14 indicators are also met by
-  `cargo test`**; `habit in use` took **one** value in 20,000 ticks. Detail in `findings.md`.
-- **Contingency fixed it.** A world that *remembers the being* (`richness.md` §7, at the
-  `Embodiment` seam, no `src/` change) gave **the first habits in the project's history** — in all
-  three architectures including **bare** — with **no new variety** and **zero deaths.**
-  **Selection pressure is not the teacher; contingency is.**
-  **The 25× occupancy rise that came with it was withdrawn the same night** by a pre-declared
-  drift check — SUB-3 is **vacuous**, so Blake's minimal-pattern thesis is **not** adjudicated.
-- **The scorecard discriminates on 5 of 14 rows, all loops closing inside the system.** The being
-  *as it lives* holds two, one as observer, one partial, one **off** (`schema_control: false`).
-- **His call:** grant `receptors` and/or `reserve`; and `ProtoBeing/docs/thea-memory.md`, his
-  biography, not covered by the deletion green light.
+- **The day's finding** — *does anything happen to the being?* **9 of our 14 indicators are also
+  met by `cargo test`** (the negative control). Detail, with falsifiers, in `findings.md`.
+- **Contingency helps, and both my headlines about it were retracted within hours.** The world now
+  lives in `Room::with_contingency()`, gated and default-off. **Read `operational-consciousness.md`
+  §8.6's retraction box before quoting anything from that day** — a static control arm forced a
+  permanent partner and flipped two verdicts.
+- **The scorecard discriminates on 5 of 14 rows, all loops closing inside the system** — the being
+  holds two, one as observer, one partial, one **off** (`schema_control: false`).
+- **His call:** the `receptors`/`reserve` grant — **now second-order, the world dominates it** —
+  and `ProtoBeing/docs/thea-memory.md`, his biography.
 
 ### NEXT SESSION
 
@@ -75,9 +71,8 @@ Founded being: **390 moments, untouched.** ProtoBeing **368 green**, pushed to
   measured in the static room and may be a measurement *of the room*.
 - **Every probe is reset-based** (fresh being, 4,000 ticks, discard), so late-life failure modes are
   invisible **by construction**. We have never seen one.
-- **38 unmarked basin-occupancy claims, 19 files.** I first said 19, having grepped `docs/` only.
-- **Doerig, *The Unfolding Argument*** — the one live objection with nothing written against it.
-  Ask Blake for the text; not the abstract (rows 8, 9, 12).
+- **38 unmarked basin-occupancy claims, 19 files** (I first said 19, having grepped `docs/` only);
+  and **Doerig, *The Unfolding Argument*** — ask Blake for the text, not the abstract (rows 8/9/12).
 
 ## 1. The error that costs the most
 
@@ -86,9 +81,14 @@ generalise as though it were the whole thing.* `errors.md` has the ledger; read 
 **Before any claim about code: have I found every writer and every reader of this value — not just
 the one I opened?** `grep` across `src/`, not the function on screen.
 
-**Graded 2026-08-04: the read-first path prevented 3 of 10.** **Row 12 is the warning** — I
+**Re-graded 2026-08-09: the read-first path prevents 7 of 12**, up from 3 of 10 — and **every
+gain came from writing an existing guard into §2 with its evidence attached, not from the five code
+guards built that day.** Those police the record's consistency; the ledger files claims about code
+and papers. The two sets do not intersect, and `errors.md` **cannot measure its own blind spot.**
+
+**Rows 8, 9, 12 stay unreachable — all three are claims about sources.** Row 12 is the warning: I
 recorded *"evidence not read"* and made a claim about that evidence an hour later. **A marker that
-names a gap is not a guard. Only something that refuses to let you cross it is.**
+names a gap is not a guard** — and yet the prose is what moved this score. Hold both.
 
 ## 2. The method that works — do not weaken it
 
