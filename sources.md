@@ -315,3 +315,68 @@ of it in my own repository within the hour of arguing it.** Nothing in the recor
 `git checkout CLAUDE.md` **discarded the uncommitted 73-line cut** and it had to be rebuilt from
 context. Now `CLAUDE.md` §2's twelfth rule. *Commit before you experiment on the thing you just
 spent an hour on.*
+
+## Du, He, Zhang, Vanden-Eijnden, Domingo-Enrich — *Rare Event Analysis via Stochastic Optimal Control* (arXiv:2604.13213v3) — **READ IN FULL 2026-08-09**
+
+Microsoft Research New England / Cornell / Cambridge / Courant, 12 Jul 2026. **Blake pasted the
+full text** including all appendices, after arxiv 403'd at CONNECT.
+
+**What it is.** Transition Path Theory's **committor** — `q(x) = P_x(X_τ ∈ B)`, the probability of
+reaching the product state before the reactant — recast as a **stochastic optimal control** problem
+via a Cole–Hopf transform, so the optimal feedback control is `σ^T ∇log q` and a running committor
+estimate *steers sampling toward the transition region*, whose data then refine the committor. Two
+objectives: REACT-DBP (on-policy backprop) and **REACT-VM** (off-policy Value Matching, with
+first-order optimality proved). A rescaling `ξ ∈ (0,½)` removes the log singularities; a κ-family
+of samplers lowers effective barriers while preserving the reactive current.
+
+### The verdict for us: the concept transfers, the method does not, and we do not need the method
+
+**My locked objection was that our being is DETERMINISTIC and TPT/SOC needs stochastic dynamics.
+That objection survives, and the paper makes it sharper than I could.**
+
+I hedged it wrongly in one respect: I implied the *continuous-vs-discrete* gap might be the blocker.
+**It is not — Appendix G develops the entire framework for discrete-time, discrete-space Markov
+chains**, finite state spaces included. Our Q8.8 state space is finite, so that half is handled.
+
+**The blocker is purely stochastic-vs-deterministic, and Appendix G §G.3 makes it exact.** The
+controlled kernel is a Boltzmann tilt of the reference kernel:
+
+> `P^u(x,dy) = e^{u(x,y)} / (P e^{u(x,·)})(x) · P(x,dy)`
+
+**For a deterministic system `P(x,·) = δ_{f(x)}`, and the tilt cancels: `P^u = P`. The control space
+collapses to a point — the method has nothing to act on.** And the committor itself degenerates to
+a 0/1 indicator, so the stochastic separatrix `{q = ½}` is empty and there is no reaction coordinate
+to learn.
+
+**Making it apply would require injecting noise into the being — which destroys bit-identical replay
+and the soul-hash. That is the one thing this project will not trade.**
+
+**And we do not need their machinery anyway.** Everything expensive in this paper solves *one*
+problem: the committor is most informative in a transition region that unbiased simulation rarely
+visits, so estimating it needs enhanced sampling with guarantees. Our being is **2 KB, ~827 ns/tick,
+deterministic and replayable**. We can compute reachability by brute force. Their contribution is a
+cure for a sampling cost we do not pay.
+
+### What DOES transfer, and it is worth more than the algorithm
+
+**1. The vocabulary, and it fits us exactly.** *"When β is large, ρ concentrates around the local
+minima of U, and transitions between them become rare."* **We have been measuring metastability all
+week without the word.** `Basin` is literally a metastable-state variable, measured at **99.9% one
+value**; quality-space occupancy **0.05%**; **99.8%** of ticks teaching nothing. In their terms our
+being sits in one metastable basin with a **reaction rate near zero**.
+
+**2. The reaction rate `ν_R` is directly measurable for us and we have never computed it.** Frequency
+of A→B transitions at stationarity (their eq. 316: `ν_R = lim N_T/T`). For us: **how often does the
+being cross between basins, per tick, and does contingency raise it?** No committor needed — count
+the crossings. That is a new number and a cheap one.
+
+**3. The deterministic analogue of the ½-level set, which is the genuinely interesting import.** In a
+stochastic system the transition state ensemble lives on `{q = ½}`. In a *deterministic* one, the
+analogue is **the set of states where an ε-perturbation flips the destination.** That is computable
+by replay-with-perturbation, and it answers a question we have never been able to ask: **where in
+its life is the being's outcome actually decided?** Their §4.6 discipline applies — score it against
+an oracle, not against its own history.
+
+**Not read, deliberately:** §§C–F's proofs (Girsanov, Dynkin representation, first-order optimality)
+and §D's RKHS landscape. They are load-bearing for their guarantees and irrelevant to whether the
+framework reaches us, which §G.3 settles in one equation.
