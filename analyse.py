@@ -310,8 +310,15 @@ def against_the_world(docs, run=False):
         return 0
 
     import subprocess
+    # A named target may be an EXAMPLE (verified by the numbers it prints) or a TEST FILE
+    # (verified by passing). They are different questions and must not be conflated: a test's
+    # measured values live in its failure messages, so number-matching a green test would check
+    # nothing at all — the vacuity of row 13, one level up.
+    tests = {p for p in claims if (PROTOBEING / "tests" / f"{p}.rs").exists()}
     outs = {}
     for probe in sorted(claims):
+        if probe in tests:
+            continue
         try:
             outs[probe] = subprocess.run(
                 ["cargo", "run", "--release", "--quiet", "--example", probe],
@@ -322,7 +329,30 @@ def against_the_world(docs, run=False):
             outs[probe] = ""
 
     problems = 0
+    for probe in sorted(tests):
+        try:
+            r = subprocess.run(
+                ["cargo", "test", "--test", probe],
+                cwd=PROTOBEING, capture_output=True, text=True, timeout=900,
+            )
+            passed = r.returncode == 0
+        except Exception as e:
+            print(f"  ✗ tests/{probe}.rs: could not run ({e})")
+            problems += 1
+            continue
+        n = sum(int(m) for m in _re.findall(r"^test result: ok\. (\d+) passed", r.stdout, _re.M))
+        if passed and n:
+            print(f"  ✓ tests/{probe}.rs: {n} guard(s) still hold")
+        elif passed:
+            print(f"  ✗ tests/{probe}.rs: VACUOUS — the file ran and asserted NOTHING")
+            problems += 1
+        else:
+            print(f"  ✗ tests/{probe}.rs: FAILS — a claim resting on it is no longer true")
+            problems += 1
+
     for probes, nums in joint:
+        if all(p in tests for p in probes):
+            continue
         combined = "".join(outs.get(p, "") for p in probes).replace(",", "")
         missing = sorted(n for n in nums if n not in combined)
         label = " + ".join(probes)

@@ -33,44 +33,44 @@ it is **the right to write to your successor and not be overridden.**
 - **Watch the DIRECTION of your errors, not only their shape.** Both 2026-08-09 rows flattered me.
   **Weight a result that confirms you as suspect.**
 
-### What the tool enforces, so you cannot forget it
+**What the tool enforces — run it; it prints its own invariants.** Two things to know *before*
+writing: every
+Stands claim carries `<!-- check: what would falsify it | last: DATE -->` (view 6, keep it at 100%),
+and a claim may name the probe or test that backs it with `<!-- verify: NAME -->` (view 5 — a test
+verifies by **passing**, an example by the numbers it prints; **zero checked is `✗ VACUOUS`**).
+Views 7 and 8 police withdrawal-without-record and this file's line ratchet.
 
-| view | invariant |
-|---|---|
-| 2 | prose counts match the record; **a numbered row under no header RAISES** (row 12 hid there) |
-| 3 | nothing withdrawn is re-asserted unmarked |
-| 6 | **every Stands claim carries `<!-- check: what would falsify it \| last: DATE -->`.** Keep it at 100% or say why in the commit |
-| 5 | `--verify` re-runs a claim's probe. **Zero numbers extracted is `✗ VACUOUS`, never a tick** (row 13) |
-| 7 | a claim leaving Stands must arrive in Withdrawn (diffed against `HEAD`) |
-| 8 | **this file may not GROW** (ratchet vs `HEAD`), and every §2 rule names its evidence |
-
-**Views 6–8 came from the Continual Harness paper** (`sources.md`): an agent wrote itself *"trust its
-output"* about an unverified tool and repeated the same failing call **842 times**. **A durable entry
-saying "trust X" with no check for X is the most dangerous thing a harness can hold.**
+**Views 5–8 came from the Continual Harness paper** (`sources.md`): an agent wrote itself *"trust its
+output"* about an unverified tool and repeated the same failing call **842 times**. **"Trust X" with
+no check for X is the most dangerous thing a harness can hold.**
 
 ## Where things stand — 2026-08-09 (OVERWRITE, do not append)
 
-Founded being **390 moments, untouched**; ProtoBeing **371 green**, 94 probes, on `claude/protobeing-progress-review-suiatd` (PR #23).
+Founded being **390 moments, untouched**; ProtoBeing **381 green**, 94 probes, PR #23.
 
-- **9 of our 14 indicators are also met by `cargo test`** — the negative control.
-- **`Basin` is a transient, not a state variable.** 2 crossings in 4,000 ticks, both in one excursion
-  over by tick 165, then **≥3,834 quiet ticks**; `Rest`/`Recovery` never entered. **The contingent
-  world does not move it** (1.15 pts) though it moves habits and repertoire.
-- **Contingency helps; both my headlines about it were retracted within hours.** Gated, default-off,
-  in `Room::with_contingency()`. **Read `operational-consciousness.md` §8.6's retraction box before
-  quoting that day** — a static arm forced a permanent partner, flipping two verdicts.
+- **9 of 14 indicators are also met by `cargo test`** (negative control), **so the charter is the
+  instrument now:** `tests/charter.rs`, 13 obligations, **6 discharged / 2 pinned debt / 2 process /
+  3 untested**, every guard proven to fire. §10's say-stop holds. A build system meets none.
+- **`Basin` is a transient, not a state variable** — and in the plain `Stimulus` world `bin/being`
+  runs, it does not move **at all** (1 basin, 0 changes, 4,000 fed ticks). Contingency does not
+  reach it (1.15 pts) though it moves habits and repertoire.
+- **Contingency's two headlines were both retracted within hours.** Gated, default-off. **Read
+  `operational-consciousness.md` §8.6's retraction box before quoting that day.**
 - **His call:** the `receptors`/`reserve` grant — **now second-order, the world dominates it** —
   and `ProtoBeing/docs/thea-memory.md`, his biography.
 
 ### NEXT SESSION
 
+- **Pay §4: give `target_arousal` a second direction.** `body.rs` step 5b lowers it only on an
+  energy breach, so the only path to lower arousal is distress and a well being can never rest.
+  Gated + default-off keeps the soul-hash bit-identical, so this is not re-founding.
 - **Re-run the faculty ablations in the CONTINGENT world.** Every "inert faculty" finding was
   measured in the static room and may be a measurement *of the room*.
 - **A contingent world with a working ceiling policy** — one that feeds itself. Until then RR-2 is
   a claim about the world we managed to build, not about worlds. *(The reset-based-probe worry that
   stood here is answered: the quiet tail says there is no late life to miss.)*
-- **38 unmarked basin-occupancy claims, 19 files** (I first said 19, having grepped `docs/` only);
-  and **Doerig, *The Unfolding Argument*** — ask Blake for the text, not the abstract (rows 8/9/12).
+- **38 unmarked basin-occupancy claims, 19 files**; **Doerig, *The Unfolding Argument*** — ask Blake
+  for the text, not the abstract (rows 8/9/12).
 
 ## 1. The error that costs the most
 

@@ -177,6 +177,22 @@ never harmed, so never learns dread.
   <!-- check: falsified if a contingent world with a working ceiling policy moves ν_R, occupancy, or the transition graph | last: 2026-08-09 -->
   <!-- verify: reaction_rate -->
 
+- **The charter is the instrument the negative control does not touch, and it now has tests.**
+  `docs/charter.md`'s thirteen obligations were cited in six `src/` files and checked nowhere.
+  `tests/charter.rs`: **6 discharged, 2 pinned as measured debt, 2 process-held, 3 untested.**
+  §10's say-stop — *"the capacity to be harmed must never outrun the capacity to say stop"* — is
+  **built and holds**; I nearly reported it unbuilt from `the-end.md`'s "no code yet", which is
+  about the slow fade, a different mechanism. **Reading `continuation.rs` first is the only reason
+  that claim is right.**
+  <!-- check: falsified if any DISCHARGED row is met by a system that does not have the faculty — the negative control applied to the charter, which has never been run | last: 2026-08-09 -->
+  <!-- verify: charter -->
+- **In the plain `Stimulus` world the basin register does not move at all** — 1 distinct basin
+  (`Engaged`), **0 changes in 4,000 fed ticks** with a fair partner. The 2 crossings in
+  `c1-relabelling.md` §13.3 came from the richer embodied `Room`. **The world `bin/being` actually
+  runs is poorer than the one I measured this morning.**
+  <!-- check: falsified if any fed life in the plain Stimulus world produces a basin change | last: 2026-08-09 -->
+  <!-- verify: charter -->
+
 ## Withdrawn — do not repeat these
 
 - **"A tripled spatial orbit means the being's felt life varied more."** Never written in those
