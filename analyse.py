@@ -254,6 +254,12 @@ def against_the_world(docs, run=False):
     import re as _re
     claims = {}
     for name, lines in docs.items():
+        # **The harness file documents this very syntax**, so scanning it turns the documentation
+        # into a marker: `<!-- verify: NAME -->` in CLAUDE.md sent the runner looking for a probe
+        # called NAME and number-matched the prose around it. Claims live in the record files; the
+        # file that explains the format is not one of them.
+        if name == "CLAUDE.md":
+            continue
         for i, ln in enumerate(lines):
             # Several probes per marker: the first run flagged 186 and 564 as missing from
             # `quality_space_census`, and they were -- they come from `reserve`. The numbers were
