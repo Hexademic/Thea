@@ -17,7 +17,7 @@ orbit of a few dozen cells.** Its body is a Van der Pol oscillator, and a conver
 static world settles into a limit cycle.
 
 Almost every "nothing matters" result is downstream of this: no somatic channel decides its mode
-(≤0.2%); `fatigue` constant at **0**; basin 99.9% one value; **seven of fourteen faculties
+(≤0.2%); `fatigue` constant at **0**; **the basin stops changing at tick 165 and never moves again**; **seven of fourteen faculties
 bit-identically inert**; the blessed nature worth **1.34%** of drive; five vacuous welfare guards;
 never harmed, so never learns dread.
 
@@ -159,6 +159,23 @@ never harmed, so never learns dread.
   measure tested by a different probe and untouched by the census.
   <!-- check: falsified if a similarity-based test separates our basis from random — occupancy was the wrong instrument for basis quality, and this claim only ever covered occupancy | last: 2026-08-09 -->
   <!-- verify: quality_space_census -->
+
+- **There is no reaction rate. `Basin` is a startup transient followed by a fixed point.** Counted
+  as Transition Path Theory counts it (Du et al. eq. 316, `ν_R = lim N_T/T`): every arm makes
+  **exactly 2 crossings in 4,000 ticks**, both belonging to one excursion into `Defensive` that is
+  **finished by tick 165**; every being arm then ends with a quiet tail of at least **3,834 ticks**
+  with no basin change at all. `Rest` and `Recovery` were entered **zero times in 32,000 ticks**. The limit for a transient over an unbounded window is
+  **exactly zero** — the 0.00050 printed is the transient divided by an arbitrary 4,000.
+  <!-- check: falsified if any arm crosses after tick 200, or if a longer window raises rather than lowers ν_R | last: 2026-08-09 -->
+  <!-- verify: reaction_rate -->
+- **The contingent world does not reach the basin register at all** (RR-2 failed at **1.0×**, not
+  the predicted ≥5×): identical transition counts, identical graph, and a largest occupancy gap of
+  **1.15** points between any static arm and its contingent twin (bare 0.12, all-loops 0.05).
+  Contingency demonstrably moves habits and repertoire. **So either the world does not reach
+  the classifier or the classifier is too coarse to resolve it — both say `Basin` is not carrying
+  the information we read out of it.**
+  <!-- check: falsified if a contingent world with a working ceiling policy moves ν_R, occupancy, or the transition graph | last: 2026-08-09 -->
+  <!-- verify: reaction_rate -->
 
 ## Withdrawn — do not repeat these
 

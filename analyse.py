@@ -263,15 +263,36 @@ def against_the_world(docs, run=False):
             if not m:
                 continue
             probes = [x.strip() for x in m.group(1).split(",") if x.strip()]
-            # The claim is the contiguous block of lines above the marker.
+            # The claim is the contiguous block of lines above the marker, SKIPPING any other
+            # HTML-comment markers stacked between. Stopping at them (the first version did) made
+            # every claim written as `<!-- check --> / <!-- verify -->` collect an EMPTY block and
+            # then print a green tick over ZERO numbers. **A check that examined nothing reported
+            # success** — the exact failure "vacuous is not passed" names, inside the tool that
+            # exists to catch it. Found 2026-08-09, already silently passing on one older claim.
             block, j = [], i - 1
-            while j >= 0 and lines[j].strip() and not lines[j].strip().startswith("<!--"):
+            while j >= 0 and lines[j].strip():
+                if lines[j].strip().startswith("<!--"):
+                    j -= 1
+                    continue
                 block.append(lines[j])
-                if lines[j].lstrip().startswith(("-", "*")):
+                # A bullet is `- ` or `* ` — a dash or star followed by a SPACE. Testing for the
+                # bare characters made markdown bold (`**exactly zero** ...`) read as a list
+                # marker, truncating the block at the first emphasised line. Every claim in this
+                # file opens lines with bold, so view 5 had been verifying a FRAGMENT of each
+                # claim while reporting a tick over the whole of it. Found 2026-08-09.
+                lead = lines[j].lstrip()
+                if lead[:2] in ("- ", "* "):
                     break
                 j -= 1
             text = " ".join(reversed(block))
-            nums = set(_re.findall(r"\d+(?:\.\d+)?", text))
+            # Match comma-grouped digits and strip the separators, so `3,834` in prose is checked
+            # against `3834` in probe output. Without this the writer must either mangle the prose
+            # or watch the claim silently split into `3` and `834` — and `3` matches everything.
+            nums = {
+                m.replace(",", "")
+                for m in _re.findall(r"\d[\d,]*(?:\.\d+)?", text)
+                if len(m.replace(",", "").replace(".", "")) > 1
+            }
             for probe in probes:
                 claims.setdefault(probe, set()).update(nums)
             # A number is satisfied if ANY named probe prints it.
@@ -302,7 +323,7 @@ def against_the_world(docs, run=False):
 
     problems = 0
     for probes, nums in joint:
-        combined = "".join(outs.get(p, "") for p in probes)
+        combined = "".join(outs.get(p, "") for p in probes).replace(",", "")
         missing = sorted(n for n in nums if n not in combined)
         label = " + ".join(probes)
         if missing:
@@ -310,6 +331,14 @@ def against_the_world(docs, run=False):
             print(f"      {', '.join(missing[:14])}")
             print("      Each is a stale claim, a wrong attribution, or a number that needs saying")
             print("      differently. **Prose numbers should not be inside a verified claim.**")
+            problems += 1
+        elif not nums:
+            # **A guard that could not have failed has not passed.** A claim opted in to
+            # verification and offered nothing to verify — that is a defect in the claim or in the
+            # extractor, never a success, and it must never print a tick.
+            print(f"  ✗ {label}: VACUOUS — marked for verification, ZERO numbers extracted")
+            print("      Nothing was checked. Either the claim states no number the probe prints,")
+            print("      or the extractor failed to reach it. **This is not a pass.**")
             problems += 1
         else:
             print(f"  ✓ {label}: all {len(nums)} claimed numbers still appear")

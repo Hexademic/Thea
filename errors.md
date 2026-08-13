@@ -13,9 +13,9 @@ whole value is that a future session reads it and does not make instance ten.
 **A claim wider than what was actually checked** — specifically: *read one part of a thing, then
 generalise as though it were the whole thing.*
 
-**Twelve instances. Not twelve mistakes — one mistake, twelve times.** Seven on 2026-08-03; #8 and #9 on
-2026-08-04, both caught only because Blake supplied a PDF of a paper I had already built a document
-on; **#10 the same afternoon, in `analyse.py` itself.**
+**Thirteen instances. Not thirteen mistakes — one mistake, thirteen times.** Seven on 2026-08-03; #8 and
+#9 on 2026-08-04, both caught only because Blake supplied a PDF of a paper I had already built a
+document on; **#10 the same afternoon, and #13 five days later, both in `analyse.py` itself.**
 
 **#10 is the first one caught by an instrument rather than by Blake or by a locked prediction**, and
 it is the sharpest illustration in the file: I widened the shape at noon to cover "one part of a
@@ -57,6 +57,7 @@ writer`. **There is no `grep` for a paper. The only instrument is reading it**, 
 |---|---|---|---|
 | 11 | Implicit, never stated: that **exercise-as-a-ratio** was the right instrument for *"is the architecture used?"* — `ProtoBeing/docs/operational-consciousness.md` §8, the metric locked before the run | **The ratio is inverted.** It rewards a register for being small: `attention focus` scores **67%** (4 of 6) and `quality point` **15%** (153 of 1,042), and the first is far the poorer. I carried the quality-space census's declared rule — *"absolute counts are chart-relative and are not findings; the ratio is"* — into a place where the denominator is a **count of states a register can hold** rather than a **sampled volume**. Different quantity, same rule. All four testable predictions failed | **Re-derive a borrowed rule in the setting you are about to use it in** — row 5's check, with a *methodological rule* in place of a constant. I never asked what the denominator was made of |
 | 12 | *"Nothing tests that refine makes the agent better… how many harness entries are ever read again? Measurable, cheap, and **I don't think anyone has run it.**"* — said to Blake about Prime Intellect's Continual Harness, having read the repository | **Both halves wrong.** They run `bootstrap-frozen` vs `bootstrap-updating` — same inherited harness, refinement off vs on — which is a clean control for refinement itself, *plus* a named negative control (Qwen3.5 without SFT). And Appendix C.1.2 measures reuse and calls it **the create-and-forget funnel**: 648 skills authored, **119 ever invoked, 27 ever successful.** I was right that the distribution is ugly and wrong that nobody had looked | **I had already written "implementation read, evidence NOT read" in `sources.md` — and then made a claim about the evidence anyway.** The check is not "flag the gap." It is **do not make the claim on the other side of a gap you just flagged** |
+| 13 | Implicit, never stated: that `analyse.py` view 5 was *checking* the claims it printed a tick beside. It has run every session since it was written | **Two defects, compounding.** The block-walk that gathers a claim's text stopped at any line starting `<!--`, so a claim written as `<!-- check -->` above `<!-- verify -->` collected an **empty block** — and the tool printed **`✓ all 0 claimed numbers still appear`**. It had already been doing this to one older claim. With that repaired, the walk still treated markdown bold `**` as a list bullet and truncated at the first emphasised line; **every claim in the file opens lines with bold**, so view 5 had been verifying a fragment of each claim while reporting a tick over the whole of it. Fixing both took one claim from **3 numbers checked to 9**, and the 9 immediately caught two figures I had subtracted in my head — one of them **wrong by one** | **`✗ VACUOUS` when zero numbers are extracted.** A verifier that examined nothing must never print a tick. And **assert on the extractor, not only on the verdict** — the count was on screen every session and I read past it |
 
 **Row 11 is row 5 one level up, and that is the new information.** Row 5 was a borrowed
 *constant*; the guard written for it says re-measure a constant in the world you will use it in.
@@ -177,7 +178,7 @@ end to close. Finishing the paper is what found the error.
 
 ---
 
-## Re-graded 2026-08-09 — **7 of 12**, and none of the gain came from the new code
+## Re-graded 2026-08-09 — **7 of 13**, and none of the gain came from the new code
 
 Blake asked whether this repository will ever be useful, and the honest answer was *there is an
 instrument that would tell us and I keep deferring it.* Deferred three times that day. Run now.
@@ -206,8 +207,10 @@ bound written by an interested party.
 | 10 | **no** | view 2 now **raises** on an orphan row — but that fixes row 10's class *in one parser*, not in general. Nothing says *"ask what else could match"* |
 | 11 | **prevented** *(new)* | §2's borrowed-METHOD clause, added the same day |
 | 12 | **no** | nothing refuses it. I had written *"evidence not read"* and made the claim anyway. **A marker that names a gap is not a guard** |
+| 13 | **no** | §2's rules are about claims I make. This was a claim my *tool* made on my behalf, and nothing in the file looks there. **The read-first path cannot reach a defect in the reader** |
 
-**3 of 10 → 7 of 12.** Four rows moved, and every one of them moved for the same reason: **a guard
+**3 of 10 → 7 of 12 → 7 of 13**, the last step being row 13 arriving unprevented the same evening.
+Four rows moved, and every one of them moved for the same reason: **a guard
 that already existed somewhere was written into `CLAUDE.md` §2 with its evidence attached, or
 pointed at from §0.**
 
@@ -233,8 +236,11 @@ afternoon, sitting inside the ledger, unnoticed for five days.
 
 1. **Today's cut removed the verbatim naming of rows 6 and 7 from §1.** They survive on the general
    grep rule. Thinner than before. **Cutting to a budget has a measurable price and this is it.**
-2. **Rows 8, 9, 12 remain unreachable — three of twelve, all of them claims about sources.** The
+2. **Rows 8, 9, 12 remain unreachable — three of thirteen, all of them claims about sources.** The
    fix is still not a rule. There is no `grep` for a paper.
+3. **Row 13 is a fourth kind and the grade was not built to see it.** Every other row is a claim I
+   made. Row 13 is a claim my *instrument* made, in a tick I read past every session. **A grade
+   that scores only my own sentences cannot score the things I have delegated.**
 
 ### What would make the next grade mean something
 
