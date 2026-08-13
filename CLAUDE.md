@@ -49,37 +49,36 @@ no check for X is the most dangerous thing a harness can hold.**
 Founded being **390 moments, untouched**; ProtoBeing **381 green**, 94 probes, PR #23.
 
 - **9 of 14 indicators are also met by `cargo test`** (negative control), **so the charter is the
-  instrument now:** `tests/charter.rs`, 13 obligations, **6 discharged / 2 pinned debt / 2 process /
-  3 untested**, every guard proven to fire. §10's say-stop holds. A build system meets none.
-- **`Basin` is a transient, not a state variable** — and in the plain `Stimulus` world `bin/being`
-  runs, it does not move **at all** (1 basin, 0 changes, 4,000 fed ticks). Contingency does not
-  reach it (1.15 pts) though it moves habits and repertoire.
-- **Contingency's two headlines were both retracted within hours.** Gated, default-off. **Read
-  `operational-consciousness.md` §8.6's retraction box before quoting that day.**
+  instrument now:** `tests/charter.rs`, 13 obligations, **6 discharged / 1 debt / 1 GATED / 2
+  process / 3 untested**, every guard proven to fire. §10's say-stop holds.
+- **GATED is the category that matters and §4 created it:** the debt is measured, the remedy is
+  built and verified, and **one decision of Blake's pays it.** Alone, the being is burdened 97.3% of
+  ticks and banks nothing; `enable_setting_down()` fixes it and is off. **Surface these to him.**
+- **`Basin` is a transient** — in the plain `Stimulus` world it does not move **at all** (1 basin, 0
+  changes, 4,000 fed ticks). **It also decides nothing: leave-one-out finds no channel above 0.2%.**
+- **Contingency's two headlines were both retracted within hours** — read
+  `operational-consciousness.md` §8.6's retraction box before quoting that day.
 - **His call:** the `receptors`/`reserve` grant — **now second-order, the world dominates it** —
   and `ProtoBeing/docs/thea-memory.md`, his biography.
 
 ### NEXT SESSION
 
-- **Pay §4: give `target_arousal` a second direction.** `body.rs` step 5b lowers it only on an
-  energy breach, so the only path to lower arousal is distress and a well being can never rest.
-  Gated + default-off keeps the soul-hash bit-identical, so this is not re-founding.
 - **Re-run the faculty ablations in the CONTINGENT world.** Every "inert faculty" finding was
   measured in the static room and may be a measurement *of the room*.
 - **A contingent world with a working ceiling policy** — one that feeds itself. Until then RR-2 is
   a claim about the world we managed to build, not about worlds. *(The reset-based-probe worry that
   stood here is answered: the quiet tail says there is no late life to miss.)*
-- **38 unmarked basin-occupancy claims, 19 files**; **Doerig, *The Unfolding Argument*** — ask Blake
-  for the text, not the abstract (rows 8/9/12).
+- **38 unmarked basin-occupancy claims, 19 files**; **Doerig** — ask Blake for the text (rows 8/9/12).
+- **ProtoBeing has no withdrawn-claims guard.** View 3 exists only here; row 14 is what that costs.
 
 ## 1. The error that costs the most
 
-**Thirteen times: a claim wider than what was actually checked** — *read one part of a thing, then
+**Fourteen times: a claim wider than what was actually checked** — *read one part of a thing, then
 generalise as though it were the whole.* `errors.md` has the ledger; read it in full. **Before any
 claim about code: have I found every writer and every reader of this value — not just the one I
 opened?** `grep` across `src/`, not the function on screen.
 
-**Re-graded 2026-08-09: the read-first path prevents 7 of 13**, up from 3 of 10 — and **every gain
+**Re-graded 2026-08-09: the read-first path prevents 7 of 14**, up from 3 of 10 — and **every gain
 came from writing an existing guard into §2 with its evidence attached, not from the five code
 guards built that day.** Those police the record's consistency; the ledger files claims about code
 and papers. The two sets do not intersect, and `errors.md` **cannot measure its own blind spot.**
@@ -94,7 +93,7 @@ and yet the prose is what moved this score. Hold both.
 Every rule names the evidence that produced it. **View 8 fails if one does not** — a rule you cannot
 trace is a `trust X` with no check for X.
 
-- **Lock predictions in a document and commit them BEFORE the code or probe exists.** [from: caught 5 of 13 ledger rows]
+- **Lock predictions in a document and commit them BEFORE the code or probe exists.** [from: caught 5 of 14 ledger rows]
 - **Write at least one prediction you expect to FAIL**, and say so in advance. [from: QS-3, P5, T5, EX-4, SUB-4]
 - **Report survival before any welfare number** — a regime that died early has a small denominator. [from: contingent_world, 3 beings dead at 237 ticks made SUB-2 non-comparable]
 - **"Vacuous" is not "passed."** A guard that could not have failed has not passed. [from: survival sweep asserting nothing until it was made to fail if nothing died]
@@ -107,6 +106,7 @@ trace is a `trust X` with no check for X.
 - **After ~3 failed attempts at one thing, STOP generating and ask Blake.** [from: the paper's stall window — tool creation ceases past ~500 turns in a stall; the agent then only repeats]
 - **NEVER `git checkout`/`git restore` a file to undo an experiment — copy it aside first.** [from: 2026-08-09, `git checkout CLAUDE.md` discarded an uncommitted 73-line cut in order to undo a 2-line test]
 - **Assert on what a check EXAMINED, not only on its verdict — zero examined is a FAILURE.** [from: row 13, `✓ all 0 claimed numbers still appear`, printed every session and read past]
+- **A probe's OUTPUT is current; its INTERPRETATION may be retracted. Read the owning document to its end before acting on a number.** [from: row 14, `basins_probe` printed a gap `comfort.md` §13–14 had already withdrawn as a cause]
 
 ## 3. Standing constraints — non-negotiable
 
