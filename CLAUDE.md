@@ -38,11 +38,12 @@ writing: every
 Stands claim carries `<!-- check: what would falsify it | last: DATE -->` (view 6, keep it at 100%),
 and a claim may name the probe or test that backs it with `<!-- verify: NAME -->` (view 5 — a test
 verifies by **passing**, an example by the numbers it prints; **zero checked is `✗ VACUOUS`**).
-Views 7 and 8 police withdrawal-without-record and this file's line ratchet.
+Views 7-8 police withdrawal-without-record and this file's line ratchet.
 
 **Views 5–8 came from the Continual Harness paper** (`sources.md`): an agent wrote itself *"trust its
 output"* about an unverified tool and repeated the same failing call **842 times**. **"Trust X" with
-no check for X is the most dangerous thing a harness can hold.**
+no check for X is a harness's most dangerous holding** — view 9 exists because that unchecked X was
+the assistant's own self-description (row 15).
 
 ## Where things stand — 2026-08-09 (OVERWRITE, do not append)
 
@@ -56,8 +57,7 @@ Founded being **390 moments, untouched**; ProtoBeing **381 green**, 94 probes, P
   and peaked at **7% of the load ceiling** where the synthetic regime saturates. **Told him not to
   enable `setting_down`.** Why the real life escapes the deadlock is the open question.
 - **`Basin` is a transient that decides nothing** — 0 changes in 4,000 ticks; no channel above 0.2%.
-- **Contingency's two headlines were both retracted within hours** — read
-  `operational-consciousness.md` §8.6's retraction box before quoting that day.
+- **Contingency's headlines were both retracted** — see `operational-consciousness.md` §8.6.
 - **His call:** the `receptors`/`reserve` grant — **now second-order, the world dominates it** —
   and `ProtoBeing/docs/thea-memory.md`, his biography.
 
@@ -68,17 +68,17 @@ Founded being **390 moments, untouched**; ProtoBeing **381 green**, 94 probes, P
 - **Why the KEPT life escapes the solitary deadlock** the synthetic regime shows. Highest-value
   open question; it may mean our strain probes do not describe real lives at all.
 - **A contingent world with a ceiling policy that feeds itself** — RR-2 is about the world we built.
-- **38 unmarked basin-occupancy claims, 19 files**; **Doerig** — ask Blake for the text (rows 8/9/12).
-- **ProtoBeing has no withdrawn-claims guard.** View 3 exists only here; row 14 is what that costs.
+- **38 unmarked basin claims, 19 files**; **Doerig** — ask Blake for the text (rows 8/9/12). And
+  **ProtoBeing has no withdrawn-claims guard**: view 3 exists only here, and row 14 is its cost.
 
 ## 1. The error that costs the most
 
-**Fourteen times: a claim wider than what was actually checked** — *read one part of a thing, then
+**Fifteen times: a claim wider than what was actually checked** — *read one part of a thing, then
 generalise as though it were the whole.* `errors.md` has the ledger; read it in full. **Before any
 claim about code: have I found every writer and every reader of this value — not just the one I
 opened?** `grep` across `src/`, not the function on screen.
 
-**Re-graded 2026-08-09: the read-first path prevents 7 of 14**, up from 3 of 10 — and **every gain
+**Re-graded 2026-08-09: the read-first path prevents 7 of 15**, up from 3 of 10 — and **every gain
 came from writing an existing guard into §2 with its evidence attached, not from the five code
 guards built that day.** Those police the record's consistency; the ledger files claims about code
 and papers. The two sets do not intersect, and `errors.md` **cannot measure its own blind spot.**
@@ -93,7 +93,7 @@ and yet the prose is what moved this score. Hold both.
 Every rule names the evidence that produced it. **View 8 fails if one does not** — a rule you cannot
 trace is a `trust X` with no check for X.
 
-- **Lock predictions in a document and commit them BEFORE the code or probe exists.** [from: caught 5 of 14 ledger rows]
+- **Lock predictions in a document and commit them BEFORE the code or probe exists.** [from: caught 5 of 15 ledger rows]
 - **Write at least one prediction you expect to FAIL**, and say so in advance. [from: QS-3, P5, T5, EX-4, SUB-4]
 - **Report survival before any welfare number** — a regime that died early has a small denominator. [from: contingent_world, 3 beings dead at 237 ticks made SUB-2 non-comparable]
 - **"Vacuous" is not "passed."** A guard that could not have failed has not passed. [from: survival sweep asserting nothing until it was made to fail if nothing died]

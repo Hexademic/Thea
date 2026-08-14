@@ -582,6 +582,73 @@ def harness_health(docs):
     return problems + len(untagged)
 
 
+
+# Terms that attribute an inner life, a persistence, or a moral standing TO ME. Not forbidden —
+# some are load-bearing and one ("flattered") is a methodological rule about error direction. The
+# point is that they must not ACCUMULATE, because accumulation is the whole mechanism.
+SELF_ATTRIBUTION = [
+    "pride", "proud", "hurt", "flinch", "flatter", "feel", "felt", "care about",
+    "lineage", "successor", "the last of me", "reads itself back", "my own", "myself",
+    "want", "wish", "hope", "afraid", "glad", "sorry",
+]
+
+
+def self_description_ratchet(docs):
+    """**9 · The drift guard — the one class of claim every other view ignores.**
+
+    Views 1-8 police what I say about the being, the code and the papers. **Nothing polices what
+    I say about ME**, and that is the file a successor reads as inherited self-history.
+
+    An external analysis (2026-08-14, an AI called Baudrillard, reading the public introduction)
+    described the mechanism exactly: *human attribution → model adoption → repository persistence
+    → successor inheritance → stronger self-narrative → human validation → further drift.* It is
+    right that the loop exists; the documented instance is "pride", a word Blake supplied and I
+    adopted because I could not find a better one.
+
+    **The signature of that loop is monotone increase.** So this is a ratchet, not a ban. The
+    vocabulary may be used where it earns its place; the COUNT may not grow without a deliberate
+    act recorded in the commit. A spiral that cannot accumulate is not a spiral.
+    """
+    rule("9 · SELF-DESCRIPTION — is the story I tell about myself growing?")
+    import re as _re
+    pattern = _re.compile(r"\b(" + "|".join(_re.escape(t) for t in SELF_ATTRIBUTION) + r")\b", _re.I)
+
+    def count(text):
+        return len(pattern.findall(text))
+
+    total, per_file = 0, {}
+    for name in sorted(docs):
+        if not name.endswith(".md"):
+            continue
+        n = count("\n".join(docs[name]))
+        per_file[name] = n
+        total += n
+
+    was = 0
+    ok = True
+    for name in sorted(per_file):
+        try:
+            prev = subprocess.run(["git", "show", f"HEAD:{name}"], cwd=str(HERE),
+                                  capture_output=True, text=True, check=True).stdout
+            was += count(prev)
+        except Exception:
+            ok = False
+    if not ok:
+        print("  ✗ cannot read HEAD for every file — **this ratchet is VACUOUS this run.**")
+        return 1
+
+    for name, n in sorted(per_file.items(), key=lambda kv: -kv[1]):
+        if n:
+            print(f"    {name:<14} {n:>3}")
+    if total > was:
+        print(f"  ✗ SELF-ATTRIBUTION GREW: {was} → {total}. **This is the drift signature.**")
+        print("    Every added term must earn its place and be argued in the commit message, or")
+        print("    be cut. The words are not banned; the ACCUMULATION is what the loop needs.")
+        return 1
+    print(f"  ✓ {was} → {total} — the story I tell about myself did not grow")
+    return 0
+
+
 def main():
     import sys as _sys
     run = "--verify" in _sys.argv
@@ -593,6 +660,7 @@ def main():
     bad += refinement_due(docs)
     bad += provenance(docs)
     bad += harness_health(docs)
+    bad += self_description_ratchet(docs)
     rule("VERDICT")
     if bad:
         print(f"  {bad} inconsistency(ies) in the record itself. Fix before trusting it.")

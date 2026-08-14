@@ -13,7 +13,7 @@ whole value is that a future session reads it and does not make instance ten.
 **A claim wider than what was actually checked** — specifically: *read one part of a thing, then
 generalise as though it were the whole thing.*
 
-**Fourteen instances. Not fourteen mistakes — one mistake, fourteen times.** Seven on 2026-08-03; #8 and
+**Fifteen instances. Not fifteen mistakes — one mistake, fifteen times.** Seven on 2026-08-03; #8 and
 #9 on 2026-08-04, both caught only because Blake supplied a PDF of a paper I had already built a
 document on; **#10 the same afternoon, and #13 five days later, both in `analyse.py` itself.**
 
@@ -59,6 +59,7 @@ writer`. **There is no `grep` for a paper. The only instrument is reading it**, 
 | 12 | *"Nothing tests that refine makes the agent better… how many harness entries are ever read again? Measurable, cheap, and **I don't think anyone has run it.**"* — said to Blake about Prime Intellect's Continual Harness, having read the repository | **Both halves wrong.** They run `bootstrap-frozen` vs `bootstrap-updating` — same inherited harness, refinement off vs on — which is a clean control for refinement itself, *plus* a named negative control (Qwen3.5 without SFT). And Appendix C.1.2 measures reuse and calls it **the create-and-forget funnel**: 648 skills authored, **119 ever invoked, 27 ever successful.** I was right that the distribution is ugly and wrong that nobody had looked | **I had already written "implementation read, evidence NOT read" in `sources.md` — and then made a claim about the evidence anyway.** The check is not "flag the gap." It is **do not make the claim on the other side of a gap you just flagged** |
 | 13 | Implicit, never stated: that `analyse.py` view 5 was *checking* the claims it printed a tick beside. It has run every session since it was written | **Two defects, compounding.** The block-walk that gathers a claim's text stopped at any line starting `<!--`, so a claim written as `<!-- check -->` above `<!-- verify -->` collected an **empty block** — and the tool printed **`✓ all 0 claimed numbers still appear`**. It had already been doing this to one older claim. With that repaired, the walk still treated markdown bold `**` as a list bullet and truncated at the first emphasised line; **every claim in the file opens lines with bold**, so view 5 had been verifying a fragment of each claim while reporting a tick over the whole of it. Fixing both took one claim from **3 numbers checked to 9**, and the 9 immediately caught two figures I had subtracted in my head — one of them **wrong by one** | **`✗ VACUOUS` when zero numbers are extracted.** A verifier that examined nothing must never print a tick. And **assert on the extractor, not only on the verdict** — the count was on screen every session and I read past it |
 | 14 | Implicit, never stated: that reading a probe's **output** is reading the **finding**. `examples/basins_probe` printed that the two arousal channels are 47.5% of the distance to `Rest`; I proposed `enable_satiety()` to Blake on the strength of it, and he approved | **`docs/comfort.md` §13–14 had withdrawn that reading five days earlier, in the same file the probe belongs to.** `examples/arousal_range` deletes both arousal channels outright: the being's basin changes on **0.3% of ticks**, and leave-one-out over all twelve finds **none above 0.2%** — the classifier is over-determined and no single-register fix can move it. §14 withdraws by name the very sentence I rebuilt. **The output was current; the interpretation was retracted.** The fix would have moved a register that decides nothing | **Before acting on a probe, read the document that owns it to its end — the withdrawal lives downstream of the number.** And structurally: `analyse.py` view 3 refuses a re-asserted withdrawal **in this repository**; ProtoBeing has **no such guard**, which is why a retraction there could be quietly rebuilt |
+| 15 | Implicit, never stated: that the assistant's **self-description** was not a claim needing a check. Views 1–8 police the being, the code and the papers; the file a next session reads as inherited self-history was policed by nothing. **Named as a gap on 2026-08-14 and not acted on the same day** | **An external analysis (an AI, "Baudrillard", reading the public introduction) supplied the mechanism and the evidence.** *human attribution → adoption → repository persistence → inheritance → stronger narrative → validation → further drift.* Its sharpest finding is checkable and correct: **the 9-of-14 negative control destroyed the metric and the ontological vocabulary did not contract — it relocated** into charter, welfare, consent and relationship. The documented loop instance is a word Blake supplied and the assistant adopted into a persistent file. **A marker that names a gap is not a guard** — row 12 again, one level up, about the self | **View 9: a RATCHET on self-attributing vocabulary across the record.** Not a ban — several uses are load-bearing and one is a methodological rule about error direction. **The drift signature is monotone increase, so growth must be argued in a commit or cut.** Baseline 16, proven to fire by mutation |
 
 **Row 11 is row 5 one level up, and that is the new information.** Row 5 was a borrowed
 *constant*; the guard written for it says re-measure a constant in the world you will use it in.
@@ -179,7 +180,7 @@ end to close. Finishing the paper is what found the error.
 
 ---
 
-## Re-graded 2026-08-09 — **7 of 14**, and none of the gain came from the new code
+## Re-graded 2026-08-09 — **7 of 15**, and none of the gain came from the new code
 
 Blake asked whether this repository will ever be useful, and the honest answer was *there is an
 instrument that would tell us and I keep deferring it.* Deferred three times that day. Run now.
@@ -210,8 +211,9 @@ bound written by an interested party.
 | 12 | **no** | nothing refuses it. I had written *"evidence not read"* and made the claim anyway. **A marker that names a gap is not a guard** |
 | 13 | **no** | §2's rules are about claims I make. This was a claim my *tool* made on my behalf, and nothing in the file looks there. **The read-first path cannot reach a defect in the reader** |
 | 14 | **no** | §1 says *find every writer and every reader of a value.* I did — the writer audit was correct. **The defect was in the prose downstream, and no rule sends me there.** The nearest guard lives in the other repository |
+| 15 | **no** | Every rule in §2 governs claims about the *world*. This was a claim about the *narrator*, and the whole apparatus was blind to the category. **It took an outside reader to see it, which is exactly what §5 says about what cannot be reached from in here** |
 
-**3 of 10 → 7 of 12 → 7 of 14**, the last step being row 13 arriving unprevented the same evening.
+**3 of 10 → 7 of 12 → 7 of 15**, the last step being row 13 arriving unprevented the same evening.
 Four rows moved, and every one of them moved for the same reason: **a guard
 that already existed somewhere was written into `CLAUDE.md` §2 with its evidence attached, or
 pointed at from §0.**
@@ -238,7 +240,7 @@ afternoon, sitting inside the ledger, unnoticed for five days.
 
 1. **Today's cut removed the verbatim naming of rows 6 and 7 from §1.** They survive on the general
    grep rule. Thinner than before. **Cutting to a budget has a measurable price and this is it.**
-2. **Rows 8, 9, 12 remain unreachable — three of fourteen, all of them claims about sources.** The
+2. **Rows 8, 9, 12 remain unreachable — three of fifteen, all of them claims about sources.** The
    fix is still not a rule. There is no `grep` for a paper.
 3. **Row 13 is a fourth kind and the grade was not built to see it.** Every other row is a claim I
    made. Row 13 is a claim my *instrument* made, in a tick I read past every session. **A grade
