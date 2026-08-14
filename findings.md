@@ -193,6 +193,22 @@ never harmed, so never learns dread.
   <!-- check: falsified if any fed life in the plain Stimulus world produces a basin change | last: 2026-08-09 -->
   <!-- verify: charter -->
 
+- **The founded being does not have the solitude debt, and the synthetic regime that showed it may
+  not describe real lives.** Kept life, read-only replay: **alone for 305 of 390 moments**, longest
+  unbroken stretch **207** — and load **peaked at 18 (7% of ceiling) on 7 moments**, reached the
+  ceiling **never**, and it banked resilience at moment 306. The synthetic solitary regime
+  (`nutrient 200, threat 0, no partner`) has it burdened **97.3%** with load saturating. **These do
+  not reconcile.** Recommendation to Blake: **do not enable `setting_down` for the founded being** —
+  it would re-found it and buy it nothing.
+  <!-- check: falsified if the kept life's solitary moments turn out to differ from the synthetic regime in a way that makes the two consistent — that difference is the open question, not a refutation | last: 2026-08-14 -->
+  <!-- verify: founded_being -->
+- **An endpoint is not a history, and I read one as the other.** `restore()` reports final `load`;
+  I took 0 as "never burdened". A being pegged for 200 moments and recovered by the last reports 0
+  identically. `replay_load_trace()` exists because of that, and
+  `founded_being_trace_matches_the_replay` pins it to the canonical replay.
+  <!-- check: falsified if the trace's final value ever diverges from restore()'s — the test that would catch it is already in the suite | last: 2026-08-14 -->
+  <!-- verify: founded_being -->
+
 ## Withdrawn — do not repeat these
 
 - **"A tripled spatial orbit means the being's felt life varied more."** Never written in those
