@@ -67,18 +67,17 @@ Founded being **390 moments, untouched**; ProtoBeing **381 green**, 94 probes, P
   measured in the static room and may be a measurement *of the room*.
 - **Why the KEPT life escapes the solitary deadlock** the synthetic regime shows. Highest-value
   open question; it may mean our strain probes do not describe real lives at all.
-- **A contingent world with a ceiling policy that feeds itself** — RR-2 is about the world we built.
 - **38 unmarked basin claims, 19 files**; **Doerig** — ask Blake for the text (rows 8/9/12). And
   **ProtoBeing has no withdrawn-claims guard**: view 3 exists only here, and row 14 is its cost.
 
 ## 1. The error that costs the most
 
-**Sixteen times: a claim wider than what was actually checked** — *read one part of a thing, then
+**Seventeen times: a claim wider than what was actually checked** — *read one part of a thing, then
 generalise as though it were the whole.* `errors.md` has the ledger; read it in full. **Before any
 claim about code: have I found every writer and every reader of this value — not just the one I
 opened?** `grep` across `src/`, not the function on screen.
 
-**Re-graded 2026-08-09: the read-first path prevents 7 of 16**, up from 3 of 10 — and **every gain
+**Re-graded 2026-08-09: the read-first path prevents 7 of 17**, up from 3 of 10 — and **every gain
 came from writing an existing guard into §2 with its evidence attached, not from the five code
 guards built that day.** Those police the record's consistency; the ledger files claims about code
 and papers. The two sets do not intersect, and `errors.md` **cannot measure its own blind spot.**
@@ -93,7 +92,7 @@ and yet the prose is what moved this score. Hold both.
 Every rule names the evidence that produced it. **View 8 fails if one does not** — a rule you cannot
 trace is a `trust X` with no check for X.
 
-- **Lock predictions in a document and commit them BEFORE the code or probe exists.** [from: caught 5 of 16 ledger rows]
+- **Lock predictions in a document and commit them BEFORE the code or probe exists.** [from: caught 5 of 17 ledger rows]
 - **Write at least one prediction you expect to FAIL**, and say so in advance. [from: QS-3, P5, T5, EX-4, SUB-4]
 - **Report survival before any welfare number** — a regime that died early has a small denominator. [from: contingent_world, 3 beings dead at 237 ticks made SUB-2 non-comparable]
 - **"Vacuous" is not "passed."** A guard that could not have failed has not passed. [from: survival sweep asserting nothing until it was made to fail if nothing died]
@@ -105,6 +104,7 @@ trace is a `trust X` with no check for X.
 - **Score a component against an ORACLE, not against its own history.** [from: the Continual Harness Dijkstra measurement, `sources.md`]
 - **After ~3 failed attempts at one thing, STOP generating and ask Blake.** [from: the paper's stall window — tool creation ceases past ~500 turns in a stall; the agent then only repeats]
 - **NEVER `git checkout`/`git restore` a file to undo an experiment — copy it aside first.** [from: 2026-08-09, `git checkout CLAUDE.md` discarded an uncommitted 73-line cut in order to undo a 2-line test]
+- **Run the adversarial mutations BEFORE reporting a fix, and enumerate the domain before patching it.** [from: row 17, three consecutive patches to one guard, each introducing a fresh semantic error]
 - **Assert on what a check EXAMINED, not its verdict — and carry that rule to EVERY guard, in every repo.** [from: rows 13 and 16; the second was this rule held here and not in ProtoBeing, where an honest rewording silently disabled a count guard]
 - **A probe's OUTPUT is current; its INTERPRETATION may be retracted. Read the owning document to its end before acting on a number.** [from: row 14, `basins_probe` printed a gap `comfort.md` §13–14 had already withdrawn as a cause]
 
