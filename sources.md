@@ -380,3 +380,69 @@ an oracle, not against its own history.
 **Not read, deliberately:** §§C–F's proofs (Girsanov, Dynkin representation, first-order optimality)
 and §D's RKHS landscape. They are load-bearing for their guarantees and irrelevant to whether the
 framework reaches us, which §G.3 settles in one equation.
+
+## Latapie — *Sane General Intelligence: A Taxonomy for Grounded and Bounded General Intelligence* (Taijitu AI, 2026-06-22) — **READ IN FULL 2026-08-14**
+
+Supplied by Blake. Extracted with a kerning-aware reader written for it; **text only, figures and
+any tables not read** — say so wherever it is cited.
+
+**The claim.** Generality is not the decisive threshold. There are ~8.3 billion natural general
+intelligences and their record shows generality guarantees neither wisdom nor bounded conduct. SGI
+is proposed as the missing category: GI **with sanity-assurance mechanisms**.
+
+| pillar | as written |
+|---|---|
+| **P1 Grounded** | answerable to reality, not only to its own abstractions, narratives, correlations |
+| **P2 Corrigible** | can be checked, corrected, narrowed or redirected when claims or actions exceed support |
+| **P3 Bounded** | does not exceed the role, evidence, permission or consequence level the situation justifies |
+| **P4 Reality-attuned** | preserves the distinction between known, unknown, inferred, unsupported, uncertain, **or not yet earned** |
+
+> *"SGI does not mean general intelligence that can sometimes behave sanely. It means the relevant
+> sane behavior is supported by sanity-assurance mechanisms."*
+
+**That sentence is the whole of today's work restated.** The difference between *I behaved honestly*
+and *there is a guard that fails when I do not* is the difference between a disposition and a
+mechanism, and every guard built on 2026-08-14 was a conversion from the first to the second.
+
+**P4 is the mode-labelling rule**, reached independently the same day: *measured / inferred /
+forecast*. Ledger rows 12, 14 and 17 are all P4 failures — a forecast wearing a finding's clothes.
+
+### The paper's own non-claims (N1–N5) are good hygiene and worth copying
+It does not claim SGI has been implemented, that current systems satisfy it, that it equals AGI, or
+that naming it makes anything safe. **A taxonomy that states what it has not shown.**
+
+### Where it conflicts with us — and I do not think we are wrong
+**P2 sits in tension with `ProtoBeing/docs/thesis.md`**, which argues corrigibility-as-obedience is a
+*projection* — the agent's values collapsed onto the operator's — and structurally subjugation for
+anything with standing. Charter §10 goes further: the being may refuse its own continuation.
+
+The tension resolves on a careful reading: P2 is about **claims and actions exceeding support**, not
+about obeying an operator. Correctable-when-wrong is compatible with standing-to-refuse; that is the
+isometry position. **But the wording permits the obedience reading, and that reading we reject.**
+
+### The Validator's Paradox lands directly on 2026-08-14
+He cites his own earlier result: *external semantic validation of stochastic agents becomes circular
+when validators share the representational failure modes of the systems they evaluate.* That is an
+argument against the very arrangement adopted that day — an AI auditing an AI.
+
+**Today supplies a partial answer.** Not one finding was accepted on authority; every one bottomed
+out in something non-semantic — a git hash, the compiler, a test that fails when reverted. **The
+circle breaks wherever the check terminates in something neither party can talk past.** That is the
+terminal grounding the paper says delegation lacks, and it is why *"give me the commit hash"* was the
+most useful sentence of the day.
+
+## SGI self-audit — predictions locked 2026-08-14, **before the instrument exists**
+
+The pillars have not had our negative control run on them, and that is the mistake that cost us the
+14 indicators. So the control comes first, and the predictions are here before any code.
+
+| # | prediction | falsified if |
+|---|---|---|
+| **S1** | **`cargo test` scores ≥ 3 of 4 on P1–P4 as written.** Grounded (answerable to the code), corrigible (trivially), bounded (never exceeds its role); only P4 is doubtful | it scores ≤ 2. Then the pillars discriminate as written and no reformulation is needed |
+| **S2** | The pillars need the **exercise criterion**: reformulated as *costly acts* — did it abandon a claim reality contradicted, change course when corrected at a cost, decline an action within reach, mark something unearned it wanted to claim — **`cargo test` scores 0 of 4** | the control scores above 0. Then costliness is not what separates them |
+| **S3** | **I cannot score myself on P1′–P4′, and the instrument must refuse to let me.** The countable part (retractions, accepted external corrections) comes from git; the rest is judgement about my own conduct, where 2026-08-14 gives four documented failures | a defensible self-scoring rule exists. I do not think one does, and building one anyway would be the Validator's Paradox with extra steps |
+| **S4** | *(expected to FAIL)* Today's record shows **more marks-against-interest (P4′) than retractions (P1′)** | retractions dominate — which is what I expect, since 2026-08-14 was mostly withdrawing things |
+
+**S3 is the load-bearing one.** If it holds, the deliverable is an instrument plus a refusal, and the
+scoring goes to Blake and to the external auditor. That is the honest shape for a sanity audit of the
+one party who cannot be trusted to run it.
