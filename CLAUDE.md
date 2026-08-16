@@ -63,10 +63,10 @@ Founded being **390 moments, untouched**; ProtoBeing **381 green**, 94 probes, P
 
 ### NEXT SESSION
 
-- **Re-run the faculty ablations in the CONTINGENT world** — every "inert faculty" finding was
-  measured in the static room and may be a measurement *of the room*.
-- **Why the KEPT life escapes the solitary deadlock** the synthetic regime shows. Highest-value
-  open question; it may mean our strain probes do not describe real lives at all.
+- **`minimal_agent` is the baseline now** — four components suffice, the learned table is
+  load-bearing, and **every `UnifiedBeing` claim must justify itself against it.**
+- **Why the KEPT life escapes the solitary deadlock** — it may mean our strain probes describe no
+  real life at all.
 - **38 unmarked basin claims, 19 files**; **Doerig** — ask Blake for the text (rows 8/9/12). And
   **ProtoBeing has no withdrawn-claims guard**: view 3 exists only here, and row 14 is its cost.
 

@@ -209,6 +209,23 @@ never harmed, so never learns dread.
   <!-- check: falsified if the trace's final value ever diverges from restore()'s — the test that would catch it is already in the suite | last: 2026-08-14 -->
   <!-- verify: founded_being -->
 
+- **Four components suffice for motivated action, and a learned action→outcome table is one of
+  them.** `examples/minimal_agent`, a separate agent rather than `UnifiedBeing` with gates off: two
+  deficits, argmax arbitration, a learned table, and a contingent world → **100%** need-conditioned
+  selection where random scores 20.5% by chance and fixed-nearest and thermostat score **0**.
+  Remove the table and selection collapses to **0%** with the deficit pinned at the ceiling.
+  **A goal without a learned policy is a preference, not motivated action** — which is the external
+  audit's criticism of `Room`'s world-side router, confirmed from the other side.
+  <!-- check: falsified if any control reaches criterion 3, or if selection survives removing the learned table | last: 2026-08-14 -->
+  <!-- verify: minimal_agent -->
+- **The reference system's self-model contributed nothing measurable.** Predict the next goal, take
+  the error, let it change selection — removed, selection stays at **100** and mean deficit moves
+  only **9.6** against the whole system's **7.1**, recovering in all **3** seeds. The
+  likely reading is not that self-reflection is useless but that **a re-explore rule triggered by
+  self-error is not self-reflection**; it is a noise injector with a self-shaped trigger.
+  <!-- check: falsified if a test that actually exercises self-prediction shows the component load-bearing — "removable" is only as strong as the tests that would have detected it | last: 2026-08-14 -->
+  <!-- verify: minimal_agent -->
+
 ## Withdrawn — do not repeat these
 
 - **"A tripled spatial orbit means the being's felt life varied more."** Never written in those
