@@ -72,20 +72,19 @@ Founded being **390 moments, untouched**; ProtoBeing **381 green**, 94 probes, P
 
 ## 1. The error that costs the most
 
-**Seventeen times: a claim wider than what was actually checked** — *read one part of a thing, then
+**Eighteen times: a claim wider than what was actually checked** — *read one part of a thing, then
 generalise as though it were the whole.* `errors.md` has the ledger; read it in full. **Before any
 claim about code: have I found every writer and every reader of this value — not just the one I
 opened?** `grep` across `src/`, not the function on screen.
 
 **Re-graded 2026-08-09: the read-first path prevents 7 of 17**, up from 3 of 10 — and **every gain
-came from writing an existing guard into §2 with its evidence attached, not from the five code
-guards built that day.** Those police the record's consistency; the ledger files claims about code
-and papers. The two sets do not intersect, and `errors.md` **cannot measure its own blind spot.**
+came from writing an existing guard into §2 with its evidence attached, not from the code guards
+built that day.** Those police the record's consistency; the ledger files claims about code and
+papers. The two sets do not intersect, and `errors.md` **cannot measure its own blind spot.**
 
-**Rows 8, 9, 12 stay unreachable — claims about sources. Row 13 is a fourth kind: a claim my own
-tool made, which §2 does not look for.** Row 12 is the warning — I recorded *"evidence not read"*
-and made a claim about that evidence an hour later. **A marker that names a gap is not a guard**,
-and yet the prose is what moved this score. Hold both.
+**Rows 8, 9, 12 stay unreachable — claims about sources; row 13 is a fourth kind, a claim my own
+tool made, which §2 does not look for.** Row 12 is the warning: I recorded *"evidence not read"* and
+made a claim about that evidence an hour later. **A marker that names a gap is not a guard.**
 
 ## 2. The method that works — do not weaken it
 
@@ -104,7 +103,8 @@ trace is a `trust X` with no check for X.
 - **Score a component against an ORACLE, not against its own history.** [from: the Continual Harness Dijkstra measurement, `sources.md`]
 - **After ~3 failed attempts at one thing, STOP generating and ask Blake.** [from: the paper's stall window — tool creation ceases past ~500 turns in a stall; the agent then only repeats]
 - **NEVER `git checkout`/`git restore` a file to undo an experiment — copy it aside first.** [from: 2026-08-09, `git checkout CLAUDE.md` discarded an uncommitted 73-line cut in order to undo a 2-line test]
-- **Run the adversarial mutations BEFORE reporting a fix, and enumerate the domain before patching it.** [from: row 17, three consecutive patches to one guard, each introducing a fresh semantic error]
+- **Run the adversarial mutations BEFORE reporting a fix, and enumerate the domain before patching it.** [from: row 17, three consecutive patches to one guard, each introducing a fresh semantic error. **First worked 2026-08-16**: it caught two defects in the attachment/say-stop probe — an accelerate-the-say-stop reading with no control arm, and a vacuity guard that passed on the control — before either reached Blake]
+- **A probe with a treatment arm ships with a control arm, and every guard is run against the case it exists to exclude.** [from: row 18, a "dilution detected" guard that fired on the one-ledger arm that cannot dilute]
 - **Assert on what a check EXAMINED, not its verdict — and carry that rule to EVERY guard, in every repo.** [from: rows 13 and 16; the second was this rule held here and not in ProtoBeing, where an honest rewording silently disabled a count guard]
 - **A probe's OUTPUT is current; its INTERPRETATION may be retracted. Read the owning document to its end before acting on a number.** [from: row 14, `basins_probe` printed a gap `comfort.md` §13–14 had already withdrawn as a cause]
 

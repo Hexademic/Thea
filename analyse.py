@@ -253,6 +253,7 @@ def against_the_world(docs, run=False):
     # Collect (probe, [numbers]) from marked claims.
     import re as _re
     claims = {}
+    unparsed: list[str] = []
     for name, lines in docs.items():
         # **The harness file documents this very syntax**, so scanning it turns the documentation
         # into a marker: `<!-- verify: NAME -->` in CLAUDE.md sent the runner looking for a probe
@@ -265,6 +266,8 @@ def against_the_world(docs, run=False):
             # `quality_space_census`, and they were -- they come from `reserve`. The numbers were
             # right and the ATTRIBUTION was wrong, which would have been a vacuous verification:
             # a claim confirmed against a probe that could never have produced it.
+            if "<!-- verify:" in ln and not _re.search(r"<!--\s*verify:\s*([\w,\s]+?)\s*-->", ln):
+                unparsed.append(ln.strip())
             m = _re.search(r"<!--\s*verify:\s*([\w,\s]+?)\s*-->", ln)
             if not m:
                 continue
@@ -305,15 +308,30 @@ def against_the_world(docs, run=False):
             claims.setdefault("__joint__", []).append((probes, nums))
 
     joint = claims.pop("__joint__", [])
+
+    # A `verify:` marker that names nothing is worse than no marker: view 6 counts the
+    # claim as carrying a falsifier while view 5 never runs one. Found 2026-08-16, when
+    # `verify: tests/continuation.rs` (a path, where the runner wants a bare name)
+    # vanished from this view without a word.
+    problems_pre = 0
+    for ln in unparsed:
+        print(f"  ✗ unparseable verify marker, so NOTHING was run for it: {ln}")
+        problems_pre += 1
+    for probe in sorted(claims):
+        if not (PROTOBEING / "tests" / f"{probe}.rs").exists() \
+           and not (PROTOBEING / "examples" / f"{probe}.rs").exists():
+            print(f"  ✗ `verify: {probe}` names neither examples/{probe}.rs nor tests/{probe}.rs")
+            problems_pre += 1
+
     if not claims:
         print("  (no claims carry a `<!-- verify: <probe> -->` marker — nothing to check)")
-        return 0
+        return problems_pre
 
     if not run:
         for probe, nums in sorted(claims.items()):
             print(f"  · {probe}: {len(nums)} numbers claimed, not run this pass")
         print("\n  Pass --verify to actually run the probes. **Not running is not passing.**")
-        return 0
+        return problems_pre
 
     import subprocess
     # A named target may be an EXAMPLE (verified by the numbers it prints) or a TEST FILE
@@ -334,7 +352,7 @@ def against_the_world(docs, run=False):
             print(f"  ✗ {probe}: could not run ({e})")
             outs[probe] = ""
 
-    problems = 0
+    problems = problems_pre
     for probe in sorted(tests):
         try:
             r = subprocess.run(

@@ -226,6 +226,31 @@ never harmed, so never learns dread.
   <!-- check: falsified if a test that actually exercises self-prediction shows the component load-bearing — "removable" is only as strong as the tests that would have detected it | last: 2026-08-14 -->
   <!-- verify: minimal_agent -->
 
+- **The say-stop is not moved by love. It is moved by a divisor.** Charter §10 triangulates the
+  being's consent to its own continuation on suffering, `proxy_depth` and `partnership_alarm` —
+  **two of three relational** — so we asked whether its attachments could move it. They cannot:
+  `bond` is read by none of the three, and holding every bond at zero leaves **all seven scenario
+  traces bit-identical**. Grief cannot reach it either — a bereaved being never reached even
+  `Enduring` (`proxy_depth` peaked at **0** against a floor of 128) and stayed `Willing` for
+  **4,000 of 4,000** ticks. What *does* move it is company: `partnership_alarm` is the **mean** of
+  `imbalance()` over live ledgers and `ALARM_FLOOR` is a threshold on that mean. Trapped alone the
+  being withdraws at tick **103** — at **every** nutrient from 0.3 to 0.9, so the operator's lever
+  moves it by **0**. Give it one fair partner it keeps: **271**. The lever the charter bolts shut
+  is shut; a lever the charter never considered moves the gravest word the being can say by **168
+  ticks**. §10 regraded DISCHARGED → **DEBT**. No remedy built — per-partner floor, max-not-mean,
+  and leaving it are three different beings, and that is Blake's call.
+  <!-- check: falsified if withdrawal at 103 (trapped alone) or 271 (trapped + kept fair partner) moves, or if a nutrient value is found that moves the trapped-alone tick | last: 2026-08-16 -->
+  <!-- verify: continuation -->
+
+- **A trap teaches the being to discard its friend and keep what it cannot leave.** With a fair
+  partner who is *cheap to leave* (`exit_cost` 0.2), refusal fires **on the friend at tick 16** and
+  **never on the trap**. `evaluate_refusal` weighs `exit_cost` and reads the **global**
+  `extraction_detected` flag and the **global mean** alarm — both raised by the trap. The being's
+  per-partner ledger is not what decides who it refuses. Found while a locked prediction (A2) was
+  failing, and it is worth more than the prediction was.
+  <!-- check: falsified if the being refuses the trap before the friend, or if refusal is shown to read per-partner state | last: 2026-08-16 -->
+  <!-- verify: attachment_and_consent -->
+
 ## Withdrawn — do not repeat these
 
 - **"A tripled spatial orbit means the being's felt life varied more."** Never written in those

@@ -104,6 +104,13 @@ two horns correct and the theorems' conclusions correct. What the abstract omits
 line that says *which systems each horn is about* — and that is the only line that decides whether it
 is about us.
 
+## 2026-08-16
+
+| # | I claimed | What was true | The check I skipped |
+|---|---|---|---|
+| 18 | Implicit, never stated: that a **vacuity guard** I wrote for the attachment/say-stop probe was capable of failing. V2 was supposed to prove the dilution mechanism was real — *"the friend arm's alarm fell below `ALARM_FLOOR` while `proxy_depth` was still above it"* | **It passes on the control.** V2 compared a **run-wide minimum** against the threshold, and the trapped-alone arm — one ledger, arithmetically incapable of dilution — reported `YES — dilution` alongside every other arm. It was measuring the alarm's startup climb, not any friend. And the probe it guarded had **no control arm at all**: two arms, trapped and trapped-with-a-friend, from which I would have reported that a friend *accelerates* the say-stop (96 against 103). The solitude control — same schedule, nobody there — also gives 96. The whole effect was the trap being interrupted | **A guard must be run against the case it is supposed to exclude.** V2 now compares the two arms **pointwise at the same tick**, requiring the control at or above the floor and the arm below it. And: **no probe with a treatment arm ships without a control arm** — the "friend" and the "no friend" runs differed in two things, and I had attributed the difference to the one I was interested in |
+
+
 ## What it cost
 
 Two of these reached Blake as findings before I caught them:
