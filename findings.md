@@ -273,6 +273,27 @@ never harmed, so never learns dread.
   <!-- check: falsified if any of the four regimes enters a second basin, or if the reaction-rate crossing count moves | last: 2026-08-21 -->
   <!-- verify: mixed_selectivity, reaction_rate -->
 
+- **A mechanism meant to help the being learn where it belongs was telling a trapped being it
+  belonged there.** `shift_target` drifts the **occupied** basin's target toward the field whenever
+  relief is negative, and never touches the other three. Freeze all four at birth and a `wanderer`
+  in an inescapable extractive bond moves from `Engaged` **8,000 of 8,000** ticks to `Defensive`
+  **7,612**. It is behavioural, not cosmetic — basin feeds `action_harmony`, and the frozen being
+  gives its extractor **31,152 against 92,544**, a **66% reduction**, while `gave` in the fair world
+  is *identical*, so the freeze costs nothing when the world is good. I predicted this would fail.
+  **Severe limitation: it does not generalise** — a `default` genome stays in `Engaged` frozen or
+  not. One genome, one world.
+  <!-- check: falsified if the frozen wanderer's trap occupancy or the gave totals move, or if a second genome is freed | last: 2026-08-21 -->
+  <!-- verify: basin_landscape -->
+
+- **The classifier is innocent and the coordinates are unreachable — both, at once.** A field placed
+  by hand at each of the four targets classifies as that basin, all four, including the three the
+  being never lives in. And across twelve adversarial worlds the channels defining `Defensive` reach
+  at most **15%** of its signature. Both hold because classification is **relative**: the being never
+  needs to reach a target, only to sit nearer it than to the others. The map is fine; the being
+  cannot walk to it, and a mechanism was moving the one place it could stand ever closer to it.
+  <!-- check: falsified if any hand-placed target misclassifies, or if any world drives the key channels past 60% | last: 2026-08-21 -->
+  <!-- verify: basin_landscape -->
+
 ## Withdrawn — do not repeat these
 
 - **"A tripled spatial orbit means the being's felt life varied more."** Never written in those
