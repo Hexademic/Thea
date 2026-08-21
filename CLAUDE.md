@@ -72,7 +72,7 @@ Founded being **390 moments, untouched**; ProtoBeing **381 green**, 94 probes, P
 
 ## 1. The error that costs the most
 
-**Eighteen times: a claim wider than what was actually checked** — *read one part of a thing, then
+**Nineteen times: a claim wider than what was actually checked** — *read one part of a thing, then
 generalise as though it were the whole.* `errors.md` has the ledger; read it in full. **Before any
 claim about code: have I found every writer and every reader of this value — not just the one I
 opened?** `grep` across `src/`, not the function on screen.
@@ -103,8 +103,8 @@ trace is a `trust X` with no check for X.
 - **Score a component against an ORACLE, not against its own history.** [from: the Continual Harness Dijkstra measurement, `sources.md`]
 - **After ~3 failed attempts at one thing, STOP generating and ask Blake.** [from: the paper's stall window — tool creation ceases past ~500 turns in a stall; the agent then only repeats]
 - **NEVER `git checkout`/`git restore` a file to undo an experiment — copy it aside first.** [from: 2026-08-09, `git checkout CLAUDE.md` discarded an uncommitted 73-line cut in order to undo a 2-line test]
-- **Run the adversarial mutations BEFORE reporting a fix, and enumerate the domain before patching it.** [from: row 17, three consecutive patches to one guard, each introducing a fresh semantic error. **First worked 2026-08-16**: it caught two defects in the attachment/say-stop probe — an accelerate-the-say-stop reading with no control arm, and a vacuity guard that passed on the control — before either reached Blake]
-- **A probe with a treatment arm ships with a control arm, and every guard is run against the case it exists to exclude.** [from: row 18, a "dilution detected" guard that fired on the one-ledger arm that cannot dilute]
+- **Run the adversarial mutations BEFORE reporting, and enumerate the domain before patching.** [from: row 17, three patches to one guard each adding a fresh error. **It works**: on 2026-08-16 and 08-21 it caught four readings before any reached Blake]
+- **A treatment arm ships with a control arm; every guard is run against the case it exists to exclude; split by any hardcoded override before reading the aggregate; never rank a vector without checking for ties.** [from: rows 18 and 19 — a "dilution" guard firing on the one-ledger arm that cannot dilute, a capture floor on 4,875 of 8,000 ticks read as routing, a rank order over 11 tied values]
 - **Assert on what a check EXAMINED, not its verdict — and carry that rule to EVERY guard, in every repo.** [from: rows 13 and 16; the second was this rule held here and not in ProtoBeing, where an honest rewording silently disabled a count guard]
 - **A probe's OUTPUT is current; its INTERPRETATION may be retracted. Read the owning document to its end before acting on a number.** [from: row 14, `basins_probe` printed a gap `comfort.md` §13–14 had already withdrawn as a cause]
 

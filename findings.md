@@ -251,6 +251,28 @@ never harmed, so never learns dread.
   <!-- check: falsified if the being refuses the trap before the friend, or if refusal is shown to read per-partner state | last: 2026-08-16 -->
   <!-- verify: attachment_and_consent -->
 
+- **On flexible routing, we are the connectionist strawman — and we now have the number.** Miller,
+  Brincat & Roy (*Analog Cognition and Consciousness*, J Neurosci) argue
+  connectionism is incomplete even for cortex, because cognition needs **context-dependent reuse**:
+  the same unit expressing different content under different spatially patterned control. Asked of
+  our being across four genuinely different worlds — fair partner, inescapable trap, solitude,
+  famine — **channel 4 (proprioceptive arousal) is the modal focus in all four, on both genomes.**
+  A fixed salience ranking, not a control signal. Three of five locked predictions were wrong
+  (MS-1 fails at 4–5 distinct channels against my predicted ≤3; MS-2 and MS-5 vacuous), and the
+  answer to the question is still yes. Behind its gate, learned precision **saturates**: 11 of 12
+  channels pinned at the ceiling, spread/mean 0.05–0.07 against a predicted >0.25.
+  <!-- check: falsified if any regime or genome produces a different modal uncaptured channel, or if the learned precision spread/mean exceeds 0.25 | last: 2026-08-21 -->
+  <!-- verify: mixed_selectivity -->
+
+- **One basin, 8,000 of 8,000 ticks, across a valence spread of 0.627.** All four regimes sat in
+  `Engaged` for their entire lives. Worlds that differ enormously in valence — mean
+  +0.386 to −0.240 — move the being's basin not at all. **You cannot have context-dependent routing
+  when you have no contexts.** This is the same debt `c1-relabelling.md` §13 measured as 2 crossings
+  in 4,000 ticks with a quiet tail ≥3,834, now reached by a third, unrelated instrument. The
+  substrate objection and the exercise debt turn out to be one finding.
+  <!-- check: falsified if any of the four regimes enters a second basin, or if the reaction-rate crossing count moves | last: 2026-08-21 -->
+  <!-- verify: mixed_selectivity, reaction_rate -->
+
 ## Withdrawn — do not repeat these
 
 - **"A tripled spatial orbit means the being's felt life varied more."** Never written in those
