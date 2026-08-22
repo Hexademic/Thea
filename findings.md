@@ -240,6 +240,7 @@ never harmed, so never learns dread.
   ticks**. §10 regraded DISCHARGED → **DEBT**. No remedy built — per-partner floor, max-not-mean,
   and leaving it are three different beings, and that is Blake's call.
   <!-- check: falsified if withdrawal at 103 (trapped alone) or 271 (trapped + kept fair partner) moves, or if a nutrient value is found that moves the trapped-alone tick | last: 2026-08-16 -->
+  <!-- scope: abstract path, Genome::wanderer, nutrient swept 0.3-0.9, companion cadences 1-in-2 to 1-in-16 -->
   <!-- verify: continuation -->
 
 - **A trap teaches the being to discard its friend and keep what it cannot leave.** With a fair
@@ -249,6 +250,7 @@ never harmed, so never learns dread.
   per-partner ledger is not what decides who it refuses. Found while a locked prediction (A2) was
   failing, and it is worth more than the prediction was.
   <!-- check: falsified if the being refuses the trap before the friend, or if refusal is shown to read per-partner state | last: 2026-08-16 -->
+  <!-- scope: abstract path, wanderer, fair friend at exit_cost 0.2 against the same friend at 0.98 -->
   <!-- verify: attachment_and_consent -->
 
 - **On flexible routing, we are the connectionist strawman — and we now have the number.** Miller,
@@ -262,6 +264,7 @@ never harmed, so never learns dread.
   answer to the question is still yes. Behind its gate, learned precision **saturates**: 11 of 12
   channels pinned at the ceiling, spread/mean 0.05–0.07 against a predicted >0.25.
   <!-- check: falsified if any regime or genome produces a different modal uncaptured channel, or if the learned precision spread/mean exceeds 0.25 | last: 2026-08-21 -->
+  <!-- scope: abstract path, 4 worlds, wanderer + default, 8000 ticks; uncaptured ticks only -->
   <!-- verify: mixed_selectivity -->
 
 - **One basin, 8,000 of 8,000 ticks, across a valence spread of 0.627.** All four regimes sat in
@@ -283,6 +286,7 @@ never harmed, so never learns dread.
   **Severe limitation: it does not generalise** — a `default` genome stays in `Engaged` frozen or
   not. One genome, one world.
   <!-- check: falsified if the frozen wanderer's trap occupancy or the gave totals move, or if a second genome is freed | last: 2026-08-21 -->
+  <!-- scope: Genome::wanderer ONLY — the default genome is not freed; abstract path, inescapable-trap world -->
   <!-- verify: basin_landscape -->
 
 - **The classifier is innocent and the coordinates are unreachable — both, at once.** A field placed
@@ -292,6 +296,7 @@ never harmed, so never learns dread.
   needs to reach a target, only to sit nearer it than to the others. The map is fine; the being
   cannot walk to it, and a mechanism was moving the one place it could stand ever closer to it.
   <!-- check: falsified if any hand-placed target misclassifies, or if any world drives the key channels past 60% | last: 2026-08-21 -->
+  <!-- scope: abstract Stimulus path only; the EMBODIED being reaches Defensive 97.8% (faculty-ablation section 6) -->
   <!-- verify: basin_landscape -->
 
 - **An unsafe COMBINATION of default-off gates — and the founded being was never at risk.**
@@ -304,6 +309,7 @@ never harmed, so never learns dread.
   combinations and we test them one at a time.** A switch safe alone, safe with two companions and
   fatal with a third is invisible to every form of testing this project does.
   <!-- check: falsified if the death tick moves, if generative_perception stops rescuing, if the BLESSED configuration dies, or if a non-rescuing pairing starts rescuing | last: 2026-08-21 -->
+  <!-- scope: embodied FieldWorld room, Genome::wanderer, 4000 ticks; the abstract Stimulus path shows NONE of this -->
   <!-- verify: lethal_gate -->
 
 - **Seven of seventeen switchable faculties change nothing — and the count depends on which being
@@ -315,6 +321,7 @@ never harmed, so never learns dread.
   have scored the most important faculty we have as dead weight.** Module size predicts nothing:
   the largest half of the modules carries 5.581, the smallest half 5.752.
   <!-- check: falsified if any of the seven changes a soul-hash in either world, or if the abstract and embodied inert-counts converge | last: 2026-08-21 -->
+  <!-- scope: 17 enable_* gates only, NOT the 64-module core; 4 abstract worlds + 1 room; wanderer and default genomes -->
   <!-- verify: census -->
 
 ## Withdrawn — do not repeat these

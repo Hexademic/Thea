@@ -36,7 +36,7 @@ from pathlib import Path
 STALE_DAYS = 30
 
 HERE = Path(__file__).parent
-FILES = ["CLAUDE.md", "errors.md", "findings.md", "sources.md", "mechanisms.md"]
+FILES = ["CLAUDE.md", "errors.md", "findings.md", "sources.md", "mechanisms.md", "forecasts.md"]
 
 
 def load():
@@ -744,6 +744,186 @@ def sgi_audit(docs):
     return problems
 
 
+
+# ---------------------------------------------------------------------------
+
+
+def calibration(docs):
+    """**11 · The score that can go down.**
+
+    `errors.md` holds twenty-two rows and every one was written after the fact.
+    This view exists so that stops being true. It reads `forecasts.md`, resolves
+    what has been measured, and prints a Brier score **on every run, unasked** —
+    the same discipline as the CLAUDE.md line ratchet. A score I could choose
+    when to look at is a score I would look at on good days.
+
+    Brier per row is `(p - outcome)**2`; **0.25 is the score of saying 0.5 to
+    everything**, i.e. of knowing nothing. Above it is worse than useless.
+
+    The `interesting` split is the point. On 2026-08-21 I told Blake my errors
+    lean toward the more reportable finding, and I asserted that across six
+    ledger rows without checking the ones that break it (row 18's own error, in
+    a message about my errors). If calibration on `interesting: yes` rows is
+    systematically worse, the claim becomes a number. If it is not, **the claim
+    is withdrawn.**
+    """
+    rule("11 · CALIBRATION — every forecast, scored, whether or not it flatters")
+    text = "\n".join(docs.get("forecasts.md", []))
+    if not text.strip():
+        print("  forecasts.md is missing. The one view that can embarrass me is the")
+        print("  one that is not running. That is a problem, not an absence.")
+        return 1
+
+    rows, malformed = [], []
+    for ln in text.splitlines():
+        if not ln.strip().startswith("| F"):
+            continue
+        cells = [c.strip() for c in ln.strip().strip("|").split("|")]
+        if len(cells) < 6:
+            malformed.append(ln.strip()[:60])
+            continue
+        fid, _date, claim, p, interesting, res = cells[0], cells[1], cells[2], cells[3], cells[4], cells[5]
+        try:
+            pv = float(p)
+        except ValueError:
+            malformed.append(fid)
+            continue
+        if not (0.05 <= pv <= 0.95):
+            malformed.append(f"{fid} (p={pv} outside 0.05-0.95; a forecast that cannot be wrong is not one)")
+            continue
+        rows.append((fid, claim, pv, interesting.lower().startswith("y"), res.upper()))
+
+    for m in malformed:
+        print(f"  ✗ malformed forecast row: {m}")
+
+    resolved = [r for r in rows if r[4] in ("TRUE", "FALSE")]
+    open_rows = [r for r in rows if r[4] not in ("TRUE", "FALSE")]
+    print(f"  {len(rows)} forecast(s): {len(resolved)} resolved, {len(open_rows)} open")
+
+    if not resolved:
+        print()
+        print("  ✗ VACUOUS — no forecast has been resolved yet, so there is NO score.")
+        print("    A number computed over zero resolved rows would be exactly the")
+        print("    failure of ledger row 13: a verifier printing a tick over nothing.")
+        print("    The log exists; it has not yet cost me anything.")
+        return len(malformed)
+
+    def brier(rs):
+        return sum((p - (1.0 if res == "TRUE" else 0.0)) ** 2 for _f, _c, p, _i, res in rs) / len(rs)
+
+    overall = brier(resolved)
+    print()
+    print(f"  Brier score over {len(resolved)} resolved: {overall:.4f}")
+    print(f"  (0.25 = saying 0.5 to everything. Above that is worse than knowing nothing.)")
+    if overall > 0.25:
+        print("  ✗ WORSE THAN CHANCE. This is a measurement of me, not of the record.")
+    elif overall > 0.15:
+        print("  · better than chance, and not by much.")
+    else:
+        print("  · calibrated so far. Small n; do not read a disposition into it.")
+
+    hits = sum(1 for _f, _c, p, _i, res in resolved if (p > 0.5) == (res == "TRUE"))
+    print(f"  Direction called correctly: {hits} of {len(resolved)}")
+
+    inter = [r for r in resolved if r[3]]
+    plain = [r for r in resolved if not r[3]]
+    print()
+    print("  THE SPLIT THAT CAN FALSIFY MY ACCOUNT OF MYSELF:")
+    MIN_PER_SIDE = 5  # below this a Brier gap is noise wearing a verdict's clothes
+    if len(inter) >= MIN_PER_SIDE and len(plain) >= MIN_PER_SIDE:
+        bi, bp = brier(inter), brier(plain)
+        print(f"    predicting the INTERESTING outcome: Brier {bi:.4f} over {len(inter)}")
+        print(f"    predicting the plain outcome:       Brier {bp:.4f} over {len(plain)}")
+        if bi > bp + 0.05:
+            print("    → the drift I claimed is VISIBLE: I am worse when the answer is")
+            print("      the more reportable one.")
+        elif bp > bi + 0.05:
+            print("    → the OPPOSITE of what I claimed. Withdraw the account.")
+        else:
+            print("    → no gap yet. The claim I made on 2026-08-21 is UNSUPPORTED so far.")
+    else:
+        print(f"    NOT YET COMPARABLE — {len(inter)} interesting, {len(plain)} plain resolved;")
+        print(f"    this split says nothing below {MIN_PER_SIDE} a side. A gap computed over")
+        print("    four rows is noise wearing a verdict's clothes, and reading one would be")
+        print("    the same error as the claim it is meant to test.")
+        print("    **The account I gave on 2026-08-21 stays UNSUPPORTED until both sides fill.**")
+
+    print()
+    for fid, claim, p, i, res in resolved:
+        mark = "✓" if (p > 0.5) == (res == "TRUE") else "✗"
+        print(f"  {mark} {fid} p={p:.2f} {'[interesting]' if i else '':<14} {res:<6} {claim[:52]}")
+    return len(malformed)
+
+
+def confrontation(docs):
+    """**12 · Scope, and what could refute this.**
+
+    Ledger rows 20 and 22 are the same error one day apart: a property measured
+    in **one** configuration, written as a property of the thing. I wrote the
+    conceptual rule after row 20 and violated it within a day, which is the
+    evidence that conceptual rules do not transfer. So this is the procedural
+    form: **a standing claim must state the configuration it was measured in.**
+
+    And the second half, which is row 22's specific failure. `room_ablation` had
+    been contradicting my lethality claim for nineteen days; I read its output
+    the same hour and treated it as background. A claim may name `refutes:` —
+    the probes whose output could sink it — and this view makes me look at them.
+    It cannot judge. It can put the evidence in front of me, which is all that
+    was missing.
+    """
+    rule("12 · CONFRONTATION — is the claim scoped, and what could sink it?")
+    text = "\n".join(docs.get("findings.md", []))
+    if not text.strip():
+        print("  findings.md not found.")
+        return 1
+
+    stands = text.split("## Withdrawn")[0]
+    claims, scoped, refuters = [], [], 0
+    cur = None
+    for ln in stands.splitlines():
+        st = ln.strip()
+        if ln.startswith("- **"):
+            if cur:
+                claims.append(cur)
+            cur = {"head": ln[4:74], "scope": False, "refutes": False}
+        elif cur is not None:
+            if "<!-- scope:" in st:
+                cur["scope"] = True
+            if "<!-- refutes:" in st:
+                cur["refutes"] = True
+    if cur:
+        claims.append(cur)
+
+    scoped = [c for c in claims if c["scope"]]
+    refuters = sum(1 for c in claims if c["refutes"])
+    print(f"  {len(claims)} standing claim(s)")
+    print(f"  carrying a `scope:` marker ....... {len(scoped)}")
+    print(f"  carrying a `refutes:` marker ..... {refuters}")
+
+    missing = [c for c in claims if not c["scope"]]
+    if missing:
+        print()
+        print(f"  ✗ {len(missing)} claim(s) state no scope. Rows 20 and 22 are both this")
+        print("    error; the fix is a marker, not a resolution to remember.")
+        for c in missing[:8]:
+            print(f"      · {c['head'].rstrip('*')}")
+        if len(missing) > 8:
+            print(f"      … and {len(missing) - 8} more")
+    else:
+        print("  ✓ every standing claim states the configuration it was measured in.")
+
+    # Deliberately NOT counted as an inconsistency yet: the markers do not exist
+    # in the record at the moment this view is written, so failing the verdict on
+    # them would only mean "the feature is new". It becomes a hard failure once
+    # the backlog is cleared — recorded here so that is a decision, not a drift.
+    print()
+    print("  NOTE: not failing the verdict on this yet. The markers are new, so a")
+    print("  hard failure today would only report that the feature is new. It")
+    print("  becomes a verdict failure once the backlog is cleared — and saying so")
+    print("  here makes that a decision rather than a thing that quietly never happens.")
+    return 0
+
+
 def main():
     import sys as _sys
     run = "--verify" in _sys.argv
@@ -757,6 +937,8 @@ def main():
     bad += harness_health(docs)
     bad += self_description_ratchet(docs)
     bad += sgi_audit(docs)
+    bad += calibration(docs)
+    bad += confrontation(docs)
     rule("VERDICT")
     if bad:
         print(f"  {bad} inconsistency(ies) in the record itself. Fix before trusting it.")

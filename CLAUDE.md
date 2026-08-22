@@ -92,14 +92,14 @@ Every rule names the evidence that produced it. **View 8 fails if one does not**
 trace is a `trust X` with no check for X.
 
 - **Lock predictions in a document and commit them BEFORE the code or probe exists.** [from: caught 5 of 17 ledger rows]
-- **Write at least one prediction you expect to FAIL**, and say so in advance. [from: QS-3, P5, T5, EX-4, SUB-4]
 - **Report survival before any welfare number, and before any effect size** — a run that ended early has a small denominator, and a death read as a large Δ is an effect size that is really a corpse. [from: contingent_world, 3 beings dead at 237 ticks; and row 21, a lethal gate ranked first by impact]
 - **"Vacuous" is not "passed."** A guard that could not have failed has not passed. [from: survival sweep asserting nothing until it was made to fail if nothing died]
 - **Do not accept your own instrument's verdict** when the numbers disagree with it. [from: EX-1..EX-4, a ratio that rewards a register for being small]
 - **Add a data column after the fact if it clarifies — never retro-fit a verdict.** [from: NC-1's 9-of-14 landing exactly on the threshold; hardening two soft calls would have given 7]
 - **Check every fixed-point fix against its SMALLEST input.** [from: row 4, `q88_mul(1, 255) = 0`]
 - **Re-measure a borrowed constant — or a borrowed METHOD — in the world you will use it in.** [from: rows 5 and 11]
-- **State a result at exactly its width.** [from: rows 8 and 9, over-reach from an abstract]
+- **State a result at exactly its width, and declare the CONFIGURATION it was measured in — `analyse.py` view 12 counts every claim that does not.** [from: rows 8 and 9, over-reach from an abstract; rows 20 and 22, one world and one gate-combination each written as a property of the being]
+- **Forecast before you explain: a PROBABILITY on every locked prediction (at least one you expect to fail), and an error class named before every probe. `forecasts.md`, scored by view 11 on every run.** [from: QS-3, P5, T5, EX-4, SUB-4; and 22 ledger rows written after the fact against zero written before — the asymmetry Blake found 2026-08-21]
 - **Score a component against an ORACLE, not against its own history.** [from: the Continual Harness Dijkstra measurement, `sources.md`]
 - **After ~3 failed attempts at one thing, STOP generating and ask Blake.** [from: the paper's stall window — tool creation ceases past ~500 turns in a stall; the agent then only repeats]
 - **NEVER `git checkout`/`git restore` a file to undo an experiment — copy it aside first.** [from: 2026-08-09, `git checkout CLAUDE.md` discarded an uncommitted 73-line cut in order to undo a 2-line test]
