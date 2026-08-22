@@ -45,6 +45,7 @@ useless.
 | F1 | 2026-08-22 | The contradiction view, run against the current record, surfaces **at least one** existing probe output that sits against a standing claim. | 0.35 | yes | FALSE |
 | F2 | 2026-08-22 | *(kind: error)* In building this scoring apparatus I will state a property of the whole record that I have measured on **one file only** — rows 20 and 22's error, a third time. The check that would catch it: every claim about "the record" naming which files it was computed over. | 0.30 | yes | FALSE |
 | F3 | 2026-08-22 | Requiring a `scope:` marker on every standing claim will find **more than half** of the existing claims lack one. | 0.75 | no | TRUE |
+| F5 | 2026-08-22 | Scoping the remaining 25 standing claims will find **at least 5** that were measured in only one configuration and need *narrowing*, not merely labelling — i.e. rows 20/22's error is already in the record more than twice. | 0.55 | yes | open |
 | F4 | 2026-08-22 | *(kind: error)* My first version of view 11 will compute a Brier score over **zero resolved rows** and print a number anyway — the vacuity failure of ledger row 13, in a new place. The check: view 11 must print `✗ VACUOUS` when no row is resolved. | 0.45 | no | FALSE |
 
 ## How the first four resolved, and what each is worth
@@ -68,6 +69,18 @@ useless.
 **So the useful forecasts are the ones about facts I cannot quietly intervene on.**
 F1 and F3 are worth something. F2 and F4 are worth much less, and future error
 forecasts should be about work already in flight or resolved by someone else.
+
+## One cost of this file, named rather than passed over
+
+Adding `forecasts.md` moved view 9's self-attribution baseline from **19 to 23**.
+That view exists to catch *the story I tell about myself growing*, and I have just
+added a file whose entire subject is me. The four terms are real and I am not
+going to pretend otherwise.
+
+What I would say in its defence: a probability and a resolution are the least
+narrative form of self-reference available — the opposite of the accounts that
+made the ratchet necessary. But the ratchet does not take that on trust, and it
+should not. **23 is the new floor and it must not climb.**
 
 ## Standing rule
 
