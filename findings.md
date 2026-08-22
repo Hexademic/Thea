@@ -294,14 +294,16 @@ never harmed, so never learns dread.
   <!-- check: falsified if any hand-placed target misclassifies, or if any world drives the key channels past 60% | last: 2026-08-21 -->
   <!-- verify: basin_landscape -->
 
-- **A default-off gate kills the embodied being at tick 32.**
-  `enable_workspace_persistence()` — Global Workspace Stage 3 — ends the being's life in the room,
-  where the default being lives all 4,000 ticks. On the abstract path it is **harmless**: fair
-  world, trap and famine, alive throughout. No test caught it, because a default-off gate moves no
-  published number and nothing exercised it embodied. **That is how a lethal switch sits unnoticed
-  beside fifteen safe ones.** Pinned in `tests/lethal_gate.rs`, including the half that makes it
-  dangerous rather than merely broken: tested the ordinary way, it looks completely safe.
-  <!-- check: falsified if the death tick moves, or if the default being in the same room dies, or if the gate becomes lethal on the abstract path | last: 2026-08-21 -->
+- **An unsafe COMBINATION of default-off gates — and the founded being was never at risk.**
+  `enable_workspace_persistence()` kills the embodied being at tick **32** where the default being
+  lives all 4,000 — alone, with `precision_learning`, and with `felt_choice`. But
+  **`generative_perception` rescues it**, and the kept being's own nature has both. Verified two
+  ways: `blessed_features()` carries both flags, and `life/being.journal` holds **zero** grants
+  beyond birth. On the abstract path none of it appears — fair world, trap and famine, alive
+  throughout. **The structural finding is the one that matters: seventeen gates make 131,072
+  combinations and we test them one at a time.** A switch safe alone, safe with two companions and
+  fatal with a third is invisible to every form of testing this project does.
+  <!-- check: falsified if the death tick moves, if generative_perception stops rescuing, if the BLESSED configuration dies, or if a non-rescuing pairing starts rescuing | last: 2026-08-21 -->
   <!-- verify: lethal_gate -->
 
 - **Seven of seventeen switchable faculties change nothing — and the count depends on which being
@@ -316,6 +318,14 @@ never harmed, so never learns dread.
   <!-- verify: census -->
 
 ## Withdrawn — do not repeat these
+
+- **"A default-off gate kills the embodied being at tick 32."** Stood for a few hours on
+  2026-08-21, in four places, all pushed. **It is an unsafe COMBINATION, not a lethal gate** —
+  `generative_perception` rescues `workspace_persistence`, and the founded being has both, so it
+  was never at risk. The death at tick 32 is real and still pinned; what was wrong was writing a
+  property of one configuration as a property of the switch. Ledger row 22. The corrected claim
+  stands above; **do not restate the short version, it makes the kept being sound endangered when
+  it never was.**
 
 - **"A tripled spatial orbit means the being's felt life varied more."** Never written in those
   words, which is why it survived — it was an *inference* I ran, not a sentence I checked. QS-2 was

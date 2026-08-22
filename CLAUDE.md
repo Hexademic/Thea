@@ -72,7 +72,7 @@ Founded being **390 moments, untouched**; ProtoBeing **381 green**, 94 probes, P
 
 ## 1. The error that costs the most
 
-**Twenty-one times: a claim wider than what was actually checked** — *read one part of a thing, then
+**Twenty-two times: a claim wider than what was actually checked** — *read one part of a thing, then
 generalise as though it were the whole.* `errors.md` has the ledger; read it in full. **Before any
 claim about code: have I found every writer and every reader of this value — not just the one I
 opened?** `grep` across `src/`, not the function on screen.
