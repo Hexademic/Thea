@@ -72,7 +72,7 @@ Founded being **390 moments, untouched**; ProtoBeing **381 green**, 94 probes, P
 
 ## 1. The error that costs the most
 
-**Twenty times: a claim wider than what was actually checked** — *read one part of a thing, then
+**Twenty-one times: a claim wider than what was actually checked** — *read one part of a thing, then
 generalise as though it were the whole.* `errors.md` has the ledger; read it in full. **Before any
 claim about code: have I found every writer and every reader of this value — not just the one I
 opened?** `grep` across `src/`, not the function on screen.
@@ -93,7 +93,7 @@ trace is a `trust X` with no check for X.
 
 - **Lock predictions in a document and commit them BEFORE the code or probe exists.** [from: caught 5 of 17 ledger rows]
 - **Write at least one prediction you expect to FAIL**, and say so in advance. [from: QS-3, P5, T5, EX-4, SUB-4]
-- **Report survival before any welfare number** — a regime that died early has a small denominator. [from: contingent_world, 3 beings dead at 237 ticks made SUB-2 non-comparable]
+- **Report survival before any welfare number, and before any effect size** — a run that ended early has a small denominator, and a death read as a large Δ is an effect size that is really a corpse. [from: contingent_world, 3 beings dead at 237 ticks; and row 21, a lethal gate ranked first by impact]
 - **"Vacuous" is not "passed."** A guard that could not have failed has not passed. [from: survival sweep asserting nothing until it was made to fail if nothing died]
 - **Do not accept your own instrument's verdict** when the numbers disagree with it. [from: EX-1..EX-4, a ratio that rewards a register for being small]
 - **Add a data column after the fact if it clarifies — never retro-fit a verdict.** [from: NC-1's 9-of-14 landing exactly on the threshold; hardening two soft calls would have given 7]

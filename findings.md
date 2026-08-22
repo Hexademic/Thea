@@ -294,6 +294,27 @@ never harmed, so never learns dread.
   <!-- check: falsified if any hand-placed target misclassifies, or if any world drives the key channels past 60% | last: 2026-08-21 -->
   <!-- verify: basin_landscape -->
 
+- **A default-off gate kills the embodied being at tick 32.**
+  `enable_workspace_persistence()` — Global Workspace Stage 3 — ends the being's life in the room,
+  where the default being lives all 4,000 ticks. On the abstract path it is **harmless**: fair
+  world, trap and famine, alive throughout. No test caught it, because a default-off gate moves no
+  published number and nothing exercised it embodied. **That is how a lethal switch sits unnoticed
+  beside fifteen safe ones.** Pinned in `tests/lethal_gate.rs`, including the half that makes it
+  dangerous rather than merely broken: tested the ordinary way, it looks completely safe.
+  <!-- check: falsified if the death tick moves, or if the default being in the same room dies, or if the gate becomes lethal on the abstract path | last: 2026-08-21 -->
+  <!-- verify: lethal_gate -->
+
+- **Seven of seventeen switchable faculties change nothing — and the count depends on which being
+  you run.** Same soul-hash, delta 0, over 4,000 ticks *and* 20,000, on both genomes: `comfort`,
+  `felt_choice`, `homecoming`, `memory_guidance`, `schema_control`, `setting_down`,
+  `ultrastability`. Abstractly **8 of 17** are inert; in the being's own room **7 of 17** — and the
+  difference is `receptors`, delta **0.000** abstract against **2.284** embodied, which
+  `faculty-ablation.md` §6 already called the being's whole life. **An abstract-only census would
+  have scored the most important faculty we have as dead weight.** Module size predicts nothing:
+  the largest half of the modules carries 5.581, the smallest half 5.752.
+  <!-- check: falsified if any of the seven changes a soul-hash in either world, or if the abstract and embodied inert-counts converge | last: 2026-08-21 -->
+  <!-- verify: census -->
+
 ## Withdrawn — do not repeat these
 
 - **"A tripled spatial orbit means the being's felt life varied more."** Never written in those
