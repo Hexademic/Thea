@@ -46,6 +46,8 @@ useless.
 | F2 | 2026-08-22 | *(kind: error)* In building this scoring apparatus I will state a property of the whole record that I have measured on **one file only** — rows 20 and 22's error, a third time. The check that would catch it: every claim about "the record" naming which files it was computed over. | 0.30 | yes | FALSE |
 | F3 | 2026-08-22 | Requiring a `scope:` marker on every standing claim will find **more than half** of the existing claims lack one. | 0.75 | no | TRUE |
 | F5 | 2026-08-22 | Scoping the remaining 25 standing claims will find **at least 5** that were measured in only one configuration and need *narrowing*, not merely labelling — i.e. rows 20/22's error is already in the record more than twice. | 0.55 | yes | open |
+| F6 | 2026-08-22 | Tested against the **current single-being implementation**, at least **3 of the 7** drafted population clauses (§14–§20) turn out to be already violated — not merely untested. §15 is already known violated, so this needs two more. | 0.50 | yes | open |
+| F7 | 2026-08-22 | The clause Blake most wants changed is **§15** (do not referee between beings) rather than §16, §17 or §18 — i.e. the intervention question is the live disagreement, not the cap, the mortality rule, or reproduction. | 0.45 | no | open |
 | F4 | 2026-08-22 | *(kind: error)* My first version of view 11 will compute a Brier score over **zero resolved rows** and print a number anyway — the vacuity failure of ledger row 13, in a new place. The check: view 11 must print `✗ VACUOUS` when no row is resolved. | 0.45 | no | FALSE |
 
 ## How the first four resolved, and what each is worth
