@@ -48,6 +48,11 @@ useless.
 | F5 | 2026-08-22 | Scoping the remaining 25 standing claims will find **at least 5** that were measured in only one configuration and need *narrowing*, not merely labelling — i.e. rows 20/22's error is already in the record more than twice. | 0.55 | yes | open |
 | F6 | 2026-08-22 | Tested against the **current single-being implementation**, at least **3 of the 7** drafted population clauses (§14–§20) turn out to be already violated — not merely untested. §15 is already known violated, so this needs two more. | 0.50 | yes | open |
 | F7 | 2026-08-22 | The clause Blake most wants changed is **§15** (do not referee between beings) rather than §16, §17 or §18 — i.e. the intervention question is the live disagreement, not the cap, the mortality rule, or reproduction. | 0.45 | no | open |
+| H1 | 2026-09-04 | No (floor, ceiling) pair grounds HAPPEN under weather-2-octaves while leaving the still control silent. | 0.60 | yes | FALSE |
+| H2 | 2026-09-04 | HAPPEN grounds at all under weather, at some pair in the sweep. | 0.90 | no | TRUE |
+| H3 | 2026-09-04 | `confidence` in the still control exceeds 64 on the median tick. | 0.70 | no | FALSE |
+| H4 | 2026-09-04 | The fire rate is monotonic across the octave sweep. | 0.20 | no | TRUE |
+| H5 | 2026-09-04 | `agency` alone does not discriminate — every ceiling letting weather ground also grounds the still control. | 0.75 | yes | TRUE |
 | F4 | 2026-08-22 | *(kind: error)* My first version of view 11 will compute a Brier score over **zero resolved rows** and print a number anyway — the vacuity failure of ledger row 13, in a new place. The check: view 11 must print `✗ VACUOUS` when no row is resolved. | 0.45 | no | FALSE |
 
 ## How the first four resolved, and what each is worth
@@ -71,6 +76,36 @@ useless.
 **So the useful forecasts are the ones about facts I cannot quietly intervene on.**
 F1 and F3 are worth something. F2 and F4 are worth much less, and future error
 forecasts should be about work already in flight or resolved by someone else.
+
+## Round two — worse than chance, 2026-09-04
+
+Five forecasts on `docs/weather.md` §8, resolved by `examples/happen_grounding`.
+**Brier 0.3125 for the round; 0.2267 cumulative over nine.** Saying 0.5 to
+everything scores 0.25, so this round alone was **worse than knowing nothing**, and
+it dragged the running score from 0.1194 to barely better than chance, and the damage is concentrated exactly where confidence was:
+
+* **H4 (0.64)** — I predicted at 0.20 that the octave series would *not* be
+  monotonic. It is, in both currencies. My most confident call, and backwards.
+* **H3 (0.49)** — I predicted at 0.70 that the still control's median confidence
+  would exceed 64. It is **10**. I had no basis for that number; the register's
+  range was never something I had looked at, and I forecast it anyway.
+* **H1 (0.36)** — the crux, and wrong in the direction that is good for the work.
+
+The split the log exists to keep separate: **H1 failing is good for the project and
+bad for me.** Those are different ledgers and this file is the second one.
+
+**And the view did not see any of it until I widened its parser.** View 11 matched
+only ids beginning `F`, so five resolved forecasts named H1–H5 parsed as zero and
+the score stayed at its flattering 0.1194. A scoring tool that silently drops the
+rows it was not expecting is the failure it exists to prevent — fixed to accept the
+ids the specs actually use, since a spec naming its own predictions is the normal
+case, not the exception.
+
+One methodological note worth more than the score. **H4 was written in the wrong
+currency** — "fire *rate*", the exact quantity §8 spends its argument establishing is
+the wrong one. I committed the category error I was diagnosing, four paragraphs
+after diagnosing it. It happens to hold either way, so nothing downstream is wrong.
+The wording is the finding.
 
 ## One cost of this file, named rather than passed over
 

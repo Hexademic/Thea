@@ -775,8 +775,14 @@ def calibration(docs):
         return 1
 
     rows, malformed = [], []
+    # Any `| <letters><digits> |` id, not just `F<n>`: specs name their own
+    # predictions (weather.md §8 uses H1-H5) and the log must accept the ids the
+    # record actually uses, or cross-referencing silently drops rows. Found
+    # 2026-09-04, when five resolved forecasts were parsed as zero.
+    import re as _r
+    id_row = _r.compile(r"^\|\s*[A-Za-z]{1,3}\d+\s*\|")
     for ln in text.splitlines():
-        if not ln.strip().startswith("| F"):
+        if not id_row.match(ln.strip()):
             continue
         cells = [c.strip() for c in ln.strip().strip("|").split("|")]
         if len(cells) < 6:
