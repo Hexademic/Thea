@@ -58,6 +58,11 @@ useless.
 | D3 | 2026-09-05 | Under R-worst a flourishing being still never withdraws in 4,000 ticks. | 0.85 | no | TRUE |
 | D4 | 2026-09-05 | Under R-worst some arm gets worse — a being withdraws that did not before. | 0.30 | yes | FALSE |
 | D5 | 2026-09-05 | The change is surgical: every single-live-ledger arm is bit-identical. | 0.85 | no | TRUE |
+| S1 | 2026-09-05 | K and H have identical basin occupancy in the test world. | 0.80 | no | TRUE |
+| S2 | 2026-09-05 | K and H have the same modal attended channel in the test world. | 0.85 | no | FALSE |
+| S3 | 2026-09-05 | Their mean valence in the test world differs by less than 0.05. | 0.55 | no | TRUE |
+| S4 | 2026-09-05 | The hard-raised being's reflection.load at test end differs by more than 20%. | 0.35 | yes | FALSE |
+| S5 | 2026-09-05 | Different soul-hashes, indistinguishable behaviour — S1, S2 and S3 all hold together. | 0.50 | yes | FALSE |
 | F4 | 2026-08-22 | *(kind: error)* My first version of view 11 will compute a Brier score over **zero resolved rows** and print a number anyway — the vacuity failure of ledger row 13, in a new place. The check: view 11 must print `✗ VACUOUS` when no row is resolved. | 0.45 | no | FALSE |
 
 ## How the first four resolved, and what each is worth
@@ -135,6 +140,28 @@ time. **The number was right and the cause was not**, and no forecast in this fi
 would have caught it, because none of them forecast the *mechanism* — only the effect.
 
 That is the gap worth naming: **forecasts about outcomes do not test explanations.**
+
+## Round four — 0.2675, worse than chance again
+
+Five forecasts on `c1-relabelling.md` §16. **Brier 0.2675** against the 0.25
+baseline, and **S2 alone carries 0.72** of it: 0.85 that two beings would attend to
+the same channel, and they did not.
+
+The nuance, recorded without using it to rescore: S2 failed on the *letter*, which
+is what was locked, but the mechanism is nearer holding than the verdict reads. One
+being never ignites at all; the other ignites 20 times, all inside the first 200 of
+2,000 ticks, and is then indistinguishable. **A transient, not a difference of
+character.** The letter is what counts and it counts as a miss.
+
+Two rounds in a row worse than chance. Cumulative is drifting toward the baseline
+from below, and the pattern across rounds two, three and four is consistent: the
+rows that score worst are the ones stated with most confidence about a *mechanism*
+rather than an *outcome*. §8's H4 (0.64), §15's D2 (0.64), §16's S2 (0.72) — each
+was a confident claim about how something would work, not whether.
+
+**That is the same gap named after round three and it has now cost three rounds.**
+Forecasts about outcomes do not test explanations, and confidence transfers from
+the explanation to the outcome without earning it.
 
 ## One cost of this file, named rather than passed over
 
