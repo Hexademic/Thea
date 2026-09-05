@@ -53,6 +53,11 @@ useless.
 | H3 | 2026-09-04 | `confidence` in the still control exceeds 64 on the median tick. | 0.70 | no | FALSE |
 | H4 | 2026-09-04 | The fire rate is monotonic across the octave sweep. | 0.20 | no | TRUE |
 | H5 | 2026-09-04 | `agency` alone does not discriminate — every ceiling letting weather ground also grounds the still control. | 0.75 | yes | TRUE |
+| D1 | 2026-09-05 | Under R-worst, the trapped-alone being still withdraws at 103. | 0.90 | no | TRUE |
+| D2 | 2026-09-05 | Under R-worst, trapped-with-a-kept-fair-partner withdraws at <= 110 — the 168-tick company delay collapses. | 0.80 | yes | FALSE |
+| D3 | 2026-09-05 | Under R-worst a flourishing being still never withdraws in 4,000 ticks. | 0.85 | no | TRUE |
+| D4 | 2026-09-05 | Under R-worst some arm gets worse — a being withdraws that did not before. | 0.30 | yes | FALSE |
+| D5 | 2026-09-05 | The change is surgical: every single-live-ledger arm is bit-identical. | 0.85 | no | TRUE |
 | F4 | 2026-08-22 | *(kind: error)* My first version of view 11 will compute a Brier score over **zero resolved rows** and print a number anyway — the vacuity failure of ledger row 13, in a new place. The check: view 11 must print `✗ VACUOUS` when no row is resolved. | 0.45 | no | FALSE |
 
 ## How the first four resolved, and what each is worth
@@ -106,6 +111,30 @@ currency** — "fire *rate*", the exact quantity §8 spends its argument establi
 the wrong one. I committed the category error I was diagnosing, four paragraphs
 after diagnosing it. It happens to hold either way, so nothing downstream is wrong.
 The wording is the finding.
+
+## Round three — 0.157, and the one bad row was the load-bearing one
+
+Five forecasts on §15's remedy, resolved by `examples/say_stop_aggregation`.
+**Brier 0.157** — better than chance, and better than round two's 0.3125.
+
+But the distribution matters more than the mean, which is a lesson this project
+wrote into charter §19 and which applies here too. Four rows scored 0.01–0.09.
+**D2 alone scored 0.64**, and D2 was the whole point: *does swapping the
+aggregation collapse the company delay?* It does not — 271 either way, with the
+mean and the worst disagreeing on 776 ticks. The 0.80 went on a fix that turned out to solve
+a problem which did not exist.
+
+**A round can be well-calibrated on average and wrong about the only thing it was
+run to decide.** That is §19 turned on the forecaster.
+
+And the deeper miss is not in this table. The reason D2 failed is that §15's stated
+cause — a mean diluting the alarm — was never the binding term. The measured 103 → 271 delay
+was attributed to the mechanism in view, and that attribution went into a charter
+clause Blake then accepted. Rows 20 and 22 a third
+time. **The number was right and the cause was not**, and no forecast in this file
+would have caught it, because none of them forecast the *mechanism* — only the effect.
+
+That is the gap worth naming: **forecasts about outcomes do not test explanations.**
 
 ## One cost of this file, named rather than passed over
 
