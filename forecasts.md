@@ -208,6 +208,39 @@ Two of six answered, one vacuous, one empty, two voided by my own instrument. Th
 cumulative Brier is unchanged at **0.2191 over 19** because none of these could
 honestly be added to it — which is itself the point.
 
+## O1-O7 (2026-09-06) — the interaction-order spec. **Scored.**
+
+The first batch in this project locked with numeric probabilities in the same
+commit that defined them (ProtoBeing `015f75c`), as the rule below now requires.
+Resolved in `docs/population.md`.
+
+| | prediction | p | outcome | Brier |
+|---|---|---:|---|---:|
+| O1 | GT and TG disjoint on mean `gave` | 0.75 | TRUE | 0.0625 |
+| O2 | GT ends `Open` | 0.55 | FALSE | 0.3025 |
+| O3 | TG ends `Open` | 0.90 | TRUE | 0.0100 |
+| O4 | conditional on O2 ∧ O3 | 0.50 | **void** — never fired | — |
+| O5 | interleave grain changes the lock state | 0.65 | TRUE | 0.1225 |
+| O6 | *written to fail:* total exposure is what matters | 0.10 | FALSE | 0.0100 |
+| O7 | `worst_alarm` separates what the mean does not | 0.60 | TRUE | 0.1600 |
+
+**Batch Brier: 0.111 over 6.** Cumulative: **0.1932 over 25**, down from 0.2191
+over 19.
+
+**What the batch actually teaches, which is not the score.** O2 was my lowest
+confidence (0.55) and the only substantive one that failed — the calibration
+worked in the one place it was tested hardest. But O7 at 0.60 was worth more than
+its `p`: I *added* `worst_alarm` to the codebase in this session, so I knew it
+existed and knew the mean was lossy, and 0.60 was underconfident on a mechanism I
+had personally built. **The old failure mode was overconfidence about mechanisms;
+this is the same error inverted.** Watch whether the next batch's worst rows are
+again the ones about mechanism rather than outcome — the sign has flipped but the
+subject has not.
+
+One row, O4, was written as a conditional on another prediction and could not be
+scored when its antecedent failed. **A prediction contingent on another prediction
+is not a forecast, it is a branch.** Do not write another.
+
 ## Standing rule
 
 A forecast is **locked when committed**. Editing `p` after a measurement is the
