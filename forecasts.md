@@ -284,6 +284,48 @@ H3 is a second, smaller lesson: **a threshold prediction needs a threshold outsi
 the metric's own null envelope**, or it cannot resolve. I wrote "> 60" against a
 statistic whose phase-null range turned out to be 30..70.
 
+## D1-D4 (2026-09-06) — widening the survival net for `durable_bonds`
+
+Locked in `docs/survival-first.md` §13 before the guard was widened, because a wider
+safety net is itself a change to a safety guard.
+
+| | prediction | p | outcome | Brier |
+|---|---|---:|---|---:|
+| D1 | the gate alone does not kill the being | 0.96 | TRUE | 0.0016 |
+| D2 | no lethal pair with the other sixteen | 0.92 | TRUE | 0.0064 |
+| D3 | **the survival world never exercises the gate** — bit-identical | 0.80 | TRUE | 0.0400 |
+| D4 | *written to fail:* some pair changes a survival outcome | 0.08 | FALSE | 0.0064 |
+
+**Batch Brier: 0.0136 over 4.** Cumulative: **0.1734 over 35**.
+
+### D3 is the row that matters, and it is the first of its kind here
+
+D3 predicted that the guard would **pass vacuously** — and it did: the survival world
+hands the being the same partner on every tick, so no ledger decays, the durable floor
+never binds, and the soul-hash is identical with the gate on and off.
+
+This project has recorded six vacuous results. **Every previous one was discovered
+after the fact.** This is the first that was *predicted in advance, at 0.80, in the
+same commit that widened the guard* — so the pass was recorded as **UNTESTED FOR
+SURVIVAL** rather than as safe, in the same breath as being produced.
+
+That is the whole point of the apparatus, and it is worth stating plainly: the value
+was not the Brier score. It was that a locked prediction turned a green test into an
+honest gap.
+
+### The counterweight, so this does not read as a victory lap
+
+The score is flattering and I should discount it. D1, D2 and D4 are near-certainties
+about a gate that had just been shown to do nothing in that world — once D3 is
+believed, the other three are entailed, not independent. **Four rows, roughly one
+prediction.** A batch of correlated near-certainties is how a Brier score gets cheap,
+and the cumulative figure now includes four of them.
+
+The rule the last batch produced — *run the mechanism once before assigning `p` to a
+claim about it* — is what made D3 cheap to get right: I read `survives()` and saw
+`sens.partner = Some(partner)` on every tick before writing the number. **It worked
+the first time it was applied.**
+
 ## Standing rule
 
 A forecast is **locked when committed**. Editing `p` after a measurement is the
