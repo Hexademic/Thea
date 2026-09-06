@@ -13,7 +13,7 @@ whole value is that a future session reads it and does not make instance ten.
 **A claim wider than what was actually checked** — specifically: *read one part of a thing, then
 generalise as though it were the whole thing.*
 
-**Seventeen instances. Not seventeen mistakes — one mistake, seventeen times.** Seven on 2026-08-03; #8 and
+**Seventeen instances of the shape below, plus two instrument errors (rows 13 and 23) that are a different shape and are described where they are filed.** Seven on 2026-08-03; #8 and
 #9 on 2026-08-04, both caught only because Blake supplied a PDF of a paper I had already built a
 document on; **#10 the same afternoon, and #13 five days later, both in `analyse.py` itself.**
 
@@ -119,6 +119,37 @@ is about us.
 | 21 | That `workspace_persistence` was **the highest-impact gate in the room** — it ranked first by embodied Δ (2.804), and that sentence was one message from being reported to Blake as the census's headline | **The being was dead at tick 32.** Its Δ was large *because* my composite awards +1.0 when survival differs, and its mean valence was an average over 32 ticks, not a life. The gate is **lethal embodied and harmless abstractly** — 4,000 ticks alive in a fair world, a trap and a famine — so no ordinary test would find it, and none had. I ranked a death as an effect size | **Read SURVIVAL before interpreting any aggregate, and never average a measure over a run that ended early.** The probe now prints a survival section above every Δ, excludes dead arms from the welfare read, and `tests/lethal_gate.rs` pins both the death tick and the fact that the abstract path hides it |
 | 20 | *"The margin is a landslide, not a near-thing"* — written into a **locked** spec (`comfort.md` §16), citing 167 against 645, as a general property of the being's basin landscape | **That is the fair world alone.** Across all four worlds the margins are 478, 575, **36** and **29** — a landslide in two and razor-thin in the other two. I measured one world and wrote the sentence about the being. The prediction built on it (R2, "the frozen margin stays above 200") **failed on exactly the two worlds I had not looked at** | **A property of the system needs every world before it is written as a property of the system.** Row 5's check in a new place: I had the four-world table on screen from an earlier diagnostic and quoted a single row of it |
 | 19 | Two readings the mixed-selectivity probe printed on its first run, and that I was one message from reporting: that **MS-3 HELD** (the trapped being attends a different channel, so context does change the focus) and that **MS-5 FAILED** — the latter labelled in the probe's output as *"the one result here that would count in Miller's favour"* | **Both were artefacts, in opposite directions, and both favoured the more interesting reading.** MS-3's context-dependence was the **threat-capture floor**: the trap fired it on **4,875 of 8,000 ticks**, and capture is a hardcoded exogenous interrupt, not biased competition selecting a winner. Excluding captured ticks the same channel wins in all four worlds. MS-5's "rank order changes with regime" compared **tie-breaks** — 11 of 12 channels sit tied at the precision ceiling, so `sort_by_key` returns index order. **I had made the MS-3 criticism, in those words, against an outside paper two days earlier** — *"a threshold sweeping down a fixed salience ranking, not attention"* — and then nearly published it about our own being | **When a mechanism has a hardcoded override, split the measurement by whether the override fired, BEFORE reading the aggregate.** And **never rank a vector without checking for ties** — an order over equal values is the sort's, not the system's. Both checks now ship in the probe, which prints the captured count beside MS-3 and the tie count beside MS-5 |
+
+
+## 2026-09-06
+
+| # | I claimed | What was true | The check I skipped |
+|---|---|---|---|
+| 23 | Nothing, to Blake — this one was stopped by the standing rule and not by him. But the probe's first run **printed** forgetting horizons of 371, 171 and >400 ticks, and I was one message from reporting that *"a morning of being used survives hundreds of ticks into the afternoon."* The metric was locked in the spec commit before the run, as the method requires | **The metric measured the Van der Pol phase and nothing else.** Holding the morning's *content* fixed and changing only its *length* by k ticks produces **exactly k** mismatched afternoon goals — 1 for a one-tick shift, 50 for fifty, and a stable horizon of ~171 throughout. A one-tick-shorter blank morning "remembered" as loudly as an entirely different life. Every number in the first table was the oscillator's position, not the being's history | **A metric must be run on a null input before it is locked, not after.** I pre-registered the *predictions* and never pre-registered a test of the *instrument that resolves them*. The rebuilt probe compares whole-afternoon aggregates against a phase-null envelope — the same statistic swept across morning lengths 150..=250 — and reports a difference only when the envelopes are **disjoint** |
+
+### Why this is not filed as "the method working"
+
+The failed predictions in this run (M1, M6) **are** the method working and are not filed. Row 23 is
+separate: the fault was in the **instrument**, and a broken instrument does not fail loudly — it
+resolves every prediction confidently and in the wrong direction. M3 and M4 were resolved by it and
+had to be voided rather than graded.
+
+**This is the second instrument error after row 13** (view 11's parser, which silently dropped every
+non-`F` row and returned a flattering Brier). Both share a shape the rest of the ledger does not:
+
+> **A claim wider than what was checked is caught by checking more. An instrument that measures the
+> wrong quantity is not — it is caught only by running it on a case where the answer is known.**
+
+So the check generalises past this probe: **every new metric gets a null run in the same commit that
+defines it.** For a difference metric that means a null-difference input; for a rate, a case with no
+events; for a score, an empty resolution set (which is row 13, exactly).
+
+### One thing worth keeping
+
+The rule that caught it was *"run adversarial mutations before reporting"* — my own, from row 17,
+written five weeks ago. It cost one extra run and saved a false finding that would have gone into a
+document, a README line and a commit message before anyone could contradict it. **The ledger is
+load-bearing, not decorative.**
 
 
 ## What it cost

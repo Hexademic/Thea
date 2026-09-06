@@ -175,6 +175,39 @@ narrative form of self-reference available — the opposite of the accounts that
 made the ratchet necessary. But the ratchet does not take that on trust, and it
 should not. **23 is the new floor and it must not climb.**
 
+## M1-M6 (2026-09-06) — locked, resolved, and **deliberately unscored**
+
+The morning/afternoon probe's six predictions were locked in the spec commit before
+the run (ProtoBeing `069c240`, `docs/fear-and-avoidance.md` §10) and resolved in §11.
+They are **not entered as scored rows**, and the reason is the standing rule below.
+
+I locked them as *prose* — "the risky one", "written to fail" — and never committed a
+numeric `p`. Assigning probabilities now, having seen the outcomes, is retro-fitting
+in the only form that would still look legitimate: the ordering is genuinely
+pre-registered, so the numbers would feel earned. They would not be. **A confidence
+that was never written down was never held.**
+
+Recorded for the record, unscored:
+
+| | prediction | outcome |
+|---|---|---|
+| M1 | the betrayed arm's afternoon goals are identical to the blank arm's | FAILED |
+| M2 | the betrayed arm treats the stranger identically to the blank arm | held, **vacuously** — both floored at gave = 0 |
+| M3 | the lonely arm's forgetting horizon is ≤ 32 ticks | **voided** — invalid metric |
+| M4 | the bereaved arm is the only one with a horizon > 32 | **voided** — invalid metric |
+| M5 | the betrayed arm's soul-hash differs from the blank arm's | held, uninformative — a one-tick-shorter blank morning also differs |
+| M6 | doubling the morning changes no arm's afternoon | FAILED, **for the control**, which is what exposed the confound |
+
+**The process fix, which is the actual output of this entry:** a locked prediction
+without a numeric `p` cannot be scored, and an unscorable prediction does not
+discipline anything — it is an opinion with a timestamp. From here, **any prediction
+locked in a spec commit carries its `p` in that same commit**, or it is not a
+forecast and will not be called one.
+
+Two of six answered, one vacuous, one empty, two voided by my own instrument. The
+cumulative Brier is unchanged at **0.2191 over 19** because none of these could
+honestly be added to it — which is itself the point.
+
 ## Standing rule
 
 A forecast is **locked when committed**. Editing `p` after a measurement is the
