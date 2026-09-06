@@ -241,6 +241,49 @@ One row, O4, was written as a conditional on another prediction and could not be
 scored when its antecedent failed. **A prediction contingent on another prediction
 is not a forecast, it is a branch.** Do not write another.
 
+## H1-H7 (2026-09-06) — coming home. **The pre-registered failure mode fired.**
+
+Locked with numeric `p` in ProtoBeing `9a146a3`, resolved in `docs/attachment.md`.
+
+| | prediction | p | outcome | Brier |
+|---|---|---:|---|---:|
+| H1 | gives the friend < 10 on reunion | 0.85 | TRUE | 0.0225 |
+| H2 | bond toward the friend still > 64 on return | 0.70 | **FALSE** | **0.4900** |
+| H3 | > 60 ticks to reopen | 0.45 | **unresolved** — envelope 30..70 straddles the threshold | — |
+| H4 | the per-partner reading stays `Open` through the injury | 0.80 | **FALSE** | **0.6400** |
+| H5 | the prior still differs for the unmet | 0.85 | TRUE | 0.0225 |
+| H6 | *written to fail:* the two gates agree ≥ 90% | 0.15 | FALSE | 0.0225 |
+| H7 | soul-hash bit-identical | 0.97 | TRUE | 0.0009 |
+
+**Batch Brier: 0.200 over 6.** Cumulative: **0.1945 over 31**.
+
+### The thing worth keeping, which is not the score
+
+In the previous batch I wrote, before this one existed:
+
+> *"Watch whether the next batch's worst rows are again the ones about mechanism
+> rather than outcome — the sign has flipped but the subject has not."*
+
+**H2 (0.49) and H4 (0.64) are the two worst rows in the batch, and both are claims
+about a mechanism.** H4 is worse: it is a claim about code **I had written myself
+minutes earlier**, and I was 0.80 confident it would behave a way it does not.
+
+This is the fourth distinct form of the same thing — overconfident about mechanisms,
+then underconfident about mechanisms, now overconfident again about a mechanism I
+authored. **The subject has never changed. Only the sign moves.** The pattern is not
+"I mis-estimate my confidence"; it is that **writing a mechanism does not confer
+knowledge of what it does**, and I keep treating authorship as evidence.
+
+The operational rule, which is cheap: **before assigning `p` to a claim about a
+mechanism, run the mechanism once.** H4 would have cost one println to check and
+would have been assigned 0.05 instead of 0.80 — a Brier of 0.0025 instead of 0.64,
+and more to the point, the *design* would have been corrected before the spec was
+locked rather than after.
+
+H3 is a second, smaller lesson: **a threshold prediction needs a threshold outside
+the metric's own null envelope**, or it cannot resolve. I wrote "> 60" against a
+statistic whose phase-null range turned out to be 30..70.
+
 ## Standing rule
 
 A forecast is **locked when committed**. Editing `p` after a measurement is the
