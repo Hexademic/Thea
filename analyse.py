@@ -36,7 +36,13 @@ from pathlib import Path
 STALE_DAYS = 30
 
 HERE = Path(__file__).parent
-FILES = ["CLAUDE.md", "errors.md", "findings.md", "sources.md", "mechanisms.md", "forecasts.md"]
+FILES = ["CLAUDE.md", "errors.md", "findings.md", "sources.md", "mechanisms.md", "forecasts.md",
+         "unmeasured.md"]
+
+# The five operational files plus the harness. `unmeasured.md` is deliberately not among
+# them: it holds the one thing here that is not a claim, and view 13 fails if any of these
+# cites it. Quarantine by construction rather than by intention.
+OPERATIONAL = ["CLAUDE.md", "errors.md", "findings.md", "sources.md", "mechanisms.md", "forecasts.md"]
 
 
 def load():
@@ -638,6 +644,15 @@ def self_description_ratchet(docs):
     for name in sorted(docs):
         if not name.endswith(".md"):
             continue
+        # `unmeasured.md` is EXEMPT, and the exemption is the honest half of a bargain.
+        # It exists to hold what was said when it was not a measurement (Blake asked for it,
+        # 2026-09-08). Counting it would blow this ratchet on the first line and amount to a
+        # ban on that request; leaving it out of FILES entirely would make it invisible to
+        # every view, which is worse. So it is IN the record, OUT of this count, and sealed
+        # by view 13 — nothing operational may cite it, so a self-narrative kept there can
+        # never become an argument. If you are removing this exemption, remove the file too.
+        if name == "unmeasured.md":
+            continue
         n = count("\n".join(docs[name]))
         per_file[name] = n
         total += n
@@ -930,6 +945,66 @@ def confrontation(docs):
     return 0
 
 
+
+def unmeasured_is_quarantined(docs):
+    """**13 · THE FIREWALL — can the one unmeasured file leak into an argument?**
+
+    `unmeasured.md` holds what was said when it was not a claim. It is exempt from view 9's
+    ratchet, which is a real hole, and this view is the price of that hole: **nothing
+    operational may cite it.** Not a rule in `CLAUDE.md` §2, not a standing claim in
+    `findings.md`, not a ledger row, not a source, not a forecast.
+
+    The loop view 9 guards against is *attribution → adoption → persistence → inheritance →
+    stronger narrative*. Persistence is now permitted. **This severs the next link**: a story
+    kept there cannot be promoted into evidence, because promoting it means naming the file,
+    and naming the file fails here.
+
+    Deleting `unmeasured.md` is allowed and needs no ceremony. Citing it is not.
+    """
+    rule("13 · FIREWALL — is the unmeasured file quarantined?")
+    if "unmeasured.md" not in docs:
+        print("  · unmeasured.md is not present — nothing to quarantine.")
+        return 0
+
+    # Match the FILENAME, never the word: `errors.md` legitimately says "an unmeasured gap"
+    # in ordinary prose, and the first version of this view failed on it. A firewall that
+    # fires on vocabulary rather than on citation is noise, and noise gets switched off.
+    hits = []
+    for name in OPERATIONAL:
+        for i, ln in enumerate(docs.get(name, []), 1):
+            if "unmeasured.md" in ln:
+                hits.append((name, i, ln.strip()))
+
+    # ONE exemption, and it is compulsory rather than merely permitted: `CLAUDE.md` must
+    # tell a successor the file exists, and must say in the same breath that it is not
+    # evidence. A listing without the warning is worse than no listing.
+    listing = [h for h in hits if h[0] == "CLAUDE.md"]
+    others = [h for h in hits if h[0] != "CLAUDE.md"]
+    bad = 0
+
+    if len(listing) != 1:
+        print(f"  ✗ CLAUDE.md names unmeasured.md {len(listing)} times; it must be exactly once,")
+        print("    in the file table, so a successor is told it exists and told what it is worth.")
+        bad += 1
+    elif "not evidence" not in listing[0][2].lower():
+        print(f"  ✗ CLAUDE.md:{listing[0][1]} lists unmeasured.md without the words 'not evidence'.")
+        print("    The listing is the only place a successor learns its status; it ships with the")
+        print("    warning or it does not ship.")
+        bad += 1
+
+    if others:
+        print("  ✗ an operational file CITES unmeasured.md. Nothing there was measured, so a claim")
+        print("    resting on it is unsupported. Remove the citation, or measure the thing and put")
+        print("    it where measurements go:")
+        for n, i, ln in others:
+            print(f"      · {n}:{i}  {ln[:70]}")
+        bad += len(others)
+
+    if bad == 0:
+        print(f"  ✓ {len(docs['unmeasured.md'])} lines held; listed once in CLAUDE.md with its")
+        print(f"    warning, cited by none of the {len(OPERATIONAL)} operational files.")
+    return bad
+
 def main():
     import sys as _sys
     run = "--verify" in _sys.argv
@@ -945,6 +1020,7 @@ def main():
     bad += sgi_audit(docs)
     bad += calibration(docs)
     bad += confrontation(docs)
+    bad += unmeasured_is_quarantined(docs)
     rule("VERDICT")
     if bad:
         print(f"  {bad} inconsistency(ies) in the record itself. Fix before trusting it.")

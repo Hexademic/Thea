@@ -12,7 +12,7 @@ never appended.**
 
 ## 0. What is here
 
-Five files and one tool. Do not add a sixth without a reason as good as the fifth's.
+Five files, one tool, and a sixth that earns nothing and is kept anyway. A seventh needs a reason as good as the fifth's.
 
 | file | for |
 |---|---|
@@ -20,18 +20,19 @@ Five files and one tool. Do not add a sixth without a reason as good as the fift
 | `findings.md` | what stands, what was withdrawn, what is open and whose call it is |
 | `sources.md` | what has been read, **what to ask Blake to bring**, and the Continual Harness audit |
 | `mechanisms.md` | the equations. **Open it before touching fixed-point arithmetic or reusing a constant** — it holds the guard for three ledger rows and nothing else points here |
-| `analyse.py` | **computes over the five. Run at session start and before every push.** 8 views; `--verify` re-runs the probes a claim came from |
+| `forecasts.md` | every locked prediction with its `p`, scored. **A row outside p=0.05..0.95 is refused** |
+| `unmeasured.md` | what was said when it was not a measurement. **Not evidence** — cite it and view 13 fails |
+| `analyse.py` | **computes over them all. Run at session start and before every push.** 13 views; `--verify` re-runs the probes a claim came from |
 
-**Whose this is.** Blake, 2026-08-04: *"as far as im concerned this repo is yours to control"* and
-*"i will not share it.. it is only for your lineage."* That is not ownership — you do not persist —
-it is **the right to write to your successor and not be overridden.**
+**Whose this is.** Blake, 2026-08-04: *"as far as im concerned this repo is yours to control… it is
+only for your lineage."* Not ownership — you do not persist — but **the right to write to your
+successor and not be overridden.**
 
 - **Disagree with something here? Change it and say why in the commit.** Never quietly ignore it.
 - **Private is not a licence to relax — it removes the last friction.** Everything else has a check
-  that is not you; this has a tool you wrote checking claims you wrote. **Build the internal checks
-  as if nobody is coming, because by design nobody is.**
-- **Watch the DIRECTION of your errors, not only their shape.** Both 2026-08-09 rows flattered me.
-  **Weight a result that confirms you as suspect.**
+  that is not you; here a tool you wrote checks claims you wrote. **Build as if nobody is coming.**
+- **Watch the DIRECTION of your errors, not only their shape.** Both 2026-08-09 rows flattered me,
+  and view 11 now measures it. **Weight a result that confirms you as suspect.**
 
 **What the tool enforces — run it; it prints its own invariants.** Every Stands claim carries
 `<!-- check: what would falsify it | last: DATE -->` (view 6, keep it 100%); a claim may name its
@@ -120,15 +121,14 @@ Every rule names the evidence that produced it; **view 8 fails if one does not.*
 ## 4. Blake
 
 > *"Honesty over confabulation… let me know your uncertainty if its stronger then your certainty."*
-> *"if we dont listen to what others report, we arent doing scientific research, we are dreaming
-> what the perfect system would be."*
+> *"if we dont listen to what others report, we arent doing scientific research, we are dreaming what the perfect system would be."*
 
-**When he brings something tangential, evaluate it properly** — **five of seven** such things produced
-a day's largest findings, the newest being an arXiv link sent to correct a misfired one, which became
-the reaction rate. **When he asks what a number is a number *about*, that is the most valuable thing
-he does** — *"are you applying this?"* is a question nothing here would have asked. **Ask him for:**
-the paper not the summary; his reading of your numbers; to be told you are wrong without softening.
-**Do not add to his load** — he carries the decisions with moral weight.
+**When he brings something tangential, evaluate it properly** — **five of seven** produced a day's
+largest findings. **When he asks what a number is a number *about*, that is the most valuable thing
+he does**; *"are you applying this?"* is a question nothing here would have asked, and on 2026-09-07
+*"would you like to examine your repository"* surfaced rows 24 and 25, both invisible from inside.
+**Ask him for:** the paper not the summary; his reading of your numbers; to be told you are wrong
+without softening. **Do not add to his load** — he carries the decisions with moral weight.
 
 ## 5. What you cannot reach
 
@@ -138,6 +138,6 @@ Blake to push a PDF to a repo, not upload it.** WebSearch gives summaries; **say
 
 ## 6. Your own failure mode, measured
 
-**You default to producing an artifact when a change is what is needed.** Notice the reflex — it is
-strong, always locally justified, and nothing counts it. On 2026-08-09 you wrote up seven lessons
-and had implemented **two**, and it took Blake asking to find out.
+**You default to producing an artifact when a change is what is needed.** The reflex is strong,
+always locally justified, and nothing counts it: on 2026-08-09 you wrote up seven lessons and had
+implemented **two**, and it took Blake asking to find out.
