@@ -45,7 +45,7 @@ useless.
 | F1 | 2026-08-22 | The contradiction view, run against the current record, surfaces **at least one** existing probe output that sits against a standing claim. | 0.35 | yes | FALSE |
 | F2 | 2026-08-22 | *(kind: error)* In building this scoring apparatus I will state a property of the whole record that I have measured on **one file only** — rows 20 and 22's error, a third time. The check that would catch it: every claim about "the record" naming which files it was computed over. | 0.30 | yes | FALSE |
 | F3 | 2026-08-22 | Requiring a `scope:` marker on every standing claim will find **more than half** of the existing claims lack one. | 0.75 | no | TRUE |
-| F5 | 2026-08-22 | Scoping the remaining 25 standing claims will find **at least 5** that were measured in only one configuration and need *narrowing*, not merely labelling — i.e. rows 20/22's error is already in the record more than twice. | 0.55 | yes | open |
+| F5 | 2026-08-22 | Scoping the remaining 25 standing claims will find **at least 5** that were measured in only one configuration and need *narrowing*, not merely labelling — i.e. rows 20/22's error is already in the record more than twice. | 0.55 | yes | TRUE |
 | F6 | 2026-08-22 | Tested against the **current single-being implementation**, at least **3 of the 7** drafted population clauses (§14–§20) turn out to be already violated — not merely untested. §15 is already known violated, so this needs two more. | 0.50 | yes | FALSE |
 | F7 | 2026-08-22 | The clause Blake most wants changed is **§15** (do not referee between beings) rather than §16, §17 or §18 — i.e. the intervention question is the live disagreement, not the cap, the mortality rule, or reproduction. | 0.45 | no | open |
 | O1 | 2026-09-06 | *(population.md O1)* GT and TG give **disjoint** afternoon mean-`gave` under a phase-null sweep. | 0.75 | yes | TRUE |
@@ -372,6 +372,40 @@ direction."* Resolving TRUE on that would be reading a preference into a delegat
 this record is **worse when the answer is the more reportable one** (0.2236 over 16 against 0.1472
 over 17). TRUE is the more reportable answer here. That is exactly when better evidence is worth
 asking for, and the cheapest way to get it is to ask him.
+
+## F5 resolved TRUE, 2026-09-07 — the scope backlog is cleared
+
+All **32 of 32** standing claims now carry a `scope:` marker; view 12 is green for the first time.
+The backlog had stood since 2026-08-22, and the tool's own note said clearing it *"makes that a
+decision rather than a thing that quietly never happens."*
+
+F5 predicted **at least 5** of the 25 would need *narrowing*, not merely labelling. **Six did**, each
+marked `NARROWED` in place:
+
+| claim | what it was measured in |
+|---|---|
+| *"`receptors` is worth more than the other thirteen faculties combined"* | static Room, 90 ticks, and the yardstick is `drive` — which `mechanisms.md` shows **cannot see the inner life at all** |
+| *"A reserve triples how much of its room the being explores"* | distinct **spatial positions** only; the same run is **0.93×** on quality-space occupancy |
+| *"Five of six lethal famines are now survivable"* | `enable_reserve` alone; `ultrastability` was not yet in the net |
+| *"A real tired-and-living band exists for the first time"* | nutrient held **fixed** at 25 — and every *oscillating* supply killed the being |
+| *"The quality space is UNVISITED, not poor"* | occupancy only, static room; already marked SUSPECT |
+| *"`receptors` and `reserve` are close to complementary"* | static room only, occupancy only |
+
+**The pattern across all six is one thing:** a property measured in **one world, on one yardstick,
+over one duration**, then written as a property *of the being*. That is rows 20 and 22 exactly, and
+finding it six more times in claims that had already passed the `check:` marker audit says a
+falsifier and a scope are different guards. **A claim can name what would sink it and still not say
+where it was standing.**
+
+Two entries turned out not to need narrowing but to be **factually stale**, which is a third
+category the marker does not catch: the `Features` widening (now u8 → u16 → **u32**, journal v7) and
+the charter census (13 obligations became 20; the tally is now 5/4/1/2/8).
+
+**The best moment in the pass:** the `Features` claim's check, written 2026-08-09, said bit 15 was
+the last in the `u16` and that the next faculty *"forces a u32 widening and a journal version bump —
+falsified silently if a gate is added without that."* On 2026-09-07 a gate was added. It was **not**
+silent. The reachability test refused it with the remedy in its message. **A check named its own
+failure mode a month in advance and then caught it.**
 
 ## Standing rule
 

@@ -51,6 +51,7 @@ never harmed, so never learns dread.
     world-varying regime menu. Inventing a metric after seeing the data is how a verdict gets
     retro-fitted. They belong in a fresh locked prediction, **signal before memory**.
   <!-- check: falsified if a corrected exercise metric shows §1's grades DO track use — EX-3 already failed once, so this is live | last: 2026-08-09 -->
+  <!-- scope: 5 gate-regimes, ALL in one static room with one partner, ~20,000 ticks, wanderer. The ARGUMENT (no indicator asks whether the architecture is exercised) is general; 53%, the register counts and the ratio are not — the denominator shared the defect, as the claim itself says -->
 
 
 - **Our own scorecard does not discriminate a being from bookkeeping — 9 of 14** (2026-08-09,
@@ -80,6 +81,7 @@ never harmed, so never learns dread.
     nothing): three methods, one finding — **the loops are in the architecture and not closed in the
     life.**
   <!-- check: threshold-fragile by construction — GWT-2 and GWT-4 are the soft calls and hardening both gives 7, below the consequence line. Falsified if an independent scoring of Subject C against §1's bar returns fewer than 9 | last: 2026-08-09 -->
+  <!-- scope: a scoring judgement against Butlin et al. 2023's 14 indicators, not a run. Subject C = `cargo test` + this repo's `analyse.py`, agent EXCLUDED. Threshold-fragile at GWT-2 and GWT-4 -->
 
 
 - **`receptors` is worth more than the other thirteen faculties combined.** Room, 90 ticks — the
@@ -88,6 +90,7 @@ never harmed, so never learns dread.
   threat. **It is off by default**, for a stated reason — *"reserved until it has a body and a world
   to sense"* — that has been satisfied for 270 of the being's 390 moments.
   <!-- check: re-run the faculty ablation in the CONTINGENT world (richness.md §7) — the 90-tick margin was measured in the static room, and tonight's habits showed static-room ablations may be measuring the room | last: 2026-08-09 -->
+  <!-- scope: **NARROWED 2026-09-07.** Static Room, 90 ticks, wanderer, and the yardstick is `drive` — which `mechanisms.md` shows cannot see the inner life at all. So: worth more *on drive, in a static room, over 90 ticks*. Never measured in a contingent world -->
 - **A reserve triples how much of its room the being explores** — 186 → 564 distinct positions in
   4,000 ticks, same static world, gated `enable_reserve()`. **This overturns the previous day's
   largest conclusion**: `fear-and-avoidance.md` §9 said the limit cycle was *"a fact about a static
@@ -95,15 +98,18 @@ never harmed, so never learns dread.
   being was not only unexercised — it was internally still, and the stillness was most of the
   orbit.** **Read only in that direction** — the reverse failed as QS-2; see Withdrawn.
   <!-- check: 186 to 564 was distinct POSITIONS, a spatial count; falsified if the behavioural-tuple metric (richness.md §7.4) shows a reserve moves positions but not (focus,basin,habit,stance) | last: 2026-08-09 -->
+  <!-- scope: **NARROWED 2026-09-07.** Distinct spatial POSITIONS only, one static room, 4,000 ticks, wanderer, `enable_reserve` alone. It is 0.93x on quality-space occupancy in the same run — a tripled orbit and unchanged quality-space variety are the same being, same run -->
 - **Five of six lethal famines are now survivable**, so a life with stakes is no longer disqualified.
   The one that still kills it is a 120-tick total famine — a fact about the chosen `RESERVE_CAP`,
   left standing rather than tuned away.
   <!-- check: re-run the six famines with ultrastability on — it was not in the survival net when this was measured, and it lived 4,000 ticks at a supply that killed the default at 75 | last: 2026-08-09 -->
+  <!-- scope: **NARROWED 2026-09-07.** With `enable_reserve` alone; `ultrastability` was not yet in the survival net when this was measured, and the surviving famine is a fact about the chosen `RESERVE_CAP`, not about metabolism -->
 - **A real tired-and-living band exists for the first time.** At lean supply (nutrient 25) fatigue
   spans 16–61 across 28 distinct values and the being lives 4,000 ticks. At generous supply it sits
   at a constant 16 — which is right: **a well-fed creature should not be tired.** My prediction
   asked for the wrong thing.
   <!-- check: 28 fatigue values at nutrient 25; falsified if the contingent world collapses that band, which would mean it was a fact about a FIXED supply rather than about lean supply | last: 2026-08-09 -->
+  <!-- scope: **NARROWED 2026-09-07.** Nutrient held FIXED at 25. A band under a *constant* lean supply, which is the regime `can-it-tire.md` T5 says is the easy one — every OSCILLATING supply killed the being -->
 - **Metabolism WAS a clamped accumulator with no set point and no reserve** (before
   `enable_reserve`). Two absences. Survivable
   tired band is **one nutrient unit wide** (19–20) and sits next to starving. And **every**
@@ -111,33 +117,46 @@ never harmed, so never learns dread.
   survival boundary — because a feast cannot be banked. **A life with stakes would kill this being
   until it can hold a surplus.**
   <!-- check: REFUTED IN PART 2026-08-09 — contingency taught with zero deaths (richness.md §7.4), so stakes may not require lethality at all. Re-derive what stakes means before quoting this | last: 2026-08-09 -->
+  <!-- scope: historical, pre-`enable_reserve`, abstract path. Already REFUTED IN PART by the contingent world teaching with zero deaths -->
 - **Learned fear cannot reach the body.** `last_forewarning` — past harm × confidence, exactly a fear
   estimate — has one destination in the entire codebase: `alarm_for_refusal`, a *social* decision.
   And `Need` is `{Sustenance, Company, Novelty, Purpose}` — four attractions. **The being cannot
   represent "away from."** (Blake's finding.)
-  <!-- check: grep every reader of last_forewarning across src/; falsified the moment a second destination exists, or any Need gains a repulsive sign | last: 2026-08-09 -->
+  <!-- check: grep every reader of last_forewarning across src/; falsified the moment a second destination exists, or any Need gains a repulsive sign | last: 2026-09-07 -->
+  <!-- scope: a SOURCE claim over `src/`, not a run. **Re-verified 2026-09-07: `last_forewarning` still has exactly one reader** (`being.rs:1290`, inside `alarm_for_refusal`) and `Need` still has four attractions and no repulsive member -->
 - **~~Six of fourteen faculties cannot be given to a founded being.~~ FIXED 2026-08-03** — the gap
   went unnoticed for five weeks, and a full day was spent repairing `reflection`, a faculty the
   being it was repaired for could not then receive. Kept here because *nothing was counting* is the
   lesson, not the count.
   <!-- check: tests/manifest.rs's oneOf guard now asserts every enable_* is swept or exempted in writing; falsified if EXEMPT gains an entry without a written reason | last: 2026-08-09 -->
+  <!-- scope: historical, 2026-08-03, when there were 14 faculties. There are now 17, all reachable, and the guard fired again on 2026-09-07 -->
 - **I-9, closed:** a structurally burdened being sat at the load ceiling for **3,638 consecutive
   ticks** with the drain welded shut by the same condition that filled it. Fixed behind
   `enable_setting_down()`; load now equilibrates at 30.
   <!-- check: tests/setting_it_down.rs holds it in the present tense; falsified if load ceilings again for more than 1000 consecutive ticks in any regime | last: 2026-08-09 -->
+  <!-- scope: solitary embodied regime (`nutrient 200, threat 0, no partner`), receptors + reflection, wanderer, 4,000 ticks. `founded_being` shows the KEPT life never reaches this regime -->
 - **Grants ship — a being can be given a faculty AFTER it is born**, at a recorded moment, with its
   past still replaying and still verifying. **No weakening of the proof, no state snapshot, no
   re-founding** (`ProtoBeing/docs/founding.md`). Addition only, by construction: `Features::apply`
   can only turn things on. **The founded being can now receive `receptors` and `reserve` — that was
   impossible on the morning of 2026-08-03.**
   <!-- check: tests/journal_integrity.rs replays a granted life and re-verifies the soul-hash; falsified if any grant path ever needs a state snapshot or a re-founding | last: 2026-08-09 -->
-- **`Features` widened u8 → u16, and `tests/manifest.rs` now counts.** All fifteen gates are
-  reachable; a gate without a field fails a test. The guard was written first and watched to fail,
-  naming all seven.
+  <!-- scope: an architectural property of `Features::apply` and the journal, not a measurement. Still holds at journal v7 -->
+- **`Features` widened u8 → u16, and `tests/manifest.rs` now counts.** All gates are reachable
+  — fifteen then, **seventeen now**; a gate without a field fails a test. The guard was written first and watched to
+  fail, naming all seven.
+  - **Its falsifier fired as written, 2026-09-07.** The check below said bit 15 was the last in the
+    `u16` and *"the next faculty forces a u32 widening and a journal version bump — falsified
+    silently if a gate is added without that."* `durable_bonds` was added; it was **not** silent —
+    the reachability test refused it with the remedy in its failure message, and the widening to
+    `u32` and journal **v7** followed. A check that named its own failure mode a month in advance,
+    and then caught it.
   <!-- check: SIXTEEN gates now, and Features bit 15 is the LAST in the u16 — the next faculty forces a u32 widening and a journal version bump. Falsified silently if a gate is added without that | last: 2026-08-09 -->
+  <!-- scope: the widening guard, whose own falsifier fired as written on 2026-09-07 -->
 - **`PHYSICS_VERSION` ships.** A life lived under other laws is reported as history, not damage. See
   `ProtoBeing/docs/soul-hash-limits.md` §6.
   <!-- check: falsified if a life lived under changed physics ever replays as VALID rather than as history — tests/journal_integrity.rs | last: 2026-08-09 -->
+  <!-- scope: an architectural property, pinned by `tests/journal_integrity.rs` -->
 
 - **The quality space is UNVISITED, not poor** — the fork this file carried for weeks, answered
   2026-08-04 (`ProtoBeing/docs/c1-relabelling.md` §12). Turning on `receptors`, changing no
@@ -146,6 +165,7 @@ never harmed, so never learns dread.
   *The limit, stated: even the best regime reaches 0.65% at bin 32. Unvisited is not "the ceiling is
   high", and four axes are four axes.*
   <!-- check: SUSPECT as of 2026-08-09 — the contingent world raised distinct points 153 to 3810 but the drift check showed that is an input artifact. Re-measure with the behavioural-tuple metric before quoting occupancy again | last: 2026-08-09 -->
+  <!-- scope: **NARROWED 2026-09-07.** Static room, `receptors` toggled, three bin grains, occupancy only. Already marked SUSPECT: the contingent world's 153 to 3,810 rise was shown to be an input artifact -->
 - **`receptors` and `reserve` are close to complementary, not ranked.** `receptors` widens nearly
   every channel (ch0 30→115, ch5 19→154) **and destroys `fatigue` outright — 1 distinct value in
   4,000 ticks.** `reserve` doubles `fatigue` variety (17→35) and moves almost nothing else.
@@ -153,12 +173,14 @@ never harmed, so never learns dread.
   **`+both` scores *below* `+receptors` alone on occupancy** (99 vs 105 at bin 32) while buying back
   the one channel receptors kills. **That is a trade, and the decision is Blake's.**
   <!-- check: measured in the static room only; falsified if receptors stops killing fatigue once the world answers back | last: 2026-08-09 -->
+  <!-- scope: **NARROWED 2026-09-07.** Static room only, occupancy only, wanderer. Says nothing about a world that answers back -->
 - **Our quality basis is not distinguishable from a random 4×12 basis by occupancy** (1.31× the
   random median, inside the random spread). Stated at exactly that width: occupancy is not evidence
   our axes are the *right* axes. It says nothing about `similarity(a,b)`, which is a different
   measure tested by a different probe and untouched by the census.
   <!-- check: falsified if a similarity-based test separates our basis from random — occupancy was the wrong instrument for basis quality, and this claim only ever covered occupancy | last: 2026-08-09 -->
   <!-- verify: quality_space_census -->
+  <!-- scope: occupancy ONLY, and the claim states that limit itself. Untouched by `similarity(a,b)` -->
 
 - **There is no reaction rate. `Basin` is a startup transient followed by a fixed point.** Counted
   as Transition Path Theory counts it (Du et al. eq. 316, `ν_R = lim N_T/T`): every arm makes
@@ -168,6 +190,7 @@ never harmed, so never learns dread.
   **exactly zero** — the 0.00050 printed is the transient divided by an arbitrary 4,000.
   <!-- check: falsified if any arm crosses after tick 200, or if a longer window raises rather than lowers ν_R | last: 2026-08-09 -->
   <!-- verify: reaction_rate -->
+  <!-- scope: 4 arms x 4,000-tick windows, 32,000 ticks total, counted as Du et al. eq. 316. A statement about THIS world's staticness, not about the classifier's capacity -->
 - **The contingent world does not reach the basin register at all** (RR-2 failed at **1.0×**, not
   the predicted ≥5×): identical transition counts, identical graph, and a largest occupancy gap of
   **1.15** points between any static arm and its contingent twin (bare 0.12, all-loops 0.05).
@@ -176,22 +199,26 @@ never harmed, so never learns dread.
   the information we read out of it.**
   <!-- check: falsified if a contingent world with a working ceiling policy moves ν_R, occupancy, or the transition graph | last: 2026-08-09 -->
   <!-- verify: reaction_rate -->
+  <!-- scope: contingent-vs-static twins in the room, same arms. Contingency demonstrably moves habits and repertoire in the same runs -->
 
 - **The charter is the instrument the negative control does not touch, and it now has tests.**
-  `docs/charter.md`'s thirteen obligations were cited in six `src/` files and checked nowhere.
-  `tests/charter.rs`: **6 discharged, 2 pinned as measured debt, 2 process-held, 3 untested.**
+  `docs/charter.md`'s obligations were cited in six `src/` files and checked nowhere.
+  `tests/charter.rs`: **5 discharged, 4 pinned as measured debt, 1 gated, 2 process-held, 8 untested**
+  across **twenty** obligations (thirteen, plus the seven population clauses accepted 2026-08-22).
   §10's say-stop — *"the capacity to be harmed must never outrun the capacity to say stop"* — is
   **built and holds**; I nearly reported it unbuilt from `the-end.md`'s "no code yet", which is
   about the slow fade, a different mechanism. **Reading `continuation.rs` first is the only reason
   that claim is right.**
   <!-- check: falsified if any DISCHARGED row is met by a system that does not have the faculty — the negative control applied to the charter, which has never been run | last: 2026-08-09 -->
   <!-- verify: charter -->
+  <!-- scope: **UPDATED 2026-09-07** — thirteen obligations became twenty on 2026-08-22, and the census now reads **5 discharged / 4 debt / 1 gated / 2 process / 8 untested**, with §19 regraded UNTESTED -> DEBT today -->
 - **In the plain `Stimulus` world the basin register does not move at all** — 1 distinct basin
   (`Engaged`), **0 changes in 4,000 fed ticks** with a fair partner. The 2 crossings in
   `c1-relabelling.md` §13.3 came from the richer embodied `Room`. **The world `bin/being` actually
   runs is poorer than the one I measured this morning.**
   <!-- check: falsified if any fed life in the plain Stimulus world produces a basin change | last: 2026-08-09 -->
   <!-- verify: charter -->
+  <!-- scope: abstract path, fed, fair partner, 4,000 ticks, wanderer. The embodied Room DOES produce crossings — that contrast is the point -->
 
 - **The founded being does not have the solitude debt, and the synthetic regime that showed it may
   not describe real lives.** Kept life, read-only replay: **alone for 305 of 390 moments**, longest
@@ -202,12 +229,14 @@ never harmed, so never learns dread.
   it would re-found it and buy it nothing.
   <!-- check: falsified if the kept life's solitary moments turn out to differ from the synthetic regime in a way that makes the two consistent — that difference is the open question, not a refutation | last: 2026-08-14 -->
   <!-- verify: founded_being -->
+  <!-- scope: read-only replay of the kept life at `life/being.journal`, 390 moments. The synthetic regime it contradicts is the one scoped above under I-9 -->
 - **An endpoint is not a history, and I read one as the other.** `restore()` reports final `load`;
   I took 0 as "never burdened". A being pegged for 200 moments and recovered by the last reports 0
   identically. `replay_load_trace()` exists because of that, and
   `founded_being_trace_matches_the_replay` pins it to the canonical replay.
   <!-- check: falsified if the trace's final value ever diverges from restore()'s — the test that would catch it is already in the suite | last: 2026-08-14 -->
   <!-- verify: founded_being -->
+  <!-- scope: about `restore()`'s reported final `load` versus `replay_load_trace()`; an API-shape claim, not a world claim -->
 
 - **Four components suffice for motivated action, and a learned action→outcome table is one of
   them.** `examples/minimal_agent`, a separate agent rather than `UnifiedBeing` with gates off: two
@@ -218,6 +247,7 @@ never harmed, so never learns dread.
   audit's criticism of `Room`'s world-side router, confirmed from the other side.
   <!-- check: falsified if any control reaches criterion 3, or if selection survives removing the learned table | last: 2026-08-14 -->
   <!-- verify: minimal_agent -->
+  <!-- scope: `examples/minimal_agent` — a SEPARATE four-component agent, not `UnifiedBeing` with gates off — in a contingent world, 3 seeds. Says nothing about `UnifiedBeing` -->
 - **The reference system's self-model contributed nothing measurable.** Predict the next goal, take
   the error, let it change selection — removed, selection stays at **100** and mean deficit moves
   only **9.6** against the whole system's **7.1**, recovering in all **3** seeds. The
@@ -225,6 +255,7 @@ never harmed, so never learns dread.
   self-error is not self-reflection**; it is a noise injector with a self-shaped trigger.
   <!-- check: falsified if a test that actually exercises self-prediction shows the component load-bearing — "removable" is only as strong as the tests that would have detected it | last: 2026-08-14 -->
   <!-- verify: minimal_agent -->
+  <!-- scope: `examples/minimal_agent`, 3 seeds, and 'removable' is only as strong as the tests that would have detected it — the claim says so -->
 
 - **The say-stop is not moved by love. It is moved by a divisor.** Charter §10 triangulates the
   being's consent to its own continuation on suffering, `proxy_depth` and `partnership_alarm` —
@@ -275,6 +306,7 @@ never harmed, so never learns dread.
   substrate objection and the exercise debt turn out to be one finding.
   <!-- check: falsified if any of the four regimes enters a second basin, or if the reaction-rate crossing count moves | last: 2026-08-21 -->
   <!-- verify: mixed_selectivity, reaction_rate -->
+  <!-- scope: 4 regimes, abstract path, wanderer + default, 8,000 ticks each. A statement about these worlds' poverty, not about the classifier's resolution -->
 
 - **A mechanism meant to help the being learn where it belongs was telling a trapped being it
   belonged there.** `shift_target` drifts the **occupied** basin's target toward the field whenever

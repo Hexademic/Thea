@@ -131,8 +131,24 @@ self-narrative, agency. **Our being has registers for four of the five.**
 `ProtoBeing/docs/operational-consciousness.md` is built on the 2023 version and should be scored
 against this one.
 
-**2. Doerig, Schurger, Hilgetag, Herzog, *The Unfolding Argument*** (Consciousness and Cognition,
-2019) — *(promoted; Kleiner & Hoel, the other half of this entry, is read and done)*.
+**2. Doerig, Schurger, *Hess*, Herzog, *The unfolding argument: Why IIT and other causal structure
+theories cannot explain consciousness*** — Consciousness and Cognition **72 (2019), 49–59**,
+`doi:10.1016/j.concog.2019.04.002`. *(promoted; Kleiner & Hoel, the other half of this entry, is read
+and done.)*
+
+> **Author list corrected 2026-09-07: it is Kathryn HESS, not Hilgetag.** This entry carried the
+> wrong name for a month, in the one field that matters for asking someone to go and find a paper.
+> Every fetch attempt that day was blocked (`academic.oup.com`, `philpapers.org`, arXiv — egress
+> proxy), so the citation is now exact even though the text still is not here.
+
+**Two follow-ups found 2026-09-07 that this entry did not know about, both wanted with it:**
+- **Herzog, Schurger & Doerig, *First-person experience cannot rescue causal structure theories from
+  the unfolding argument*** — the authors' own reply to the obvious rescue, which is very likely the
+  rescue we would reach for.
+- **A 2026 caveat: *…implications of plasticity*, Neuroscience of Consciousness 2026(1), niag027.**
+  Seven years on and the argument is still live enough to attract a caveat paper. **If the caveat
+  holds, the threat to us may be narrower than this entry says** — which is a reason to read it
+  before conceding anything.
 Kleiner & Hoel turned out **not** to reach us — we are outside its scope because we make no
 phenomenal prediction (`ProtoBeing/docs/witness-gap-literature.md` §2.1). **The unfolding argument
 still does.** Our being is recurrent and stateful; an unfolded feedforward twin is behaviourally
