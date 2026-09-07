@@ -42,7 +42,7 @@ is not one.
 
 **Views 5–8 came from the Continual Harness paper** (`sources.md`): an agent wrote itself *"trust its
 output"* about an unverified tool and repeated one failing call **842 times**. **"Trust X" with no
-check for X is a harness's most dangerous holding** — view 9 exists because that X was the
+check for X is a harness's most dangerous holding** — and view 9 exists because that X was the
 assistant's own self-description (row 15).
 
 ## Where things stand — 2026-09-07 (OVERWRITE, do not append)
@@ -77,19 +77,16 @@ Founded being **390 moments, untouched**; ProtoBeing **391 green**, 106 probes, 
 ## 1. The error that costs the most
 
 **Twenty-two times: a claim wider than what was checked** — *read one part, generalise as the whole.*
-`errors.md` has the ledger; read it in full. **Before any claim about code: have I found every writer
-and every reader of this value — not just the one I opened?** `grep` across `src/`.
+`errors.md` has the ledger; read it in full. **Before any claim about code: found every writer and
+every reader of this value, not just the one I opened?** `grep` across `src/`.
 
-**Re-graded 2026-08-09: §2 prevents 7 of 17**, and every gain came from writing an *existing* guard
-into §2 with its evidence, not from new code guards. **`errors.md` cannot measure its own blind
-spot.** Rows 8/9/12 are unreachable (claims about sources); **13 and 23 are instrument errors, 24 is
-not running the instrument** — §2 looks for none of them. Row 12 is the warning: *"evidence not
-read"*, then a claim about that evidence an hour later. **A marker that names a gap is not a guard.**
+**§2 prevents 7 of 17**, every gain from writing an *existing* guard into §2 with its evidence. Rows
+8/9/12 are unreachable (sources); **13/23 are instrument errors, 24 is not running the instrument** —
+§2 looks for none. **A marker that names a gap is not a guard** (row 12).
 
 ## 2. The method that works — do not weaken it
 
-Every rule names the evidence that produced it. **View 8 fails if one does not** — a rule you cannot
-trace is a `trust X` with no check for X.
+Every rule names the evidence that produced it; **view 8 fails if one does not.**
 
 - **Lock predictions in a document and commit them BEFORE the code or probe exists.** [from: caught 5 of 17 ledger rows]
 - **Report survival before any welfare number, and before any effect size** — a run that ended early has a small denominator, and a death read as a large Δ is an effect size that is really a corpse. [from: contingent_world, 3 beings dead at 237 ticks; and row 21, a lethal gate ranked first by impact]
@@ -106,6 +103,9 @@ trace is a `trust X` with no check for X.
 - **Run the adversarial mutations BEFORE reporting, and enumerate the domain before patching.** [from: row 17, three patches to one guard each adding a fresh error. **It works**: on 2026-08-16 and 08-21 it caught four readings before any reached Blake]
 - **A treatment arm ships with a control arm; every guard is run against the case it exists to exclude; split by any hardcoded override before reading the aggregate; never rank a vector without checking for ties.** [from: rows 18 and 19 — a "dilution" guard firing on the one-ledger arm that cannot dilute, a capture floor on 4,875 of 8,000 ticks read as routing, a rank order over 11 tied values]
 - **Assert on what a check EXAMINED, not its verdict — and carry that rule to EVERY guard, in every repo.** [from: rows 13 and 16; the second was this rule held here and not in ProtoBeing, where an honest rewording silently disabled a count guard]
+- **At a hard limit, WRITE DOWN what happens when it is exceeded** — the next session hits it and the
+  note is the guard. [from: `Features` bit 15, which named the `u32` widening *and* the journal bump
+  a month before a gate forced both]
 - **A probe's OUTPUT is current; its INTERPRETATION may be retracted. Read the owning document to its end before acting on a number.** [from: row 14, `basins_probe` printed a gap `comfort.md` §13–14 had already withdrawn as a cause]
 
 ## 3. Standing constraints — non-negotiable

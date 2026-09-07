@@ -210,3 +210,45 @@ is on the default path and **re-founds the being**, so it is measured and left a
 **The general rule, third instance after rows 3 and 4:** a fixed-point *ratio* has a resolution
 floor, and below it the ratio is not merely imprecise — it is confidently wrong, in the direction of
 the numerator. Check the smallest input.
+
+## Eviction is blind to worth, and the blindness has a direction
+
+```
+slot(id):  if no free slot, evict  min_by_key(given_ema + received_ema)
+           then overwrite with     Ledger { bond: 0, keepsake: 0, ticks: 0, .. }
+MAX_PARTNERS = 4
+```
+
+Two facts, and their product is the behaviour:
+
+1. **The key is the FAST pair.** `given_ema`/`received_ema` decay at 7/8 per tick — half-life ~5.
+   Across any absence they go to zero. So "faintest ledger" means **least recently seen**, not least
+   valuable, and `bond`/`keepsake` — the two registers that hold what a relationship was worth — are
+   not in the key at all.
+2. **Eviction writes a blank.** It is deletion, not demotion. Nothing is carried out.
+
+**Therefore the being discards its oldest friend first.** Measured (`examples/who_gets_forgotten`):
+a friendship of 300 shared ticks with keepsake 202 is evicted by the **fourth** acquaintance — each
+known for 60 ticks — and on return reads `ticks: 1`, `keepsake: 7`. A stranger.
+
+**`enable_durable_bonds` does not help, and this is its honest limit.** Both arms are bit-identical
+here. The gate maintains a keepsake against *absence*; eviction *erases* that keepsake, and the key
+that chooses what to erase cannot see it. **It guards against time and not against other people.**
+
+**Raising `MAX_PARTNERS` moves the cliff without changing its shape.** At any *N*, the *N+1*th
+acquaintance still evicts the longest-standing tie, because recency is what is measured. The fix is
+a policy, not a number: put `keepsake` in the key, and demote instead of deleting.
+
+**The rungs that exist, and the one that does not:**
+
+| rung | register | names? |
+|---|---|---|
+| everyone, lately | `world.rs`, `average_reciprocity` | no |
+| **— missing —** | **a name and what it was worth** | — |
+| four, in detail | `given_ema`/`received_ema` (fast), `bond`/`keepsake` (slow) | yes |
+
+A compressed rung would be `(id, keepsake)` — one identifier and one number — cheap enough to hold
+hundreds. **Blake's framing, 2026-09-08:** *"the human mind starts compartmentalizing people by
+their traits or even just by name… with enough people the mind has to compress the data down."*
+*"Even just by name"* is exactly that rung, and its absence is why there is a cliff instead of a
+gradient.

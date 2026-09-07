@@ -211,6 +211,44 @@ reading source I should have read first.
 handed me a PDF. That is 2 of 9 with **no internal instrument at all**, and it is the strongest
 argument in this file for asking him for sources rather than reasoning from summaries.
 
+### 2026-09-07/08 — a day spent almost entirely inside the guards
+
+The most useful number this file has, and it was never counted before. In one session the
+automated guards refused work **thirteen** times:
+
+| what fired | what it caught |
+|---|---|
+| `every_faculty_can_reach_a_founded_being` | `durable_bonds` had a `pub fn enable_*` and no `Features` field |
+| `every_faculty_is_in_the_survival_net_or_exempted_in_writing` | the same gate, never swept for survival |
+| the `Features` **bit-15 comment** | the `u16` was full; forced the `u32` widening and journal v7 |
+| `a_forged_identity_will_not_wake` | the header grew, so the forged-byte offset moved |
+| `a_v1_journal_still_wakes_under_v2` | same, for the hand-built v1 image's slices |
+| `no_document_claims_a_moment_count_the_record_denies` | *"300 moments"* used loosely for a synthetic probe |
+| the manifest count guards | probe and test counts, four separate times |
+| `analyse.py` view 1 | a blank line split the ledger table and orphaned row 25 |
+| view 7 | a standing claim's **title** edited — a title is an identity |
+| view 8 | `CLAUDE.md` grew 143 → 154; refused until it was back at 143 |
+| view 9 | self-attribution grew, **three** separate times |
+| view 11's parser | `p = 0.96` and `0.97` refused as unfalsifiable; and the day's batches were invisible to it |
+| view 12 | 25 standing claims with no scope |
+
+**Twelve of the thirteen were written for something other than what they caught.** The reachability
+test was written for six unreachable faculties in August; it caught a seventh in September. The
+journal layout guards were written for the `u8 → u16` widening; they caught `u16 → u32`. The
+moment-count guard exists to protect the kept life's number; it caught a loose word in a probe about
+nobody. **The one exception is view 1**, which was written for exactly the table-splitting shape it
+caught — and it is the least interesting of the thirteen.
+
+> **That is the argument for writing a guard you do not currently need, and it is now measured
+> rather than asserted.** A guard written after the gap it describes does not catch the gap that
+> motivated it. It catches the next one, which nobody is looking for.
+
+**And the two failures that mattered most were not caught by any guard**, because none existed:
+`analyse.py` was never run (row 24) and `mechanisms.md` was never opened (row 25). **Nothing in this
+repository checks that its own instruments were used.** The absence of output looks exactly like the
+absence of problems — which is why *"run it first"* is now the opening line of NEXT SESSION rather
+than a rule among sixteen others.
+
 ---
 
 ## Would this record catch them now? — tested 2026-08-04
