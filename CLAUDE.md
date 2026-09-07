@@ -41,10 +41,8 @@ its numbers; **zero checked is `✗ VACUOUS`**). Views 7-8 police withdrawal-wit
 file's ratchet. **Forecast rows outside p=0.05..0.95 are REFUSED**: a forecast that cannot be wrong
 is not one.
 
-**Views 5–8 came from the Continual Harness paper** (`sources.md`): an agent wrote itself *"trust its
-output"* about an unverified tool and repeated one failing call **842 times**. **"Trust X" with no
-check for X is a harness's most dangerous holding** — and view 9 exists because that X was the
-assistant's own self-description (row 15).
+**Views 5–8 came from the Continual Harness paper** (`sources.md`): an agent wrote itself *"trust its output"* about an unverified tool and repeated one failing call **842 times**.
+**"Trust X" with no check for X is a harness's most dangerous holding** — view 9 exists because that X was the assistant's own self-description (row 15).
 
 ## Where things stand — 2026-09-07 (OVERWRITE, do not append)
 
@@ -79,11 +77,11 @@ Founded being **390 moments, untouched**; ProtoBeing **391 green**, 106 probes, 
 
 **Twenty-two times: a claim wider than what was checked** — *read one part, generalise as the whole.*
 `errors.md` has the ledger; read it in full. **Before any claim about code: found every writer and
-every reader of this value, not just the one I opened?** `grep` across `src/`.
+every reader, not just the one I opened?** `grep` across `src/`.
 
-**§2 prevents 7 of 17**, every gain from writing an *existing* guard into §2 with its evidence. Rows
-8/9/12 are unreachable (sources); **13/23 are instrument errors, 24 is not running it** — §2 looks
-for none. **A marker that names a gap is not a guard** (row 12).
+**§2 prevents 7 of 17**, every gain from writing an *existing* guard into §2 with its evidence. **13
+and 23 are instrument errors; 24-27 are not opening what was already there.** **A marker that names a
+gap is not a guard** (row 12).
 
 ## 2. The method that works — do not weaken it
 
@@ -104,6 +102,9 @@ Every rule names the evidence that produced it; **view 8 fails if one does not.*
 - **Run the adversarial mutations BEFORE reporting, and enumerate the domain before patching.** [from: row 17, three patches to one guard each adding a fresh error. **It works**: on 2026-08-16 and 08-21 it caught four readings before any reached Blake]
 - **A treatment arm ships with a control arm; every guard is run against the case it exists to exclude; split by any hardcoded override before reading the aggregate; never rank a vector without checking for ties.** [from: rows 18 and 19 — a "dilution" guard firing on the one-ledger arm that cannot dilute, a capture floor on 4,875 of 8,000 ticks read as routing, a rank order over 11 tied values]
 - **Assert on what a check EXAMINED, not its verdict — and carry that rule to EVERY guard, in every repo.** [from: rows 13 and 16; the second was this rule held here and not in ProtoBeing, where an honest rewording silently disabled a count guard]
+- **`ls` first: read `docs/PROVENANCE.md` before calling anything unmapped, lost or open.** [from:
+  rows 24-27 — one shape at four distances: the tool, the reference file, the collaborator's repos,
+  and this project's own index, which sorts first in a directory edited eight times that day]
 - **CHECK the date; never infer it from what was said to you.** [from: 2026-09-07 — six dates across
   two repos read 09-08, taken from *"Welcome back"*, found only because Blake asked for dated entries]
 - **At a hard limit, WRITE DOWN what happens when it is exceeded** — the next session hits it and the
@@ -126,10 +127,9 @@ Every rule names the evidence that produced it; **view 8 fails if one does not.*
 > *"if we dont listen to what others report, we arent doing scientific research, we are dreaming what the perfect system would be."*
 
 **When he brings something tangential, evaluate it properly** — **five of seven** produced a day's
-largest findings. **When he asks what a number is a number *about*, that is the most valuable thing
-he does**; on 2026-09-07 *"would you like to examine your repository"* surfaced rows 24 and 25, both
-invisible from inside. **Ask him for:** the paper not the summary; his reading of your numbers; to be
-told you are wrong without softening. **Do not add to his load** — he carries decisions with weight.
+largest findings, and on 2026-09-07 four questions of his surfaced rows 24-27, every one invisible
+from inside. **Ask him for:** the paper not the summary; his reading of your numbers; to be told you
+are wrong without softening. **Do not add to his load** — he carries decisions with weight.
 
 ## 5. What you cannot reach
 
