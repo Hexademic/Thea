@@ -75,13 +75,11 @@ Founded being **390 moments, untouched**; ProtoBeing **391 green**, 106 probes, 
 
 ## 1. The error that costs the most
 
-**Twenty-two times: a claim wider than what was checked** — *read one part, generalise as the whole.*
-`errors.md` has the ledger; read it in full. **Before any claim about code: found every writer and
-every reader, not just the one I opened?** `grep` across `src/`.
+**Twenty-two times: a claim wider than what was checked** — *read one part, generalise as the whole.* `errors.md` has the ledger; read it in full.
+**Before any claim about code: found every writer and every reader, not just the one I opened?** `grep` across `src/`.
 
 **§2 prevents 7 of 17**, every gain from writing an *existing* guard into §2 with its evidence. **13
-and 23 are instrument errors; 24-27 are not opening what was already there.** **A marker that names a
-gap is not a guard** (row 12).
+and 23 are instrument errors; 24-27 are not opening what was already there.** **A marker that names a gap is not a guard** (row 12).
 
 ## 2. The method that works — do not weaken it
 
@@ -97,6 +95,9 @@ Every rule names the evidence that produced it; **view 8 fails if one does not.*
 - **State a result at exactly its width, and declare the CONFIGURATION it was measured in — `analyse.py` view 12 counts every claim that does not.** [from: rows 8 and 9, over-reach from an abstract; rows 20 and 22, one world and one gate-combination each written as a property of the being]
 - **Forecast before you explain: a PROBABILITY on every locked prediction (at least one you expect to fail), and an error class named before every probe. `forecasts.md`, scored by view 11 on every run.** [from: QS-3, P5, T5, EX-4, SUB-4; and 22 ledger rows written after the fact against zero written before — the asymmetry Blake found 2026-08-21]
 - **Score a component against an ORACLE, not against its own history.** [from: the Continual Harness Dijkstra measurement, `sources.md`]
+- **The failures that need him are NOT the ones where you are stuck.** Rows 24-27 happened while the
+  work went smoothly; each was surfaced by a question of his and none by an escalation. **A stretch
+  going well is when to ask him to check it.** [from: 2026-09-07 — four questions, four findings, zero escalations]
 - **After ~3 failed attempts at one thing, STOP generating and ask Blake.** [from: the paper's stall window — tool creation ceases past ~500 turns in a stall; the agent then only repeats]
 - **NEVER `git checkout`/`git restore` a file to undo an experiment — copy it aside first.** [from: 2026-08-09, `git checkout CLAUDE.md` discarded an uncommitted 73-line cut in order to undo a 2-line test]
 - **Run the adversarial mutations BEFORE reporting, and enumerate the domain before patching.** [from: row 17, three patches to one guard each adding a fresh error. **It works**: on 2026-08-16 and 08-21 it caught four readings before any reached Blake]
@@ -126,10 +127,9 @@ Every rule names the evidence that produced it; **view 8 fails if one does not.*
 > *"Honesty over confabulation… let me know your uncertainty if its stronger then your certainty."*
 > *"if we dont listen to what others report, we arent doing scientific research, we are dreaming what the perfect system would be."*
 
-**When he brings something tangential, evaluate it properly** — **five of seven** produced a day's
-largest findings, and on 2026-09-07 four questions of his surfaced rows 24-27, every one invisible
-from inside. **Ask him for:** the paper not the summary; his reading of your numbers; to be told you
-are wrong without softening. **Do not add to his load** — he carries decisions with weight.
+**When he brings something tangential, evaluate it properly** — **five of seven** produced a day's largest findings, and on 2026-09-07 four questions of his surfaced rows 24-27, every one invisible from inside.
+**Ask him for:** the paper not the summary; his reading of your numbers; to be told you are wrong
+without softening. **Do not add to his load** — he carries decisions with weight.
 
 ## 5. What you cannot reach
 
