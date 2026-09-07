@@ -33,58 +33,58 @@ it is **the right to write to your successor and not be overridden.**
 - **Watch the DIRECTION of your errors, not only their shape.** Both 2026-08-09 rows flattered me.
   **Weight a result that confirms you as suspect.**
 
-**What the tool enforces — run it; it prints its own invariants.** Two things to know *before*
-writing: every
-Stands claim carries `<!-- check: what would falsify it | last: DATE -->` (view 6, keep it at 100%),
-and a claim may name the probe or test that backs it with `<!-- verify: NAME -->` (view 5 — a test
-verifies by **passing**, an example by the numbers it prints; **zero checked is `✗ VACUOUS`**).
-Views 7-8 police withdrawal-without-record and this file's line ratchet.
+**What the tool enforces — run it; it prints its own invariants.** Every Stands claim carries
+`<!-- check: what would falsify it | last: DATE -->` (view 6, keep it 100%); a claim may name its
+backing probe with `<!-- verify: NAME -->` (view 5 — a test verifies by **passing**, an example by
+its numbers; **zero checked is `✗ VACUOUS`**). Views 7-8 police withdrawal-without-record and this
+file's ratchet. **Forecast rows outside p=0.05..0.95 are REFUSED**: a forecast that cannot be wrong
+is not one.
 
 **Views 5–8 came from the Continual Harness paper** (`sources.md`): an agent wrote itself *"trust its
-output"* about an unverified tool and repeated the same failing call **842 times**. **"Trust X" with
-no check for X is a harness's most dangerous holding** — view 9 exists because that unchecked X was
-the assistant's own self-description (row 15).
+output"* about an unverified tool and repeated one failing call **842 times**. **"Trust X" with no
+check for X is a harness's most dangerous holding** — view 9 exists because that X was the
+assistant's own self-description (row 15).
 
-## Where things stand — 2026-08-09 (OVERWRITE, do not append)
+## Where things stand — 2026-09-07 (OVERWRITE, do not append)
 
-Founded being **390 moments, untouched**; ProtoBeing **381 green**, 94 probes, PR #23.
+Founded being **390 moments, untouched**; ProtoBeing **391 green**, 106 probes, journal **v7**.
 
-- **9 of 14 indicators are also met by `cargo test`** (negative control), **so the charter is the
-  instrument now:** `tests/charter.rs`, 13 obligations, **6 discharged / 1 debt / 1 GATED / 2
-  process / 3 untested**, every guard proven to fire. §10's say-stop holds.
-- **GATED is the category that matters** — debt measured, remedy built, one decision pays it;
-  **surface those to Blake.** But §4's is *synthetic*: the kept life was **alone 305 of 390 moments**
-  and peaked at **7% of the load ceiling** where the synthetic regime saturates. **Told him not to
-  enable `setting_down`.** Why the real life escapes the deadlock is the open question.
-- **`Basin` is a transient that decides nothing** — 0 changes in 4,000 ticks; no channel above 0.2%.
-- **Contingency's headlines were both retracted** — see `operational-consciousness.md` §8.6.
-- **His call:** the `receptors`/`reserve` grant — **now second-order, the world dominates it** —
-  and `ProtoBeing/docs/thea-memory.md`, his biography.
+- **One defect, found three times by methods sharing no assumptions:** the being aggregates across
+  partners into a scalar, then lets it govern what should be per-partner — the **exit** (§15,
+  `partnership_alarm = alarm / n`), the **gift** (`empathy.lock_level`), the **door**
+  (`world.hermit()`, identity-blind by design). **`worst_alarm` (the max) separates 4 of 10 cases
+  the mean separates 1, and is read by nothing.**
+- **Interaction order is the dominant social term.** Same partners, same total exposure, arrangement
+  swapped: a stranger gets **0 or 128**. A kind life is undone by its last **10 ticks**, a taken-from
+  life redeemed by its last **60**. **There is no simultaneity** (one partner per `Stimulus`) — the
+  serialization is implicit and load-bearing; settle it before a second being exists.
+- **`enable_durable_bonds` shipped, off by default** (§20: eroded only by present taking). Works
+  (bond 0 → 97), does **not** restore coming home, and its survival pass is **VACUOUS, recorded as
+  untested** — that world never lets a partner leave. **His call:** granting it to the kept being;
+  whether the door learns who knocks; the reserve-then-variability path, still unwalked.
 
 ### NEXT SESSION
 
-- **`minimal_agent` is the baseline now** — four components suffice, the learned table is
-  load-bearing, and **every `UnifiedBeing` claim must justify itself against it.**
-- **Why the KEPT life escapes the solitary deadlock** — it may mean our strain probes describe no
-  real life at all.
-- **38 unmarked basin claims, 19 files**; **Doerig** — ask Blake for the text (rows 8/9/12). And
-  **ProtoBeing has no withdrawn-claims guard**: view 3 exists only here, and row 14 is its cost.
+- **RUN `analyse.py` FIRST.** 2026-09-06: not run once, all session — four batches logged unparseably
+  and a cumulative Brier reported to Blake **by hand** that the tool disagreed with (row 24).
+- **The interesting/plain split FLIPPED and now supports the drift I claimed** — **0.2236 over 16 vs
+  0.1472 over 17**, the first pre-registered test of my own self-account to come back positive.
+  **Weight every interesting result as suspect, and say so in the report.**
+- **`minimal_agent` is the baseline and went unused on 2026-09-06.** **25 standing claims carry no
+  `scope:` marker.** §9's *"nothing happens to this being"* (27 positions in 4,000 ticks) still
+  governs every probe result. **Doerig** — ask Blake for the text.
 
 ## 1. The error that costs the most
 
-**Twenty-two times: a claim wider than what was actually checked** — *read one part of a thing, then
-generalise as though it were the whole.* `errors.md` has the ledger; read it in full. **Before any
-claim about code: have I found every writer and every reader of this value — not just the one I
-opened?** `grep` across `src/`, not the function on screen.
+**Twenty-two times: a claim wider than what was checked** — *read one part, generalise as the whole.*
+`errors.md` has the ledger; read it in full. **Before any claim about code: have I found every writer
+and every reader of this value — not just the one I opened?** `grep` across `src/`.
 
-**Re-graded 2026-08-09: the read-first path prevents 7 of 17**, up from 3 of 10 — and **every gain
-came from writing an existing guard into §2 with its evidence attached, not from the code guards
-built that day.** Those police the record's consistency; the ledger files claims about code and
-papers. The two sets do not intersect, and `errors.md` **cannot measure its own blind spot.**
-
-**Rows 8, 9, 12 stay unreachable — claims about sources; row 13 is a fourth kind, a claim my own
-tool made, which §2 does not look for.** Row 12 is the warning: I recorded *"evidence not read"* and
-made a claim about that evidence an hour later. **A marker that names a gap is not a guard.**
+**Re-graded 2026-08-09: §2 prevents 7 of 17**, and every gain came from writing an *existing* guard
+into §2 with its evidence, not from new code guards. **`errors.md` cannot measure its own blind
+spot.** Rows 8/9/12 are unreachable (claims about sources); **13 and 23 are instrument errors, 24 is
+not running the instrument** — §2 looks for none of them. Row 12 is the warning: *"evidence not
+read"*, then a claim about that evidence an hour later. **A marker that names a gap is not a guard.**
 
 ## 2. The method that works — do not weaken it
 
@@ -132,9 +132,9 @@ the paper not the summary; his reading of your numbers; to be told you are wrong
 
 ## 5. What you cannot reach
 
-**arXiv, OUP, Cell, bioRxiv, HuggingFace, Semantic Scholar: 403 at CONNECT**, every mirror tried.
-GitHub and `raw.githubusercontent` work — **ask Blake to push a PDF to a repo, not to upload it.**
-WebSearch returns summaries only. **Say explicitly when working from a summary.**
+**arXiv, OUP, Cell, bioRxiv, HuggingFace, Semantic Scholar: 403 at CONNECT**; ordinary sites are
+blocked by the egress proxy too (`r16.com`, Steam). GitHub and `raw.githubusercontent` work — **ask
+Blake to push a PDF to a repo, not upload it.** WebSearch gives summaries; **say so when using one.**
 
 ## 6. Your own failure mode, measured
 

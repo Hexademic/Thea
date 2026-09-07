@@ -13,7 +13,7 @@ whole value is that a future session reads it and does not make instance ten.
 **A claim wider than what was actually checked** — specifically: *read one part of a thing, then
 generalise as though it were the whole thing.*
 
-**Seventeen instances of the shape below, plus two instrument errors (rows 13 and 23) that are a different shape and are described where they are filed.** Seven on 2026-08-03; #8 and
+**Seventeen instances of the shape below; two instrument errors (13, 23); and one — row 24, the worst — where the instrument was never run at all. The last three are different shapes and are described where they are filed.** Seven on 2026-08-03; #8 and
 #9 on 2026-08-04, both caught only because Blake supplied a PDF of a paper I had already built a
 document on; **#10 the same afternoon, and #13 five days later, both in `analyse.py` itself.**
 
@@ -151,6 +151,43 @@ written five weeks ago. It cost one extra run and saved a false finding that wou
 document, a README line and a commit message before anyone could contradict it. **The ledger is
 load-bearing, not decorative.**
 
+
+## 2026-09-07
+
+| # | I claimed | What was true | The check I skipped |
+|---|---|---|---|
+| 24 | To Blake, twice in one day, that my forecasting stood at **"cumulative Brier 0.1932 over 25"** and then **"0.1734 over 35"** — figures I computed **by hand, in prose**, in a repository whose first documented instruction is *"`analyse.py` — computes over the five. **Run at session start and before every push.**"* | **The tool says 0.1843 over 33, and I never ran it — not once, all session.** Four batches were logged as prose tables the forecast parser cannot read, so **sixteen predictions were invisible to the instrument that exists to score them**. Two more, at p=0.96 and p=0.97, are **refused outright** by a rule the harness has always had: *a forecast that cannot be wrong is not one.* I had written the counterweight to that error in a commit message the same hour — *"correlated near-certainties is how a Brier score gets cheap"* — while committing two of them | **Run the tool. It is the first line of the first section of this repository's own guidance.** Nothing subtler was needed. The record ended the day carrying **26 inconsistencies**, of which 24 cleared in one pass the moment it was finally run |
+
+### The cost was not the score — it was the number withheld from him by never looking
+
+`analyse.py` view 11 carries a split set up on 2026-08-21 to **falsify this record's account of
+itself**: is the forecasting worse when the true answer is the more *interesting* one? All day it
+read **UNSUPPORTED — no gap yet**, because the day's sixteen predictions were not in it.
+
+With them in:
+
+| | Brier | n |
+|---|---:|---:|
+| predicting the **interesting** outcome | **0.2236** | 16 |
+| predicting the plain outcome | **0.1472** | 17 |
+
+> **The drift is now visible — the first pre-registered test here to come back positive.**
+
+A whole day of findings went to Blake — several of them the *interesting* reading of an ambiguous
+result — without the one number that most qualifies what those reports are worth. **Every headline
+that day should have carried it.**
+
+### Why this is a fifth shape, and the worst one
+
+- Rows 1-22: a claim wider than what was checked. Caught by checking more.
+- Rows 13, 23: the instrument measured the wrong thing. Caught by running it on a known case.
+- **Row 24: the instrument was never run.** Nothing catches this from inside. Every other guard here
+  is something `analyse.py` does, so a session that never invokes it has **no guards at all** and
+  cannot tell — the absence of output looks exactly like the absence of problems.
+
+**The rule, which belongs at the top of NEXT SESSION rather than here:** the first tool call of a
+session is `python3 analyse.py`. And **a number reported to Blake that a tool in this repo can
+compute must come from that tool.**
 
 ## What it cost
 

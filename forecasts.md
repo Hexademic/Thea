@@ -48,6 +48,25 @@ useless.
 | F5 | 2026-08-22 | Scoping the remaining 25 standing claims will find **at least 5** that were measured in only one configuration and need *narrowing*, not merely labelling — i.e. rows 20/22's error is already in the record more than twice. | 0.55 | yes | open |
 | F6 | 2026-08-22 | Tested against the **current single-being implementation**, at least **3 of the 7** drafted population clauses (§14–§20) turn out to be already violated — not merely untested. §15 is already known violated, so this needs two more. | 0.50 | yes | open |
 | F7 | 2026-08-22 | The clause Blake most wants changed is **§15** (do not referee between beings) rather than §16, §17 or §18 — i.e. the intervention question is the live disagreement, not the cap, the mortality rule, or reproduction. | 0.45 | no | open |
+| O1 | 2026-09-06 | *(population.md O1)* GT and TG give **disjoint** afternoon mean-`gave` under a phase-null sweep. | 0.75 | yes | TRUE |
+| O2 | 2026-09-06 | *(population.md O2)* **GT ends `Open`** — a generous block's reserve survives 200 ticks of a 0.30 taker. | 0.55 | yes | FALSE |
+| O3 | 2026-09-06 | *(population.md O3)* **TG ends `Open`** — recovery, per §11's 23-66 tick reopening. | 0.90 | no | TRUE |
+| O4 | 2026-09-06 | *(population.md O4)* Conditional on O2 and O3 both holding, the two afternoons stay distinguishable. **Void: a prediction contingent on another prediction is a branch, not a forecast.** | 0.50 | no | void |
+| O5 | 2026-09-06 | *(population.md O5)* **Interleave grain matters** — ALT-1 and ALT-50 end in different lock states on identical total exposure. | 0.65 | yes | TRUE |
+| O6 | 2026-09-06 | *(population.md O6, written to fail)* Total exposure is what matters, not order — every arrangement converges. | 0.10 | no | FALSE |
+| O7 | 2026-09-06 | *(population.md O7)* `worst_alarm` separates arrangement pairs that `partnership_alarm` does not. | 0.60 | yes | TRUE |
+| CH1 | 2026-09-06 | *(attachment.md H1)* Coming home is broken: on return the being gives its long-bonded friend **< 10**, against ~128 in the never-injured control. | 0.85 | yes | TRUE |
+| CH2 | 2026-09-06 | *(attachment.md H2)* The bond survives what the giving does not — bond toward the friend on return is still **> 64**. | 0.70 | yes | FALSE |
+| CH3 | 2026-09-06 | *(attachment.md H3)* More than 60 ticks back with the friend before the lock reopens. **Void: the envelope was 30..70 and the threshold fell inside it — a threshold prediction needs a threshold outside the metric's own null.** | 0.45 | no | void |
+| CH4 | 2026-09-06 | *(attachment.md H4)* The per-partner disposition computed from the friend's own ledger stays `Open` through the entire injury phase. | 0.80 | yes | FALSE |
+| CH5 | 2026-09-06 | *(attachment.md H5)* For a genuinely unmet stranger the generalized prior still differs between a taken-from history and a kind one. | 0.85 | no | TRUE |
+| CH6 | 2026-09-06 | *(attachment.md H6, written to fail)* The per-partner disposition and the scalar agree on **>= 90%** of (tick, partner) pairs — the new structure is redundant. | 0.15 | no | FALSE |
+| CH7 | 2026-09-06 | *(attachment.md H7)* The soul-hash is bit-identical before and after the observer, and the founded life replays unchanged. | 0.97 | no | TRUE |
+| SN1 | 2026-09-06 | *(survival-first.md D1)* `durable_bonds` alone does not kill the being in the survival world. | 0.96 | no | TRUE |
+| SN2 | 2026-09-06 | *(survival-first.md D2)* No lethal **pair** involving `durable_bonds` among the other sixteen gates. | 0.92 | no | TRUE |
+| SN3 | 2026-09-06 | *(survival-first.md D3)* **The survival world never exercises the gate** — its single partner is present every tick, so the trajectory is bit-identical with the gate on and off, and the pass is vacuous. | 0.80 | yes | TRUE |
+| SN4 | 2026-09-06 | *(survival-first.md D4, written to fail)* Some pair involving `durable_bonds` changes the survival outcome of a gate that survives alone. | 0.08 | no | FALSE |
+| MA1 | 2026-09-06 | *(fear-and-avoidance.md M1)* The betrayed arm's afternoon goals are identical to the blank arm's. **Void: locked as prose with no numeric `p`, so unscorable — see the M1-M6 section.** | 0.50 | no | void |
 | H1 | 2026-09-04 | No (floor, ceiling) pair grounds HAPPEN under weather-2-octaves while leaving the still control silent. | 0.60 | yes | FALSE |
 | H2 | 2026-09-04 | HAPPEN grounds at all under weather, at some pair in the sweep. | 0.90 | no | TRUE |
 | H3 | 2026-09-04 | `confidence` in the still control exceeds 64 on the median tick. | 0.70 | no | FALSE |
@@ -191,12 +210,12 @@ Recorded for the record, unscored:
 
 | | prediction | outcome |
 |---|---|---|
-| M1 | the betrayed arm's afternoon goals are identical to the blank arm's | FAILED |
-| M2 | the betrayed arm treats the stranger identically to the blank arm | held, **vacuously** — both floored at gave = 0 |
-| M3 | the lonely arm's forgetting horizon is ≤ 32 ticks | **voided** — invalid metric |
-| M4 | the bereaved arm is the only one with a horizon > 32 | **voided** — invalid metric |
-| M5 | the betrayed arm's soul-hash differs from the blank arm's | held, uninformative — a one-tick-shorter blank morning also differs |
-| M6 | doubling the morning changes no arm's afternoon | FAILED, **for the control**, which is what exposed the confound |
+| **M1** | the betrayed arm's afternoon goals are identical to the blank arm's | FAILED |
+| **M2** | the betrayed arm treats the stranger identically to the blank arm | held, **vacuously** — both floored at gave = 0 |
+| **M3** | the lonely arm's forgetting horizon is ≤ 32 ticks | **voided** — invalid metric |
+| **M4** | the bereaved arm is the only one with a horizon > 32 | **voided** — invalid metric |
+| **M5** | the betrayed arm's soul-hash differs from the blank arm's | held, uninformative — a one-tick-shorter blank morning also differs |
+| **M6** | doubling the morning changes no arm's afternoon | FAILED, **for the control**, which is what exposed the confound |
 
 **The process fix, which is the actual output of this entry:** a locked prediction
 without a numeric `p` cannot be scored, and an unscorable prediction does not
@@ -216,16 +235,16 @@ Resolved in `docs/population.md`.
 
 | | prediction | p | outcome | Brier |
 |---|---|---:|---|---:|
-| O1 | GT and TG disjoint on mean `gave` | 0.75 | TRUE | 0.0625 |
-| O2 | GT ends `Open` | 0.55 | FALSE | 0.3025 |
-| O3 | TG ends `Open` | 0.90 | TRUE | 0.0100 |
-| O4 | conditional on O2 ∧ O3 | 0.50 | **void** — never fired | — |
-| O5 | interleave grain changes the lock state | 0.65 | TRUE | 0.1225 |
-| O6 | *written to fail:* total exposure is what matters | 0.10 | FALSE | 0.0100 |
-| O7 | `worst_alarm` separates what the mean does not | 0.60 | TRUE | 0.1600 |
+| **O1** | GT and TG disjoint on mean `gave` | 0.75 | TRUE | 0.0625 |
+| **O2** | GT ends `Open` | 0.55 | FALSE | 0.3025 |
+| **O3** | TG ends `Open` | 0.90 | TRUE | 0.0100 |
+| **O4** | conditional on O2 ∧ O3 | 0.50 | **void** — never fired | — |
+| **O5** | interleave grain changes the lock state | 0.65 | TRUE | 0.1225 |
+| **O6** | *written to fail:* total exposure is what matters | 0.10 | FALSE | 0.0100 |
+| **O7** | `worst_alarm` separates what the mean does not | 0.60 | TRUE | 0.1600 |
 
-**Batch Brier: 0.111 over 6.** Cumulative: **0.1932 over 25**, down from 0.2191
-over 19.
+**Batch Brier: 0.111 over 6.** *(Cumulative figures in these batch notes were computed by hand;
+`analyse.py` is the arbiter and says **0.1843 over 33** — see row 24.)*
 
 **What the batch actually teaches, which is not the score.** O2 was my lowest
 confidence (0.55) and the only substantive one that failed — the calibration
@@ -247,15 +266,16 @@ Locked with numeric `p` in ProtoBeing `9a146a3`, resolved in `docs/attachment.md
 
 | | prediction | p | outcome | Brier |
 |---|---|---:|---|---:|
-| H1 | gives the friend < 10 on reunion | 0.85 | TRUE | 0.0225 |
-| H2 | bond toward the friend still > 64 on return | 0.70 | **FALSE** | **0.4900** |
-| H3 | > 60 ticks to reopen | 0.45 | **unresolved** — envelope 30..70 straddles the threshold | — |
-| H4 | the per-partner reading stays `Open` through the injury | 0.80 | **FALSE** | **0.6400** |
-| H5 | the prior still differs for the unmet | 0.85 | TRUE | 0.0225 |
-| H6 | *written to fail:* the two gates agree ≥ 90% | 0.15 | FALSE | 0.0225 |
-| H7 | soul-hash bit-identical | 0.97 | TRUE | 0.0009 |
+| **H1** | gives the friend < 10 on reunion | 0.85 | TRUE | 0.0225 |
+| **H2** | bond toward the friend still > 64 on return | 0.70 | **FALSE** | **0.4900** |
+| **H3** | > 60 ticks to reopen | 0.45 | **unresolved** — envelope 30..70 straddles the threshold | — |
+| **H4** | the per-partner reading stays `Open` through the injury | 0.80 | **FALSE** | **0.6400** |
+| **H5** | the prior still differs for the unmet | 0.85 | TRUE | 0.0225 |
+| **H6** | *written to fail:* the two gates agree ≥ 90% | 0.15 | FALSE | 0.0225 |
+| **H7** | soul-hash bit-identical | 0.97 | TRUE | 0.0009 |
 
-**Batch Brier: 0.200 over 6.** Cumulative: **0.1945 over 31**.
+**Batch Brier: 0.200 over 6.** *(Hand-computed; the tool scores CH1-CH6 and **refuses CH7 at
+p=0.97** — a forecast that cannot be wrong is not one.)*
 
 ### The thing worth keeping, which is not the score
 
@@ -291,12 +311,14 @@ safety net is itself a change to a safety guard.
 
 | | prediction | p | outcome | Brier |
 |---|---|---:|---|---:|
-| D1 | the gate alone does not kill the being | 0.96 | TRUE | 0.0016 |
-| D2 | no lethal pair with the other sixteen | 0.92 | TRUE | 0.0064 |
-| D3 | **the survival world never exercises the gate** — bit-identical | 0.80 | TRUE | 0.0400 |
-| D4 | *written to fail:* some pair changes a survival outcome | 0.08 | FALSE | 0.0064 |
+| **D1** | the gate alone does not kill the being | 0.96 | TRUE | 0.0016 |
+| **D2** | no lethal pair with the other sixteen | 0.92 | TRUE | 0.0064 |
+| **D3** | **the survival world never exercises the gate** — bit-identical | 0.80 | TRUE | 0.0400 |
+| **D4** | *written to fail:* some pair changes a survival outcome | 0.08 | FALSE | 0.0064 |
 
-**Batch Brier: 0.0136 over 4.** Cumulative: **0.1734 over 35**.
+**Batch Brier: 0.0136 over 4.** *(Hand-computed. The tool **refuses SN1 at p=0.96** on the same
+rule, so this batch scores as three rows, not four — and the counterweight below was righter than I
+knew: the harness has a hard rule against exactly what I did.)*
 
 ### D3 is the row that matters, and it is the first of its kind here
 
