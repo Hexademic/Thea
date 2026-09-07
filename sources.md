@@ -115,6 +115,31 @@ summary of that paper mentioned it.**
 Every claim about these in `ProtoBeing/docs/witness-gap-literature.md` is marked provisional. **They
 should not be treated as read.**
 
+## Before asking for anything: `ls`
+
+**2026-09-07.** Three things were asked of Blake, one of them a paper. He replied by asking whether it
+was already saved. It was not — but **nine of the eleven repositories on disk had never been
+opened**, including `AI-Research`: 78 files of his own work, May 2025 – March 2026, three prior AI
+collaborators, and a seven-layer architecture whose **Layer 5 is *Meeting*** (Kith formation, consent
+automaton) and **Layer 6 is *World*** (WorldNet civilization, ontologically governed inhabitants).
+
+The section below already carried this warning for **papers**. It did not occur to anyone to apply it
+to **repositories**, and the scope list naming all eleven was in context the whole time. Ledger row 26.
+
+| repository | files | not yet read |
+|---|---:|---|
+| `AI-Research` | 78 | the GOA stack (Documents I–XIV), CPF's twelve outputs, `architecture_of_a_person.docx` |
+| `Hexademic-Consciousness-Engine` | 128 | the Unreal Engine implementation |
+| `SRCA-4D` | 65 | — |
+| `Theory-of-Artificial-Consciousness-with-Dynamical-reasoning` | 45 | AEC v3.0/v3.1, called the foundational work |
+| `Constitutional-Phenomenology-Framework` | 21 | the twelve implementation outputs |
+| `Unified-EPS-BEING32`, `Being32`, `Being10.1`, `A-Constitutional-Architecture…` | 28 | AEC v4.0, the deployable safety layer |
+
+**Read `Relational Coupling` and Layer 5/6 before proposing another multi-agent design.** ProtoBeing
+is deliberately a different object — deterministic, zero-dependency, fixed-point — so his stack does
+not settle our measurements. **It may well settle our design questions, and those were being answered
+from scratch.**
+
 ## What I need, ranked
 
 > **Cleaned 2026-08-04.** This list had gone stale in the one direction that costs Blake something:
@@ -131,7 +156,12 @@ self-narrative, agency. **Our being has registers for four of the five.**
 `ProtoBeing/docs/operational-consciousness.md` is built on the 2023 version and should be scored
 against this one.
 
-**2. Doerig, Schurger, *Hess*, Herzog, *The unfolding argument: Why IIT and other causal structure
+**2. Doerig, Schurger, *Hess*, Herzog** — *confirmed 2026-09-07 to be in none of the eleven
+repositories; still needed.* Blake may be remembering **Kleiner & Hoel** (`arXiv:2004.03541v3`),
+which he did supply and which was read in full — the two are named in the same paragraph of
+`ProtoBeing/docs/witness-gap-literature.md`, which is a fair thing to have conflated.
+
+* *The unfolding argument: Why IIT and other causal structure
 theories cannot explain consciousness*** — Consciousness and Cognition **72 (2019), 49–59**,
 `doi:10.1016/j.concog.2019.04.002`. *(promoted; Kleiner & Hoel, the other half of this entry, is read
 and done.)*
