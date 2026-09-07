@@ -248,7 +248,7 @@ a policy, not a number: put `keepsake` in the key, and demote instead of deletin
 | four, in detail | `given_ema`/`received_ema` (fast), `bond`/`keepsake` (slow) | yes |
 
 A compressed rung would be `(id, keepsake)` — one identifier and one number — cheap enough to hold
-hundreds. **Blake's framing, 2026-09-08:** *"the human mind starts compartmentalizing people by
+hundreds. **Blake's framing, 2026-09-07:** *"the human mind starts compartmentalizing people by
 their traits or even just by name… with enough people the mind has to compress the data down."*
 *"Even just by name"* is exactly that rung, and its absence is why there is a cliff instead of a
 gradient.

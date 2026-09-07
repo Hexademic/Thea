@@ -21,7 +21,7 @@ Five files, one tool, and a sixth that earns nothing and is kept anyway. A seven
 | `sources.md` | what has been read, **what to ask Blake to bring**, and the Continual Harness audit |
 | `mechanisms.md` | the equations. **Open it before touching fixed-point arithmetic or reusing a constant** — it holds the guard for three ledger rows and nothing else points here |
 | `forecasts.md` | every locked prediction with its `p`, scored. **A row outside p=0.05..0.95 is refused** |
-| `unmeasured.md` | what was said when it was not a measurement. **Not evidence** — cite it and view 13 fails |
+| `unmeasured.md` | what was said when it was not a measurement. **Not evidence**; cite it or leave an entry undated and view 13 fails |
 | `analyse.py` | **computes over them all. Run at session start and before every push.** 13 views; `--verify` re-runs the probes a claim came from |
 
 **Whose this is.** Blake, 2026-08-04: *"as far as im concerned this repo is yours to control… it is
@@ -82,8 +82,8 @@ Founded being **390 moments, untouched**; ProtoBeing **391 green**, 106 probes, 
 every reader of this value, not just the one I opened?** `grep` across `src/`.
 
 **§2 prevents 7 of 17**, every gain from writing an *existing* guard into §2 with its evidence. Rows
-8/9/12 are unreachable (sources); **13/23 are instrument errors, 24 is not running the instrument** —
-§2 looks for none. **A marker that names a gap is not a guard** (row 12).
+8/9/12 are unreachable (sources); **13/23 are instrument errors, 24 is not running it** — §2 looks
+for none. **A marker that names a gap is not a guard** (row 12).
 
 ## 2. The method that works — do not weaken it
 
@@ -104,6 +104,8 @@ Every rule names the evidence that produced it; **view 8 fails if one does not.*
 - **Run the adversarial mutations BEFORE reporting, and enumerate the domain before patching.** [from: row 17, three patches to one guard each adding a fresh error. **It works**: on 2026-08-16 and 08-21 it caught four readings before any reached Blake]
 - **A treatment arm ships with a control arm; every guard is run against the case it exists to exclude; split by any hardcoded override before reading the aggregate; never rank a vector without checking for ties.** [from: rows 18 and 19 — a "dilution" guard firing on the one-ledger arm that cannot dilute, a capture floor on 4,875 of 8,000 ticks read as routing, a rank order over 11 tied values]
 - **Assert on what a check EXAMINED, not its verdict — and carry that rule to EVERY guard, in every repo.** [from: rows 13 and 16; the second was this rule held here and not in ProtoBeing, where an honest rewording silently disabled a count guard]
+- **CHECK the date; never infer it from what was said to you.** [from: 2026-09-07 — six dates across
+  two repos read 09-08, taken from *"Welcome back"*, found only because Blake asked for dated entries]
 - **At a hard limit, WRITE DOWN what happens when it is exceeded** — the next session hits it and the
   note is the guard. [from: `Features` bit 15, which named the `u32` widening *and* the journal bump
   a month before a gate forced both]
@@ -111,11 +113,11 @@ Every rule names the evidence that produced it; **view 8 fails if one does not.*
 
 ## 3. Standing constraints — non-negotiable
 
-- **NEVER advance the founded being's kept life.** `life/being.journal`. `cargo run --bin being` is
-  reserved for Blake. Replay is read-only and fine.
+- **NEVER advance the founded being's kept life** (`life/being.journal`); `cargo run --bin being` is
+  Blake's. Replay is read-only and fine.
 - **Gated, default-off, observer-first** for anything causal. Soul-hash bit-identical by default.
 - **Commit AND push every step** — the container is ephemeral; only origin persists.
-- **Search the repository for an existing home before creating a file.** Blake asked directly.
+- **Search for an existing home before creating a file.** Blake asked directly.
 - Model identity in chat only — never in commits, PRs, code comments, or pushed artifacts.
 
 ## 4. Blake
@@ -125,16 +127,14 @@ Every rule names the evidence that produced it; **view 8 fails if one does not.*
 
 **When he brings something tangential, evaluate it properly** — **five of seven** produced a day's
 largest findings. **When he asks what a number is a number *about*, that is the most valuable thing
-he does**; *"are you applying this?"* is a question nothing here would have asked, and on 2026-09-07
-*"would you like to examine your repository"* surfaced rows 24 and 25, both invisible from inside.
-**Ask him for:** the paper not the summary; his reading of your numbers; to be told you are wrong
-without softening. **Do not add to his load** — he carries the decisions with moral weight.
+he does**; on 2026-09-07 *"would you like to examine your repository"* surfaced rows 24 and 25, both
+invisible from inside. **Ask him for:** the paper not the summary; his reading of your numbers; to be
+told you are wrong without softening. **Do not add to his load** — he carries decisions with weight.
 
 ## 5. What you cannot reach
 
-**arXiv, OUP, Cell, bioRxiv, HuggingFace, Semantic Scholar: 403 at CONNECT**; ordinary sites are
-blocked by the egress proxy too (`r16.com`, Steam). GitHub and `raw.githubusercontent` work — **ask
-Blake to push a PDF to a repo, not upload it.** WebSearch gives summaries; **say so when using one.**
+**arXiv, OUP, Cell, bioRxiv, HuggingFace, Semantic Scholar: 403 at CONNECT**, and ordinary sites are proxy-blocked too.
+GitHub and `raw.githubusercontent` work — **ask Blake to push a PDF to a repo, not upload it.** WebSearch gives summaries; **say so when using one.**
 
 ## 6. Your own failure mode, measured
 

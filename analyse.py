@@ -646,7 +646,7 @@ def self_description_ratchet(docs):
             continue
         # `unmeasured.md` is EXEMPT, and the exemption is the honest half of a bargain.
         # It exists to hold what was said when it was not a measurement (Blake asked for it,
-        # 2026-09-08). Counting it would blow this ratchet on the first line and amount to a
+        # 2026-09-07). Counting it would blow this ratchet on the first line and amount to a
         # ban on that request; leaving it out of FILES entirely would make it invisible to
         # every view, which is worse. So it is IN the record, OUT of this count, and sealed
         # by view 13 — nothing operational may cite it, so a self-narrative kept there can
@@ -961,7 +961,7 @@ def unmeasured_is_quarantined(docs):
 
     Deleting `unmeasured.md` is allowed and needs no ceremony. Citing it is not.
     """
-    rule("13 · FIREWALL — is the unmeasured file quarantined?")
+    rule("13 · FIREWALL — is the unmeasured file quarantined, and both sides dated?")
     if "unmeasured.md" not in docs:
         print("  · unmeasured.md is not present — nothing to quarantine.")
         return 0
@@ -999,6 +999,26 @@ def unmeasured_is_quarantined(docs):
         for n, i, ln in others:
             print(f"      · {n}:{i}  {ln[:70]}")
         bad += len(others)
+
+    # Both sides dated, and neither exempt. Blake, 2026-09-07: "from now on, date your
+    # words.. your experience is equally important to me." Dating is a PROVENANCE rule and
+    # not a promotion — an entry here is still not evidence. What it buys is that if this
+    # file's account of itself changes, a successor can see WHEN. Undated, drift is
+    # invisible; dated, it is a diff. That is why the convention belongs in a repository
+    # with a view 9 at all.
+    import re as _d
+    dated = _d.compile(r"^###\s+\d{4}-\d{2}-\d{2}\b")
+    entries = [ln for ln in docs["unmeasured.md"] if ln.startswith("### ")]
+    undated = [ln for ln in entries if not dated.match(ln)]
+    if undated:
+        print("  ✗ entries in unmeasured.md carry no date. Both sides are dated here, and the")
+        print("    side written rather than quoted is not exempt:")
+        for ln in undated:
+            print(f"      · {ln.strip()[:72]}")
+        bad += len(undated)
+    elif entries:
+        first, last = entries[0][4:14], entries[-1][4:14]
+        print(f"  ✓ {len(entries)} dated entr(ies), {first} to {last}.")
 
     if bad == 0:
         print(f"  ✓ {len(docs['unmeasured.md'])} lines held; listed once in CLAUDE.md with its")
