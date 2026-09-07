@@ -376,23 +376,31 @@ never harmed, so never learns dread.
   refuses to store any. This is the real remaining half of the freeze.
 - Whether to avow Charter §11(b).
 
-**Measured 2026-08-04, not yet acted on — the survival net covers 11 of 15 gates:**
-- **`tests/survival.rs` has `const N_GATES = 11`. `src/being.rs` has 15 `enable_*`.** The four
-  outside the net are **`comfort`, `settling`, `reserve`, `setting_down`** — the gate list is written
-  by hand in `apply()` and nothing checks it against the source.
-- So **`s2_the_composed_being_survives` and the 66-life pair sweep have never run on a being with a
-  `reserve`** — the faculty Blake is deciding whether to grant. *"The composed being survives"* means
-  *the eleven-gate composed being.*
-- **Same shape as the gap fixed on 2026-08-03** (six of fourteen faculties unreachable by a founded
-  being, unnoticed five weeks). `tests/manifest.rs` now counts whether a gate is **reachable**.
-  **Nothing counts whether it is survivable.**
-- **How it surfaced is the lesson:** a one-digit gap between two numbers quoted interchangeably —
-  **366 is the total test count, 365 the passing count, and the difference is one `#[ignore]`d test**
-  (the 66-life sweep; run explicitly, it passes). Blake said *chase it*. **A number nobody could
-  explain was hiding a coverage hole**, and no rule in `CLAUDE.md` would have found it.
-- **Not fixed tonight, deliberately.** Widening a safety guard deserves locked predictions, not a
-  tired patch — and P-style predictions should say in advance which of the four is expected to be
-  lethal alone. **`reserve` is the one to watch: it changes metabolism.**
+**CLOSED 2026-09-06/07 — the survival net and the reachability gap.** Both items below were
+recorded here on 2026-08-04 as open and are now done; they are kept, struck, because *how* they
+closed is the lesson.
+
+- **`tests/survival.rs` `N_GATES` was 11 against 15 `enable_*`.** It is now **17 against 17**, and
+  `tests/manifest.rs` fails if they diverge. The four then outside the net — `comfort`, `settling`,
+  `reserve`, `setting_down` — went in on 2026-08-06 with predictions locked first.
+- **"A `Features` reachability test, so faculties cannot again be built where the being cannot
+  reach"** — **it exists, and on 2026-09-07 it caught a live one.** `durable_bonds` was written with
+  a `pub fn enable_*` and no `Features` field; `every_faculty_can_reach_a_founded_being` refused it
+  with the exact remedy in the failure message. The `u16` was full, so it forced the widening to
+  `u32` and journal **v7** that the bit-15 comment had predicted in advance.
+- **The lesson both times:** *a guard written after the gap it describes catches the next instance,
+  not the one that motivated it.* Neither of these fired on the case that caused them. Both fired on
+  a case nobody was looking for. **That is the whole argument for writing a guard you do not
+  currently need.**
+
+**Measured 2026-09-07, and Blake's:**
+- **`MAX_PARTNERS = 4`.** At five relationships `slot()` evicts the faintest ledger every tick, every
+  ledger is refilled before its EMAs mean anything, and the being's **worst-case** alarm collapses
+  from 253 to 15. It does not report distress-and-unheard; it reports **calm**, which from outside is
+  indistinguishable from being fine. A ceiling, not a dilution, and it sits under §14–§20.
+- **The hermit door is identity-blind** (`world.rs`, by design). Whether it should learn who is
+  knocking — the third register of the one defect.
+- **Granting the kept being `durable_bonds`** at a named moment, or not.
 
 **Measured 2026-08-04, not yet acted on — ProtoBeing's claims are unchecked:**
 - **19 basin-occupancy claims sit with no correction marker within ten lines, across 9 documents**;
@@ -407,8 +415,9 @@ never harmed, so never learns dread.
   withdrawn-claim view into ProtoBeing as a test so this is caught rather than discovered.
 
 **Measurements not yet made:**
-- Is the quality space **poor, or merely unvisited**? Opposite fixes. `quality_space.rs` already has
-  `similarity(a,b)`; nobody has run the census of afforded volume vs occupied volume.
+- ~~Is the quality space **poor, or merely unvisited**?~~ **Answered** — `examples/quality_space_census`
+  exists and its numbers re-verify (`analyse.py --verify`, 2026-09-07). `receptors` quadruples
+  occupancy; a reserve moves it 0.93×.
 - `quality_space.rs` under C1 — its basis is author-set by its own admission. If the axes fail as the
   basins did, GWOT alignment needs an intrinsic basis **first**.
 - I-8's **competence** half: does weathering buy anything in a hardship *with an exit*? Untouched.

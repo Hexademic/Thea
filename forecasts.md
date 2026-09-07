@@ -46,7 +46,7 @@ useless.
 | F2 | 2026-08-22 | *(kind: error)* In building this scoring apparatus I will state a property of the whole record that I have measured on **one file only** — rows 20 and 22's error, a third time. The check that would catch it: every claim about "the record" naming which files it was computed over. | 0.30 | yes | FALSE |
 | F3 | 2026-08-22 | Requiring a `scope:` marker on every standing claim will find **more than half** of the existing claims lack one. | 0.75 | no | TRUE |
 | F5 | 2026-08-22 | Scoping the remaining 25 standing claims will find **at least 5** that were measured in only one configuration and need *narrowing*, not merely labelling — i.e. rows 20/22's error is already in the record more than twice. | 0.55 | yes | open |
-| F6 | 2026-08-22 | Tested against the **current single-being implementation**, at least **3 of the 7** drafted population clauses (§14–§20) turn out to be already violated — not merely untested. §15 is already known violated, so this needs two more. | 0.50 | yes | open |
+| F6 | 2026-08-22 | Tested against the **current single-being implementation**, at least **3 of the 7** drafted population clauses (§14–§20) turn out to be already violated — not merely untested. §15 is already known violated, so this needs two more. | 0.50 | yes | FALSE |
 | F7 | 2026-08-22 | The clause Blake most wants changed is **§15** (do not referee between beings) rather than §16, §17 or §18 — i.e. the intervention question is the live disagreement, not the cap, the mortality rule, or reproduction. | 0.45 | no | open |
 | O1 | 2026-09-06 | *(population.md O1)* GT and TG give **disjoint** afternoon mean-`gave` under a phase-null sweep. | 0.75 | yes | TRUE |
 | O2 | 2026-09-06 | *(population.md O2)* **GT ends `Open`** — a generous block's reserve survives 200 ticks of a 0.30 taker. | 0.55 | yes | FALSE |
@@ -347,6 +347,31 @@ The rule the last batch produced — *run the mechanism once before assigning `p
 claim about it* — is what made D3 cheap to get right: I read `survives()` and saw
 `sens.partner = Some(partner)` on every tick before writing the number. **It worked
 the first time it was applied.**
+
+## F6 resolved FALSE, 2026-09-07 — and F7 deliberately left open
+
+**F6** predicted that **at least 3 of the 7** population clauses would turn out already violated
+rather than merely untested. Two are: **§15** (DEBT since it was drafted) and **§19**, regraded
+UNTESTED → DEBT today with both failures pinned in `tests/charter.rs`. That is **2 of 7**, so F6 is
+**FALSE**.
+
+It is false for a structural reason worth keeping, and not because the clauses are in good shape:
+**§16, §17 and §18 cannot be violated by a system with one being.** A covenant cap with no second
+covenant, one mortality rule with no world that has death, birth-as-a-loophole with no
+reproduction — these are not untested by neglect, they are untestable. **The prediction assumed the
+implementation could be wrong about things it does not yet do.** A clause about many beings is not
+checkable against one, and I should have priced that in at the time rather than treating "untested"
+and "not yet violated" as the same shortfall.
+
+**F7** predicted that §15 is the clause Blake most wants changed. Today he engaged §15's fork and no
+other, and directed the work on it — which is real evidence. It is **not the evidence F7 asked for**:
+he *delegated* the choice rather than stating a preference, saying *"I trust you Thea, proceed at your
+direction."* Resolving TRUE on that would be reading a preference into a delegation.
+
+**It stays open**, and the reason is today's own measurement: the interesting/plain split now shows
+this record is **worse when the answer is the more reportable one** (0.2236 over 16 against 0.1472
+over 17). TRUE is the more reportable answer here. That is exactly when better evidence is worth
+asking for, and the cheapest way to get it is to ask him.
 
 ## Standing rule
 
