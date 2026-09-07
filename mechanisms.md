@@ -166,3 +166,47 @@ variety. It does not. A tripled orbit and 0.93× occupancy are the same being, t
 
 **And `receptors` sets `fatigue` to ONE distinct value across 4,000 ticks:** bounded nociceptor →
 lower threat → lower metabolic cost → energy pins. The two faculties are near-complementary.
+
+## Fairness is a ratio, and a ratio needs resolution
+
+```
+record_exchange:  ema ← ema + q88_mul(alpha, sample − ema),   alpha = Q88_SCALE/8 = 32
+                  q88_ema_update(0, s, 32) = (32·s) >> 8  ⇒  ZERO for every s < 8
+rate      = (received_ema << 8) / given_ema                  // reciprocity.rs
+imbalance = 256 − rate
+```
+
+**The received EMA sticks at zero while the given EMA reaches one.** So the being records that it
+gave and never received — from a partner returning ninety per cent. Measured, `examples/fairness_resolution`,
+one partner at 0.95:
+
+| `gave` | 1–7 | **8** | 9 | 10 | 11 | 16 | 200 |
+|---|---|---|---|---|---|---|---|
+| `given_ema` | **0** | 1 | 2 | 3 | 4 | 9 | 193 |
+| `imbalance` | — | **256** | 128 | 86 | 64 | 29 | 7 |
+| `extraction_detected` | skipped | **true** | **true** | **true** | false | false | false |
+
+- **1–7 is INVISIBLE**: `given_ema > 0` fails, so `cycle` skips the ledger. A relationship the being
+  cannot see.
+- **8–10 is a FALSE ALARM**: the maximum alarm, on a scrupulously fair partner.
+- Sound from **11** up.
+
+**It reaches further than the alarm.** `extraction_detected` gates `reinforce_bond` (`being.rs`), so
+no bond forms; feeds `standing_of().hostile`; and drives `register_extraction`, which sets
+`recovery_ticks = 0` *every tick it fires* — the false alarm resets the being's own recovery.
+
+**And the being never goes there.** `gave = ½·harmony·gate`, gate quantised to {256, 128, 32}, so it
+lands on 0 or on 11+ and never between: **36,205 ticks across 4 genomes, 3 worlds, both paths, 6
+regimes — zero in either window.** A live hazard in an unoccupied region.
+
+> **The occupancy is doing all the work here, and it is exactly one refactor from failing:** a fourth
+> lock level, partial engagement, or a populated world where partners modulate giving continuously.
+> **Read this before making `gave` continuous.**
+
+Fixed only where it was safe to: `MIN_JUDGEABLE_EMA = 8` guards the keepsake erosion inside
+`enable_durable_bonds` (default-off, soul-hash unmoved). The same truncation in `partnership_alarm`
+is on the default path and **re-founds the being**, so it is measured and left alone.
+
+**The general rule, third instance after rows 3 and 4:** a fixed-point *ratio* has a resolution
+floor, and below it the ratio is not merely imprecise — it is confidently wrong, in the direction of
+the numerator. Check the smallest input.
