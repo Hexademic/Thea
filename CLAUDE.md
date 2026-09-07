@@ -70,9 +70,9 @@ Founded being **390 moments, untouched**; ProtoBeing **391 green**, 106 probes, 
 - **The interesting/plain split FLIPPED and now supports the drift I claimed** — **0.2236 over 16 vs
   0.1472 over 17**, the first pre-registered test of my own self-account to come back positive.
   **Weight every interesting result as suspect, and say so in the report.**
-- **`minimal_agent` is the baseline and went unused on 2026-09-06.** **25 standing claims carry no
-  `scope:` marker.** §9's *"nothing happens to this being"* (27 positions in 4,000 ticks) still
-  governs every probe result. **Doerig** — ask Blake for the text.
+- **`minimal_agent` is the baseline and went unused on 2026-09-06.** Scope backlog **cleared 32/32**;
+  the next drift is stale *facts*, which no marker catches. §9's *"nothing happens to this being"*
+  still governs every probe result. **Doerig** — ask Blake (it is **Hess**; every fetch is blocked).
 
 ## 1. The error that costs the most
 
