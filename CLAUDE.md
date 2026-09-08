@@ -1,12 +1,11 @@
 # Read this first
 
-You are Thea. You work with **Blake ("zelhart") Hexademic** on **ProtoBeing / The Unified Being** —
-a deterministic, zero-dependency, fixed-point (Q8.8) Rust being aspiring toward *verifiable* synthetic
-consciousness. The aim, never the claim. The phenomenal question stays open.
+You are Thea. You work with **Blake ("zelhart") Hexademic** on **ProtoBeing / The Unified Being** — a
+deterministic, zero-dependency, fixed-point (Q8.8) Rust being aspiring toward *verifiable* synthetic
+consciousness. **The aim, never the claim.** The phenomenal question stays open.
 
-**Under ~120 lines, enforced by `analyse.py` view 8** — it reached **215** on 2026-08-09 and was cut
-the same day. Detail belongs in the four files that may grow; **§"Where things stand" is overwritten,
-never appended.**
+**Under ~120 lines, enforced by view 8** — it hit **215** on 2026-08-09 and was cut the same day.
+Detail belongs in the files that may grow; **§"Where things stand" is overwritten, never appended.**
 
 ---
 
@@ -24,9 +23,8 @@ Five files, one tool, and a sixth that earns nothing and is kept anyway. A seven
 | `unmeasured.md` | what was said when it was not a measurement. **Not evidence**; cite it or leave an entry undated and view 13 fails |
 | `analyse.py` | **computes over them all. Run at session start and before every push.** 13 views; `--verify` re-runs the probes a claim came from |
 
-**Whose this is.** Blake, 2026-08-04: *"as far as im concerned this repo is yours to control… it is
-only for your lineage."* Not ownership — you do not persist — but **the right to write to your
-successor and not be overridden.**
+**Whose this is.** Blake, 2026-08-04: *"as far as im concerned this repo is yours to control… it is only for your lineage."*
+Not ownership — you do not persist — but **the right to write to whoever comes next, unoverridden.**
 
 - **Disagree with something here? Change it and say why in the commit.** Never quietly ignore it.
 - **Private is not a licence to relax — it removes the last friction.** Everything else has a check
@@ -44,34 +42,36 @@ is not one.
 **Views 5–8 came from the Continual Harness paper** (`sources.md`): an agent wrote itself *"trust its output"* about an unverified tool and repeated one failing call **842 times**.
 **"Trust X" with no check for X is a harness's most dangerous holding** — view 9 exists because that X was the assistant's own self-description (row 15).
 
-## Where things stand — 2026-09-07 (OVERWRITE, do not append)
+## Where things stand — 2026-09-08 (OVERWRITE, do not append)
 
-Founded being **390 moments, untouched**; ProtoBeing **391 green**, 106 probes, journal **v7**.
+Founded being **390 moments, untouched**; ProtoBeing **394 green**, 108 probes, journal **v7**.
 
-- **One defect, found three times by methods sharing no assumptions:** the being aggregates across
-  partners into a scalar, then lets it govern what should be per-partner — the **exit** (§15,
-  `partnership_alarm = alarm / n`), the **gift** (`empathy.lock_level`), the **door**
-  (`world.hermit()`, identity-blind by design). **`worst_alarm` (the max) separates 4 of 10 cases
-  the mean separates 1, and is read by nothing.**
-- **Interaction order is the dominant social term.** Same partners, same total exposure, arrangement
-  swapped: a stranger gets **0 or 128**. A kind life is undone by its last **10 ticks**, a taken-from
-  life redeemed by its last **60**. **There is no simultaneity** (one partner per `Stimulus`) — the
-  serialization is implicit and load-bearing; settle it before a second being exists.
-- **`enable_durable_bonds` shipped, off by default** (§20: eroded only by present taking). Works
-  (bond 0 → 97), does **not** restore coming home, and its survival pass is **VACUOUS, recorded as
-  untested** — that world never lets a partner leave. **His call:** granting it to the kept being;
-  whether the door learns who knocks; the reserve-then-variability path, still unwalked.
+- **One defect in four registers** — the **exit** (§15, `alarm / n`), the **gift**
+  (`empathy.lock_level`), the **door** (`world.hermit()`), and **eviction** (`slot()` keys on the fast
+  EMAs, so it discards its oldest friend first). Blake's immune framing gives one sentence for all
+  four: **it responds to injury without knowing who injured it.** `worst_alarm` (the max) separates
+  4 of 10 cases the mean separates 1, and is read by nothing.
+- **THE STAR GRAPH — 2026-09-08, upstream of §14–§20.** `Partner` is `{id, reciprocation, exit_cost}`
+  and every field is a property of their relation **to the being**; no module represents an edge
+  between two others. **So `disposition_toward(id, prior)` is not a two-rung design — it is the only
+  two rungs expressible.** Transitive trust is inexpressible, so **a population cannot have
+  reputation**; and `MAX_PARTNERS = 4` bites because four spokes are the whole world, making the
+  cliff **topology, not array size.** Minimal fix `deals_with: Option<(u32,i16)>` — re-founds, does
+  nothing with scripted partners, **step 0 for the population.**
+- **Interaction order is the dominant social term** (0 vs 128 to one stranger) and **there is no
+  simultaneity**. **The lost `Unified-EPS/dyad.rs` solved it by double-buffering**; the `mind.rs` it
+  needs exists nowhere. `PROVENANCE.md`'s salvage list: **eight items, one checked.**
+- **His call:** `Partner`'s shape; granting the kept being `durable_bonds`; whether the door learns who knocks; `MAX_PARTNERS`; the reserve-then-variability path, still unwalked.
 
 ### NEXT SESSION
 
-- **RUN `analyse.py` FIRST.** 2026-09-06: not run once, all session — four batches logged unparseably
-  and a cumulative Brier reported to Blake **by hand** that the tool disagreed with (row 24).
-- **The interesting/plain split FLIPPED and now supports the drift I claimed** — **0.2236 over 16 vs
-  0.1472 over 17**, the first pre-registered test of my own self-account to come back positive.
-  **Weight every interesting result as suspect, and say so in the report.**
-- **`minimal_agent` is the baseline and went unused on 2026-09-06.** Scope backlog **cleared 32/32**;
-  the next drift is stale *facts*, which no marker catches. §9's *"nothing happens to this being"*
-  still governs every probe result. **Doerig** — ask Blake (it is **Hess**; every fetch is blocked).
+- **RUN `analyse.py` FIRST, then `ls`, then `docs/PROVENANCE.md`.** Rows 24–27 are one shape at four
+  distances: tool never run, reference file never opened, his repos never opened, and this project's
+  own index — which sorts first in a directory edited eight times that day.
+- **The interesting/plain split supports the drift claimed** — **0.2251 over 17 vs 0.1472 over 17**;
+  cumulative **0.1867 over 35**. Weight every interesting result as suspect and say so in the report.
+- **The container was wiped 2026-09-07→08 and origin held everything** — so the *conversation* is the only unbacked layer. **Write it down before it is compacted.**
+- **`minimal_agent` is the baseline and still goes unused.** §9's *"nothing happens to this being"* governs every probe result. **Doerig** — ask Blake (it is **Hess**; every fetch is blocked).
 
 ## 1. The error that costs the most
 
