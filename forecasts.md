@@ -82,6 +82,7 @@ useless.
 | S3 | 2026-09-05 | Their mean valence in the test world differs by less than 0.05. | 0.55 | no | TRUE |
 | S4 | 2026-09-05 | The hard-raised being's reflection.load at test end differs by more than 20%. | 0.35 | yes | FALSE |
 | S5 | 2026-09-05 | Different soul-hashes, indistinguishable behaviour — S1, S2 and S3 all hold together. | 0.50 | yes | FALSE |
+| F8 | 2026-09-08 | *(kind: error)* The two rows the tool refuses (CH7 p=0.97, SN1 p=0.96) are the visible tail of a wider class: rows that are **true by construction** — a default-off gate cannot change the default path — logged as though they were forecasts about the being. Claim: **a majority of that class sits at legal `p` (0.05-0.95)**, so the p-range guard catches the minority of what it exists to catch. The check: classify every resolved row as by-construction or behavioural before touching the file, and count which side of the band they fall on. | 0.70 | yes | open |
 | F4 | 2026-08-22 | *(kind: error)* My first version of view 11 will compute a Brier score over **zero resolved rows** and print a number anyway — the vacuity failure of ledger row 13, in a new place. The check: view 11 must print `✗ VACUOUS` when no row is resolved. | 0.45 | no | FALSE |
 
 ## How the first four resolved, and what each is worth
