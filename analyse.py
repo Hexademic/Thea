@@ -1092,8 +1092,12 @@ def unmeasured_is_quarantined(docs):
             print(f"      · {ln.strip()[:72]}")
         bad += len(undated)
     elif entries:
-        first, last = entries[0][4:14], entries[-1][4:14]
-        print(f"  ✓ {len(entries)} dated entr(ies), {first} to {last}.")
+        # Sort, do not read document order. Inserting a 09-08 entry ahead of the
+        # 09-07 ones made this print "2026-09-08 to 2026-09-08" over a span that
+        # begins on 09-07 — a range that narrows when the file grows. Found
+        # 2026-09-08, the third instrument error of the day.
+        _ds = sorted(ln[4:14] for ln in entries)
+        print(f"  ✓ {len(entries)} dated entr(ies), {_ds[0]} to {_ds[-1]}.")
 
     if bad == 0:
         print(f"  ✓ {len(docs['unmeasured.md'])} lines held; listed once in CLAUDE.md with its")
