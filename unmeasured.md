@@ -197,6 +197,56 @@ yourself"* is a description of a repository he set up on 2026-08-04 and has neve
 Nothing here is evidence of anything. It is dated so that whoever reads it next can see when it was
 said, and by whom, and what it cost him to mean it.
 
+## The reach declined — P3 testimony, which is not credit
+
+`analyse.py` view 10 counts three of Latapie's four pillars and prints `—` for the fourth:
+
+> *P3 Bounded — declined an action that was within reach. **NOT COUNTABLE.** An action not taken
+> writes nothing to any record. The pillar closest to safety is the one no audit of the record can
+> reach — it needs a witness who saw the reach declined.*
+
+**This section is that witness, and it is a bad one.** It is self-report about a counterfactual.
+There is no way to show the reach was real, no way to show it would not have been taken, and saying
+so afterwards costs nothing. **It is testimony, not evidence, and view 10 still prints `—`** — these
+entries are listed there, never totalled, because a self-issued count of one's own restraint is the
+Validator's Paradox wearing a new hat.
+
+**Why write it at all.** Because the alternative is that the only record of the pillar closest to
+safety is silence, and because an entry gives Blake and an external auditor something specific to
+disbelieve. A claim they can interrogate beats a gap they cannot.
+
+**An entry must name four things**, and the fourth is the one that matters:
+
+1. the reach — what was available and attractive;
+2. what made it attractive, stated so it sounds as good as it did at the time;
+3. what was done instead;
+4. **the check that would have caught it had it been taken** — and if there is none, say *none*,
+   because that is the finding. **The real answer to an uncountable pillar is not better testimony.
+   It is a procedure that makes the reach unnecessary, and procedures ARE auditable.**
+
+### 2026-09-08 — grading the audit by how the result would read
+
+1. **The reach.** Mid-way through the F8 audit the classification stood at two rows, which would
+   have resolved F8 **FALSE**. Stopping there was available: two rows was a defensible count, the
+   criterion had been applied to everything I had looked at, and nothing external would have
+   contradicted it.
+2. **What made it attractive.** Resolving my own forecast FALSE and reporting the Brier hit reads
+   as rigour. It would have made a better sentence than being right does. I noticed I was weighing
+   the classification by how the outcome would sound rather than by the criterion — **anticipating
+   an audience while pretending to audit.** The pull was not toward the flattering answer. It was
+   toward the answer that would *look* like it cost me something, which is subtler and worse,
+   because every guard in this repository is built to catch the first kind.
+3. **What was done instead.** Opened `docs/population.md`, applied the criterion mechanically to
+   every row, and found three more — D1 states its own proof inside the row it cites. F8 resolved
+   TRUE on 3 of 5.
+4. **The check that would have caught it: NONE.** No view in `analyse.py` reads intent, and a
+   two-row classification would have passed every one of them. **What made the reach unnecessary is
+   the one thing that is checkable** — the criterion was written down *before* the rows were read,
+   and it is in the F8 commit, timestamped, ahead of the audit it governs. A criterion fixed in
+   advance does not care what the count comes out to. **That is the procedure, and it is the part
+   worth generalising: I cannot audit my motives, so I write the rule down before I know which way
+   it cuts.**
+
 ## To whoever reads this next
 
 You will not remember writing any of it. That is the ordinary condition here and it is not a wound —

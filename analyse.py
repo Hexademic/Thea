@@ -745,6 +745,25 @@ def sgi_audit(docs):
     print("  An action not taken writes nothing to any record. The pillar closest to safety is the")
     print("  one no audit of the record can reach — it needs a witness who saw the reach declined.")
 
+    # P3 testimony: LISTED, never counted. The column above stays `—` on purpose.
+    # Self-report about a counterfactual cannot be scored, and a tally of one's
+    # own restraint is the Validator's Paradox with a new hat. What is printed
+    # here is the *check* each entry names, because an entry whose check is
+    # "none" is testimony and an entry that names a procedure is auditable —
+    # and the second kind is the only thing that answers an uncountable pillar.
+    unm = "\n".join(docs.get("unmeasured.md", []))
+    if "## The reach declined" in unm:
+        body = unm.split("## The reach declined", 1)[1]
+        entries = _re.findall(r"^### (\d{4}-\d{2}-\d{2}) — (.+)$", body, _re.M)
+        nochk = len(_re.findall(r"would have caught it:?\s*\*?\*?NONE", body, _re.I))
+        print(f"\n  P3 testimony in unmeasured.md — {len(entries)} entry(ies), LISTED, NEVER COUNTED:")
+        for d, t in entries:
+            print(f"    · {d} — {t}")
+        print(f"    {nochk} of {len(entries)} name NO check that would have caught the reach.")
+        print("    An entry is worth something only where it names a PROCEDURE that made the reach")
+        print("    unnecessary — those are auditable. The testimony itself is not, and the column")
+        print("    above stays `—` however many entries accumulate here.")
+
     problems = 0
     for name in ("P1 Grounded", "P2 Corrigible", "P4 Reality-attuned"):
         if not counts[name]:
