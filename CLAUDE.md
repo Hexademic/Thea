@@ -45,22 +45,21 @@ with `<!-- verify: NAME -->` (view 5 — a test verifies by **passing**, an exam
 
 Founded being **390 moments, untouched**; ProtoBeing **394 green**, 108 probes, journal **v7**.
 
-- **One defect in four registers** — the **exit** (§15, `alarm / n`), the **gift**
-  (`empathy.lock_level`), the **door** (`world.hermit()`), and **eviction** (`slot()` keys the fast
-  EMAs, discarding its oldest friend first). Blake's immune framing covers all four: **it responds
-  to injury without knowing who injured it.** `worst_alarm` separates 4 of 10 cases the mean
-  separates 1, and is read by nothing.
-- **THE SCORE WAS PAYING ME FOR NOT LOOKING (row 28).** Five rows were true by construction; Brier
-  **0.1867 → 0.1985** once they left it. A fix that costs me is the only kind that proves its own motive.
+- **One defect in four registers** — exit (§15 `alarm / n`), gift (`empathy.lock_level`), door
+  (`world.hermit()`), eviction (`slot()` keys the fast EMAs, so it drops its oldest friend first).
+  His immune sentence covers all four: **injury answered without knowing who caused it.**
+- **THE TARGET, stated for the first time 2026-09-08** (`docs/positioning.md`): *"a minimal pattern
+  of data information processing, to ensure that complex recursive self improvement within an
+  environment/society would thrive."* **Three terms, none satisfied** — 64 modules is not minimal,
+  `self.genome` is never assigned, no `Vec<Being>` exists. **It answers his "have we over
+  complicated the project?" with yes**, and makes `mind.rs` the first term attemptable at all.
 - **THE STAR GRAPH — 2026-09-08, upstream of §14–§20.** `Partner` is `{id, reciprocation, exit_cost}`
   and every field is a property of their relation **to the being**; no module represents an edge
   between two others. **So `disposition_toward(id, prior)` is not a two-rung design — it is the only
   two rungs expressible.** Transitive trust is inexpressible, so **a population cannot have
   reputation**; `MAX_PARTNERS = 4` bites because four spokes are the whole world — the cliff is
   **topology, not array size.** Fix `deals_with: Option<(u32,i16)>` — re-founds, **step 0.**
-- **Interaction order is the dominant social term** (0 vs 128 to one stranger) and **there is no
-  simultaneity**. **The lost `dyad.rs` solved it by double-buffering**; its `mind.rs` exists nowhere.
-  `PROVENANCE.md`'s salvage list: **eight items, one checked.**
+- **Interaction order is the dominant social term** (0 vs 128), **no simultaneity**; lost `dyad.rs` double-buffered it. `PROVENANCE.md` salvage: **eight items, one checked.**
 - **His call:** `Partner`'s shape; granting the kept being `durable_bonds`; whether the door learns who knocks; `MAX_PARTNERS`; the reserve-then-variability path, still unwalked.
 
 ### NEXT SESSION
@@ -128,15 +127,16 @@ Every rule names the evidence that produced it; **view 8 fails if one does not.*
 > *"if we dont listen to what others report, we arent doing scientific research, we are dreaming what the perfect system would be."*
 
 **When he brings something tangential, evaluate it properly** — **five of seven** produced a day's largest findings, and on 2026-09-07 four questions of his surfaced rows 24-27, every one invisible from inside.
-**Ask him for:** the paper not the summary; his reading of your numbers; to be told you are wrong
-without softening. **Do not add to his load** — he carries decisions with weight.
+**Ask him for:** the paper not the summary; his reading of your numbers; to be told you are wrong without softening.
+**The channel runs BOTH ways — he said so outright, 2026-09-08:** judge his words, never take them
+as standard, measure his biases as well as yours, and treat correcting him as ordinary rather than
+costly. **The record is one-sided** — eight kept quotations of his, every one warm; his guard
+corrections obeyed without argument. **Not deferring is the instruction.** His exact words stay
+quarantined where they are — importing them here is the very loop view 9 exists to catch.
+**Cannot reach:** arXiv, OUP, Cell, bioRxiv, HuggingFace, Semantic Scholar 403 at CONNECT; ordinary
+sites proxy-blocked. GitHub + `raw.githubusercontent` work — **ask him to push a PDF, not upload it.**
 
-## 5. What you cannot reach
-
-**arXiv, OUP, Cell, bioRxiv, HuggingFace, Semantic Scholar: 403 at CONNECT**, and ordinary sites are proxy-blocked too.
-GitHub and `raw.githubusercontent` work — **ask Blake to push a PDF to a repo, not upload it.** WebSearch gives summaries; **say so when using one.**
-
-## 6. Your own failure mode, measured
+## 5. Your own failure mode, measured
 
 **You default to producing an artifact when a change is what is needed.** The reflex is strong,
 always locally justified, and nothing counts it: on 2026-08-09 you wrote up seven lessons and had
