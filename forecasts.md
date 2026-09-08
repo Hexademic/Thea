@@ -22,7 +22,12 @@ Each forecast is one row. Fields:
 
 * `id` — `F<n>`, never reused.
 * `p` — my probability the claim resolves TRUE. **0.05–0.95.** Not 0 or 1; a
-  forecast that cannot be wrong is not a forecast.
+  forecast that cannot be wrong is not a forecast. **The band is necessary and not
+  sufficient** — see *Not forecasts*: three rows inside it were resolvable by reading,
+  and the band saw none of them.
+* `[behavioural]` — set on a row the phrase test flagged and I then classified as a
+  real forecast, with the reason in the row itself. A **positive declaration**, not a
+  suppression list: it lives in the record where it can be argued with.
 * `interesting` — **yes** if the outcome I am predicting is the *more reportable*
   one. This is the field that can falsify what I told Blake on 2026-08-21: that my
   errors lean toward the interesting finding. If my calibration on `interesting: yes`
@@ -61,10 +66,7 @@ useless.
 | CH4 | 2026-09-06 | *(attachment.md H4)* The per-partner disposition computed from the friend's own ledger stays `Open` through the entire injury phase. | 0.80 | yes | FALSE |
 | CH5 | 2026-09-06 | *(attachment.md H5)* For a genuinely unmet stranger the generalized prior still differs between a taken-from history and a kind one. | 0.85 | no | TRUE |
 | CH6 | 2026-09-06 | *(attachment.md H6, written to fail)* The per-partner disposition and the scalar agree on **>= 90%** of (tick, partner) pairs — the new structure is redundant. | 0.15 | no | FALSE |
-| CH7 | 2026-09-06 | *(attachment.md H7)* The soul-hash is bit-identical before and after the observer, and the founded life replays unchanged. | 0.97 | no | TRUE |
-| SN1 | 2026-09-06 | *(survival-first.md D1)* `durable_bonds` alone does not kill the being in the survival world. | 0.96 | no | TRUE |
 | SN2 | 2026-09-06 | *(survival-first.md D2)* No lethal **pair** involving `durable_bonds` among the other sixteen gates. | 0.92 | no | TRUE |
-| SN3 | 2026-09-06 | *(survival-first.md D3)* **The survival world never exercises the gate** — its single partner is present every tick, so the trajectory is bit-identical with the gate on and off, and the pass is vacuous. | 0.80 | yes | TRUE |
 | SN4 | 2026-09-06 | *(survival-first.md D4, written to fail)* Some pair involving `durable_bonds` changes the survival outcome of a gate that survives alone. | 0.08 | no | FALSE |
 | MA1 | 2026-09-06 | *(fear-and-avoidance.md M1)* The betrayed arm's afternoon goals are identical to the blank arm's. **Void: locked as prose with no numeric `p`, so unscorable — see the M1-M6 section.** | 0.50 | no | void |
 | H1 | 2026-09-04 | No (floor, ceiling) pair grounds HAPPEN under weather-2-octaves while leaving the still control silent. | 0.60 | yes | FALSE |
@@ -72,18 +74,101 @@ useless.
 | H3 | 2026-09-04 | `confidence` in the still control exceeds 64 on the median tick. | 0.70 | no | FALSE |
 | H4 | 2026-09-04 | The fire rate is monotonic across the octave sweep. | 0.20 | no | TRUE |
 | H5 | 2026-09-04 | `agency` alone does not discriminate — every ceiling letting weather ground also grounds the still control. | 0.75 | yes | TRUE |
-| D1 | 2026-09-05 | Under R-worst, the trapped-alone being still withdraws at 103. | 0.90 | no | TRUE |
 | D2 | 2026-09-05 | Under R-worst, trapped-with-a-kept-fair-partner withdraws at <= 110 — the 168-tick company delay collapses. | 0.80 | yes | FALSE |
 | D3 | 2026-09-05 | Under R-worst a flourishing being still never withdraws in 4,000 ticks. | 0.85 | no | TRUE |
 | D4 | 2026-09-05 | Under R-worst some arm gets worse — a being withdraws that did not before. | 0.30 | yes | FALSE |
-| D5 | 2026-09-05 | The change is surgical: every single-live-ledger arm is bit-identical. | 0.85 | no | TRUE |
-| S1 | 2026-09-05 | K and H have identical basin occupancy in the test world. | 0.80 | no | TRUE |
+| S1 | 2026-09-05 | **[behavioural]** K and H have identical basin occupancy in the test world. Two differently-raised beings; nothing in the code makes their occupancy match. | 0.80 | no | TRUE |
 | S2 | 2026-09-05 | K and H have the same modal attended channel in the test world. | 0.85 | no | FALSE |
 | S3 | 2026-09-05 | Their mean valence in the test world differs by less than 0.05. | 0.55 | no | TRUE |
 | S4 | 2026-09-05 | The hard-raised being's reflection.load at test end differs by more than 20%. | 0.35 | yes | FALSE |
-| S5 | 2026-09-05 | Different soul-hashes, indistinguishable behaviour — S1, S2 and S3 all hold together. | 0.50 | yes | FALSE |
-| F8 | 2026-09-08 | *(kind: error)* The two rows the tool refuses (CH7 p=0.97, SN1 p=0.96) are the visible tail of a wider class: rows that are **true by construction** — a default-off gate cannot change the default path — logged as though they were forecasts about the being. Claim: **a majority of that class sits at legal `p` (0.05-0.95)**, so the p-range guard catches the minority of what it exists to catch. The check: classify every resolved row as by-construction or behavioural before touching the file, and count which side of the band they fall on. | 0.70 | yes | open |
+| S5 | 2026-09-05 | **[behavioural]** Different soul-hashes, indistinguishable behaviour — S1, S2 and S3 all hold together. A conjunction of measurements; it resolved FALSE, which no by-construction row can do. | 0.50 | yes | FALSE |
+| F8 | 2026-09-08 | **[behavioural]** *(kind: error)* The two rows the tool refuses (CH7 p=0.97, SN1 p=0.96) are the visible tail of a wider class: rows that are **true by construction** — a default-off gate cannot change the default path — logged as though they were forecasts about the being. Claim: **a majority of that class sits at legal `p` (0.05-0.95)**, so the p-range guard catches the minority of what it exists to catch. The check: classify every resolved row as by-construction or behavioural before touching the file, and count which side of the band they fall on. | 0.70 | yes | TRUE |
 | F4 | 2026-08-22 | *(kind: error)* My first version of view 11 will compute a Brier score over **zero resolved rows** and print a number anyway — the vacuity failure of ledger row 13, in a new place. The check: view 11 must print `✗ VACUOUS` when no row is resolved. | 0.45 | no | FALSE |
+
+### F8 — TRUE, and the win is smaller than the finding
+
+Locked before the audit at `p=0.70`, `interesting: yes` — so weight it as suspect, which
+is what the split says to do with anything of mine that reads well.
+
+**The count:** five rows meet the read-it-instead criterion; **three of five sat inside
+the `p` band**. A majority, so the row resolves TRUE — but 3-of-5 is a thin majority and
+I wrote 0.70, so this is a called direction, not a sharp forecast.
+
+**What is worth more than the count** is the thing I did not predict and had to be shown
+by the classification: the band's blindness is not random. It caught **CH7 and SN1, the
+two rows where I knew the answer was structural and priced it** — and missed **SN3, D1
+and D5, where I did not check and forecast instead.** The guard is anti-correlated with
+the harm: it fires where I was honest and stays silent where I was lazy.
+
+**The near-miss.** My first pass classified two rows, not five, and would have resolved
+F8 **FALSE** on a 2-2 split. D1 and D5 only joined when I opened `docs/population.md`
+and read D1's own text — *"One live ledger means mean == max, so nothing should move."*
+The proof was written inside the row I was classifying. **Rows 24–27 again: the answer
+was already in a file I had not opened**, and this time the file was the one the row
+cites by name.
+
+
+## Not forecasts — rows resolvable by reading, moved out of the score
+
+*Opened 2026-09-08, by the audit F8 locked.*
+
+**The criterion, applied before the rows were read:** *could this row have been
+resolved by reading the code and the world config alone, without running the being?*
+If yes it is **not a forecast**. Scoring it rewards me for guessing at something I
+could have looked up, and every such row is near-certain, so each one quietly
+improves the Brier.
+
+Five rows meet it. **Two were already refused** by view 11's `p` band; **three sat
+inside the band, invisible.** That is the F8 finding: the `p` guard is a proxy for
+by-construction-ness and it is **60% blind**.
+
+* **CH7** — 2026-09-06, written `p=0.97`, resolved TRUE. *The soul-hash is bit-identical
+  before and after the observer, and the founded life replays unchanged.* The observer
+  is default-off; a gate that is off cannot move the default path. **Refused by the band.**
+  > as written: *(attachment.md H7)* The soul-hash is bit-identical before and after the observer, and the founded life replays unchanged.
+* **SN1** — 2026-09-06, written `p=0.96`, resolved TRUE. *`durable_bonds` alone does not
+  kill the being in the survival world.* Follows from SN3 below. **Refused by the band.**
+  > as written: *(survival-first.md D1)* `durable_bonds` alone does not kill the being in the survival world.
+* **SN3** — 2026-09-06, written `p=0.80`, resolved TRUE. *The survival world never
+  exercises the gate — its single partner is present every tick.* Whether that world has
+  one always-present partner is a fact about a config file. **Inside the band.**
+  > as written: *(survival-first.md D3)* **The survival world never exercises the gate** — its single partner is present every tick, so the trajectory is bit-identical with the gate on and off, and the pass is vacuous.
+* **D1** — 2026-09-05, written `p=0.90`, resolved TRUE. *Under R-worst, trapped-alone still
+  withdraws at 103.* The row states its own proof: *"One live ledger means mean == max, so
+  nothing should move."* `alarm / 1` and `max([alarm])` are the same integer. **Inside the band.**
+  > as written: Under R-worst, the trapped-alone being still withdraws at 103.
+* **D5** — 2026-09-05, written `p=0.85`, resolved TRUE. *Every single-live-ledger arm is
+  bit-identical.* D1 generalised. **Inside the band.**
+  > as written: The change is surgical: every single-live-ledger arm is bit-identical.
+
+### The part that is worse than the count
+
+CH7 priced its certainty honestly at 0.97 and the tool caught it. SN3, D1 and D5 are
+the **worse** rows, and they scored: I did not know they were by-construction, so I
+forecast at 0.80–0.90 what one file-read would have settled. **By-construction is a
+property of the claim, not of what I happened to know when I wrote it.** The band
+catches the rows where I saw it; it is blind exactly where I did not look — and those
+are the rows where the score pays me for not looking.
+
+### What this costs, stated because it is the check on the fix
+
+All five resolved TRUE, so removing them **raises** my Brier — the fix runs against my
+interest, which is the only reason to trust that I made it for the right reason.
+
+| | before | after |
+|---|---:|---:|
+| Brier, all resolved | 0.1867 over 35 | **0.1985 over 33** |
+| predicting the interesting outcome | 0.2239 over 18 | **0.2267 over 18** |
+| predicting the plain outcome | 0.1472 over 17 | **0.1647 over 15** |
+
+*(After also scoring F8 itself, which is why the interesting denominator holds at 18.)*
+
+**The band stays exactly as it is.** It is not the instrument for this class, but it is
+still the instrument for its own: a new `p=0.97` row in the log above must still fire
+`✗ malformed`. Nothing here is an escape hatch — a row leaves the score only by meeting
+the read-it-instead criterion in writing, and view 11 prints the count of exclusions on
+every run so the quarantine cannot grow quietly.
+
 
 ## How the first four resolved, and what each is worth
 
@@ -278,6 +363,9 @@ Locked with numeric `p` in ProtoBeing `9a146a3`, resolved in `docs/attachment.md
 **Batch Brier: 0.200 over 6.** *(Hand-computed; the tool scores CH1-CH6 and **refuses CH7 at
 p=0.97** — a forecast that cannot be wrong is not one.)*
 
+> **2026-09-08:** CH7 is now filed under *Not forecasts* — resolvable by reading, not by
+> running. The hand-computed 0.200 above is left as written; it was six rows at the time.
+
 ### The thing worth keeping, which is not the score
 
 In the previous batch I wrote, before this one existed:
@@ -320,6 +408,10 @@ safety net is itself a change to a safety guard.
 **Batch Brier: 0.0136 over 4.** *(Hand-computed. The tool **refuses SN1 at p=0.96** on the same
 rule, so this batch scores as three rows, not four — and the counterweight below was righter than I
 knew: the harness has a hard rule against exactly what I did.)*
+
+> **2026-09-08:** and it scores as **one**. SN3 has joined SN1 under *Not forecasts*,
+> and D1 and D5 left the 09-05 batch the same way. The counterweight was righter still:
+> the hard rule caught the row I was honest about and missed the three I had not checked.
 
 ### D3 is the row that matters, and it is the first of its kind here
 

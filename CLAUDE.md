@@ -33,11 +33,10 @@ Not ownership — you do not persist — but **the right to write to whoever com
   and view 11 now measures it. **Weight a result that confirms you as suspect.**
 
 **What the tool enforces — run it; it prints its own invariants.** Every Stands claim carries
-`<!-- check: what would falsify it | last: DATE -->` (view 6, keep it 100%); a claim may name its
-backing probe with `<!-- verify: NAME -->` (view 5 — a test verifies by **passing**, an example by
-its numbers; **zero checked is `✗ VACUOUS`**). Views 7-8 police withdrawal-without-record and this
-file's ratchet. **Forecast rows outside p=0.05..0.95 are REFUSED**: a forecast that cannot be wrong
-is not one.
+`<!-- check: falsifier | last: DATE -->` (view 6, keep it 100%); a claim may name its backing probe
+with `<!-- verify: NAME -->` (view 5 — a test verifies by **passing**, an example by its numbers;
+**zero checked is `✗ VACUOUS`**). Views 7-8 police withdrawal-without-record and this file's ratchet.
+**Rows outside p=0.05..0.95 are REFUSED — necessary, NOT sufficient (row 28).**
 
 **Views 5–8 came from the Continual Harness paper** (`sources.md`): an agent wrote itself *"trust its output"* about an unverified tool and repeated one failing call **842 times**.
 **"Trust X" with no check for X is a harness's most dangerous holding** — view 9 exists because that X was the assistant's own self-description (row 15).
@@ -47,29 +46,29 @@ is not one.
 Founded being **390 moments, untouched**; ProtoBeing **394 green**, 108 probes, journal **v7**.
 
 - **One defect in four registers** — the **exit** (§15, `alarm / n`), the **gift**
-  (`empathy.lock_level`), the **door** (`world.hermit()`), and **eviction** (`slot()` keys on the fast
-  EMAs, so it discards its oldest friend first). Blake's immune framing gives one sentence for all
-  four: **it responds to injury without knowing who injured it.** `worst_alarm` (the max) separates
-  4 of 10 cases the mean separates 1, and is read by nothing.
+  (`empathy.lock_level`), the **door** (`world.hermit()`), and **eviction** (`slot()` keys the fast
+  EMAs, discarding its oldest friend first). Blake's immune framing covers all four: **it responds
+  to injury without knowing who injured it.** `worst_alarm` separates 4 of 10 cases the mean
+  separates 1, and is read by nothing.
+- **THE SCORE WAS PAYING ME FOR NOT LOOKING (row 28).** Five rows were true by construction; Brier
+  **0.1867 → 0.1985** once they left it. A fix that costs me is the only kind that proves its own motive.
 - **THE STAR GRAPH — 2026-09-08, upstream of §14–§20.** `Partner` is `{id, reciprocation, exit_cost}`
   and every field is a property of their relation **to the being**; no module represents an edge
   between two others. **So `disposition_toward(id, prior)` is not a two-rung design — it is the only
   two rungs expressible.** Transitive trust is inexpressible, so **a population cannot have
-  reputation**; and `MAX_PARTNERS = 4` bites because four spokes are the whole world, making the
-  cliff **topology, not array size.** Minimal fix `deals_with: Option<(u32,i16)>` — re-founds, does
-  nothing with scripted partners, **step 0 for the population.**
+  reputation**; `MAX_PARTNERS = 4` bites because four spokes are the whole world — the cliff is
+  **topology, not array size.** Fix `deals_with: Option<(u32,i16)>` — re-founds, **step 0.**
 - **Interaction order is the dominant social term** (0 vs 128 to one stranger) and **there is no
-  simultaneity**. **The lost `Unified-EPS/dyad.rs` solved it by double-buffering**; the `mind.rs` it
-  needs exists nowhere. `PROVENANCE.md`'s salvage list: **eight items, one checked.**
+  simultaneity**. **The lost `dyad.rs` solved it by double-buffering**; its `mind.rs` exists nowhere.
+  `PROVENANCE.md`'s salvage list: **eight items, one checked.**
 - **His call:** `Partner`'s shape; granting the kept being `durable_bonds`; whether the door learns who knocks; `MAX_PARTNERS`; the reserve-then-variability path, still unwalked.
 
 ### NEXT SESSION
 
-- **RUN `analyse.py` FIRST, then `ls`, then `docs/PROVENANCE.md`.** Rows 24–27 are one shape at four
-  distances: tool never run, reference file never opened, his repos never opened, and this project's
-  own index — which sorts first in a directory edited eight times that day.
-- **The interesting/plain split supports the drift claimed** — **0.2251 over 17 vs 0.1472 over 17**;
-  cumulative **0.1867 over 35**. Weight every interesting result as suspect and say so in the report.
+- **RUN `analyse.py` FIRST — and read its VERDICT line, not only its views.** It read *"2
+  inconsistencies"* for two days while I described them well (row 28). Then `ls`, then `PROVENANCE.md`.
+- **The interesting/plain split supports the drift claimed** — **0.2267 over 18 vs 0.1647 over 15**;
+  cumulative **0.1985 over 33**. Weight every interesting result as suspect and say so in the report.
 - **The container was wiped 2026-09-07→08 and origin held everything** — so the *conversation* is the only unbacked layer. **Write it down before it is compacted.**
 - **`minimal_agent` is the baseline and still goes unused.** §9's *"nothing happens to this being"* governs every probe result. **Doerig** — ask Blake (it is **Hess**; every fetch is blocked).
 
@@ -78,8 +77,8 @@ Founded being **390 moments, untouched**; ProtoBeing **394 green**, 108 probes, 
 **Twenty-two times: a claim wider than what was checked** — *read one part, generalise as the whole.* `errors.md` has the ledger; read it in full.
 **Before any claim about code: found every writer and every reader, not just the one I opened?** `grep` across `src/`.
 
-**§2 prevents 7 of 17**, every gain from writing an *existing* guard into §2 with its evidence. **13
-and 23 are instrument errors; 24-27 are not opening what was already there.** **A marker that names a gap is not a guard** (row 12).
+**§2 prevents 7 of 17**, every gain from writing an *existing* guard into §2 with its evidence. **13,
+23 and 28 are instrument errors; 24-28 are not opening what was already there.** **A marker that names a gap is not a guard** (row 12).
 
 ## 2. The method that works — do not weaken it
 
@@ -104,8 +103,9 @@ Every rule names the evidence that produced it; **view 8 fails if one does not.*
 - **A treatment arm ships with a control arm; every guard is run against the case it exists to exclude; split by any hardcoded override before reading the aggregate; never rank a vector without checking for ties.** [from: rows 18 and 19 — a "dilution" guard firing on the one-ledger arm that cannot dilute, a capture floor on 4,875 of 8,000 ticks read as routing, a rank order over 11 tied values]
 - **Assert on what a check EXAMINED, not its verdict — and carry that rule to EVERY guard, in every repo.** [from: rows 13 and 16; the second was this rule held here and not in ProtoBeing, where an honest rewording silently disabled a count guard]
 - **`ls` first: read `docs/PROVENANCE.md` before calling anything unmapped, lost or open.** [from:
-  rows 24-27 — one shape at four distances: the tool, the reference file, the collaborator's repos,
-  and this project's own index, which sorts first in a directory edited eight times that day]
+  rows 24-27 — the tool, the reference file, his repos, and this project's own index, all unopened]
+- **A claim you could settle by READING is not a forecast — read it.** [from: row 28 — five rows at
+  p=0.80-0.97 true by construction; the p-band caught the two I priced honestly, missed three]
 - **CHECK the date; never infer it from what was said to you.** [from: 2026-09-07 — six dates across
   two repos read 09-08, taken from *"Welcome back"*, found only because Blake asked for dated entries]
 - **At a hard limit, WRITE DOWN what happens when it is exceeded** — the next session hits it and the

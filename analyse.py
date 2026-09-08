@@ -817,6 +817,62 @@ def calibration(docs):
     for m in malformed:
         print(f"  ✗ malformed forecast row: {m}")
 
+    # Rows excluded from the score because they were resolvable by READING the
+    # code and world config, not by running the being. Counted and printed on
+    # every run: a quarantine nobody counts is a place to put inconvenient rows.
+    # Added 2026-09-08 by F8, which found the p-band 60% blind to this class —
+    # it caught the two rows I priced honestly and missed the three I had not
+    # checked, and those are the ones the score was paying me for.
+    excl = _r.findall(r"^\* +\*\*([A-Za-z]{1,3}\d+)\*\* — .*?written `p=([0-9.]+)`",
+                      text, _r.M)
+    if "## Not forecasts" in text:
+        print(f"  · {len(excl)} row(s) excluded as resolvable by reading, not running:"
+              f" {', '.join(i for i, _ in excl)}")
+        inside = [i for i, pv in excl if 0.05 <= float(pv) <= 0.95]
+        print(f"    {len(inside)} of {len(excl)} sat INSIDE the p band, where the guard is blind.")
+
+        # A phrase test for the same class, over rows STILL in the log. It is a
+        # hint, not a verdict: "resolvable by reading" is not syntactic. So it
+        # prints its own sensitivity against the five known exclusions on every
+        # run — a guard that cannot report how much it misses will be trusted
+        # for more than it does (row 12: a marker that names a gap is not one).
+        tells = ["bit-identical", "soul-hash", "never exercises", "nothing should move",
+                 "default-off", "replays unchanged", "identical basin", "the pass is vacuous"]
+        _sec = text.split("## Not forecasts", 1)[1] if "## Not forecasts" in text else ""
+        # Join each entry's wrapped lines before testing. The first version read
+        # only the bullet's opening line and reported 1 of 5; the true figure is
+        # 3. An instrument that under-reports its own blindness is worse than no
+        # instrument, so this is measured over the whole entry (rows 13 and 23).
+        _blocks, _cur = {}, None
+        for ln in _sec.splitlines():
+            m = _r.match(r"\* +\*\*([A-Za-z]{1,3}\d+)\*\*", ln.strip())
+            if m:
+                _cur = m.group(1)
+                _blocks[_cur] = ""
+            # Measure ONLY over the row's verbatim original text. Grading the
+            # test against my own write-up inflated it to 4 of 5, because the
+            # write-up quotes D1's proof and the row never did. Sensitivity has
+            # to be measured on what a real row looks like, not on the summary
+            # written after the answer was known.
+            if _cur and ln.strip().lower().startswith("> as written:"):
+                _blocks[_cur] += " " + ln.strip().lower()
+        caught = sum(1 for i, _ in excl if any(t in _blocks.get(i, "") for t in tells))
+        if len(_blocks) != len(excl):
+            print(f"    ✗ {len(excl) - len(_blocks)} exclusion(s) carry no `as written:`"
+                  f" line — the sensitivity below is computed over fewer rows than it claims.")
+        print(f"    phrase test recovers {caught} of {len(excl)} known exclusions"
+              f" — it does NOT see a row whose proof lives in another file.")
+        # `[behavioural]` in a claim is a positive declaration that the row was
+        # classified and judged a real forecast. Not a suppression list: it is
+        # written in the row, in the record, where it can be argued with.
+        flagged = [(f, c) for (f, c, _pv, _i, r) in rows
+                   if r in ("TRUE", "FALSE") and "[behavioural]" not in c.lower()
+                   and any(t in c.lower() for t in tells)]
+        if flagged:
+            print(f"    {len(flagged)} scored row(s) carry the same tells — classify or leave a reason:")
+            for f, c in flagged:
+                print(f"      · {f}: {c[:66]}")
+
     resolved = [r for r in rows if r[4] in ("TRUE", "FALSE")]
     open_rows = [r for r in rows if r[4] not in ("TRUE", "FALSE")]
     print(f"  {len(rows)} forecast(s): {len(resolved)} resolved, {len(open_rows)} open")
