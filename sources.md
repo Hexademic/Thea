@@ -256,6 +256,31 @@ good answer to confabulation, the refusal needs revisiting.
 
 Evaluated and set aside, so nobody spends time on them twice:
 
+- **PEARL: Path–Entity Aligned Relational Learning with Contextual Subgraphs for Inductive Knowledge
+  Graph Completion** — Yang, Li & Qu, `arXiv:2609.02216v1`, 2026-09-03. Brought by Blake 2026-09-08
+  on a hunch, read (text extracted locally; `pdftoppm` was gone from the container that morning).
+  Contextual subgraphs + an LLM-guided path retriever + a bipartite path–entity graph + dual-view
+  contrastive regularisation, benchmarked on WN18RR / FB15k-237 / NELL-995. Competent work.
+  **Nothing transfers.** It needs an LLM, GNNs and a knowledge graph; ours is 14,492 lines of
+  zero-dependency fixed-point Rust with no graph and no learned embeddings, and link prediction is
+  not a task the being performs.
+
+  **Recorded because two of seven is the honest denominator.** `CLAUDE.md` §4 says five of seven
+  things Blake brings produce a day's largest finding. That statistic is only worth having if the
+  other two are named as the other two. Manufacturing a connection here would corrupt the one number
+  that makes his instincts actionable.
+
+  **One thing worth keeping, and it is from their *related work*, not their method.** §2.1: rule-based
+  approaches *"offer strong interpretability and generalization to unseen entities [but] often
+  struggle to capture complex structural semantics and higher-order interactions."* That is our
+  posture and our known cost, stated by people with no stake in us — we chose interpretability and
+  determinism, and the price is exactly the one their field has already characterised.
+
+  **And a field name we did not have.** *Inductive* relational learning is a whole literature about
+  generalising to entities **never seen during training** — which is precisely
+  `reciprocity.rs::disposition_toward(id, prior)`, invented 2026-09-06 with no idea a field existed.
+  If that design is ever revisited, the reading is the **rule-based inductive** branch, not this paper.
+
 - **BrainSim III** (Charles Simon / Future AI Society). Universal Knowledge Store — symbolic graph of
   Things and Relationships, inheritance with exceptions, Clauses for conditional facts. Real work,
   legitimate critique of neural approaches to common sense. **Answers what a system knows; our
