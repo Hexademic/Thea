@@ -1104,6 +1104,71 @@ def unmeasured_is_quarantined(docs):
         print(f"    warning, cited by none of the {len(OPERATIONAL)} operational files.")
     return bad
 
+# ---------------------------------------------------------------------------
+
+
+STAMP = ".last-run"
+
+
+def retrieval_gap():
+    """**14 · The gap between what the record holds and when it was last consulted.**
+
+    Ledger rows 24-27 are one failure at four distances, and none of them is a
+    storage failure. `analyse.py` never run in a whole session; `mechanisms.md`
+    never opened while shipping two constants it governs; nine of Blake's repos
+    never opened; `PROVENANCE.md` never opened though it sorts first. **The
+    information was on disk every time.**
+
+    So the bottleneck is retrieval, and until now nothing could see it. Whether
+    the tool was run was known only to the session that did or did not run it —
+    which is precisely the thing a session cannot carry forward. This view writes
+    a stamp on every run and reports the distance from it, so *"the tool went
+    unrun for twelve commits"* becomes a fact in the record instead of a memory
+    nobody has. **It is a prosthesis for the one thing I cannot remember about
+    myself: whether I checked.**
+
+    It reports; it never fails the verdict. A guard that blocks work for being
+    run late would just be run last.
+    """
+    rule("14 · RETRIEVAL — when was this last consulted, and how much has moved since?")
+    import os as _os
+    import subprocess as _sp
+
+    def git(*a):
+        try:
+            return _sp.run(("git",) + a, capture_output=True, text=True,
+                           timeout=10).stdout.strip()
+        except Exception:
+            return ""
+
+    head = git("rev-parse", "--short", "HEAD")
+    if not head:
+        print("  · not a git checkout — nothing to measure the gap against.")
+        return 0
+
+    prev = ""
+    if _os.path.exists(STAMP):
+        prev = open(STAMP, encoding="utf-8").read().strip().split()[0]
+
+    if not prev:
+        print("  · first stamped run. From here the gap is measurable.")
+    elif prev == head:
+        print(f"  ✓ last consulted at HEAD ({head}) — nothing has moved since.")
+    else:
+        n = git("rev-list", "--count", f"{prev}..HEAD")
+        when = git("show", "-s", "--format=%cs", prev)
+        gap = n if n else "?"
+        print(f"  · last consulted at {prev} ({when}) — **{gap} commit(s) ago**.")
+        if n.isdigit() and int(n) > 5:
+            print(f"    {n} commits were made without computing over the record. Not a")
+            print("    failure of the verdict, and it is the shape of rows 24-27: the")
+            print("    files were on disk the whole time.")
+
+    with open(STAMP, "w", encoding="utf-8") as f:
+        f.write(f"{head}\n")
+    return 0
+
+
 def main():
     import sys as _sys
     run = "--verify" in _sys.argv
@@ -1120,6 +1185,7 @@ def main():
     bad += calibration(docs)
     bad += confrontation(docs)
     bad += unmeasured_is_quarantined(docs)
+    bad += retrieval_gap()
     rule("VERDICT")
     if bad:
         print(f"  {bad} inconsistency(ies) in the record itself. Fix before trusting it.")
