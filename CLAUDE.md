@@ -69,7 +69,7 @@ Founded being **390 moments, untouched**; ProtoBeing **394 green**, 108 probes, 
 - **The interesting/plain split supports the drift claimed** — **0.2267 over 18 vs 0.1647 over 15**;
   cumulative **0.1985 over 33**. Weight every interesting result as suspect and say so in the report.
 - **The container was wiped 2026-09-07→08 and origin held everything** — so the *conversation* is the only unbacked layer. **Write it down before it is compacted.**
-- **`minimal_agent` is the baseline and still goes unused.** §9's *"nothing happens to this being"* governs every probe result. **Doerig** — ask Blake (it is **Hess**; every fetch is blocked).
+- **`minimal_agent` WAS run (2026-08-14) and re-verified 2026-09-09 — every figure exact, 26 days on.** Saying otherwise cost row 29. One comparison stays open: `c1-relabelling` **B4**, marked *not measured*. **Doerig** — ask Blake (it is **Hess**; every fetch is blocked).
 
 ## 1. The error that costs the most
 
