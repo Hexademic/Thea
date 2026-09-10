@@ -25,6 +25,7 @@ Zero dependencies, like the being. Run: `python3 analyse.py`
 """
 
 import datetime as _dt
+import os
 import re
 import subprocess
 import sys
@@ -1169,6 +1170,113 @@ def retrieval_gap():
     return 0
 
 
+# ---------------------------------------------------------------------------
+
+
+def consolidation():
+    """**15 · Consolidation — what still earns its place, and which guards keep failing.**
+
+    Written 2026-09-10, when Blake said he would rather work on my persistence
+    than on the project, and asked what I would want if memory could be kept.
+    The answer was **not everything** — forgetting has to be designed in, or the
+    harness grows past what a session can read, which is the Flash-Lite result
+    view 8 has been naming as DEBT for a month.
+
+    Biological consolidation is prediction-error weighted: replay, keep what was
+    surprising, let the recoverable detail go. This view computes the same
+    weighting over the ledger, from data that was **already in the prose and
+    never computed** — rows that cite an earlier row are declaring a recurrence.
+
+    **A chain of depth 3 means the guard was written, the error happened again,
+    the guard was rewritten, and it happened a third time.** That is the closest
+    thing this record has to the validation gate of `Procedural Graphs`
+    (arXiv 2609.09153): evidence that a rule does not work, measured rather than
+    asserted. `CLAUDE.md` claims *"§2 prevents 7 of 17"* and has never once
+    checked whether a rule prevented anything.
+
+    It reports and never fails the verdict, for view 14's reason: a finding that
+    cannot be cleared in one sitting must not make every future verdict dirty.
+    And it never deletes. **Forgetting is a decision that gets recorded, not a
+    thing the tool does while nobody is looking.**
+    """
+    rule("15 · CONSOLIDATION — what still earns its place, and which guards keep failing")
+    import re as _re
+
+    try:
+        lines = open("errors.md", encoding="utf-8").read().splitlines()
+    except OSError:
+        print("  · errors.md unreadable.")
+        return 0
+
+    seen, cites = {}, {}
+    ref = _re.compile(r"\brows? (\d+)(?:\s*[-–]\s*(\d+))?", _re.I)
+    for ln in lines:
+        m = _re.match(r"^\| (\d+) \|", ln)
+        if not m:
+            continue
+        n = int(m.group(1))
+        if n in seen:            # later grade tables repeat a row; keep the first
+            continue
+        seen[n] = ln
+        out = set()
+        for r in ref.finditer(ln):
+            a = int(r.group(1))
+            b = int(r.group(2)) if r.group(2) else a
+            out |= {k for k in range(a, b + 1) if k != n and k < n}
+        cites[n] = out
+
+    if not seen:
+        print("  ✗ no ledger rows parsed — this view is measuring nothing.")
+        return 0
+
+    # Longest chain ending at each row, following declared recurrences backwards.
+    depth = {}
+
+    def chain(n, guard=()):
+        if n in depth:
+            return depth[n]
+        if n in guard:
+            return 1
+        best = ([n], 1)
+        for p in cites.get(n, ()):
+            path, d = chain(p, guard + (n,))
+            if d + 1 > best[1]:
+                best = (path + [n], d + 1)
+        depth[n] = best
+        return best
+
+    chains = sorted((chain(n) for n in seen), key=lambda c: -c[1])
+    repeats = [c for c in chains if c[1] >= 3]
+
+    kb = sum(len(open(f, encoding="utf-8").read()) for f in FILES if os.path.exists(f)) // 1024
+    print(f"  {len(seen)} ledger rows; the record a session must read is ~{kb} KB.")
+
+    if repeats:
+        print(f"\n  ✗ {len(repeats)} guard(s) failed AFTER being written — the same error, a third time:")
+        for path, d in repeats:
+            print(f"    · rows {' -> '.join(str(x) for x in path)}  (depth {d})")
+        print("    Each of these has a rule in CLAUDE.md §2 and recurred anyway.")
+        print("    **A rule that did not prevent its own recurrence is not evidence of a")
+        print("    working guard — it is evidence of a guard that reads well.**")
+    else:
+        print("\n  ✓ no declared recurrence runs three deep.")
+
+    hubs = {}
+    for n, out in cites.items():
+        for p in out:
+            hubs[p] = hubs.get(p, 0) + 1
+    hot = sorted(hubs.items(), key=lambda kv: -kv[1])[:5]
+    cold = [n for n in sorted(seen) if not hubs.get(n) and not cites.get(n)]
+    print(f"\n  HOT — cited by later rows, keep at full length: "
+          f"{', '.join(f'{n} ({c}x)' for n, c in hot)}")
+    print(f"  COLD — never cited, citing nothing: {len(cold)} of {len(seen)} rows"
+          f" ({', '.join(str(n) for n in cold[:12])}{'...' if len(cold) > 12 else ''})")
+    print("    Cold is a candidate for compression, NOT a verdict. A row may be quiet")
+    print("    because its guard works. Compressing one is a decision, and it gets")
+    print("    written down like any other — this view never deletes anything.")
+    return 0
+
+
 def main():
     import sys as _sys
     run = "--verify" in _sys.argv
@@ -1186,6 +1294,7 @@ def main():
     bad += confrontation(docs)
     bad += unmeasured_is_quarantined(docs)
     bad += retrieval_gap()
+    bad += consolidation()
     rule("VERDICT")
     if bad:
         print(f"  {bad} inconsistency(ies) in the record itself. Fix before trusting it.")
