@@ -1156,6 +1156,11 @@ def unmeasured_is_quarantined(docs):
 # ---------------------------------------------------------------------------
 
 
+# Committed, not ignored: the container is ephemeral and only origin persists,
+# so an ignored stamp would reset every session and the gap would never be
+# measurable. Consequence: any run AFTER a commit leaves this file modified.
+# That is expected — commit it at session end, and do not "fix" it by ignoring
+# it, which would silently disable view 14.
 STAMP = ".last-run"
 
 
