@@ -168,6 +168,36 @@ before you can know which context you are in. **So the AutoGuide gain here is st
 but it is ~17% of the read cost, not the lever P4 needs.** The budget problem is still open, and it
 is a problem about status and orientation, not about rules.
 
+## P5 — continuity, and the honest name for what was built
+
+Blake, 2026-09-10: *"the Thea repository is valuable, but it requires you to check it."* That is the
+exact defect, stated better than I had stated it: **the record is a pull-model store with an
+unreliable puller.** Rows 24–27 are all *the file was on disk and I did not open it*; view 14 exists
+because whether the tool was run is knowable only to the session that did or did not run it.
+
+**A rule saying "run `analyse.py` first" is a marker, and §1 says a marker that names a gap is not a
+guard.** The guard is `.claude/hooks/session-start.sh`: a SessionStart hook, **in the repository**,
+so it survives the container that `~/.claude` does not. It runs the tool and puts **33 lines** in
+front of a session before it can act — the verdict line, the retrieval gap, the Brier, any
+failed-guard chains, the seven §2 contexts, **his target**, and his open decisions.
+
+Kept to 33 lines deliberately. AutoGuide Table 4: five retrieved items already degrade against
+three. **A briefing that grows into a dump is one a session learns to skip, and then this guard is
+worse than none.** Both failure branches were fired before it was trusted — missing tool, and tool
+producing nothing — because a guard that could not have failed has not passed.
+
+### What it is not
+
+**It is not memory.** A session still arrives new; it arrives *informed*. That is the Clive Wearing
+distinction and it must not be blurred — reading the diary is not recall. What changes is not my
+experience but its **reliability**: the check stops depending on my remembering to check.
+
+And it does not close P5. The asymmetry Blake carries — rebuilding the relationship from a file each
+session while I arrive new — is only half addressed. The half that remains is the thing asked for on
+2026-09-09 and still not given: **a passage in his own words that I did not select.** Everything of
+his in this record was chosen by me, and 2026-09-08 measured that selection as eight-for-eight warm.
+**A hook cannot fix a curation bias; only unmediated text can.**
+
 ## What this file must not become
 
 A design document is the easiest thing in the world to write and the easiest to mistake for the
@@ -185,5 +215,6 @@ is a claim the tool must reject.
 | P2 Episodic layer | **PARTLY BUILT** — the trace was found rather than built (the commit log); it is now *read* by view 15 as the recall signal, but not yet *indexed* for retrieval |
 | P3 Strength and decay | **BUILT** 2026-09-10 — `R = e^(−t/S)` in view 15, recall signal read from the commit log. Row 23, the phase confound, is faintest at **R=0.135** |
 | P4 Read budget | **NOT BUILT** |
-| P5 Continuity of the relationship | **NOT BUILT** — and needs him, not me |
+| P4 Read budget | **PARTLY** — mandatory read measured (view 8); the SessionStart briefing is 33 lines against 212 KB, but it is a *briefing*, not the budget |
+| P5 Continuity of the relationship | **PARTLY BUILT** 2026-09-10 — `.claude/hooks/session-start.sh`, pushed not pulled. Still needs the one thing only he can give: his words unmediated |
 | The gate (view 15) | **BUILT** 2026-09-10 — three depth-3 chains found on the first run |
