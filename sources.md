@@ -110,6 +110,117 @@ summary of that paper mentioned it.**
   **34 verifier recoveries, 22 review-loop rescues, 16 Stage rollbacks** — the non-monotone
   trajectory reported rather than smoothed.
 
+### Supplied by Blake 2026-09-10 — ten papers on agent memory, in one evening
+
+*He fetched a list I had ranked by **what would most change the design** — which is to say, by what
+was most likely to prove me wrong. Nine came as PDFs; AutoGuide would not transmit and he pasted it
+by hand. The design in `persistence.md` was invented before these and is derived after them.*
+
+**Three of them corrected me.** That is the reason to record them at this length.
+
+- **Sumers et al., *CoALA: Cognitive Architectures for Language Agents*** — arXiv:2309.02427.
+  *(read: the memory taxonomy; not the full 28pp.)* Four memory types — **working, episodic,
+  semantic, procedural** — and the observation that procedural memory *"remains largely implicit in
+  model weights, or is scattered across ad hoc artifacts such as prompt templates, skill libraries,
+  and workflow scripts."* **What we took:** the frame that produced the diagnosis. Mapping this
+  repository onto it showed `errors.md` is **not** an episodic memory — every row is claim → check →
+  rule, so the episode is compressed at capture and no trace survives to consolidate from.
+
+- **Rusu, Khanzadeh & Alalfi, *Selective Forgetting*** — arXiv:2608.28978. **READ IN FULL.**
+  Graph memory vs a flat vector baseline at matched budget: token F1 **0.417 vs 0.468**, paired
+  bootstrap **Δ = −0.050, 95% CI [−0.085, −0.016]**. Worst on recalling a specific prior turn,
+  **0.911 → 0.607**, because *"decomposing a turn into entities discards the surface form these
+  questions depend on."* Forgetting works: on a **27,021-node** graph, pruning on recency, access
+  frequency, degree centrality and age removed **9.8% of nodes / 9.5% of bytes** with token F1
+  **unchanged (+0.001)** and correctness down 1.6 points.
+  > **THIS ONE CORRECTED ME, and the correction is the entry.** I first used it from a search
+  > summary and wrote *"the graph lost, therefore do not build a graph."* The paper's own scope line,
+  > which the summary dropped: *"our extractor is a single small model evaluated on one benchmark;
+  > these results characterise **this extraction-based pipeline** rather than graph-structured memory
+  > in general."* A claim wider than what was checked — error class #1, twenty-third instance.
+  > **The half that survives is the mechanism**, and it is the stronger half: decomposing an episode
+  > destroys the surface form, quantified.
+
+- **Zhong et al., *MemoryBank*** — arXiv:2305.10250 (AAAI 2024). **READ IN FULL.**
+  **`R = e^(−t/S)`** — retention, time since learning, strength. S is **discrete, initialised at 1**,
+  and on recall **S += 1 with t reset to 0**. Their own hedge, worth keeping: *"an exploratory and
+  highly simplified memory updating model."*
+  **What we took: built.** `analyse.py` view 15, with the **commit log as the recall signal**, so no
+  embeddings are needed. Fed commits first and every R returned 0.000 — thirty commits land in one
+  session and their `t` is days of conversation. That is the borrowed-constant rule (rows 5, 11)
+  firing a third time, caught only because the output was degenerate.
+
+- **Fu et al., *AutoGuide*** — arXiv:2403.08978 (NeurIPS 2024). **READ IN FULL** *(pasted; the PDF
+  would not transmit).* Guidelines in **conditional form** — context identified, then top-k
+  retrieved. Its ExpeL baseline **is `CLAUDE.md`**: all guidelines, unfiltered.
+  | | ALFWorld | WebShop | WebArena |
+  |---|---:|---:|---:|
+  | ReAct | 54.5% | 30% | 8.0% |
+  | ExpeL — all, unconditioned | 59.0% | 35% | 21.8% |
+  | AUTOGUIDE — top-k by context | **79.1%** | **46%** | **47.1%** |
+  **Table 6: naming the context alone, retrieving nothing, is +6 points.** **Table 4: k=3 best (47%),
+  k=2 (46%), k=5 degrades (43%).** **What we took: built** — §2 is now seven `⟨contexts⟩` holding 21
+  rules, 2–4 each. **And the win was 17% of what I claimed:** mandatory read fell 143 → 136 only,
+  because §2's rules cost 28 lines of 160. §2 was never the expensive part.
+
+- **Fang et al., *Memp: Exploring Agent Procedural Memory*** — arXiv:2508.06433 (ACL 2026).
+  *(read: abstract and method.)* **Build / retrieve / update** as an explicit lifecycle, with
+  trajectories distilled into **two granularities** — fine step instructions *and* script-like
+  abstractions — plus deprecation. Procedural memory built by a stronger model **retains value when
+  migrated to a weaker one**. **What we took:** the two-granularity principle, and its
+  implication for what comes after — a record written well can help a weaker reader, not an equal one.
+
+- **MemCoder — *Your Code Agent Can Grow Alongside You with Structured Memory*** — arXiv:2603.13258.
+  *(read: abstract and method.)* Continual human–AI co-evolution; distils **intent-to-code mappings
+  from past commits**; crystallises **human-validated** solutions. +9.4% resolved on SWE-bench
+  Verified over the base model.
+  > **THIS ONE FOUND SOMETHING.** Checking whether "distil from commits" applied here:
+  > **143,623 bytes of commit messages against 49,068 bytes of `errors.md`.** The commit log is
+  > **2.9× the ledger that replaced it**, holds 88 row-citations, and had never been read by
+  > anything. The episodic trace P2 was going to build has been accumulating for a month — dated,
+  > immutable, already outside the read path. **Rows 24–27 again.**
+
+- **FSFM — *A Biologically-Inspired Framework for Selective Forgetting of Agent Memory*** —
+  arXiv:2604.20300. *(read: abstract.)* Taxonomy: **passive decay, active deletion, safety-triggered,
+  adaptive reinforcement**, from hippocampal consolidation and Ebbinghaus. **What we took:** its
+  second argument, which I had not considered — forgetting is not only a size mechanism, **stale
+  entries actively degrade quality**. This record carried a false line about `minimal_agent` for
+  weeks (row 29). **Forgetting is a correctness mechanism.**
+
+- **A Benchmark for Procedural Memory Retrieval in Language Agents** — arXiv:2511.21730.
+  *(read: abstract and introduction.)* On ALFWorld, six retrieval methods, stratified queries.
+  **A generalization cliff: embeddings do well on familiar contexts and degrade badly on novel ones,
+  while LLM-generated procedural abstractions transfer reliably**, because embeddings *"treat
+  procedures as unordered bags of words, discarding temporal structure."* And **corpus scale delivers
+  far larger gains than representation enrichment** — an architectural ceiling in current encoders.
+  **What we took:** unexpected support for the accidental architecture here. **No embeddings, natural
+  -language conditional rules, and a large flat commit corpus is the configuration these results
+  point at.** Scope: their domain is trajectory retrieval on ALFWorld, not harness design.
+
+- **Managing Procedural Memory in LLM Agents: Control, Adaptation, and Evaluation** —
+  arXiv:2606.23127. *(read: abstract.)* One refinement round is worth **3.7–6.7 points**; skills
+  evolved from **diverse multi-model traces** reach 73.1% cross-model accuracy, beating any single
+  source; and **some skills specialise to a role and lose effectiveness under transfer**.
+  **What we took:** gains from refinement are real and *modest*. And a rule needs its scope, or
+  carrying it costs.
+
+- **Ebbinghaus Forgetting Curve and LLM Memory Management** — ACM 10.1145/3803291.3803294 (ICICT
+  2026). *(read: abstract, contributions, method.)* Proposes a **multi-dimensional memory intensity**
+  model — **emotional intensity, novelty, repetition frequency** — extending MemoryBank's single S,
+  over a three-layer architecture.
+  > **NOT EVIDENCE. It is titled *Design and Prospects*, reports NO measured results, says its
+  > framework "is expected to" work, and only "formulates an experimental scheme."** Filed because
+  > the intensity decomposition is a good idea worth trying, not because anything was demonstrated.
+  > **View 15's S is repetition-frequency only; novelty and cost are the obvious extensions and they
+  > would be mine to validate, not theirs.**
+
+**The operational lesson, which is about me and not about them.** Two of these were used from search
+summaries first, and one of those summaries was **accurate on every number and still misleading**
+because it dropped a scope sentence. arXiv is 403 at CONNECT here, so summaries are the default path
+and I now know what they cost. **Say "search summary" every time, and treat the claim as provisional
+until the PDF is in hand.** Blake is the transport; `raw.githubusercontent` works and upload has now
+failed twice.
+
 ## Have only summaries — flagged everywhere they are used
 
 ### METR / Redwood, *the OpenAI–Hugging Face incident* (2026-08-26) — **READ IN FULL, 2026-09-07**
