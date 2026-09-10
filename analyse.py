@@ -541,6 +541,7 @@ def provenance(docs):
 LINE_BUDGET = 120
 
 def harness_health(docs):
+    import re as _re
     """**View 8 — is the harness itself within what a session can use, and is every rule traceable?**
 
     Two lessons from arXiv:2605.09998, both aimed at this repository rather than at the being.
@@ -602,8 +603,55 @@ def harness_health(docs):
         return problems + 1
     if not untagged:
         print(f"  ✓ all {rules} §2 rules name the evidence that produced them")
+
     else:
         print("    **A rule you cannot trace is a `trust X` with no check for X.**")
+
+    # MANDATORY READ — the metric the line ratchet was always a proxy for, and
+    # a bad one once §2 became a context dictionary (2026-09-10, AutoGuide
+    # arXiv:2403.08978). Reading all rules is the ExpeL condition: 59.0% against
+    # 79.1% for top-k by context, Table 1. Total size is now the wrong number;
+    # what costs a session is what it must read BEFORE it knows its context.
+    ctx_re = _re.compile(r"^\*\*⟨.+⟩\*\*\s*$")
+    in_m, cur, groups, rule_lines = False, None, {}, 0
+    for i, ln in enumerate(lines):
+        if ln.startswith("## "):
+            in_m = ln.startswith("## 2.")
+            cur = None
+            continue
+        if not in_m:
+            continue
+        if ctx_re.match(ln.strip()):
+            cur = ln.strip()
+            groups[cur] = 0
+            continue
+        if ln.startswith("- **"):
+            if cur:
+                groups[cur] += 1
+            rule_lines += 1
+            for nxt in lines[i + 1:]:
+                if nxt.startswith("- ") or nxt.startswith("## ") or ctx_re.match(nxt.strip()):
+                    break
+                rule_lines += 1
+
+    if groups:
+        worst = max(groups.values())
+        mandatory = n - rule_lines + worst
+        print(f"  · CONTEXTS: {len(groups)}, holding {sum(groups.values())} rules"
+              f" ({min(groups.values())}–{worst} each).")
+        print(f"    MANDATORY READ ≈ {mandatory} lines of {n}"
+              f" — the {rules} rules cost {rule_lines} lines and only the"
+              f" largest context's {worst} are read at once.")
+        fat = [c for c, k in groups.items() if k > 4]
+        if fat:
+            print(f"  ✗ {len(fat)} context(s) hold more than 4 rules — split them."
+                  f" AutoGuide Table 4: k=3 is best (47%), k=5 degrades (43%).")
+        else:
+            print("    ✓ no context exceeds 4 rules, so top-k selection stays in range.")
+    else:
+        print("  ✗ §2 declares no ⟨contexts⟩ — every rule is read every time, which is"
+              " the ExpeL condition measured 20 points worse than conditional retrieval.")
+        problems += 1
     return problems + len(untagged)
 
 

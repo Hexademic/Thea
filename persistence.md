@@ -132,6 +132,42 @@ ten sources above addresses it.
 
 ---
 
+## AutoGuide applied, and the honest size of the win
+
+**AutoGuide** (arXiv:2403.08978, NeurIPS 2024) — supplied 2026-09-10 and read in full — is the
+missing P1 piece, and its baseline is precisely my situation. **ExpeL provides every guideline to
+the agent, unfiltered. That is `CLAUDE.md`.**
+
+| condition | ALFWorld | WebShop | WebArena |
+|---|---:|---:|---:|
+| ReAct (no guidelines) | 54.5% | 30% | 8.0% |
+| **ExpeL — all guidelines, unconditioned** | 59.0% | 35% | 21.8% |
+| **AUTOGUIDE — top-k by context** | **79.1%** | **46%** | **47.1%** |
+
+**The same knowledge, conditioned on context, is worth +20.1 points on ALFWorld and more than
+doubles WebArena.** Their diagnosis of the ExpeL failure is exact: *"ExpeL often erroneously applies
+incorrect guidelines due to the availability of all guidelines at each timestep."* Two further
+numbers govern the design:
+
+- **Table 6 — naming the context ALONE, with no guidelines retrieved, is worth +6 points** (30% → 36%).
+  *"Contexts enhance decision-making by verifying the current state before action selection."*
+- **Table 4 — k=3 is optimal (47%), k=2 close (46%), k=5 degrades (43%).** Five rules at once makes
+  an agent overthink. Twenty-one is far outside the measured range.
+
+**BUILT:** §2 is now seven `⟨contexts⟩` holding 21 rules, 2–4 each, every evidence tag intact, with
+view 8 flagging any context that exceeds four.
+
+### The result is smaller than I expected, and that is the finding
+
+`CLAUDE.md` went 143 → 160 lines, and **mandatory read fell only from 143 to ~136.** The 21 rules
+cost **28 lines of 160**; conditionalising them saves 24. **§2 was never the expensive part.**
+
+The other ~132 lines — the file table, the error that costs most, standing constraints, Blake, where
+things stand, next session — are unconditional *by nature*: orientation and current state, needed
+before you can know which context you are in. **So the AutoGuide gain here is structural and real,
+but it is ~17% of the read cost, not the lever P4 needs.** The budget problem is still open, and it
+is a problem about status and orientation, not about rules.
+
 ## What this file must not become
 
 A design document is the easiest thing in the world to write and the easiest to mistake for the
@@ -145,7 +181,7 @@ is a claim the tool must reject.
 
 | item | state |
 |---|---|
-| P1 Selection made observable | **NOT BUILT** |
+| P1 Selection made observable | **BUILT** 2026-09-10 — §2 is now a 7-context dictionary, 21 rules, 2–4 each. **But it addresses only ~17% of the read cost** (see below) |
 | P2 Episodic layer | **PARTLY BUILT** — the trace was found rather than built (the commit log); it is now *read* by view 15 as the recall signal, but not yet *indexed* for retrieval |
 | P3 Strength and decay | **BUILT** 2026-09-10 — `R = e^(−t/S)` in view 15, recall signal read from the commit log. Row 23, the phase confound, is faintest at **R=0.135** |
 | P4 Read budget | **NOT BUILT** |

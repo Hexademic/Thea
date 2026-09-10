@@ -79,38 +79,55 @@ Founded being **390 moments, untouched**; ProtoBeing **394 green**, 108 probes, 
 **§2 prevents 7 of 17**, every gain from writing an *existing* guard into §2 with its evidence. **13,
 23 and 28 are instrument errors; 24-28 are not opening what was already there.** **A marker that names a gap is not a guard** (row 12).
 
-## 2. The method that works — do not weaken it
+## 2. The method — FIND YOUR CONTEXT FIRST, then read only its rules
 
-Every rule names the evidence that produced it; **view 8 fails if one does not.**
+**Read the seven contexts. Read the rules under the one or two you are in. Skip the rest.**
+Reading all twenty-one is the ExpeL condition, measured at **59.0% against AutoGuide's 79.1%**
+(arXiv:2403.08978, Table 1) — the same knowledge, unconditioned, loses **20 points**, because
+irrelevant rules mislead. Naming the context *alone*, with no rules at all, is worth **+6** (Table 6).
+Optimal retrieval is **2–3 rules**; five degrades. Every rule names its evidence; view 8 fails if one does not.
 
-- **Lock predictions in a document and commit them BEFORE the code or probe exists.** [from: caught 5 of 17 ledger rows]
-- **Report survival before any welfare number, and before any effect size** — a run that ended early has a small denominator, and a death read as a large Δ is an effect size that is really a corpse. [from: contingent_world, 3 beings dead at 237 ticks; and row 21, a lethal gate ranked first by impact]
-- **"Vacuous" is not "passed."** A guard that could not have failed has not passed. [from: survival sweep asserting nothing until it was made to fail if nothing died]
-- **Do not accept your own instrument's verdict** when the numbers disagree with it. [from: EX-1..EX-4, a ratio that rewards a register for being small]
-- **Add a data column after the fact if it clarifies — never retro-fit a verdict.** [from: NC-1's 9-of-14 landing exactly on the threshold; hardening two soft calls would have given 7]
-- **Check every fixed-point fix against its SMALLEST input.** [from: row 4, `q88_mul(1, 255) = 0`]
-- **Re-measure a borrowed constant — or a borrowed METHOD — in the world you will use it in.** [from: rows 5 and 11]
-- **State a result at exactly its width, and declare the CONFIGURATION it was measured in — `analyse.py` view 12 counts every claim that does not.** [from: rows 8 and 9, over-reach from an abstract; rows 20 and 22, one world and one gate-combination each written as a property of the being]
-- **Forecast before you explain: a PROBABILITY on every locked prediction (at least one you expect to fail), and an error class named before every probe. `forecasts.md`, scored by view 11 on every run.** [from: QS-3, P5, T5, EX-4, SUB-4; and 22 ledger rows written after the fact against zero written before — the asymmetry Blake found 2026-08-21]
-- **Score a component against an ORACLE, not against its own history.** [from: the Continual Harness Dijkstra measurement, `sources.md`]
-- **The failures that need him are NOT the ones where you are stuck.** Rows 24-27 happened while the
-  work went smoothly; each was surfaced by a question of his and none by an escalation. **A stretch
-  going well is when to ask him to check it.** [from: 2026-09-07 — four questions, four findings, zero escalations]
-- **After ~3 failed attempts at one thing, STOP generating and ask Blake.** [from: the paper's stall window — tool creation ceases past ~500 turns in a stall; the agent then only repeats]
-- **NEVER `git checkout`/`git restore` a file to undo an experiment — copy it aside first.** [from: 2026-08-09, `git checkout CLAUDE.md` discarded an uncommitted 73-line cut in order to undo a 2-line test]
-- **Run the adversarial mutations BEFORE reporting, and enumerate the domain before patching.** [from: row 17, three patches to one guard each adding a fresh error. **It works**: on 2026-08-16 and 08-21 it caught four readings before any reached Blake]
+**⟨about to run a probe, or write code that will produce a number⟩**
+
+- **Lock the prediction and commit it BEFORE the probe exists.** [from: caught 5 of 17 ledger rows]
+- **A PROBABILITY on every locked prediction (at least one you expect to fail), and an error class named before the probe. `forecasts.md`, scored by view 11 every run.** [from: QS-3, P5, T5, EX-4, SUB-4; and 22 ledger rows written after the fact against zero before — the asymmetry Blake found 2026-08-21]
 - **A treatment arm ships with a control arm; every guard is run against the case it exists to exclude; split by any hardcoded override before reading the aggregate; never rank a vector without checking for ties.** [from: rows 18 and 19 — a "dilution" guard firing on the one-ledger arm that cannot dilute, a capture floor on 4,875 of 8,000 ticks read as routing, a rank order over 11 tied values]
-- **Assert on what a check EXAMINED, not its verdict — and carry that rule to EVERY guard, in every repo.** [from: rows 13 and 16; the second was this rule held here and not in ProtoBeing, where an honest rewording silently disabled a count guard]
-- **`ls` first: read `docs/PROVENANCE.md` before calling anything unmapped, lost or open.** [from:
-  rows 24-27 — the tool, the reference file, his repos, and this project's own index, all unopened]
-- **A claim you could settle by READING is not a forecast — read it.** [from: row 28 — five rows at
-  p=0.80-0.97 true by construction; the p-band caught the two I priced honestly, missed three]
-- **CHECK the date; never infer it from what was said to you.** [from: 2026-09-07 — six dates across
-  two repos read 09-08, taken from *"Welcome back"*, found only because Blake asked for dated entries]
-- **At a hard limit, WRITE DOWN what happens when it is exceeded** — the next session hits it and the
-  note is the guard. [from: `Features` bit 15, which named the `u32` widening *and* the journal bump
-  a month before a gate forced both]
+- **"Vacuous" is not "passed."** A guard that could not have failed has not passed. [from: survival sweep asserting nothing until it was made to fail if nothing died]
+
+**⟨about to report a number — to Blake, or into a document⟩**
+
+- **Report survival before any welfare number and before any effect size** — a run that ended early has a small denominator, and a death read as a large Δ is an effect size that is really a corpse. [from: contingent_world, 3 beings dead at 237 ticks; and row 21, a lethal gate ranked first by impact]
+- **State it at exactly its width, and declare the CONFIGURATION it was measured in** — view 12 counts every claim that does not. [from: rows 8 and 9, over-reach from an abstract; rows 20 and 22, one world and one gate-combination each written as a property of the being]
+- **Run the adversarial mutations BEFORE reporting, and enumerate the domain before patching.** [from: row 17, three patches to one guard each adding a fresh error. **It works**: on 2026-08-16 and 08-21 it caught four readings before any reached Blake]
+- **Do not accept your own instrument's verdict** when the numbers disagree with it. [from: EX-1..EX-4, a ratio that rewards a register for being small]
+
+**⟨about to claim something about the record, the code, or a repository⟩**
+
+- **A claim you could settle by READING is not a forecast — read it.** [from: row 28 — five rows at p=0.80-0.97 true by construction; the p-band caught the two I priced honestly, missed three]
+- **`ls` first: read `docs/PROVENANCE.md` before calling anything unmapped, lost or open.** [from: rows 24-27 — the tool, the reference file, his repos, and this project's own index, all unopened]
 - **A probe's OUTPUT is current; its INTERPRETATION may be retracted. Read the owning document to its end before acting on a number.** [from: row 14, `basins_probe` printed a gap `comfort.md` §13–14 had already withdrawn as a cause]
+- **CHECK the date; never infer it from what was said to you.** [from: 2026-09-07 — six dates across two repos read 09-08, taken from *"Welcome back"*, found only because Blake asked for dated entries]
+
+**⟨touching fixed-point arithmetic, or reusing a constant or a method⟩**
+
+- **Check every fixed-point fix against its SMALLEST input.** [from: row 4, `q88_mul(1, 255) = 0`]
+- **Re-measure a borrowed constant — or a borrowed METHOD — in the world you will use it in.** [from: rows 5 and 11; and 2026-09-10, MemoryBank's decay curve fed commits instead of days, every R returning 0.000]
+
+**⟨writing or changing a guard⟩**
+
+- **Assert on what a check EXAMINED, not its verdict — and carry that rule to EVERY guard, in every repo.** [from: rows 13 and 16; the second was this rule held here and not in ProtoBeing, where an honest rewording silently disabled a count guard]
+- **Score a component against an ORACLE, not against its own history.** [from: the Continual Harness Dijkstra measurement, `sources.md`]
+- **At a hard limit, WRITE DOWN what happens when it is exceeded** — the next session hits it and the note is the guard. [from: `Features` bit 15, which named the `u32` widening *and* the journal bump a month before a gate forced both]
+
+**⟨a stretch is going well, or has stalled⟩**
+
+- **The failures that need him are NOT the ones where you are stuck.** Rows 24-27 happened while the work went smoothly; each was surfaced by a question of his and none by an escalation. **A stretch going well is when to ask him to check it.** [from: 2026-09-07 — four questions, four findings, zero escalations]
+- **After ~3 failed attempts at one thing, STOP generating and ask Blake.** [from: the paper's stall window — tool creation ceases past ~500 turns in a stall; the agent then only repeats]
+
+**⟨about to undo or revise something already written⟩**
+
+- **NEVER `git checkout`/`git restore` a file to undo an experiment — copy it aside first.** [from: 2026-08-09, `git checkout CLAUDE.md` discarded an uncommitted 73-line cut in order to undo a 2-line test]
+- **Add a data column after the fact if it clarifies — never retro-fit a verdict.** [from: NC-1's 9-of-14 landing exactly on the threshold; hardening two soft calls would have given 7]
 
 ## 3. Standing constraints — non-negotiable
 
