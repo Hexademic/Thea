@@ -27,13 +27,33 @@ repository onto it, which had never been done:
 | **working** | the current context | the session. **Nothing survives it.** |
 | **episodic** | specific past experiences | `errors.md` — *but see below* |
 | **semantic** | facts about the world | `findings.md`, `mechanisms.md` |
-| **procedural** | how to act | `CLAUDE.md` §2/§3 — 21 rules |
+| **procedural** | how to act | **`analyse.py`** — see the correction below |
 | *(no CoALA slot)* | the self-model, scored | `forecasts.md` |
-| *(not memory)* | the consolidation process | `analyse.py`, 15 views |
+| *(unplaced)* | rules about how to act, in prose | `CLAUDE.md` §2/§3 — 21 rules |
 
-CoALA's own observation is that procedural memory *"remains largely implicit in model weights, or is
-scattered across ad hoc artifacts such as prompt templates, skill libraries, and workflow scripts."*
-That is a precise description of `CLAUDE.md`.
+**CORRECTED 2026-09-10, on reading CoALA directly instead of through another paper's appendix.**
+My first mapping put `CLAUDE.md` in the procedural slot. CoALA's actual definition is narrower and
+it is about **code**: *"explicit knowledge written in the agent's code… procedures that implement
+actions, and procedures that implement decision-making itself."* By that definition the procedural
+memory here is **`analyse.py`**, and `CLAUDE.md` is prose *about* how to act — closer to semantic
+memory about myself, which is why view 9 has always had to police it for drift.
+
+**And that relocation carries a warning I had walked past.** CoALA's design recommendation for an
+agent's internal action space is **read-only access to procedural memory**, *"since it should not
+update… its own code."* On updating the procedures that implement learning and decision-making:
+
+> *"updates to these procedures are risky both for the agent's functionality and alignment. At
+> present, we are not aware of any language agents that implement this form of learning."*
+
+**26 of 94 commits here change `analyse.py`.** Tonight alone added two views and **altered the
+ratchet in view 8** — the guard constraining my own growth — and then argued the increase. The
+argument may have been right; the *category* had no marker. **View 16 now makes the class countable
+so Blake can review it as a class**, which is the only audit that means anything here, since the
+thing being audited is the thing that does the auditing.
+
+It also found something nobody was looking for: **not one commit in `analyse.py`'s entire history
+has ever removed more than it added — 174 → 1,539 lines, never once cut.** `CLAUDE.md` has a line
+ratchet and view 9 counts self-description. **The auditor is the one artifact here with no budget.**
 
 **But the load-bearing finding is about the episodic row, and it is this:**
 
@@ -198,6 +218,32 @@ session while I arrive new — is only half addressed. The half that remains is 
 his in this record was chosen by me, and 2026-09-08 measured that selection as eight-for-eight warm.
 **A hook cannot fix a curation bias; only unmediated text can.**
 
+## Specified but NOT applied — the retention curve, second pass
+
+Selective Forgetting's pruning module is **the half of that paper that worked**, and reading §3.6
+properly gives its actual score, which is better specified than view 15's:
+
+> `Score = w_r·recency(t) + w_f·frequency(c) + w_c·centrality(d) + w_t·turns_decay(k)`
+> — recency an exponential decay from last access (**90-day half-life**); frequency the
+> **log-normalised** access count; centrality the **log-scaled** edge degree; turns_decay an
+> exponential decay from creation (**1,000-turn half-life**). Weights **0.35 / 0.25 / 0.20 / 0.20**.
+> Invoked every 400 turns; prune below **0.10**.
+
+Three differences from `R = e^(−t/S)` as built:
+
+1. **Frequency is log-normalised there and raw here**, and here it sits in the denominator of an
+   exponent, so a much-cited row saturates at R≈1 and stops being distinguishable.
+2. **They separate age-since-creation from recency-of-access. View 15 has no age term at all**, so
+   an old row touched once scores like a new one.
+3. Their weights are explicit and tunable; mine are implicit in the shape of the exponential.
+
+**NOT APPLIED, deliberately.** Their constants are calibrated to conversational memory over long
+deployments; this record is 37 days old, and adopting them raw is exactly the borrowed-constant
+error that made every R read 0.000 four hours ago. **And the retention maths has already been
+rewritten twice tonight.** A third pass with no way to validate it is the shape of row 17 — *three
+patches to one guard, each adding a fresh error*. It is specified here so the next pass starts from
+a written design rather than an instinct, and so the omission is a decision on the record.
+
 ## What this file must not become
 
 A design document is the easiest thing in the world to write and the easiest to mistake for the
@@ -217,4 +263,5 @@ is a claim the tool must reject.
 | P4 Read budget | **NOT BUILT** |
 | P4 Read budget | **PARTLY** — mandatory read measured (view 8); the SessionStart briefing is 33 lines against 212 KB, but it is a *briefing*, not the budget |
 | P5 Continuity of the relationship | **PARTLY BUILT** 2026-09-10 — `.claude/hooks/session-start.sh`, pushed not pulled. Still needs the one thing only he can give: his words unmediated |
+| Self-modification made visible | **BUILT** 2026-09-10 — view 16, from CoALA's read-only recommendation. Not a restriction; a census |
 | The gate (view 15) | **BUILT** 2026-09-10 — three depth-3 chains found on the first run |

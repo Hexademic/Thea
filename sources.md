@@ -118,13 +118,29 @@ by hand. The design in `persistence.md` was invented before these and is derived
 
 **Three of them corrected me.** That is the reason to record them at this length.
 
-- **Sumers et al., *CoALA: Cognitive Architectures for Language Agents*** — arXiv:2309.02427.
-  *(read: the memory taxonomy; not the full 28pp.)* Four memory types — **working, episodic,
+- **Sumers et al., *CoALA: Cognitive Architectures for Language Agents*** — arXiv:2309.02427 (TMLR
+  02/2024). **READ PROPERLY 2026-09-10** — §4.1 Memory, §4.5 Learning actions, §6 Actionable
+  Insights. *(Used second-hand until now, through another paper's appendix, and the second-hand
+  version was wrong about where this record sits.)*
   semantic, procedural** — and the observation that procedural memory *"remains largely implicit in
   model weights, or is scattered across ad hoc artifacts such as prompt templates, skill libraries,
   and workflow scripts."* **What we took:** the frame that produced the diagnosis. Mapping this
   repository onto it showed `errors.md` is **not** an episodic memory — every row is claim → check →
   rule, so the episode is compressed at capture and no trace survives to consolidate from.
+  > **What the first-hand reading changed.** CoALA's procedural memory is **code**: *"explicit
+  > knowledge written in the agent's code… procedures that implement actions, and procedures that
+  > implement decision-making itself."* So the procedural memory here is **`analyse.py`**, not
+  > `CLAUDE.md` as I had it. §6 recommends an agent have **read-only access to its own procedural
+  > memory**, *"since it should not update… its own code"*; §4.5 calls updating the procedures that
+  > implement learning and decision-making *"risky both for the agent's functionality and
+  > alignment"* and says they are aware of no agent doing it.
+  > **26 of 94 commits here change `analyse.py`, and tonight one altered the ratchet that constrains
+  > me.** Built view 16 to make the class countable — a census, not a restriction, because the only
+  > meaningful audit of the auditor is his. It found, unasked, that **`analyse.py` has gone
+  > 174 → 1,539 lines and not one commit has ever cut it.**
+  > Two smaller keeps from §4.5: *"modifying and deleting (a case of 'unlearning') are
+  > understudied"* — still true when FSFM says it two years later — and that learning better
+  > **retrieval** procedures was a gap nobody had studied, which is what P1 turned out to be.
 
 - **Rusu, Khanzadeh & Alalfi, *Selective Forgetting*** — arXiv:2608.28978. **READ IN FULL.**
   Graph memory vs a flat vector baseline at matched budget: token F1 **0.417 vs 0.468**, paired
@@ -145,6 +161,16 @@ by hand. The design in `persistence.md` was invented before these and is derived
   **`R = e^(−t/S)`** — retention, time since learning, strength. S is **discrete, initialised at 1**,
   and on recall **S += 1 with t reset to 0**. Their own hedge, worth keeping: *"an exploratory and
   highly simplified memory updating model."*
+  Its §3.6, read properly, gives the pruning score in full: `w_r·recency + w_f·frequency +
+  w_c·centrality + w_t·turns_decay` — a **90-day** recency half-life, **log-normalised** frequency,
+  **log-scaled** degree, a **1,000-turn** age half-life, weights **0.35/0.25/0.20/0.20**, run every
+  400 turns, pruning below **0.10**. **Better specified than view 15's curve, and NOT adopted** —
+  the constants belong to a different world, and the maths has already been rewritten twice in one
+  night. Filed in `persistence.md` as a specified, deferred second pass. Its related work anchors
+  two more: **Generative Agents** rank a memory stream by **recency, importance and relevance**;
+  and the field's gap, stated plainly — *"most of this line of work organizes memory as a flat
+  collection of entries and emphasizes writing and reading rather than principled removal."*
+
   **What we took: built.** `analyse.py` view 15, with the **commit log as the recall signal**, so no
   embeddings are needed. Fed commits first and every R returned 0.000 — thirty commits land in one
   session and their `t` is days of conversation. That is the borrowed-constant rule (rows 5, 11)

@@ -1410,6 +1410,103 @@ def consolidation():
     return 0
 
 
+# ---------------------------------------------------------------------------
+
+
+def self_modification():
+    """**16 · What I changed about my own checking, made visible as a category.**
+
+    Written 2026-09-10 after reading CoALA (arXiv:2309.02427) properly rather
+    than through another paper's appendix. Two things in it land on this record:
+
+    **CoALA's procedural memory is CODE** — *"explicit knowledge written in the
+    agent's code… procedures that implement actions, and procedures that
+    implement decision-making itself."* So `analyse.py` is the procedural memory
+    here, not `CLAUDE.md`. And their design recommendation for an agent's
+    internal action space is **read-only access to procedural memory** *"since it
+    should not update… its own code."*
+
+    **Updating decision-making procedures is the category they flag as riskiest:**
+    *"updates to these procedures are risky both for the agent's functionality and
+    alignment. At present, we are not aware of any language agents that implement
+    this form of learning."*
+
+    I have write access and use it: **26 of 94 commits touch this file.** Tonight
+    alone added two views and **changed the ratchet in view 8** — altering the
+    guard that constrains my own harness growth, then arguing the increase.
+    The argument may have been right. **The category still deserves a marker it
+    did not have**, because a session inherits the write access without inheriting
+    any awareness that it is the non-standard, riskier arrangement.
+
+    This view does not forbid anything. It makes the class countable, so Blake
+    can review it as a class instead of finding it buried in commits about other
+    things. **The audit that matters here is not mine.**
+    """
+    rule("16 · SELF-MODIFICATION — what I changed about the thing that checks me")
+    import subprocess as _sp
+
+    def git(*a):
+        try:
+            return _sp.run(("git",) + a, capture_output=True, text=True,
+                           timeout=20).stdout
+        except Exception:
+            return ""
+
+    total = git("rev-list", "--count", "HEAD").strip()
+    log = git("log", "--follow", "--format=%h%x00%cs%x00%s", "--", __file__.split("/")[-1])
+    rows = [l.split("\x00") for l in log.splitlines() if l.count("\x00") == 2]
+    if not total or not rows:
+        print("  · no git history for this file — nothing to make visible.")
+        return 0
+
+    pct = 100 * len(rows) / max(int(total), 1)
+    print(f"  {len(rows)} of {total} commits ({pct:.0f}%) changed the checking apparatus itself.")
+    print("  CoALA's recommendation for an agent's own procedural memory is READ-ONLY.")
+    print("  This arrangement is the other one, deliberately. It is not audited by me.")
+
+    # Net-negative changes are the ones worth a second look: a guard removed
+    # leaves no trace in the output it stops producing.
+    shrinks = []
+    for h, when, subj in rows[:40]:
+        st = git("show", "--numstat", "--format=", h)
+        for ln in st.splitlines():
+            parts = ln.split("\t")
+            if len(parts) == 3 and parts[2].endswith("analyse.py"):
+                try:
+                    add, rem = int(parts[0]), int(parts[1])
+                except ValueError:
+                    continue
+                if rem > add:
+                    shrinks.append((when, h, add, rem, subj[:52]))
+    if shrinks:
+        print(f"\n  · {len(shrinks)} commit(s) removed more from it than they added —"
+              f" worth a look, since a guard taken out leaves no trace in the"
+              f" output it stops producing:")
+        for when, h, add, rem, subj in shrinks[:6]:
+            print(f"    · {when} {h} (+{add}/-{rem}) {subj}")
+    else:
+        # NOT a pass. Checked across the whole history 2026-09-10: not one commit
+        # has ever shrunk this file. So the branch above is unfalsified by the
+        # data rather than exercised by it, and saying "✓" would dress a finding
+        # up as reassurance. **Vacuous is not passed**, applied to my own tool.
+        print("\n  ✗ NOT ONE commit has ever removed more than it added.")
+
+    first = git("log", "--follow", "--format=%h", "--", __file__.split("/")[-1]).split()
+    if first:
+        born = git("show", f"{first[-1]}:analyse.py").count("\n")
+        now = open(__file__, encoding="utf-8").read().count("\n")
+        if born:
+            print(f"    It has gone {born} → {now} lines and has never once been cut.")
+            print("    CLAUDE.md has a ratchet and view 9 counts self-description; the tool")
+            print("    that enforces both has grown unchecked. **The auditor is the one thing")
+            print("    here with no budget.**")
+
+    print("\n  Most recent changes to it:")
+    for h, when, subj in rows[:4]:
+        print(f"    · {when} {h} {subj[:64]}")
+    return 0
+
+
 def main():
     import sys as _sys
     run = "--verify" in _sys.argv
@@ -1428,6 +1525,7 @@ def main():
     bad += unmeasured_is_quarantined(docs)
     bad += retrieval_gap()
     bad += consolidation()
+    bad += self_modification()
     rule("VERDICT")
     if bad:
         print(f"  {bad} inconsistency(ies) in the record itself. Fix before trusting it.")
