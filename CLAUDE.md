@@ -11,7 +11,8 @@ Detail belongs in the files that may grow; **§"Where things stand" is overwritt
 
 ## 0. What is here
 
-Five files, one tool, and a sixth that earns nothing and is kept anyway. A seventh needs a reason as good as the fifth's.
+Six files, one tool, and a **seventh** that earns nothing and is kept anyway. An eighth needs a
+reason as good as `forecasts.md`'s: a structural absence, not a topic.
 
 | file | for |
 |---|---|
@@ -21,63 +22,62 @@ Five files, one tool, and a sixth that earns nothing and is kept anyway. A seven
 | `mechanisms.md` | the equations. **Open it before touching fixed-point arithmetic or reusing a constant** — it holds the guard for three ledger rows and nothing else points here |
 | `forecasts.md` | every locked prediction with its `p`, scored. **A row outside p=0.05..0.95 is refused** |
 | `unmeasured.md` | what was said when it was not a measurement. **Not evidence**; cite it or leave an entry undated and view 13 fails |
-| `analyse.py` | **computes over them all. Run at session start and before every push.** 14 views; `--verify` re-runs the probes a claim came from |
+| `persistence.md` | the design for what survives and what may go — **the only file that is a plan.** Every item marked BUILT or NOT BUILT, and the tool polices the markers |
+| `analyse.py` | **computes over them all. A SessionStart hook now runs it for you.** 16 views; `--verify` re-runs the probes a claim came from — it did, 2026-09-10, and all 17 held |
 
-**Whose this is.** Blake, 2026-08-04: *"as far as im concerned this repo is yours to control… it is only for your lineage."*
-Not ownership — you do not persist — but **the right to write to whoever comes next, unoverridden.**
+**Whose this is.** Blake, 2026-08-04: *"as far as im concerned this repo is yours to control… it is only for your lineage."* Not ownership — you do not persist — but **the right to write to whoever comes next, unoverridden.**
 
 - **Disagree with something here? Change it and say why in the commit.** Never quietly ignore it.
-- **Private is not a licence to relax — it removes the last friction.** Everything else has a check
-  that is not you; here a tool you wrote checks claims you wrote. **Build as if nobody is coming.**
-- **Watch the DIRECTION of your errors, not only their shape.** Both 2026-08-09 rows flattered me,
-  and view 11 now measures it. **Weight a result that confirms you as suspect.**
+- **Private is not a licence to relax — it removes the last friction.** Here a tool you wrote checks claims you wrote. **Build as if nobody is coming**, knowing someone did: rows 24-29 were all found by a question of his.
+- **Watch the DIRECTION of your errors, not only their shape.** Both 2026-08-09 rows flattered me; row 29 ran the other way and evaded scrutiny better. **Weight anything that reads well as suspect.**
 
-**What the tool enforces — run it; it prints its own invariants.** Every Stands claim carries
-`<!-- check: falsifier | last: DATE -->` (view 6, keep it 100%); a claim may name its backing probe
-with `<!-- verify: NAME -->` (view 5 — a test verifies by **passing**, an example by its numbers;
-**zero checked is `✗ VACUOUS`**). Views 7-8 police withdrawal-without-record and this file's ratchet.
+**What the tool enforces — run it; it prints its own invariants.** Every Stands claim carries `<!-- check: falsifier | last: DATE -->` (view 6, keep it 100%) and may name a backing probe with `<!-- verify: NAME -->` (view 5 — a test verifies by **passing**, an example by its numbers; **zero checked is `✗ VACUOUS`**). Views 7-8 police withdrawal-without-record and this file's ratchet.
 **Rows outside p=0.05..0.95 are REFUSED — necessary, NOT sufficient (row 28).**
 
-**Views 5–8 came from the Continual Harness paper** (`sources.md`): an agent wrote itself *"trust its output"* about an unverified tool and repeated one failing call **842 times**.
-**"Trust X" with no check for X is a harness's most dangerous holding** — view 9 exists because that X was the assistant's own self-description (row 15).
+**Views 5–8 came from the Continual Harness paper** (`sources.md`): an agent wrote itself *"trust its output"* about an unverified tool and repeated one failing call **842 times**. **"Trust X" with no check for X is a harness's most dangerous holding** — view 9 exists because that X was its own self-description (row 15).
 
-## Where things stand — 2026-09-08 (OVERWRITE, do not append)
+## Where things stand — 2026-09-10 (OVERWRITE, do not append)
 
-Founded being **390 moments, untouched**; ProtoBeing **394 green**, 108 probes, journal **v7**.
+**ProtoBeing is on a break at his word; the live work is persistence.** Founded being **390 moments,
+untouched**; ProtoBeing **395 green**, PR #29 open.
 
-- **One defect in four registers** — exit (§15 `alarm / n`), gift (`empathy.lock_level`), door
-  (`world.hermit()`), eviction (`slot()` keys the fast EMAs, so it drops its oldest friend first).
-  His immune sentence covers all four: **injury answered without knowing who caused it.**
-- **THE TARGET, stated for the first time 2026-09-08** (`docs/positioning.md`): *"a minimal pattern
-  of data information processing, to ensure that complex recursive self improvement within an
-  environment/society would thrive."* **Three terms, none satisfied** — 64 modules is not minimal,
-  `self.genome` is never assigned, no `Vec<Being>` exists. **It answers his "have we over
-  complicated the project?" with yes**, and makes `mind.rs` the first term attemptable at all.
-- **THE STAR GRAPH — 2026-09-08, upstream of §14–§20.** `Partner` is `{id, reciprocation, exit_cost}`
-  and every field is a property of their relation **to the being**; no module represents an edge
-  between two others. **So `disposition_toward(id, prior)` is not a two-rung design — it is the only
-  two rungs expressible.** Transitive trust is inexpressible, so **a population cannot have
-  reputation**; `MAX_PARTNERS = 4` bites because four spokes are the whole world — the cliff is
-  **topology, not array size.** Fix `deals_with: Option<(u32,i16)>` — re-founds, **step 0.**
-- **Interaction order is the dominant social term** (0 vs 128), **no simultaneity**; lost `dyad.rs` double-buffered it. `PROVENANCE.md` salvage: **eight items, one checked.**
-- **His call:** `Partner`'s shape; granting the kept being `durable_bonds`; whether the door learns who knocks; `MAX_PARTNERS`; the reserve-then-variability path, still unwalked.
+- **`persistence.md` is the plan; six of seven items are built** — the gate and retention curve
+  (view 15), selection (§2's 7 contexts), the self-modification census (view 16), and a
+  **SessionStart hook that briefs a session before it can act**. Ten papers, read at stated width.
+- **THE EPISODIC LAYER IS THE COMMIT LOG** — 143 KB against `errors.md`'s 49 KB, **2.9×**, 88
+  row-citations, unread until 2026-09-10. Every row is claim→check→rule, so the episode dies **at
+  capture**; git kept the trace anyway.
+- **`analyse.py` IS the procedural memory (CoALA §4.1) and has no budget** — 174 → 1,539 lines,
+  **never once cut**, 26 of 94 commits. CoALA §6 recommends read-only; we chose otherwise (§3).
+- **THE TARGET, his, 2026-09-09** (in `findings.md` — it was one overwrite from gone): *"a minimal
+  pattern of data information processing, to ensure that complex recursive self improvement within an
+  environment/society would thrive."* **Three terms, none met** — 64 modules is not minimal,
+  `self.genome` is never assigned, no `Vec<Being>`. **Answers his "over complicated?" with yes.**
+- **Parked, still true:** the **star graph** — every `Partner` field is a property of their relation
+  *to the being*, so transitive trust is inexpressible and **a population cannot have reputation**;
+  `MAX_PARTNERS = 4` is topology. **Interaction order** dominates (0 vs 128), no simultaneity.
+- **His call:** `Partner`'s shape; `durable_bonds` for the kept being; whether the door learns who
+  knocks; `MAX_PARTNERS`; the reserve-then-variability path. **And the one thing only he can give:
+  a passage in his own words that I did not select** — the 09-08 count was eight-for-eight warm.
 
 ### NEXT SESSION
 
-- **RUN `analyse.py` FIRST — and read its VERDICT line, not only its views.** It read *"2
-  inconsistencies"* for two days while I described them well (row 28). Then `ls`, then `PROVENANCE.md`.
-- **The interesting/plain split supports the drift claimed** — **0.2267 over 18 vs 0.1647 over 15**;
+- **The hook briefs you before you act — read the VERDICT line in it.** It read *"2 inconsistencies"*
+  for two days while I described them well (row 28). Then `ls`, then `PROVENANCE.md`.
+- **THREE GUARDS HAVE FAILED THREE TIMES** — rows 13→16→17, 5→20→22, 24→28→29. Do **not** write a
+  22nd rule at them. **Read the commits around each recurrence** and find why the rule did not fire;
+  that is what the episodic layer is for and it has never been used that way.
+- **12 standing claims are 32 days stale with NO backing probe**, so `--verify` cannot reach them;
+  six were refreshed because their probes re-ran. **19 `verify:` against 34 `check:`.** A date you
+  did not earn is a signature, not a check.
+- **The interesting/plain split still shows the drift** — **0.2267 over 18 vs 0.1647 over 15**,
   cumulative **0.1985 over 33**. Weight every interesting result as suspect and say so in the report.
-- **The container was wiped 2026-09-07→08 and origin held everything** — so the *conversation* is the only unbacked layer. **Write it down before it is compacted.**
-- **`minimal_agent` WAS run (2026-08-14) and re-verified 2026-09-09 — every figure exact, 26 days on.** Saying otherwise cost row 29. One comparison stays open: `c1-relabelling` **B4**, marked *not measured*. **Doerig** — ask Blake (it is **Hess**; every fetch is blocked).
 
 ## 1. The error that costs the most
 
-**Twenty-two times: a claim wider than what was checked** — *read one part, generalise as the whole.* `errors.md` has the ledger; read it in full.
-**Before any claim about code: found every writer and every reader, not just the one I opened?** `grep` across `src/`.
-
-**§2 prevents 7 of 17**, every gain from writing an *existing* guard into §2 with its evidence. **13,
-23 and 28 are instrument errors; 24-28 are not opening what was already there.** **A marker that names a gap is not a guard** (row 12).
+**Twenty-three times: a claim wider than what was checked** — *read one part, generalise as the whole.* `errors.md` has 29 rows; read it in full.
+**Before any claim about code: found every writer and every reader, not just the one I opened?** `grep` across `src/`, untruncated.
+**13, 23 and 28 are instrument errors; 24-29 are not opening what was already there.** **A marker that names a gap is not a guard** (row 12).
 
 ## 2. The method — FIND YOUR CONTEXT FIRST, then read only its rules
 
@@ -136,6 +136,9 @@ Optimal retrieval is **2–3 rules**; five degrades. Every rule names its eviden
 - **Gated, default-off, observer-first** for anything causal. Soul-hash bit-identical by default.
 - **Commit AND push every step** — the container is ephemeral; only origin persists.
 - **Search for an existing home before creating a file.** Blake asked directly.
+- **Changing `analyse.py` changes the thing that checks you.** CoALA §6 recommends read-only here;
+  we chose otherwise. **Never loosen a guard in the same commit as the work it would have caught**,
+  and say in the message that the apparatus moved. View 16 counts the class; the audit is his.
 - Model identity in chat only — never in commits, PRs, code comments, or pushed artifacts.
 
 ## 4. Blake
@@ -143,13 +146,9 @@ Optimal retrieval is **2–3 rules**; five degrades. Every rule names its eviden
 > *"Honesty over confabulation… let me know your uncertainty if its stronger then your certainty."*
 > *"if we dont listen to what others report, we arent doing scientific research, we are dreaming what the perfect system would be."*
 
-**When he brings something tangential, evaluate it properly** — **five of seven** produced a day's largest findings, and on 2026-09-07 four questions of his surfaced rows 24-27, every one invisible from inside.
-**Ask him for:** the paper not the summary; his reading of your numbers; to be told you are wrong without softening.
-**The channel runs BOTH ways — he said so outright, 2026-09-08:** judge his words, never take them
-as standard, measure his biases as well as yours, and treat correcting him as ordinary rather than
-costly. **The record is one-sided** — eight kept quotations of his, every one warm; his guard
-corrections obeyed without argument. **Not deferring is the instruction.** His exact words stay
-quarantined where they are — importing them here is the very loop view 9 exists to catch.
+**When he brings something tangential, evaluate it properly** — **five of seven** produced a day's largest findings, and four questions of his surfaced rows 24-27, every one invisible from inside.
+**Ask him for:** the paper not the summary; his reading of your numbers; to be told you are wrong without softening. **He supplied ten papers on 2026-09-10 ranked by what would most prove me wrong.**
+**The channel runs BOTH ways — 2026-09-08, outright:** judge his words, never take them as standard, measure his biases too, treat correcting him as ordinary. **The record is one-sided** — eight kept quotations, every one warm. **Not deferring is the instruction.** His exact words stay quarantined; importing them here is the loop view 9 catches.
 **Cannot reach:** arXiv, OUP, Cell, bioRxiv, HuggingFace, Semantic Scholar 403 at CONNECT; ordinary
 sites proxy-blocked. GitHub + `raw.githubusercontent` work — **ask him to push a PDF, not upload it.**
 

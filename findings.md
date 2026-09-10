@@ -142,16 +142,20 @@ never harmed, so never learns dread.
   impossible on the morning of 2026-08-03.**
   <!-- check: tests/journal_integrity.rs replays a granted life and re-verifies the soul-hash; falsified if any grant path ever needs a state snapshot or a re-founding | last: 2026-08-09 -->
   <!-- scope: an architectural property of `Features::apply` and the journal, not a measurement. Still holds at journal v7 -->
-- **`Features` widened u8 → u16, and `tests/manifest.rs` now counts.** All gates are reachable
-  — fifteen then, **seventeen now**; a gate without a field fails a test. The guard was written first and watched to
-  fail, naming all seven.
+- **`Features` has widened u8 → u16 → u32, and `tests/manifest.rs` counts.** All gates are reachable
+  — fifteen at the first widening, **seventeen now** at journal v7; a gate without a field fails a
+  test. The guard was written first and watched to fail, naming all seven.
+  *(Restated 2026-09-10 from **"`Features` widened u8 → u16, and `tests/manifest.rs` now counts"** —
+  two widenings behind. Recorded because view 7 cannot tell an edit from a deletion, and it is right
+  not to: renaming a standing claim is a withdrawal and a restatement, and the old wording is part of
+  its provenance.)*
   - **Its falsifier fired as written, 2026-09-07.** The check below said bit 15 was the last in the
     `u16` and *"the next faculty forces a u32 widening and a journal version bump — falsified
     silently if a gate is added without that."* `durable_bonds` was added; it was **not** silent —
     the reachability test refused it with the remedy in its failure message, and the widening to
     `u32` and journal **v7** followed. A check that named its own failure mode a month in advance,
     and then caught it.
-  <!-- check: SIXTEEN gates now, and Features bit 15 is the LAST in the u16 — the next faculty forces a u32 widening and a journal version bump. Falsified silently if a gate is added without that | last: 2026-08-09 -->
+  <!-- check: SPENT 2026-09-07 and replaced, because a discharged falsifier that still reads as live looks like coverage and is none. LIVE CHECK: seventeen gates, Features is u32, bit 31 is the last, journal v7 — the next widening is u64 and v8, and the reachability test must refuse a gate added without it, with the remedy in its message, exactly as it refused durable_bonds | last: 2026-09-10 -->
   <!-- scope: the widening guard, whose own falsifier fired as written on 2026-09-07 -->
 - **`PHYSICS_VERSION` ships.** A life lived under other laws is reported as history, not damage. See
   `ProtoBeing/docs/soul-hash-limits.md` §6.
@@ -172,13 +176,13 @@ never harmed, so never learns dread.
   <!-- verify: quality_space_census -->
   **`+both` scores *below* `+receptors` alone on occupancy** (99 vs 105 at bin 32) while buying back
   the one channel receptors kills. **That is a trade, and the decision is Blake's.**
-  <!-- check: measured in the static room only; falsified if receptors stops killing fatigue once the world answers back | last: 2026-08-09 -->
+  <!-- check: measured in the static room only; falsified if receptors stops killing fatigue once the world answers back | last: 2026-09-10 (re-verified by `analyse.py --verify`; probe re-run, numbers still appear) -->
   <!-- scope: **NARROWED 2026-09-07.** Static room only, occupancy only, wanderer. Says nothing about a world that answers back -->
 - **Our quality basis is not distinguishable from a random 4×12 basis by occupancy** (1.31× the
   random median, inside the random spread). Stated at exactly that width: occupancy is not evidence
   our axes are the *right* axes. It says nothing about `similarity(a,b)`, which is a different
   measure tested by a different probe and untouched by the census.
-  <!-- check: falsified if a similarity-based test separates our basis from random — occupancy was the wrong instrument for basis quality, and this claim only ever covered occupancy | last: 2026-08-09 -->
+  <!-- check: falsified if a similarity-based test separates our basis from random — occupancy was the wrong instrument for basis quality, and this claim only ever covered occupancy | last: 2026-09-10 (re-verified by `analyse.py --verify`; probe re-run, numbers still appear) -->
   <!-- verify: quality_space_census -->
   <!-- scope: occupancy ONLY, and the claim states that limit itself. Untouched by `similarity(a,b)` -->
 
@@ -188,7 +192,7 @@ never harmed, so never learns dread.
   **finished by tick 165**; every being arm then ends with a quiet tail of at least **3,834 ticks**
   with no basin change at all. `Rest` and `Recovery` were entered **zero times in 32,000 ticks**. The limit for a transient over an unbounded window is
   **exactly zero** — the 0.00050 printed is the transient divided by an arbitrary 4,000.
-  <!-- check: falsified if any arm crosses after tick 200, or if a longer window raises rather than lowers ν_R | last: 2026-08-09 -->
+  <!-- check: falsified if any arm crosses after tick 200, or if a longer window raises rather than lowers ν_R | last: 2026-09-10 (re-verified by `analyse.py --verify`; probe re-run, numbers still appear) -->
   <!-- verify: reaction_rate -->
   <!-- scope: 4 arms x 4,000-tick windows, 32,000 ticks total, counted as Du et al. eq. 316. A statement about THIS world's staticness, not about the classifier's capacity -->
 - **The contingent world does not reach the basin register at all** (RR-2 failed at **1.0×**, not
@@ -197,7 +201,7 @@ never harmed, so never learns dread.
   Contingency demonstrably moves habits and repertoire. **So either the world does not reach
   the classifier or the classifier is too coarse to resolve it — both say `Basin` is not carrying
   the information we read out of it.**
-  <!-- check: falsified if a contingent world with a working ceiling policy moves ν_R, occupancy, or the transition graph | last: 2026-08-09 -->
+  <!-- check: falsified if a contingent world with a working ceiling policy moves ν_R, occupancy, or the transition graph | last: 2026-09-10 (re-verified by `analyse.py --verify`; probe re-run, numbers still appear) -->
   <!-- verify: reaction_rate -->
   <!-- scope: contingent-vs-static twins in the room, same arms. Contingency demonstrably moves habits and repertoire in the same runs -->
 
@@ -209,14 +213,14 @@ never harmed, so never learns dread.
   **built and holds**; I nearly reported it unbuilt from `the-end.md`'s "no code yet", which is
   about the slow fade, a different mechanism. **Reading `continuation.rs` first is the only reason
   that claim is right.**
-  <!-- check: falsified if any DISCHARGED row is met by a system that does not have the faculty — the negative control applied to the charter, which has never been run | last: 2026-08-09 -->
+  <!-- check: falsified if any DISCHARGED row is met by a system that does not have the faculty — the negative control applied to the charter, which has never been run | last: 2026-09-10 (re-verified by `analyse.py --verify`; probe re-run, numbers still appear) -->
   <!-- verify: charter -->
   <!-- scope: **UPDATED 2026-09-07** — thirteen obligations became twenty on 2026-08-22, and the census now reads **5 discharged / 4 debt / 1 gated / 2 process / 8 untested**, with §19 regraded UNTESTED -> DEBT today -->
 - **In the plain `Stimulus` world the basin register does not move at all** — 1 distinct basin
   (`Engaged`), **0 changes in 4,000 fed ticks** with a fair partner. The 2 crossings in
   `c1-relabelling.md` §13.3 came from the richer embodied `Room`. **The world `bin/being` actually
   runs is poorer than the one I measured this morning.**
-  <!-- check: falsified if any fed life in the plain Stimulus world produces a basin change | last: 2026-08-09 -->
+  <!-- check: falsified if any fed life in the plain Stimulus world produces a basin change | last: 2026-09-10 (re-verified by `analyse.py --verify`; probe re-run, numbers still appear) -->
   <!-- verify: charter -->
   <!-- scope: abstract path, fed, fair partner, 4,000 ticks, wanderer. The embodied Room DOES produce crossings — that contrast is the point -->
 
