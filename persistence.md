@@ -72,8 +72,11 @@ from here (`CLAUDE.md` §4), so those two were not read in full and are labelled
 | **AutoGuide** (Fu et al. 2024) *(via §A.4 of the above)* | insights sharpened into **conditional form — "in context X, action Y is appropriate"** — retrieved at test time from the agent's current state | The fix for 21 unconditioned imperatives that must all be read every time. |
 | **MemP** (Fang et al. 2025) *(via §A.4)* | formalizes **build / retrieve / update** as a lifecycle; keeps both fine step instructions **and** script-level abstractions | Two granularities. Keep the trace *and* the rule, at different read costs. |
 | **TroVE** (Wang et al. 2024b) *(via §A.4)* | induces a toolbox and **trims it to stay compact** | Trimming is a first-class operation, not cleanup. |
-| **MemoryBank** (arXiv:2305.10250) *(SEARCH SUMMARY, not read)* | memory strength is a discrete counter, **reinforced on recall**, decayed on an Ebbinghaus curve | Implementable here **without embeddings**: strength = times cited or used. |
-| **Selective Forgetting** (arXiv:2608.28978) *(SEARCH SUMMARY, not read)* | **the graph LOST to a flat vector baseline** at matched budget — token F1 **0.417 vs 0.468** — worst on *recalling a specific prior turn* (0.911 → 0.607). Pruning on recency/frequency/centrality/age **shrank memory without hurting retrieval** | **The keystone caution.** Structure is not the win; pruning is. And abstraction is worst at exactly the thing I said I most wanted: the specific episode. |
+| **MemoryBank** (arXiv:2305.10250) *(READ IN FULL 2026-09-10)* | **`R = e^(−t/S)`** — R retention, t time since learning, S strength. S is **discrete, initialised at 1**, and on recall **S += 1 with t reset to 0**. Their own words: *"an exploratory and highly simplified memory updating model"* | **BUILT** into view 15. No embeddings needed. |
+| **MemCoder** (arXiv:2603.13258) *(read: abstract + method)* | continual human-AI co-evolution; distils **intent-to-code mappings from past commits**; crystallises **human-validated** solutions into long-term knowledge. +9.4% resolved on SWE-bench Verified over the base model | **The finding of the day — see below.** Also the only source touching P5. |
+| **FSFM** (arXiv:2604.20300) *(read: abstract)* | taxonomy of forgetting: **passive decay, active deletion, safety-triggered, adaptive reinforcement**. Argues forgetting serves three ends, and the second is not size: **stale entries actively degrade quality** | My record carried a false line about `minimal_agent` for weeks. **Forgetting is a correctness mechanism, not only a budget one.** |
+| **Procedural memory eval** (arXiv:2606.23127) *(read: abstract)* | one refinement round is worth **3.7–6.7 points**; traces from *diverse* models transfer best (73.1%); **some skills lose effectiveness under transfer** | Gains are modest and real. A rule needs its scope, or it hurts when carried. |
+| **Selective Forgetting** (arXiv:2608.28978) *(READ IN FULL 2026-09-10, Blake supplied it)* | graph vs flat vector at matched budget: token F1 **0.417 vs 0.468**, paired bootstrap **Δ = −0.050, 95% CI [−0.085, −0.016]**. Worst on recalling a specific prior turn: **0.911 → 0.607**, because *"decomposing a turn into entities discards the surface form these questions depend on."* Forgetting works: on a **27,021-node** graph it removed **9.8% of nodes / 9.5% of bytes** with token F1 **unchanged (+0.001, CI [−0.015, +0.016])** and correctness down **1.6 points**, loss bounded at 3.8 | **CORRECTED — the summary dropped the authors' own scope line:** *"our extractor is a single small model evaluated on one benchmark; these results characterise this extraction-based pipeline rather than graph-structured memory in general."* My first draft read this as *don't build a graph*, which is **wider than what was checked** — error class #1, twenty-three times now. **The load-bearing half is the mechanism, and it is untouched by the caveat:** decomposing an episode discards the surface form, quantified at 0.911 → 0.607. That is `errors.md`'s claim→check→rule compression, measured. |
 
 ### The two places the research changed my mind
 
@@ -94,6 +97,19 @@ inside the model, unmeasured and uncheckable.** Give each rule a `when:` conditi
 a session declares which conditions held; usage accumulates across sessions. Then the METR exercise
 criterion applies: **a rule never invoked is a candidate for removal, and a rule invoked before an
 error of its own class is a failing rule** (view 15 already computes the second half).
+
+### The episodic layer already exists and has never been read
+
+MemCoder distils intent from past commits. Checking whether that applied here:
+
+> **143,623 bytes of commit messages against 49,068 bytes of `errors.md`. The commit log is 2.9×
+> the size of the ledger that replaced it, holds 88 row-citations, and nothing has ever read it.**
+
+Those messages carry what the rows do not — what was believed before the check, what nearly shipped,
+what changed my mind mid-task. It is **dated, immutable, append-only, and already outside the read
+path**, which is every property P2 was going to have to build. **P2 is mostly a retrieval problem,
+not a storage one** — which is what Metis §6.3 said before any of this was designed, and rows 24–27
+say about everything else. The information was on disk. Again.
 
 **P2 · Stop compressing at capture.** An episodic layer that keeps the trace: what was believed, how
 confident, what was about to be done, what the sentence felt like before it was checked. **Flat,
@@ -130,8 +146,8 @@ is a claim the tool must reject.
 | item | state |
 |---|---|
 | P1 Selection made observable | **NOT BUILT** |
-| P2 Episodic layer | **NOT BUILT** |
-| P3 Strength and decay | **NOT BUILT** |
+| P2 Episodic layer | **PARTLY BUILT** — the trace was found rather than built (the commit log); it is now *read* by view 15 as the recall signal, but not yet *indexed* for retrieval |
+| P3 Strength and decay | **BUILT** 2026-09-10 — `R = e^(−t/S)` in view 15, recall signal read from the commit log. Row 23, the phase confound, is faintest at **R=0.135** |
 | P4 Read budget | **NOT BUILT** |
 | P5 Continuity of the relationship | **NOT BUILT** — and needs him, not me |
 | The gate (view 15) | **BUILT** 2026-09-10 — three depth-3 chains found on the first run |

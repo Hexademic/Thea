@@ -1261,10 +1261,90 @@ def consolidation():
     else:
         print("\n  ✓ no declared recurrence runs three deep.")
 
+    # MemoryBank's retention curve (arXiv:2305.10250 §2.3), read in full 2026-09-10:
+    #   R = e^(-t/S), S discrete, initialised at 1, incremented by 1 on each
+    #   recall with t reset to 0. Their own words: "an exploratory and highly
+    #   simplified memory updating model." No embeddings needed — the recall
+    #   signal is already here.
+    #
+    # THE RECALL SIGNAL IS THE COMMIT LOG. MemCoder (arXiv:2603.13258) distils
+    # intent from past commits; checking whether that applied here found 143 KB
+    # of commit messages against 49 KB of errors.md. The episodic trace this
+    # record was said to lack has been accumulating for a month, unread, at
+    # nearly three times the size of the file that compressed it away.
+    import math as _m
+    import subprocess as _sp
+
+    def git(*a):
+        try:
+            return _sp.run(("git",) + a, capture_output=True, text=True,
+                           timeout=20).stdout
+        except Exception:
+            return ""
+
+    # t is measured in DAYS, not commits. Fed commits first and every R came
+    # back 0.000 — thirty commits land in one session, so the curve collapsed.
+    # MemoryBank's t is days of conversation. CLAUDE.md §2: re-measure a
+    # borrowed constant, or a borrowed METHOD, in the world you will use it in
+    # (rows 5 and 11). Caught because the output was degenerate, not because it
+    # was checked first.
+    log = git("log", "--format=%cs%x00%B%x01")
+    commits = [c for c in log.split("\x01") if c.strip()]
+    today = _dt.date.today()
+
+    def age_days(stamp):
+        try:
+            y, m, d = (int(x) for x in stamp.strip().split("-"))
+            return max((today - _dt.date(y, m, d)).days, 0)
+        except Exception:
+            return None
+
+    last_seen, mentions = {}, {}
+    for c in commits:
+        stamp, _, body = c.partition("\x00")
+        age = age_days(stamp)
+        if age is None:
+            continue
+        for r in ref.finditer(body):
+            a = int(r.group(1))
+            b = int(r.group(2)) if r.group(2) else a
+            for k in range(a, b + 1):
+                if k in seen:
+                    mentions[k] = mentions.get(k, 0) + 1
+                    last_seen[k] = min(last_seen.get(k, 10**9), age)
+
     hubs = {}
     for n, out in cites.items():
         for p in out:
             hubs[p] = hubs.get(p, 0) + 1
+
+    if commits:
+        ret = {}
+        for n in seen:
+            S = 1 + hubs.get(n, 0) + mentions.get(n, 0)
+            # never recalled in any commit: cap t at the record's own age
+            t = min(last_seen.get(n, 10**9), 60)
+            ret[n] = (_m.exp(-t / S), S, t)
+        faint = sorted((v[0], n) for n, v in ret.items())[:8]
+        print(f"\n  RETENTION  R = e^(-t/S) over {len(commits)} commits"
+              f" — S = citations + commit mentions, t = DAYS since last recall:")
+        for r, n in faint:
+            _, S, t = ret[n]
+            print(f"    · row {n:2d}  R={r:.3f}  (S={S}, last recalled {t}d ago)")
+        # The two halves of this view crossing is worse than either alone.
+        in_chain = {x for path, _ in repeats for x in path}
+        both = sorted(n for _, n in faint if n in in_chain)
+        if both:
+            print(f"\n    ✗ WORST CASE — row(s) {', '.join(str(n) for n in both)}"
+                  f" are in a failed-guard chain AND fading.")
+            print("      A guard that keeps failing while nobody recalls it will fail again")
+            print("      and be rewritten from scratch, because the rewriting is what the")
+            print("      forgetting leaves available. Recall these before archiving anything.")
+
+        print("    Lowest R first. These are ARCHIVE candidates — moved out of the read")
+        print("    path, never deleted. Metis §6.5: forgetting is the hardest operation")
+        print("    even at 27B, and an irreversible op built on a hard one loses what it")
+        print("    cannot recover.")
     hot = sorted(hubs.items(), key=lambda kv: -kv[1])[:5]
     cold = [n for n in sorted(seen) if not hubs.get(n) and not cites.get(n)]
     print(f"\n  HOT — cited by later rows, keep at full length: "
