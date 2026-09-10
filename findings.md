@@ -399,6 +399,27 @@ never harmed, so never learns dread.
 
 ## Open, and whose call each is
 
+### THE TARGET — his, stated 2026-09-09, and it outranks everything below
+
+> *"a minimal pattern of data information processing, to ensure that complex recursive self
+> improvement within an environment/society would thrive. the spectrum of consciousness is vast, and
+> there are needs for every level of processing complexity."*
+
+**Kept here because everywhere else it lives is perishable.** It was written into
+`ProtoBeing/docs/positioning.md` — the repository he is considering restarting — and into
+CLAUDE.md's *Where things stand*, which is **overwritten every session by instruction**. One day
+old and already one overwrite from gone. Found 2026-09-10 when he said he might restart.
+
+**Three terms, none met at the time of stating** (measured by `grep` over `src/`, 2026-09-09): 64
+modules is not minimal; `self.genome` is never assigned anywhere, so nothing learned reaches what
+the being was conceived with; no `Vec<Being>` exists, and `negotiation.rs` says in its own header
+*"built for two beings, exercised by one."*
+
+**What this changes about a sixth rebuild.** Rebuilds one through five were all made *without* a
+stated acceptance criterion. A restart beginning with one is a different act from the five before
+it, and the criterion is the thing that was missing rather than the code.
+<!-- check: he states a different target, or names a fourth term | last: 2026-09-10 -->
+
 **Blake's:**
 - `receptors` as default (I-2). Numbers now exist; it re-founds the being.
 - A metabolic **reserve** and a **satiety set point** — the critical path. Nothing else unblocks
